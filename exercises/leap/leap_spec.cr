@@ -25,7 +25,7 @@ describe "Leap" do
       Year.is_leap?(1900).should be_false
     end
 
-    pending "marks 1400 as a leap year" do
+    pending "marks 2400 as a leap year" do
       Year.is_leap?(2400).should be_true
     end
 

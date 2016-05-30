@@ -1,6 +1,6 @@
 class Year
-  def self.is_leap?(year : Int32)
-    Year.new(year).is_leap?
+  def self.leap?(year : Int32)
+    Year.new(year).leap?
   end
 
   :private
@@ -9,11 +9,11 @@ class Year
     @year = year
   end
 
-  def is_leap?
-    divisable_by?(400) || divisable_by?(4) && !divisable_by?(100)
+  def leap?
+    divisible_by?(400) || divisible_by?(4) && !divisible_by?(100)
   end
 
-  def divisable_by?(number : Int32)
+  def divisible_by?(number : Int32)
     @year % number == 0
   end
 end

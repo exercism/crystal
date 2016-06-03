@@ -1,4 +1,4 @@
-# xCrystal
+# xCrystal [![Build Status](https://travis-ci.org/exercism/xcrystal.svg?branch=master)](https://travis-ci.org/exercism/xcrystal)
 
 Exercism problems in Crystal.
 

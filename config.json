@@ -7,6 +7,7 @@
   "problems": [
     "hello-world",
     "hamming",
+    "gigasecond",
     "rna-transcription",
     "bob",
     "raindrops",

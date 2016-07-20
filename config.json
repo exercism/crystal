@@ -12,7 +12,8 @@
     "bob",
     "raindrops",
     "leap",
-    "pangram"
+    "pangram",
+    "atbash_cipher"
   ],
   "deprecated": [
   ],

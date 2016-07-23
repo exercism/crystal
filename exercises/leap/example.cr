@@ -3,8 +3,6 @@ class Year
     Year.new(year).leap?
   end
 
-  :private
-
   def initialize(year : Int32)
     @year = year
   end
@@ -13,7 +11,7 @@ class Year
     divisible_by?(400) || divisible_by?(4) && !divisible_by?(100)
   end
 
-  def divisible_by?(number : Int32)
+  private def divisible_by?(number : Int32)
     @year % number == 0
   end
 end

@@ -14,6 +14,7 @@
     "leap",
     "pangram",
     "largest-series-product",
+    "bracket-push",
     "atbash-cipher"
   ],
   "deprecated": [

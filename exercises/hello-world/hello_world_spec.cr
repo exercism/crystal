@@ -4,7 +4,7 @@ require "./hello_world"
 describe "HelloWorld" do
   describe "#hello" do
     it "says hello with default 'World'" do
-      HelloWorld.hello().should eq "Hello, World"
+      HelloWorld.hello.should eq "Hello, World"
     end
 
     pending "says hello with one name" do

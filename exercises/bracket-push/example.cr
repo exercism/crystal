@@ -7,11 +7,11 @@ module Brackets
   end
 
   private def filter_brackets(brackets : String) : Array(Char)
-    brackets.chars.select{|c| (MAP.keys + MAP.values).includes?(c)}
+    brackets.chars.select { |c| (MAP.keys + MAP.values).includes?(c) }
   end
 
   private def create_stack(brackets : Array(Char)) : Array(Char)
-    brackets.reduce([] of Char) do |stack, b| 
+    brackets.reduce([] of Char) do |stack, b|
       MAP[b]? && MAP[b]? == stack.last? ? stack[0..-2] : stack << b
     end
   end

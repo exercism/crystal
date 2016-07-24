@@ -21,7 +21,8 @@ test-assignment:
 	@cp $(EXERCISESDIR)/$(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(TESTFILE)
 	@sed 's/pending/it/g' $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECFILE) > $(OUTDIR)/$(SPECFILE)
 	@cd $(OUTDIR) && crystal spec $(SPECFILE)
-	@echo "\n"
+	crystal tool format --check $(EXERCISESDIR)/$(ASSIGNMENT)
+	@printf "\n"
 
 test:
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done

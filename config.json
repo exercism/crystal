@@ -2,7 +2,7 @@
   "slug": "crystal",
   "language": "Crystal",
   "repository": "https://github.com/exercism/xcrystal",
-  "active": false,
+  "active": true,
   "test_pattern": "_spec.cr",
   "problems": [
     "hello-world",

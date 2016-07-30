@@ -44,7 +44,7 @@ describe "Bob" do
     end
 
     pending "responds to shouting with no exclamation mark" do
-      Bob.hey("I HATE YOU!").should eq "Whoa, chill out!"
+      Bob.hey("I HATE YOU").should eq "Whoa, chill out!"
     end
 
     pending "responds to statement containing question mark" do

@@ -15,6 +15,7 @@
     "pangram",
     "largest-series-product",
     "bracket-push",
+    "sieve",
     "atbash-cipher"
   ],
   "deprecated": [

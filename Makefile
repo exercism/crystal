@@ -16,12 +16,13 @@ SPECFILE := "$(TESTNAME)_spec.$(FILEEXT)"
 TESTFILE := "$(TESTNAME).$(FILEEXT)"
 
 test-assignment:
+	@echo "running formatting check for: $(ASSIGNMENT)"
+	@crystal tool format --check $(EXERCISESDIR)/$(ASSIGNMENT)
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cp $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECFILE) $(OUTDIR)
 	@cp $(EXERCISESDIR)/$(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(TESTFILE)
 	@sed 's/pending/it/g' $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECFILE) > $(OUTDIR)/$(SPECFILE)
 	@cd $(OUTDIR) && crystal spec $(SPECFILE)
-	crystal tool format --check $(EXERCISESDIR)/$(ASSIGNMENT)
 	@printf "\n"
 
 test:

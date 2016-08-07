@@ -17,7 +17,8 @@
     "bracket-push",
     "sieve",
     "roman-numerals",
-    "atbash-cipher"
+    "atbash-cipher",
+    "anagram"
   ],
   "deprecated": [
   ],

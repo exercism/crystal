@@ -1,14 +1,13 @@
 class Series
+  @series : Array(Int64)
+
   def initialize(series : String)
-    if series =~ /\D/
-      @series = [] of Int64
-    else
-      @series = series.chars.map(&.to_i).map(&.to_i64)
-    end
+    raise ArgumentError.new("Series contains non-digit characters") if series =~ /\D/
+    @series = series.chars.map(&.to_i).map(&.to_i64)
   end
 
   def largest_product(span : Int32) : Int64
-    return -1i64 if span > @series.size || (@series.empty? && span > 0) || span < 0
+    raise ArgumentError.new("Invalid span") if span > @series.size || span < 0
     return 1i64 if span == 0
 
     product_from_sequence(create_sequences(span))

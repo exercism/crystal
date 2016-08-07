@@ -37,7 +37,7 @@ describe "Series" do
       Series.new("99099").largest_product(3).should eq 0
     end
     it "rejects span longer than string length" do
-      Series.new("123").largest_product(4).should eq -1
+      expect_raises(ArgumentError) { Series.new("123").largest_product(4) }
     end
     it "reports 1 for empty string and empty product (0 span)" do
       Series.new("").largest_product(0).should eq 1
@@ -46,13 +46,13 @@ describe "Series" do
       Series.new("123").largest_product(0).should eq 1
     end
     it "rejects empty string and nonzero span" do
-      Series.new("").largest_product(1).should eq -1
+      expect_raises(ArgumentError) { Series.new("").largest_product(1) }
     end
     it "rejects invalid character in digits" do
-      Series.new("1234a5").largest_product(2).should eq -1
+      expect_raises(ArgumentError) { Series.new("1234a5").largest_product(2).should eq -1 }
     end
     it "rejects negative span" do
-      Series.new("12345").largest_product(-1).should eq -1
+      expect_raises(ArgumentError) { Series.new("12345").largest_product(-1) }
     end
   end
 end

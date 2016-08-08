@@ -2,19 +2,20 @@ module Anagram
   extend self
 
   def find(subject, candidates)
-    downcased_subject = subject.downcase
-    sorted_subject_chars = downcased_subject.chars.sort
-    matches = Hash(String, Array(String)).new
-    matches[downcased_subject] = Array(String).new
+    matches = Array(String).new
     candidates.each do |candidate|
-      downcased_candidate = candidate.downcase
-      sorted_candidate_chars = downcased_candidate.chars.sort
-      unless downcased_subject == downcased_candidate
-        if sorted_subject_chars == sorted_candidate_chars
-          matches[downcased_subject] << candidate
-        end
+      if !duplicates?(subject, candidate) && anagrams?(subject, candidate)
+        matches << candidate
       end
     end
-    matches.values.flatten
+    matches
+  end
+
+  def anagrams?(subject, candidate)
+    subject.downcase.chars.sort == candidate.downcase.chars.sort
+  end
+
+  def duplicates?(subject, candidate)
+    subject.downcase == candidate.downcase
   end
 end

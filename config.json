@@ -18,7 +18,8 @@
     "sieve",
     "roman-numerals",
     "atbash-cipher",
-    "anagram"
+    "anagram",
+    "react"
   ],
   "exercises": [
     {
@@ -101,6 +102,12 @@
     },
     {
       "slug": "anagram",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
+      "slug": "react",
       "difficulty": 1,
       "topics": [
       ]

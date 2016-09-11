@@ -1,74 +1,64 @@
 require "spec"
 require "./react"
 
-describe Reactor do
-  describe "input cells" do
-    it "have a value" do
-      reactor = Reactor.new
-      input = reactor.create_input(10)
-      input.value.should eq 10
-    end
-
-    pending "can have values set" do
-      reactor = Reactor.new
-      input = reactor.create_input(4)
-      input.value = 20
-      input.value.should eq 20
-    end
+describe React::InputCell do
+  it "have a value" do
+    input = React::InputCell.new(10)
+    input.value.should eq 10
   end
 
-  describe "compute cells" do
-    pending "calculate initial value" do
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      output = reactor.create_compute(input) { |v| v + 1 }
-      output.value.should eq 2
-    end
+  it "can have values set" do
+    input = React::InputCell.new(4)
+    input.value = 20
+    input.value.should eq 20
+  end
+end
 
-    pending "take input in the right order" do
-      reactor = Reactor.new
-      one = reactor.create_input(1)
-      two = reactor.create_input(2)
-      output = reactor.create_compute(one, two) { |v1, v2| v1 + v2 * 10 }
-      output.value.should eq 21
-    end
+describe React::ComputeCell do
+  it "calculate initial value" do
+    input = React::InputCell.new(1)
+    output = React::ComputeCell.new(input) { |v| v + 1 }
+    output.value.should eq 2
+  end
 
-    pending "update value when dependencies are changed" do
-      reactor = Reactor.new
-      one = reactor.create_input(1)
-      output = reactor.create_compute(one) { |v| v + 1 }
-      one.value = 3
-      output.value.should eq 4
-    end
+  it "take input in the right order" do
+    one = React::InputCell.new(1)
+    two = React::InputCell.new(2)
+    output = React::ComputeCell.new(one, two) { |v1, v2| v1 + v2 * 10 }
+    output.value.should eq 21
+  end
 
-    pending "can depend on other compute cells" do
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      times_two = reactor.create_compute(input) { |v| v * 2 }
-      times_thirty = reactor.create_compute(input) { |v| v * 30 }
-      output = reactor.create_compute(times_two, times_thirty) { |v1, v2| v1 + v2 }
-      output.value.should eq 32
-      input.value = 3
-      output.value.should eq 96
-    end
+  it "update value when dependencies are changed" do
+    one = React::InputCell.new(1)
+    output = React::ComputeCell.new(one) { |v| v + 1 }
+    one.value = 3
+    output.value.should eq 4
+  end
+
+  it "can depend on other compute cells" do
+    input = React::InputCell.new(1)
+    times_two = React::ComputeCell.new(input) { |v| v * 2 }
+    times_thirty = React::ComputeCell.new(input) { |v| v * 30 }
+    output = React::ComputeCell.new(times_two, times_thirty) { |v1, v2| v1 + v2 }
+    output.value.should eq 32
+    input.value = 3
+    output.value.should eq 96
   end
 
   describe "callbacks" do
-    pending "are fired on change" do
+    it "are fired on change" do
       values = [] of Int32
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      output = reactor.create_compute(input) { |v| v + 1 }
+      input = React::InputCell.new(1)
+      output = React::ComputeCell.new(input) { |v| v + 1 }
       output.add_callback { |v| values << v }
       input.value = 3
       values.should eq [4]
     end
 
-    pending "are not fired if no change" do
+    it "are not fired if no change" do
       values = [] of Int32
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      output = reactor.create_compute(input) { |v| v < 3 ? 111 : 222 }
+      input = React::InputCell.new(1)
+      output = React::ComputeCell.new(input) { |v| v < 3 ? 111 : 222 }
       output.add_callback { |v| values << v }
       input.value = 2
       values.should eq [] of Int32
@@ -76,13 +66,12 @@ describe Reactor do
       values.should eq [222]
     end
 
-    pending "can be added and removed" do
+    it "can be added and removed" do
       values1 = [] of Int32
       values2 = [] of Int32
       values3 = [] of Int32
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      output = reactor.create_compute(input) { |v| v + 1 }
+      input = React::InputCell.new(1)
+      output = React::ComputeCell.new(input) { |v| v + 1 }
       callback = output.add_callback { |v| values1 << v }
       output.add_callback { |v| values2 << v }
       input.value = 31
@@ -96,12 +85,11 @@ describe Reactor do
       values3.should eq [42]
     end
 
-    pending "don't interfere with other callbacks if removed multiple times" do
+    it "don't interfere with other callbacks if removed multiple times" do
       values1 = [] of Int32
       values2 = [] of Int32
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      output = reactor.create_compute(input) { |v| v + 1 }
+      input = React::InputCell.new(1)
+      output = React::ComputeCell.new(input) { |v| v + 1 }
       callback = output.add_callback { |v| values1 << v }
       output.add_callback { |v| values2 << v }
       10.times { output.remove_callback(callback) }
@@ -110,26 +98,24 @@ describe Reactor do
       values2.should eq [3]
     end
 
-    pending "are called only once even if multiple dependencies change" do
+    it "are called only once even if multiple dependencies change" do
       values = [] of Int32
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      plus_one = reactor.create_compute(input) { |v| v + 1 }
-      minus_one1 = reactor.create_compute(input) { |v| v - 1 }
-      minus_one2 = reactor.create_compute(minus_one1) { |v| v - 1 }
-      output = reactor.create_compute(plus_one, minus_one2) { |v1, v2| v1 * v2 }
+      input = React::InputCell.new(1)
+      plus_one = React::ComputeCell.new(input) { |v| v + 1 }
+      minus_one1 = React::ComputeCell.new(input) { |v| v - 1 }
+      minus_one2 = React::ComputeCell.new(minus_one1) { |v| v - 1 }
+      output = React::ComputeCell.new(plus_one, minus_one2) { |v1, v2| v1 * v2 }
       output.add_callback { |v| values << v }
       input.value = 4
       values.should eq [10]
     end
 
-    pending "are not called if dependencies change in such a way that final value doesn't change" do
+    it "are not called if dependencies change in such a way that final value doesn't change" do
       values = [] of Int32
-      reactor = Reactor.new
-      input = reactor.create_input(1)
-      plus_one = reactor.create_compute(input) { |v| v + 1 }
-      minus_one = reactor.create_compute(input) { |v| v - 1 }
-      always_two = reactor.create_compute(plus_one, minus_one) { |v1, v2| v1 - v2 }
+      input = React::InputCell.new(1)
+      plus_one = React::ComputeCell.new(input) { |v| v + 1 }
+      minus_one = React::ComputeCell.new(input) { |v| v - 1 }
+      always_two = React::ComputeCell.new(plus_one, minus_one) { |v1, v2| v1 - v2 }
       always_two.add_callback { |v| values << v }
       10.times { |i| input.value = i }
       values.should eq [] of Int32

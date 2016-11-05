@@ -1,28 +1,24 @@
-# assignments
 ASSIGNMENT ?= ""
-IGNOREDIRS := "^(\.git|docs)$$"
+IGNOREDIRS := "^(\.git|.crystal|docs|bin|img|script)$$"
 EXERCISESDIR ?= "exercises"
 ASSIGNMENTS = $(shell find exercises -maxdepth 1 -mindepth 1 -type d | cut -d'/' -f2 | sort | grep -Ev $(IGNOREDIRS))
 
-# output directories
-TMPDIR ?= "/tmp"
-OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
-
-# language specific config (tweakable per language)
 FILEEXT := "cr"
-EXAMPLE := "example.$(FILEEXT)"
-TESTNAME := "$(subst -,_,$(ASSIGNMENT))"
-SPECFILE := "$(TESTNAME)_spec.$(FILEEXT)"
-TESTFILE := "$(TESTNAME).$(FILEEXT)"
+SPECDIR = "spec"
+ASSIGNMENTNAME := "$(subst -,_,$(ASSIGNMENT))"
+EXERCISESPECDIR := $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECDIR)
+SPECFILE := "$(ASSIGNMENTNAME)_spec.$(FILEEXT)"
+TMPSPECFILE := "$(ASSIGNMENTNAME)_spec.$(FILEEXT).tmp"
 
 test-assignment:
 	@echo "running formatting check for: $(ASSIGNMENT)"
 	@crystal tool format --check $(EXERCISESDIR)/$(ASSIGNMENT)
+	@echo "moving files around"
+	@sed 's/pending/it/g' $(EXERCISESPECDIR)/$(SPECFILE) > $(EXERCISESPECDIR)/$(TMPSPECFILE)
+	@rm $(EXERCISESPECDIR)/$(SPECFILE)
+	@mv $(EXERCISESPECDIR)/$(TMPSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
 	@echo "running tests for: $(ASSIGNMENT)"
-	@cp $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECFILE) $(OUTDIR)
-	@cp $(EXERCISESDIR)/$(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(TESTFILE)
-	@sed 's/pending/it/g' $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECFILE) > $(OUTDIR)/$(SPECFILE)
-	@cd $(OUTDIR) && crystal spec $(SPECFILE)
+	@cd $(EXERCISESDIR)/$(ASSIGNMENT) && crystal spec
 	@printf "\n"
 
 test:

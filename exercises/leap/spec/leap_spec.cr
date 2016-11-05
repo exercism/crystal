@@ -1,5 +1,5 @@
 require "spec"
-require "./leap"
+require "../src/*"
 
 struct Time
   def leap_year?

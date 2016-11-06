@@ -1,5 +1,5 @@
 require "spec"
-require "./atbash_cipher"
+require "../src/*"
 
 describe "Atbash" do
   describe "#encode" do

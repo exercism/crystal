@@ -1,5 +1,5 @@
 require "spec"
-require "./roman_numerals"
+require "../src/*"
 
 describe "Int" do
   describe "#to_roman" do

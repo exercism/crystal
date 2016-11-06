@@ -1,5 +1,5 @@
 require "spec"
-require "./gigasecond"
+require "../src/*"
 
 describe "Gigasecond" do
   describe "#from" do

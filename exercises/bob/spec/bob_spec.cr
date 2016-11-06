@@ -1,5 +1,5 @@
 require "spec"
-require "./bob"
+require "../src/*"
 
 describe "Bob" do
   describe "#hey" do

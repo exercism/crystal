@@ -1,5 +1,5 @@
 require "spec"
-require "./pangram"
+require "../src/*"
 
 describe "Pangram" do
   describe "#pangram?" do

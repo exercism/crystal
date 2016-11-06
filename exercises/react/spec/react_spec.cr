@@ -1,5 +1,5 @@
 require "spec"
-require "./react"
+require "../src/*"
 
 describe React::InputCell do
   it "have a value" do

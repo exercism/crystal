@@ -1,5 +1,5 @@
 require "spec"
-require "./raindrops"
+require "../src/*"
 
 describe "Raindrops" do
   describe "#drops" do

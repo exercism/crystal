@@ -1,5 +1,5 @@
 require "spec"
-require "./bracket_push"
+require "../src/*"
 
 describe "Brackets" do
   describe "#are_valid?" do

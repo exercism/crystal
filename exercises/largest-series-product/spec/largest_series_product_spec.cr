@@ -1,5 +1,5 @@
 require "spec"
-require "./largest_series_product"
+require "../src/*"
 
 describe "Series" do
   describe "#largest_product" do

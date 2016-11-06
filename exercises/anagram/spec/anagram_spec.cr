@@ -1,5 +1,5 @@
 require "spec"
-require "./anagram"
+require "../src/*"
 
 describe "Anagram" do
   describe "#find" do

@@ -1,5 +1,5 @@
 require "spec"
-require "./sieve"
+require "../src/*"
 
 describe "Primes" do
   describe "#sieve" do

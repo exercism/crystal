@@ -1,5 +1,5 @@
 require "spec"
-require "./rna_transcription"
+require "../src/*"
 
 describe "RnaComplement" do
   describe "#of_dna" do

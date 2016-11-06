@@ -1,5 +1,5 @@
 require "spec"
-require "./hamming"
+require "../src/*"
 
 describe "Hamming" do
   describe "#compute" do

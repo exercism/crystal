@@ -13,7 +13,7 @@ http://crystal-lang.org/docs/installation/index.html
 Execute the tests with:
 
 ```bash
-$ crystal spec test_spec.cr
+$ crystal spec
 ```
 
 In each test suite all but the first test have been skipped.

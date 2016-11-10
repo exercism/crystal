@@ -1,15 +1,32 @@
 ## Project Structure
 
-The Crystal exercises on exercism are setup to work with `crystal spec` (Crystal's default testing framework).
+* `src` contains your solution to the exercise
+* `spec` contains the tests to run for the exercise
 
-You will find two directories in each Crystal exercise: `src` and `spec`.
+## Running Tests
 
-In `spec/hello_world_spec.cr`, the tests are defined. These are the goals you'll be working towards.
+If you're in the right directory (i.e. the one containing `src` and `spec`), you can run the tests for that exercise by running `crystal spec`:
 
-In `src`, you'll create a new file called `src/hello_world.cr` and define a new class or module for `HelloWorld`. There you'll work on adding in functionality to the class to make the tests pass.
+```bash
+$ pwd
+/Users/johndoe/Code/exercism/crystal/hello-world
+
+$ ls
+GETTING_STARTED.md README.md          spec               src
+
+$ crystal spec
+```
+
+This will run all of the test files in the `spec` directory.
+
+In each test file, all but the first test have been skipped.
+
+Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
 
 ## Submitting Your Solution
 
-Once satisfied with your solution, you can submit your code by running `exercism submit src/hello_world.cr`.
+Be sure to submit the source file in the `src` directory when submitting your solution:
 
-Have fun!
+```bash
+$ exercism submit src/hello_world.cr
+```

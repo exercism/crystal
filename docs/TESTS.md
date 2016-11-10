@@ -44,5 +44,5 @@ $ crystal tool format ./<path>/<to>/<file>
 Be sure to submit the source file in the `src` directory when submitting your solution:
 
 ```bash
-$ exercism submit src/hello_world.cr
+$ exercism submit src/<exercise>.cr
 ```

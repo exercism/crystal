@@ -2,17 +2,16 @@ require "spec"
 require "../src/*"
 
 describe "HelloWorld" do
-  describe "#hello" do
-    it "says hello with default 'World'" do
-      HelloWorld.hello.should eq "Hello, World!"
-    end
 
-    pending "says hello with one name" do
-      HelloWorld.hello("Max").should eq "Hello, Max!"
-    end
+  it "tests no name" do
+    HelloWorld.hello.should eq("Hello, World")
+  end
 
-    pending "says hello with another name" do
-      HelloWorld.hello("Alice").should eq "Hello, Alice!"
-    end
+  pending "tests sample name" do
+    HelloWorld.hello("Alice").should eq("Hello, Alice")
+  end
+
+  pending "tests other sample name" do
+    HelloWorld.hello("Bob").should eq("Hello, Bob")
   end
 end

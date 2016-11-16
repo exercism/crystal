@@ -1,6 +1,7 @@
 ASSIGNMENT ?= ""
 IGNOREDIRS := "^(\.git|.crystal|docs|bin|img|script)$$"
 EXERCISESDIR ?= "exercises"
+GENERATORDIR ?= "src/generator"
 ASSIGNMENTS = $(shell find exercises -maxdepth 1 -mindepth 1 -type d | cut -d'/' -f2 | sort | grep -Ev $(IGNOREDIRS))
 
 FILEEXT := "cr"
@@ -23,3 +24,6 @@ test-assignment:
 
 test:
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
+
+build_generator:
+	@crystal build $(GENERATORDIR)/generate.$(FILEEXT) -o bin/generate

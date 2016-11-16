@@ -24,6 +24,8 @@ test-assignment:
 
 test:
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
+	@echo "running generator tests"
+	@cd $(GENERATORDIR) && crystal spec
 
 build_generator:
 	@crystal build $(GENERATORDIR)/generate.$(FILEEXT) -o bin/generate

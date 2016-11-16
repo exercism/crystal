@@ -1,5 +1,6 @@
 require "ecr"
 require "json"
+
 abstract class ExerciseGenerator
   METADATA_REPOSITORY = "x-common"
 
@@ -15,15 +16,15 @@ abstract class ExerciseGenerator
     exercise_name.split('-').map(&.capitalize).join
   end
 
-  abstract def exercise_name
-  abstract def test_cases
+  abstract def exercise_name : String
+  abstract def test_cases : Array(ExerciseTestCase)
 
   private def root
     File.expand_path(File.join("..", "..", "..", ".."), __FILE__)
   end
 
   private def test_file
-    File.expand_path(File.join("exercises", exercise_name, "spec", "#{exercise_name.tr("-","_")}_spec.cr"), root)
+    File.expand_path(File.join("exercises", exercise_name, "spec", "#{exercise_name.tr("-", "_")}_spec.cr"), root)
   end
 
   private def metadata_dir

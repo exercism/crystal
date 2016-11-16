@@ -118,7 +118,8 @@
   "ignored": [
     "bin",
     "docs",
-    "img"
+    "img",
+    "src"
   ],
   "foregone": [
   ]

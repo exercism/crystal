@@ -2,7 +2,6 @@ require "./exercise_generator"
 require "./exercise_test_case"
 
 class HelloWorldGenerator < ExerciseGenerator
-
   def exercise_name
     "hello-world"
   end
@@ -23,9 +22,9 @@ class HelloWorldTestCase < ExerciseTestCase
 
   def workload
     if !name
-      "HelloWorld.hello.should eq(\"Hello, World\")"
+      "HelloWorld.hello.should eq(\"#{expected}\")"
     else
-      "HelloWorld.hello(\"#{name}\").should eq(\"Hello, #{name}\")"
+      "HelloWorld.hello(\"#{name}\").should eq(\"#{expected}\")"
     end
   end
 

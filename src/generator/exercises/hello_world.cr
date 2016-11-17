@@ -21,10 +21,10 @@ class HelloWorldTestCase < ExerciseTestCase
   )
 
   def workload
-    if !name
-      "HelloWorld.hello.should eq(\"#{expected}\")"
-    else
+    if name
       "HelloWorld.hello(\"#{name}\").should eq(\"#{expected}\")"
+    else
+      "HelloWorld.hello.should eq(\"#{expected}\")"
     end
   end
 

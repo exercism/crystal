@@ -8,17 +8,21 @@ class HelloWorldGenerator < ExerciseGenerator
 
   def test_cases
     JSON.parse(data)["cases"].map do |test_case|
-      HelloWorldTestCase.from_json(test_case.to_json)
+      HelloWorldTestCase.new(test_case)
     end
   end
 end
 
 class HelloWorldTestCase < ExerciseTestCase
-  JSON.mapping(
-    description: String,
-    name: String | Nil,
-    expected: String
-  )
+  private getter description : JSON::Any
+  private getter name : JSON::Any | Nil
+  private getter expected : JSON::Any
+
+  def initialize(test_case)
+    @description = test_case["description"]
+    @name = test_case["name"]?
+    @expected = test_case["expected"]
+  end
 
   def workload
     if name

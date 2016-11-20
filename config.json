@@ -19,7 +19,8 @@
     "roman-numerals",
     "atbash-cipher",
     "anagram",
-    "react"
+    "react",
+    "acronym"
   ],
   "exercises": [
     {
@@ -108,6 +109,12 @@
     },
     {
       "slug": "react",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
+      "slug": "acronym",
       "difficulty": 1,
       "topics": [
       ]

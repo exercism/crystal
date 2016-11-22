@@ -1,4 +1,4 @@
-require "./exercises/*"
+require "./src/generators/*"
 
 if ARGV.empty?
   STDERR.puts "Exercise name required!\n"

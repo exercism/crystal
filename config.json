@@ -124,7 +124,7 @@
       "slug": "flatten-array",
       "difficulty": 1,
       "topics": [
-        
+
       ]
     }
   ],
@@ -134,7 +134,7 @@
     "bin",
     "docs",
     "img",
-    "src"
+    "generator"
   ],
   "foregone": [
   ]

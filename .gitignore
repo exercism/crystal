@@ -17,5 +17,5 @@ bin/configlet
 bin/configlet.exe
 CHECKLIST
 tmp/
-bin/generate
+bin/generator
 cache/

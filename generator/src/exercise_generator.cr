@@ -22,7 +22,7 @@ abstract class ExerciseGenerator
   abstract def test_cases : Array(ExerciseTestCase)
 
   private def root
-    File.expand_path(File.join("..", "..", "..", ".."), __FILE__)
+    File.expand_path(File.join("..", "..", ".."), __FILE__)
   end
 
   private def test_file

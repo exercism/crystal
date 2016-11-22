@@ -15,9 +15,7 @@ class RemoteDataFile
   end
 
   private def remote_file
-    file = File.open(cache_file, "w")
     File.write(cache_file, body)
-    file.close
     cache_file
   end
 

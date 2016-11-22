@@ -31,4 +31,4 @@ test:
 	@cd $(GENERATORDIR) && crystal spec
 
 build_generator:
-	@crystal build $(GENERATORDIR)/generate.$(FILEEXT) -o bin/generate
+	@crystal build $(GENERATORDIR)/generator.$(FILEEXT) -o bin/generator

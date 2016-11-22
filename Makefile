@@ -9,17 +9,20 @@ SPECDIR = "spec"
 ASSIGNMENTNAME := "$(subst -,_,$(ASSIGNMENT))"
 EXERCISESPECDIR := $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECDIR)
 SPECFILE := "$(ASSIGNMENTNAME)_spec.$(FILEEXT)"
-TMPSPECFILE := "$(ASSIGNMENTNAME)_spec.$(FILEEXT).tmp"
+SUPERSPECFILE := "$(SPECFILE).super"
+TMPSPECFILE := "$(SPECFILE).tmp"
 
 test-assignment:
 	@echo "running formatting check for: $(ASSIGNMENT)"
 	@crystal tool format --check $(EXERCISESDIR)/$(ASSIGNMENT)
 	@echo "moving files around"
 	@sed 's/pending/it/g' $(EXERCISESPECDIR)/$(SPECFILE) > $(EXERCISESPECDIR)/$(TMPSPECFILE)
-	@rm $(EXERCISESPECDIR)/$(SPECFILE)
+	@mv $(EXERCISESPECDIR)/$(SPECFILE) $(EXERCISESPECDIR)/$(SUPERSPECFILE)
 	@mv $(EXERCISESPECDIR)/$(TMPSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cd $(EXERCISESDIR)/$(ASSIGNMENT) && crystal spec
+	@rm $(EXERCISESPECDIR)/$(SPECFILE)
+	@mv $(EXERCISESPECDIR)/$(SUPERSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
 	@printf "\n"
 
 test:

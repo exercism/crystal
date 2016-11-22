@@ -20,7 +20,8 @@
     "atbash-cipher",
     "anagram",
     "react",
-    "acronym"
+    "acronym",
+    "flatten-array"
   ],
   "exercises": [
     {
@@ -117,6 +118,13 @@
       "slug": "acronym",
       "difficulty": 1,
       "topics": [
+      ]
+    },
+    {
+      "slug": "flatten-array",
+      "difficulty": 1,
+      "topics": [
+        
       ]
     }
   ],

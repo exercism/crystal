@@ -1,34 +1,52 @@
-ASSIGNMENT ?= ""
-IGNOREDIRS := "^(\.git|.crystal|docs|bin|img|script)$$"
+EXERCISE ?= ""
+IGNOREDIRS := "^(\.git|.crystal|bin|cache|docs|img)$$"
 EXERCISESDIR ?= "exercises"
-GENERATORDIR ?= "generator"
-ASSIGNMENTS = $(shell find exercises -maxdepth 1 -mindepth 1 -type d | cut -d'/' -f2 | sort | grep -Ev $(IGNOREDIRS))
+EXERCISES = $(shell find $(EXERCISESDIR) -maxdepth 1 -mindepth 1 -type d | cut -d '/' -f 2 | sort | grep -Ev $(IGNOREDIRS))
 
 FILEEXT := "cr"
 SPECDIR = "spec"
-ASSIGNMENTNAME := "$(subst -,_,$(ASSIGNMENT))"
-EXERCISESPECDIR := $(EXERCISESDIR)/$(ASSIGNMENT)/$(SPECDIR)
-SPECFILE := "$(ASSIGNMENTNAME)_spec.$(FILEEXT)"
+EXERCISENAME := "$(subst -,_,$(EXERCISE))"
+EXERCISESPECDIR := $(EXERCISESDIR)/$(EXERCISE)/$(SPECDIR)
+SPECFILE := "$(EXERCISENAME)_spec.$(FILEEXT)"
 SUPERSPECFILE := "$(SPECFILE).super"
 TMPSPECFILE := "$(SPECFILE).tmp"
 
-test-assignment:
-	@echo "running formatting check for: $(ASSIGNMENT)"
-	@crystal tool format --check $(EXERCISESDIR)/$(ASSIGNMENT)
+GENERATORDIR ?= "generator"
+GENERATORSDIR := $(GENERATORDIR)/src/generators
+GENERATORS = $(shell find $(GENERATORSDIR) -type f | cut -d '/' -f 4 | cut -d '.' -f 1 | sed 's/_/-/g')
+
+test-exercise:
+	@echo "running formatting check for: $(EXERCISE)"
+	@crystal tool format --check $(EXERCISESDIR)/$(EXERCISE)
 	@echo "moving files around"
 	@sed 's/pending/it/g' $(EXERCISESPECDIR)/$(SPECFILE) > $(EXERCISESPECDIR)/$(TMPSPECFILE)
 	@mv $(EXERCISESPECDIR)/$(SPECFILE) $(EXERCISESPECDIR)/$(SUPERSPECFILE)
 	@mv $(EXERCISESPECDIR)/$(TMPSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
-	@echo "running tests for: $(ASSIGNMENT)"
-	@cd $(EXERCISESDIR)/$(ASSIGNMENT) && crystal spec
+	@echo "running tests for: $(EXERCISE)"
+	@cd $(EXERCISESDIR)/$(EXERCISE) && crystal spec
 	@rm $(EXERCISESPECDIR)/$(SPECFILE)
 	@mv $(EXERCISESPECDIR)/$(SUPERSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
 	@printf "\n"
 
-test:
-	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
+test-exercises:
+	@for exercise in $(EXERCISES); do EXERCISE=$$exercise $(MAKE) -s test-exercise || exit 1; done
+
+build-generator:
+	@crystal build $(GENERATORDIR)/generator.$(FILEEXT) -o bin/generator
+
+generate-exercise:
+	@echo "generating spec file for generator: $(GENERATOR)"
+	@bin/generator $(GENERATOR)
+
+generate-exercises:
+	@echo $(GENERATORS)
+	@for generator in $(GENERATORS); do GENERATOR=$$generator $(MAKE) -s generate-exercise || exit 1; done
+
+test-generator:
 	@echo "running generator tests"
 	@cd $(GENERATORDIR) && crystal spec
 
-build_generator:
-	@crystal build $(GENERATORDIR)/generator.$(FILEEXT) -o bin/generator
+test:
+	@echo "running all the tests"
+	@$(MAKE) -s test-exercises
+	@$(MAKE) -s test-generator

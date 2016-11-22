@@ -39,7 +39,6 @@ generate-exercise:
 	@bin/generator $(GENERATOR)
 
 generate-exercises:
-	@echo $(GENERATORS)
 	@for generator in $(GENERATORS); do GENERATOR=$$generator $(MAKE) -s generate-exercise || exit 1; done
 
 test-generator:

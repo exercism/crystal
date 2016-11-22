@@ -39,7 +39,7 @@ class RemoteDataFile
     when 200
       response.body
     when 404
-      raise "A canonical-data.json doesn't exist for #{@test_name} in x-common. " +
+      raise "A #{DATA_FILE} doesn't exist for #{@test_name} in x-common. " +
             "Go make one!"
     else
       raise "Error while requesting the #{@test_name} data file from GitHub... " +

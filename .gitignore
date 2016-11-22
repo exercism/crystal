@@ -7,7 +7,7 @@
 !bin/fetch-configlet
 !LICENSE
 !Makefile
-!src/
+!generator/
 
 # double ignore others
 *.swp

@@ -1,3 +1,5 @@
+require "./remote_data_file"
+
 require "ecr"
 require "json"
 
@@ -32,7 +34,13 @@ abstract class ExerciseGenerator
   end
 
   private def data
-    File.read(File.join(metadata_dir, "canonical-data.json"))
+    local_data_file = File.join(metadata_dir, "canonical-data.json")
+    if File.exists?(local_data_file)
+      File.read(local_data_file)
+    else
+      remote_data_file = RemoteDataFile.new(exercise_name)
+      File.read(remote_data_file.path)
+    end
   end
 
   ECR.def_to_s "#{__DIR__}/templates/example.tt"

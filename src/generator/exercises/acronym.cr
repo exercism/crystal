@@ -29,6 +29,6 @@ class AcronymTestCase < ExerciseTestCase
   end
 
   def test_name
-    description
+    "does #{description}"
   end
 end

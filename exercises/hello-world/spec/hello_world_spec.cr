@@ -2,15 +2,15 @@ require "spec"
 require "../src/*"
 
 describe "HelloWorld" do
-  it "tests no name" do
+  it "no name" do
     HelloWorld.hello.should eq("Hello, World!")
   end
 
-  pending "tests sample name" do
+  pending "sample name" do
     HelloWorld.hello("Alice").should eq("Hello, Alice!")
   end
 
-  pending "tests other sample name" do
+  pending "other sample name" do
     HelloWorld.hello("Bob").should eq("Hello, Bob!")
   end
 end

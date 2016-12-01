@@ -4,18 +4,18 @@ Exercism problems in Crystal.
 
 ## The Tests
 
-### All Assignments
+### All Exercises
 
-Run all assignments with:
+Run all Exercises with:
 ```bash
 $ make test
 ```
 
-### Single Assignment
+### Single Exercises
 
-Run single assignments with:
+Run single Exercises with:
 ```bash
-$ make test-assignment ASSIGNMENT=test-folder-name
+$ make test-exercise EXERCISE=exercise-name
 ```
 
 ## The Test Generator

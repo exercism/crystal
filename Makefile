@@ -13,7 +13,7 @@ SPECFILE := "$(EXERCISENAME)_spec.$(FILEEXT)"
 SUPERTMPSPECFILE := "$(SPECFILE).super.tmp"
 TMPSPECFILE := "$(SPECFILE).tmp"
 
-test-assignment:
+test-exercise:
 	@echo "running formatting check for: $(EXERCISE)"
 	@crystal tool format --check $(EXERCISESDIR)/$(EXERCISE)
 	@sed 's/pending/it/g' $(EXERCISESPECDIR)/$(SPECFILE) > $(EXERCISESPECDIR)/$(TMPSPECFILE)
@@ -26,7 +26,7 @@ test-assignment:
 	@printf "\n"
 
 test:
-	@for assignment in $(EXERCISES); do EXERCISE=$$assignment $(MAKE) -s test-assignment || exit 1; done
+	@for exercise in $(EXERCISES); do EXERCISE=$$exercise $(MAKE) -s test-exercise || exit 1; done
 	@echo "running generator tests"
 	@cd $(GENERATORDIR) && crystal spec
 

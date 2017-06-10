@@ -6,111 +6,129 @@
   "test_pattern": "_spec.cr",
   "exercises": [
     {
-      "slug": "hello-world" ,
+      "slug": "hello-world",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "hamming",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "gigasecond",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
-      "slug": "rna-transcription" ,
+      "slug": "rna-transcription",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "bob",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "raindrops",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
-      "slug": "leap" ,
+      "slug": "leap",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "difference-of-squares",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "pangram",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "largest-series-product",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "bracket-push",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
-      "slug": "sieve" ,
+      "slug": "sieve",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "roman-numerals",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "atbash-cipher",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "anagram",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "react",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "acronym",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "binary",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
@@ -127,22 +145,26 @@
       "slug": "run-length-encoding",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "pascals-triangle",
       "difficulty": 1,
       "topics": [
+
       ]
     },
     {
       "slug": "forth",
       "difficulty": 3,
       "topics": [
+
       ]
     }
   ],
   "deprecated": [
+
   ],
   "ignored": [
     "bin",
@@ -151,5 +173,6 @@
     "src"
   ],
   "foregone": [
+
   ]
 }

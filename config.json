@@ -166,12 +166,6 @@
   "deprecated": [
 
   ],
-  "ignored": [
-    "bin",
-    "docs",
-    "img",
-    "src"
-  ],
   "foregone": [
 
   ]

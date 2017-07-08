@@ -1,7 +1,6 @@
 EXERCISE ?= ""
 IGNOREDIRS := "^(\.git|.crystal|docs|bin|img|script)$$"
 EXERCISESDIR ?= "exercises"
-GENERATORDIR ?= "src/generator"
 EXERCISES = $(shell find exercises -maxdepth 1 -mindepth 1 -type d | cut -d'/' -f2 | sort | grep -Ev $(IGNOREDIRS))
 
 FILEEXT = "cr"

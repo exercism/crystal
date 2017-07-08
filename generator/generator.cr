@@ -1,3 +1,4 @@
+require "./src/exercise_generator"
 require "./src/generators/*"
 
 if ARGV.empty?

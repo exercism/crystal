@@ -8,9 +8,13 @@ end
 
 exercise = ARGV[0]
 
-klass = {{ExerciseGenerator.subclasses}}.find do |generator|
-  generator.to_s == "#{exercise.split('-').map(&.capitalize).join}Generator"
-end
+begin
+  klass = {{ExerciseGenerator.subclasses}}.find do |generator|
+    generator.to_s == "#{exercise.split('-').map(&.capitalize).join}Generator"
+  end
 
-raise "Undefined Generator" unless klass
-klass.generate
+  raise "Undefined Generator" unless klass
+  klass.generate
+rescue ex
+  STDERR.puts ex.message
+end

@@ -21,3 +21,4 @@ bin/generator
 cache/
 generator/lib
 generator/.shards
+generator/bin/generator

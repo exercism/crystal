@@ -32,18 +32,18 @@ test-exercises:
 	@for exercise in $(EXERCISES); do EXERCISE=$$exercise $(MAKE) -s test-exercise || exit 1; done
 
 build-generator:
-	@crystal build $(GENERATORDIR)/generator.$(FILEEXT) -o bin/generator
+	@crystal build $(GENERATORDIR)/generator.$(FILEEXT) -o generator/bin/generator
 
 generate-exercise:
 	@echo "generating spec file for generator: $(GENERATOR)"
-	@bin/generator $(GENERATOR)
+	@generator/bin/generator $(GENERATOR)
 
 generate-exercises:
 	@for generator in $(GENERATORS); do GENERATOR=$$generator $(MAKE) -s generate-exercise || exit 1; done
 
 test-generator:
 	@echo "running generator tests"
-	@cd $(GENERATORDIR) && crystal spec
+	@cd $(GENERATORDIR) && crystal deps && crystal spec
 
 test:
 	@echo "running all the tests"

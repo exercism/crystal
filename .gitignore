@@ -7,8 +7,9 @@
 !bin/fetch-configlet
 !LICENSE
 !Makefile
+!generator/
 
-# make sure to ignore others
+# double ignore others
 *.swp
 .crystal/
 .DS_Store
@@ -16,4 +17,8 @@ bin/configlet
 bin/configlet.exe
 CHECKLIST
 tmp/
-bin/generate
+bin/generator
+cache/
+generator/lib
+generator/.shards
+generator/bin/generator

@@ -1,6 +1,6 @@
 require "spec"
-require "../exercises/exercise_generator"
-require "../exercises/exercise_test_case"
+require "../src/exercise_generator"
+require "../src/exercise_test_case"
 
 class DummyGenerator < ExerciseGenerator
   def exercise_name

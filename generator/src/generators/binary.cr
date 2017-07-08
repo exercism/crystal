@@ -1,5 +1,5 @@
-require "./exercise_generator"
-require "./exercise_test_case"
+require "../exercise_generator"
+require "../exercise_test_case"
 
 class BinaryGenerator < ExerciseGenerator
   def exercise_name

@@ -1,6 +1,6 @@
 require "spec"
 require "json"
-require "../exercises/exercise_test_case"
+require "../src/exercise_test_case"
 
 class DummyTestCase < ExerciseTestCase
   def workload; end

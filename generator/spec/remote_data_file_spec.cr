@@ -3,8 +3,8 @@ require "file_utils"
 require "webmock"
 require "../src/remote_data_file"
 
-TEST_URL = "#{RemoteDataFile::BASE_URL}/test-exercise/#{RemoteDataFile::DATA_FILE}"
-TEST_DIR = "cache/test-exercise"
+TEST_URL = [RemoteDataFile::BASE_URL, "test-exercise", RemoteDataFile::DATA_FILE].join("/")
+TEST_DIR = File.expand_path(File.join("..", "..", "cache", "test-exercise"), __FILE__)
 
 describe "RemoteDataFile" do
   describe "#path" do

@@ -20,17 +20,21 @@ class RemoteDataFile
   end
 
   private def cache_file
-    "#{cache_dir}/#{DATA_FILE}"
+    File.join(cache_dir, DATA_FILE)
   end
 
   private def cache_dir
-    dirpath = "cache/#{@test_name}"
+    dirpath = File.expand_path(File.join("cache", @test_name), generator_root)
 
     unless Dir.exists?(dirpath)
       Dir.mkdir_p(dirpath)
     end
 
     dirpath
+  end
+
+  private def generator_root
+    File.expand_path(File.join("..", ".."), __FILE__)
   end
 
   private def body
@@ -48,6 +52,6 @@ class RemoteDataFile
   end
 
   private def url
-    "#{BASE_URL}/#{@test_name}/#{DATA_FILE}"
+    [BASE_URL, @test_name, DATA_FILE].join("/")
   end
 end

@@ -19,3 +19,5 @@ CHECKLIST
 tmp/
 bin/generator
 cache/
+generator/lib
+generator/.shards

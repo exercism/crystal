@@ -1,0 +1,9 @@
+name: generator
+version: 0.0.1
+
+development_dependencies:
+  webmock:
+    github: manastech/webmock.cr
+    branch: master
+
+license: MIT

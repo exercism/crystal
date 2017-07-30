@@ -31,7 +31,7 @@ describe "RemoteDataFile" do
       it "raises a not found exception if status is 404" do
         WebMock.stub(:get, TEST_URL).to_return(status: 404, body: "")
 
-        error_message = "A #{RemoteDataFile::DATA_FILE} doesn't exist for test-exercise in x-common. " +
+        error_message = "A #{RemoteDataFile::DATA_FILE} doesn't exist for test-exercise in problem-specifications. " +
                         "Go make one!"
 
         expect_raises(Exception, error_message) do

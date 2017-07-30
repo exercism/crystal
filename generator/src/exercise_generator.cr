@@ -4,7 +4,7 @@ require "ecr"
 require "json"
 
 abstract class ExerciseGenerator
-  METADATA_REPOSITORY = "x-common"
+  METADATA_REPOSITORY = "problem-specifications"
 
   def self.generate
     new.generate

@@ -28,7 +28,7 @@ This file should contain 2 classes:
 * An exercise generator which must inherit from the ExerciseGenerator class.
 * A test case class which inherits from ExerciseTestCase.
 
-The x-common repo must reside at the same level as the developer's crystal directory, and must contain a canonical-data.json file for the given exercise.
+The problem-specifications repo must reside at the same level as the developer's crystal directory, and must contain a canonical-data.json file for the given exercise.
 
 ### Running the Generator
 

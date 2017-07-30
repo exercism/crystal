@@ -1,7 +1,7 @@
 require "http/client"
 
 class RemoteDataFile
-  BASE_URL = "https://raw.githubusercontent.com/exercism/x-common/master/exercises"
+  BASE_URL = "https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises"
   DATA_FILE = "canonical-data.json"
 
   def initialize(@test_name : String); end
@@ -43,7 +43,7 @@ class RemoteDataFile
     when 200
       response.body
     when 404
-      raise "A #{DATA_FILE} doesn't exist for #{@test_name} in x-common. " +
+      raise "A #{DATA_FILE} doesn't exist for #{@test_name} in problem-specifications. " +
             "Go make one!"
     else
       raise "Error while requesting the #{@test_name} data file from GitHub... " +

@@ -1,4 +1,4 @@
-# xCrystal [![Build Status](https://travis-ci.org/exercism/crystal.svg?branch=master)](https://travis-ci.org/exercism/crystal)
+# Crystal [![Build Status](https://travis-ci.org/exercism/crystal.svg?branch=master)](https://travis-ci.org/exercism/crystal)
 
 Exercism problems in Crystal.
 
@@ -28,19 +28,39 @@ This file should contain 2 classes:
 * An exercise generator which must inherit from the ExerciseGenerator class.
 * A test case class which inherits from ExerciseTestCase.
 
+There are two ways for the generator to get the test data.
+
+**Local:**
 The problem-specifications repo must reside at the same level as the developer's crystal directory, and must contain a canonical-data.json file for the given exercise.
 
-### Running the Generator
+**Remote:**
+If the local x-common repo doesn't exist, a request is made to GitHub to download (and cache) the test's canonical-data.json file.
+
+### Running the Generator for a Single Exercise
 
 From within the crystal directory:
 ```bash
-$ crystal generator/generate.cr hello-world
+$ crystal generator/generator.cr hello-world
 ```
 
-Or build a binary:
+Or build a binary and use that:
 ```bash
 $ make build-generator
-$ bin/generate-exercise hello-world
+$ make generate-exercise GENERATOR=hello-world
+```
+
+### Running (or Re-running) the Generator for All Exercises
+
+This can be good for refreshing the tests when changes are made to the x-common repo. Or for testing the full functionality of the test generator.
+
+```bash
+$ make generate-exercises
+```
+
+### To Test the Generator
+
+```bash
+$ make test-generator
 ```
 
 ## Contributing Guide

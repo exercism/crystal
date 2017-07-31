@@ -8,7 +8,7 @@ Exercism problems in Crystal.
 
 Run all Exercises with:
 ```bash
-$ make test
+$ make test-exercises
 ```
 
 ### Single Exercises
@@ -51,13 +51,13 @@ $ make generate-exercise GENERATOR=hello-world
 
 ### Running (or Re-running) the Generator for All Exercises
 
-This can be good for refreshing the tests when changes are made to the x-common repo. Or for testing the full functionality of the test generator.
+This can be used for refreshing the tests when changes are made to the x-common repo. Or for testing the full functionality of the test generator.
 
 ```bash
 $ make generate-exercises
 ```
 
-### To Test the Generator
+### Testing the Generator
 
 ```bash
 $ make test-generator

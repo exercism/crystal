@@ -34,7 +34,7 @@ There are two ways for the generator to get the test data.
 The problem-specifications repo must reside at the same level as the developer's crystal directory, and must contain a canonical-data.json file for the given exercise.
 
 **Remote:**
-If the local x-common repo doesn't exist, a request is made to GitHub to download (and cache) the test's canonical-data.json file.
+If the local problem-specifications repo doesn't exist, a request is made to GitHub to download (and cache) the test's canonical-data.json file.
 
 ### Running the Generator for a Single Exercise
 

@@ -1,7 +1,7 @@
 require "http/client"
 
 class RemoteDataFile
-  BASE_URL = "https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises"
+  BASE_URL  = "https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises"
   DATA_FILE = "canonical-data.json"
 
   def initialize(@test_name : String); end

@@ -42,7 +42,6 @@ describe "RemoteDataFile" do
       it "raises a unexpected exception if status is other than 200 or 404" do
         WebMock.stub(:get, TEST_URL).to_return(status: 500, body: "")
 
-
         error_message = "Error while requesting the test-exercise data file from GitHub... " +
                         "Status was 500"
         expect_raises(Exception, error_message) do

@@ -74,6 +74,16 @@
       ]
     },
     {
+      "uuid": "64f8e403-9a3d-4094-9114-f1bee88c072b",
+      "slug": "triangle",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "19298c02-b34f-4f11-aad6-5da4838967a0",
       "slug": "difference-of-squares",
       "core": false,

@@ -15,7 +15,7 @@ class Triangle
   def scalene?
     @sides.uniq.size == 3
   end
-  
+
   private def illegal?
     impossible_length_side? || violates_inequality?
   end

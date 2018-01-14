@@ -7,9 +7,16 @@ class PascalsTriangleGenerator < ExerciseGenerator
   end
 
   def test_cases
-    JSON.parse(data)["rows"]["cases"].map do |test_case|
-      PascalsTriangleTestCase.new(test_case) unless test_case["count"]?.nil?
-    end.compact
+    test_cases = [] of JSON::Any
+    JSON.parse(data)["cases"].each do |group|
+      group.each do |a, b|
+        test_cases.concat(b) if a.as_s == "cases"
+      end
+    end
+
+    test_cases.map do |test_case|
+      PascalsTriangleTestCase.new(test_case)
+    end
   end
 end
 
@@ -29,7 +36,7 @@ class PascalsTriangleTestCase < ExerciseTestCase
       "PascalsTriangle.rows(#{count}).should eq(#{expected})"
     else
       <<-WL
-      expect_raises do
+      expect_raises(ArgumentError) do
             PascalsTriangle.rows(#{count})
           end
       WL

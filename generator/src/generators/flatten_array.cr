@@ -20,7 +20,7 @@ class FlattenArrayTestCase < ExerciseTestCase
 
   def initialize(test_case)
     @description = test_case["description"]
-    @input = test_case["input"]
+    @input = test_case["input"]["array"]
     @expected = fix_empty_array(test_case["expected"])
   end
 

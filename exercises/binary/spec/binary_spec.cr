@@ -39,37 +39,37 @@ describe "Binary" do
   end
 
   pending "2 is not a valid binary digit" do
-    expect_raises do
+    expect_raises(ArgumentError) do
       Binary.to_decimal("2")
     end
   end
 
   pending "a number containing a non-binary digit is invalid" do
-    expect_raises do
+    expect_raises(ArgumentError) do
       Binary.to_decimal("01201")
     end
   end
 
   pending "a number with trailing non-binary characters is invalid" do
-    expect_raises do
+    expect_raises(ArgumentError) do
       Binary.to_decimal("10nope")
     end
   end
 
   pending "a number with leading non-binary characters is invalid" do
-    expect_raises do
+    expect_raises(ArgumentError) do
       Binary.to_decimal("nope10")
     end
   end
 
   pending "a number with internal non-binary characters is invalid" do
-    expect_raises do
+    expect_raises(ArgumentError) do
       Binary.to_decimal("10nope10")
     end
   end
 
   pending "a number and a word whitespace spearated is invalid" do
-    expect_raises do
+    expect_raises(ArgumentError) do
       Binary.to_decimal("001 nope")
     end
   end

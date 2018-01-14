@@ -10,10 +10,6 @@ describe "Acronym" do
     Acronym.abbreviate("Ruby on Rails").should eq("ROR")
   end
 
-  pending "does camelcase" do
-    Acronym.abbreviate("HyperText Markup Language").should eq("HTML")
-  end
-
   pending "does punctuation" do
     Acronym.abbreviate("First In, First Out").should eq("FIFO")
   end

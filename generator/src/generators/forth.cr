@@ -8,8 +8,8 @@ class ForthGenerator < ExerciseGenerator
 
   def test_cases
     test_cases = [] of JSON::Any
-    JSON.parse(data).each do |k, v|
-      v.each do |a, b|
+    JSON.parse(data)["cases"].each do |group|
+      group.each do |a, b|
         test_cases.concat(b) if a.as_s == "cases"
       end
     end
@@ -35,7 +35,7 @@ class ForthTestCase < ExerciseTestCase
       "Forth.evaluate(#{input.inspect}).should eq(#{expected})"
     else
       <<-WL
-      expect_raises do
+      expect_raises(Exception) do
             Forth.evaluate(#{input.inspect})
           end
       WL

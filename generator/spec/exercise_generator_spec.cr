@@ -21,7 +21,7 @@ describe "ExerciseGenerator" do
 
   describe "#generate" do
     it "raises an error if no test cases exist" do
-      expect_raises do
+      expect_raises(Exception) do
         DummyGenerator.generate
       end
     end

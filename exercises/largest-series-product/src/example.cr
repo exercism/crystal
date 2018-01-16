@@ -3,7 +3,7 @@ class Series
 
   def initialize(series : String)
     raise ArgumentError.new("Series contains non-digit characters") if series =~ /\D/
-    @series = series.chars.map(&.to_i).map(&.to)
+    @series = series.chars.map(&.to_i).map(&.to_i64)
   end
 
   def largest_product(span : Int32) : Int64

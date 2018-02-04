@@ -37,6 +37,5 @@ In each test suite all but the first test have been skipped.
 
 Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
 
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

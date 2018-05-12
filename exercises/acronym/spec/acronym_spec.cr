@@ -14,15 +14,11 @@ describe "Acronym" do
     Acronym.abbreviate("First In, First Out").should eq("FIFO")
   end
 
-  pending "does all caps words" do
-    Acronym.abbreviate("PHP: Hypertext Preprocessor").should eq("PHP")
-  end
-
-  pending "does non-acronym all caps word" do
+  pending "does all caps word" do
     Acronym.abbreviate("GNU Image Manipulation Program").should eq("GIMP")
   end
 
-  pending "does hyphenated" do
+  pending "does punctuation without whitespace" do
     Acronym.abbreviate("Complementary metal-oxide semiconductor").should eq("CMOS")
   end
 end

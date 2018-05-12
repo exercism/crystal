@@ -19,7 +19,7 @@ class AcronymTestCase < ExerciseTestCase
   private getter expected : JSON::Any
 
   def initialize(test_case)
-    @phrase = test_case["phrase"]
+    @phrase = test_case["input"]["phrase"]
     @description = test_case["description"]
     @expected = test_case["expected"]
   end

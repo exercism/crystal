@@ -19,7 +19,7 @@ class BinaryTestCase < ExerciseTestCase
   private getter expected : JSON::Any?
 
   def initialize(test_case)
-    @binary = test_case["binary"]
+    @binary = test_case["input"]["binary"]
     @description = test_case["description"]
     @expected = test_case["expected"]?
   end

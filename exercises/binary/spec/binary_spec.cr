@@ -68,7 +68,7 @@ describe "Binary" do
     end
   end
 
-  pending "a number and a word whitespace spearated is invalid" do
+  pending "a number and a word whitespace separated is invalid" do
     expect_raises(ArgumentError) do
       Binary.to_decimal("001 nope")
     end

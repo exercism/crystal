@@ -13,7 +13,7 @@ TMPSPECFILE := "$(SPECFILE).tmp"
 GENERATORDIR ?= generator
 GENERATORBIN := $(GENERATORDIR)/bin
 GENERATORSDIR := $(GENERATORDIR)/src/generators
-GENERATORS = $(shell find $(GENERATORSDIR) -type f | cut -d '/' -f 4 | cut -d '.' -f 1 | sed 's/_/-/g')
+GENERATORS = $(shell find $(GENERATORSDIR) -name '*.cr' | xargs -I '{}' basename '{}' .cr | tr _ -)
 
 G_SRCS := $(shell find $(GENERATORDIR) -name "*.cr" -or -name "*.tt" | grep -Ev '(/lib/|/spec/)')
 

@@ -1,0 +1,9 @@
+<%- if group_description -%>
+describe "<%= group_description %>" do
+<%- end -%>
+<%- cases.each do |test_case| -%>
+<%= test_case.indent(group_description ? 1 : 0) %>
+<%- end -%>
+<%- if group_description -%>
+end
+<%- end -%>

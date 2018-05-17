@@ -1,0 +1,8 @@
+require "spec"
+require "../src/*"
+
+describe "<%= test_class %>" do
+<%- cases.each do |test_case_or_group| -%>
+<%= test_case_or_group.indent(1) %>
+<%- end -%>
+end

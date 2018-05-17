@@ -1,0 +1,7 @@
+{
+  "exercise": "exercise",
+  "version": "0.0.1",
+  "cases": [
+    {"description": "whatevs", "property": "yup", "input": 1, "expected": 0}
+  ]
+}

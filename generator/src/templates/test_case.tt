@@ -1,0 +1,3 @@
+<%= test_prefix %> "<%= test_description %>" do
+  <%= test_workload %>
+end

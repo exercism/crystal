@@ -1,4 +1,5 @@
 require "./src/exercise_generator"
+require "./src/generator"
 require "./src/generators/*"
 
 if ARGV.empty?
@@ -9,7 +10,7 @@ end
 exercise = ARGV[0]
 
 begin
-  klass = {{ExerciseGenerator.subclasses}}.find do |generator|
+  klass = {{ExerciseGenerator.subclasses + Generator::Base.subclasses}}.find do |generator|
     generator.to_s == "#{exercise.split('-').map(&.capitalize).join}Generator"
   end
 

@@ -1,0 +1,12 @@
+{
+  "exercise": "exercise",
+  "version": "0.0.1",
+  "cases": [
+    {
+      "description": "group1",
+      "cases": [
+        {"description": "test1", "property": "one", "input": 1, "expected": 1}
+      ]
+    }
+  ]
+}

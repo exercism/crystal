@@ -19,17 +19,23 @@ class TriangleGenerator < ExerciseGenerator
   end
 end
 
+class Input 
+  JSON.mapping(
+    sides: Array(Int32)
+  )
+end
+
 class TriangleTestCase < ExerciseTestCase
 
   JSON.mapping(
     description: String,
     property: String,
-    sides: Array(Int32),
+    input: Input,
     expected: Bool
   )
 
   def workload
-    "Triangle.new(#{sides}).#{property}?.should eq(#{expected})"
+    "Triangle.new(#{input.sides}).#{property}?.should eq(#{expected})"
   end
 
   def test_name

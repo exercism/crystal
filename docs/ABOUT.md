@@ -1,4 +1,6 @@
-Crystal is a compiled language that is currently in the alpha stages of development. These are some of the language's goals:
+Crystal is a compiled language that is currently in the alpha stages of development. 
+These are some of the language's goals:
+
 * Ruby-inspired syntax.
 
 * Statically type-checked but without having to specify the type of variables or method arguments.

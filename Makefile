@@ -50,7 +50,7 @@ generate-exercises:
 
 test-generator:
 	@echo "running generator tests"
-	@cd $(GENERATORDIR) && crystal deps && crystal spec
+	@cd $(GENERATORDIR) && shards install && crystal spec
 
 test:
 	@echo "running all the tests"

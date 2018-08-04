@@ -75,7 +75,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "pangram",
@@ -91,7 +93,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "bracket-push",
@@ -107,7 +111,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "roman-numerals",
@@ -155,7 +161,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "binary-search-tree",
@@ -184,7 +192,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "forth",

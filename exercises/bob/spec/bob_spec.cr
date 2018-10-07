@@ -24,7 +24,7 @@ describe "Bob" do
     end
 
     pending "responds to forceful questions" do
-      Bob.hey("WHAT THE HELL WERE YOU THINKING?").should eq "Whoa, chill out!"
+      Bob.hey("WHAT THE HELL WERE YOU THINKING?").should eq "Calm down, I know what I'm doing!"
     end
 
     pending "responds to shouting numbers" do

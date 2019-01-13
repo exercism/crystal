@@ -9,9 +9,8 @@ class TriangleGenerator < ExerciseGenerator
 
   def test_cases
     cases = [] of TriangleTestCase
-    JSON.parse(data)["cases"].each do |category|
-      category["cases"].each do |test_case|
-        next if test_case["comments"]? # skip float cases
+    JSON.parse(data)["cases"].as_a.each do |category|
+      category["cases"].as_a.each do |test_case|
         cases << TriangleTestCase.from_json(test_case.to_json)
       end
     end
@@ -19,14 +18,13 @@ class TriangleGenerator < ExerciseGenerator
   end
 end
 
-class Input 
+class Input
   JSON.mapping(
-    sides: Array(Int32)
+    sides: Array(Int32 | Float32)
   )
 end
 
 class TriangleTestCase < ExerciseTestCase
-
   JSON.mapping(
     description: String,
     property: String,

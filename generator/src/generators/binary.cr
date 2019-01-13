@@ -7,7 +7,7 @@ class BinaryGenerator < ExerciseGenerator
   end
 
   def test_cases
-    JSON.parse(data)["cases"].map do |test_case|
+    JSON.parse(data)["cases"].as_a.map do |test_case|
       BinaryTestCase.new(test_case)
     end
   end

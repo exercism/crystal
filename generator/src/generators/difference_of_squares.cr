@@ -7,8 +7,8 @@ class DifferenceOfSquaresGenerator < ExerciseGenerator
   end
 
   def test_cases
-    JSON.parse(data)["cases"].flat_map do |case_group|
-      case_group["cases"].map do |test_case|
+    JSON.parse(data)["cases"].as_a.flat_map do |case_group|
+      case_group["cases"].as_a.map do |test_case|
         DifferenceOfSquaresTestCase.new(test_case)
       end
     end

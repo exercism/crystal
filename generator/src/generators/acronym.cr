@@ -7,7 +7,7 @@ class AcronymGenerator < ExerciseGenerator
   end
 
   def test_cases
-    JSON.parse(data)["cases"].first["cases"].map do |test_case|
+    JSON.parse(data)["cases"].as_a.first["cases"].as_a.map do |test_case|
       AcronymTestCase.new(test_case)
     end
   end

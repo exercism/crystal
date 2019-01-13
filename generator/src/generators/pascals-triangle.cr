@@ -7,15 +7,10 @@ class PascalsTriangleGenerator < ExerciseGenerator
   end
 
   def test_cases
-    test_cases = [] of JSON::Any
-    JSON.parse(data)["cases"].each do |group|
-      group.each do |a, b|
-        test_cases.concat(b) if a.as_s == "cases"
+    JSON.parse(data)["cases"].as_a.select { |g| g.as_h.has_key?("cases") }.flat_map do |group|
+      group.as_h["cases"].as_a.map do |test_case|
+        PascalsTriangleTestCase.new(test_case)
       end
-    end
-
-    test_cases.map do |test_case|
-      PascalsTriangleTestCase.new(test_case)
     end
   end
 end
@@ -27,7 +22,7 @@ class PascalsTriangleTestCase < ExerciseTestCase
 
   def initialize(test_case)
     @description = test_case["description"]
-    @count = test_case["count"]
+    @count = test_case["input"]["count"]
     @expected = fix_empty_array(test_case["expected"])
   end
 

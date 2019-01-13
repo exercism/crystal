@@ -7,14 +7,10 @@ class ForthGenerator < ExerciseGenerator
   end
 
   def test_cases
-    test_cases = [] of JSON::Any
-    JSON.parse(data)["cases"].each do |group|
-      group.each do |a, b|
-        test_cases.concat(b) if a.as_s == "cases"
+    JSON.parse(data)["cases"].as_a.flat_map do |group|
+      group["cases"].as_a.map do |test_case|
+        ForthTestCase.new(test_case)
       end
-    end
-    test_cases.map do |test_case|
-      ForthTestCase.new(test_case)
     end
   end
 end
@@ -22,17 +18,17 @@ end
 class ForthTestCase < ExerciseTestCase
   private getter input : JSON::Any | String
   private getter description : JSON::Any
-  private getter expected : JSON::Any?
+  private getter expected : Array(JSON::Any) | Nil
 
   def initialize(test_case)
-    @input = test_case["input"].as_a.join
+    @input = test_case["input"]["instructions"][0].as_s
     @description = test_case["description"]
-    @expected = fix_empty_array(test_case["expected"]?)
+    @expected = test_case["expected"].as_a?
   end
 
   def workload
     if expected
-      "Forth.evaluate(#{input.inspect}).should eq(#{expected})"
+      "Forth.evaluate(#{input.inspect}).should eq(#{fix_empty_array(expected)})"
     else
       <<-WL
       expect_raises(Exception) do

@@ -223,6 +223,20 @@
         "loops",
         "math"
       ]
+    },
+    {
+      "slug": "isogram",
+      "uuid": "bba4f22b-1afc-46a5-bb99-046f7f4bee8c",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "algorithms",
+        "conditionals",
+        "loops",
+        "maps",
+        "strings"
+      ]
     }
   ]
 }

@@ -40,4 +40,5 @@ Once you get a test passing, you can unskip the next one by changing `pending` t
 A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

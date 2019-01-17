@@ -80,4 +80,5 @@ Once you get a test passing, you can unskip the next one by changing `pending` t
 Josh Cheek [https://twitter.com/josh_cheek](https://twitter.com/josh_cheek)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

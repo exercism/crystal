@@ -25,7 +25,7 @@ class ArmstrongNumbersTestCase < ExerciseTestCase
   end
 
   def workload
-    "ArmstrongNumbers.isArmstrongNumber(#{number}).should eq(#{expected})"
+    "ArmstrongNumbers.armstrong_number?(#{number}).should eq(#{expected})"
   end
 
   def test_name

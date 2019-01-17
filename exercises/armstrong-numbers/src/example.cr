@@ -1,7 +1,7 @@
 module ArmstrongNumbers
   extend self
 
-  def isArmstrongNumber(input : Number)
+  def armstrong_number?(input : Number) : Bool
     number = "#{input}"
     length = number.size
 

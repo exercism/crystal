@@ -8,29 +8,32 @@ class BinaryGenerator < ExerciseGenerator
 
   def test_cases
     JSON.parse(data)["cases"].as_a.map do |test_case|
-      BinaryTestCase.new(test_case)
+      BinaryTestCase.from_json(test_case.to_json)
     end
   end
 end
 
 class BinaryTestCase < ExerciseTestCase
-  private getter binary : JSON::Any
-  private getter description : JSON::Any
-  private getter expected : JSON::Any?
-
-  def initialize(test_case)
-    @binary = test_case["input"]["binary"]
-    @description = test_case["description"]
-    @expected = test_case["expected"]?
+  class Input
+    JSON.mapping(
+      binary: String
+    )
   end
+
+  JSON.mapping(
+    description: String,
+    property: String,
+    input: Input,
+    expected: Int32 | Nil
+  )
 
   def workload
     if expected
-      "Binary.to_decimal(\"#{binary}\").should eq(#{expected})"
+      "Binary.to_decimal(\"#{input.binary}\").should eq(#{expected})"
     else
       <<-WL
       expect_raises(ArgumentError) do
-            Binary.to_decimal(\"#{binary}\")
+            Binary.to_decimal(\"#{input.binary}\")
           end
       WL
     end

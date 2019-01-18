@@ -9,27 +9,28 @@ class DifferenceOfSquaresGenerator < ExerciseGenerator
   def test_cases
     JSON.parse(data)["cases"].as_a.flat_map do |case_group|
       case_group["cases"].as_a.map do |test_case|
-        DifferenceOfSquaresTestCase.new(test_case)
+        DifferenceOfSquaresTestCase.from_json(test_case.to_json)
       end
     end
   end
 end
 
 class DifferenceOfSquaresTestCase < ExerciseTestCase
-  private getter number : JSON::Any
-  private getter description : JSON::Any
-  private getter expected : JSON::Any?
-  private getter type : String
-
-  def initialize(test_case)
-    @type = test_case["property"].as_s.gsub(/([A-Z])/, "_\\1").downcase
-    @number = test_case["input"]["number"]
-    @description = test_case["description"]
-    @expected = test_case["expected"]?
+  class Input
+    JSON.mapping(
+      number: Int32
+    )
   end
 
+  JSON.mapping(
+    description: String,
+    property: String,
+    input: Input,
+    expected: Int32
+  )
+
   def workload
-    "Squares.#{type}(#{number}).should eq(#{expected})"
+    "Squares.#{property.gsub(/([A-Z])/, "_\\1").downcase}(#{input.number}).should eq(#{expected})"
   end
 
   def test_name

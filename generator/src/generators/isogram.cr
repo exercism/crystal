@@ -8,24 +8,27 @@ class IsogramGenerator < ExerciseGenerator
 
   def test_cases
     JSON.parse(data)["cases"][0]["cases"].as_a.map do |test_case|
-      IsogramTestCase.new(test_case)
+      IsogramTestCase.from_json(test_case.to_json)
     end
   end
 end
 
 class IsogramTestCase < ExerciseTestCase
-  private getter description : JSON::Any
-  private getter phrase : JSON::Any
-  private getter expected : JSON::Any
-
-  def initialize(test_case)
-    @description = test_case["description"]
-    @phrase = test_case["input"]["phrase"]
-    @expected = test_case["expected"]
+  class Input
+    JSON.mapping(
+      phrase: String,
+    )
   end
 
+  JSON.mapping(
+    description: String,
+    property: String,
+    input: Input,
+    expected: Bool
+  )
+
   def workload
-    "Isogram.isogram?(\"#{phrase}\").should eq(#{expected})"
+    "Isogram.isogram?(\"#{input.phrase}\").should eq(#{expected})"
   end
 
   def test_name

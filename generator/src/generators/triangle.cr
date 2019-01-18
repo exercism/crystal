@@ -8,23 +8,25 @@ class TriangleGenerator < ExerciseGenerator
   end
 
   def test_cases
-    cases = [] of TriangleTestCase
-    JSON.parse(data)["cases"].as_a.each do |category|
-      category["cases"].as_a.each do |test_case|
-        cases << TriangleTestCase.from_json(test_case.to_json)
+    JSON.parse(data)["cases"].as_a.flat_map do |category|
+      category["cases"].as_a.map do |test_case|
+        TriangleTestCase.from_json(test_case.to_json)
       end
     end
-    cases
   end
 end
 
-class Input
-  JSON.mapping(
-    sides: Array(Int32 | Float32)
-  )
-end
-
 class TriangleTestCase < ExerciseTestCase
+  class Input
+    JSON.mapping(
+      sides: Array(Int32 | Float32)
+    )
+
+    def to_s(io)
+      io << "[#{sides.map { |s| s.to_s }.join(", ")}]"
+    end
+  end
+
   JSON.mapping(
     description: String,
     property: String,
@@ -33,7 +35,7 @@ class TriangleTestCase < ExerciseTestCase
   )
 
   def workload
-    "Triangle.new(#{input.sides}).#{property}?.should eq(#{expected})"
+    "Triangle.new(#{input}).#{property}?.should eq(#{expected})"
   end
 
   def test_name

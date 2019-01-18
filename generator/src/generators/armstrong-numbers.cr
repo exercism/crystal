@@ -8,24 +8,27 @@ class ArmstrongNumbersGenerator < ExerciseGenerator
 
   def test_cases
     JSON.parse(data)["cases"].as_a.map do |test_case|
-      ArmstrongNumbersTestCase.new(test_case)
+      ArmstrongNumbersTestCase.from_json(test_case.to_json)
     end
   end
 end
 
 class ArmstrongNumbersTestCase < ExerciseTestCase
-  private getter description : JSON::Any
-  private getter number : JSON::Any?
-  private getter expected : JSON::Any
-
-  def initialize(test_case)
-    @description = test_case["description"]
-    @number = test_case["input"]["number"]?
-    @expected = test_case["expected"]
+  class Input
+    JSON.mapping(
+      number: Int32
+    )
   end
 
+  JSON.mapping(
+    description: String,
+    property: String,
+    input: Input,
+    expected: Bool
+  )
+
   def workload
-    "ArmstrongNumbers.armstrong_number?(#{number}).should eq(#{expected})"
+    "ArmstrongNumbers.armstrong_number?(#{input.number}).should eq(#{expected})"
   end
 
   def test_name

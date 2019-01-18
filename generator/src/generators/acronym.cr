@@ -8,24 +8,27 @@ class AcronymGenerator < ExerciseGenerator
 
   def test_cases
     JSON.parse(data)["cases"].as_a.first["cases"].as_a.map do |test_case|
-      AcronymTestCase.new(test_case)
+      AcronymTestCase.from_json(test_case.to_json)
     end
   end
 end
 
 class AcronymTestCase < ExerciseTestCase
-  private getter phrase : JSON::Any
-  private getter description : JSON::Any
-  private getter expected : JSON::Any
-
-  def initialize(test_case)
-    @phrase = test_case["input"]["phrase"]
-    @description = test_case["description"]
-    @expected = test_case["expected"]
+  class Input
+    JSON.mapping(
+      phrase: String,
+    )
   end
 
+  JSON.mapping(
+    description: String,
+    property: String,
+    input: Input,
+    expected: String
+  )
+
   def workload
-    "Acronym.abbreviate(\"#{phrase}\").should eq(\"#{expected}\")"
+    "Acronym.abbreviate(\"#{input.phrase}\").should eq(\"#{expected}\")"
   end
 
   def test_name

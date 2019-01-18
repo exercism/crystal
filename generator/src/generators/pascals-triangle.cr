@@ -9,52 +9,39 @@ class PascalsTriangleGenerator < ExerciseGenerator
   def test_cases
     JSON.parse(data)["cases"].as_a.select { |g| g.as_h.has_key?("cases") }.flat_map do |group|
       group.as_h["cases"].as_a.map do |test_case|
-        PascalsTriangleTestCase.new(test_case)
+        PascalsTriangleTestCase.from_json(test_case.to_json)
       end
     end
   end
 end
 
 class PascalsTriangleTestCase < ExerciseTestCase
-  private getter description : JSON::Any
-  private getter count : JSON::Any
-  private getter expected : JSON::Any
-
-  def initialize(test_case)
-    @description = test_case["description"]
-    @count = test_case["input"]["count"]
-    @expected = fix_empty_array(test_case["expected"])
+  class Input
+    JSON.mapping(
+      count: Int32
+    )
   end
 
+  JSON.mapping(
+    description: String,
+    property: String,
+    input: Input,
+    expected: Array(Array(Int32))
+  )
+
   def workload
-    if !error?
-      "PascalsTriangle.rows(#{count}).should eq(#{expected})"
+    "PascalsTriangle.rows(#{input.count}).should eq(#{fix_empty_array(expected)})"
+  end
+
+  private def fix_empty_array(expected)
+    if expected.empty?
+      "[] of Int32"
     else
-      <<-WL
-      expect_raises(ArgumentError) do
-            PascalsTriangle.rows(#{count})
-          end
-      WL
+      expected
     end
   end
 
   def test_name
-    if !error?
-      "will return the first #{count} row(s)"
-    else
-      "will raise an Argument error for #{description}"
-    end
-  end
-
-  private def error?
-    expected == -1
-  end
-
-  private def fix_empty_array(json)
-    if json.to_s.match(/\[\]/)
-      JSON.parse("[] of Int32".to_json)
-    else
-      json
-    end
+    "will return the first #{input.count} row(s)"
   end
 end

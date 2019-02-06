@@ -259,6 +259,17 @@
       "topics": [
         "strings"
       ]
+    },
+    {
+      "slug": "collatz-conjecture",
+      "uuid": "b52b0ee3-2dc3-4ab7-9fb1-22731d4b2fcd",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "loops",
+        "math"
+      ]
     }
   ]
 }

@@ -270,6 +270,19 @@
         "loops",
         "math"
       ]
+    },
+    {
+      "slug": "scrabble-score",
+      "uuid": "0768322b-89aa-4aa1-9dac-d694c4417f52",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "games",
+        "loops",
+        "maps",
+        "strings"
+      ]
     }
   ]
 }

@@ -249,6 +249,16 @@
         "optional_values",
         "text_formatting"
       ]
+    },
+    {
+      "slug": "reverse-string",
+      "uuid": "f25d51c6-4830-461c-abd1-b9b03f620eac",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
     }
   ]
 }

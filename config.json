@@ -295,6 +295,17 @@
         "floating_point_numbers",
         "integers"
       ]
+    },
+    {
+      "slug": "isbn-verifier",
+      "uuid": "0b6c8c53-04ae-4969-8bc0-1f1205df3420",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings"
+      ]
     }
   ]
 }

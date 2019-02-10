@@ -283,6 +283,18 @@
         "maps",
         "strings"
       ]
+    },
+    {
+      "slug": "space-age",
+      "uuid": "0077bdf1-a1be-4a42-992e-8cdde99837eb",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "floating_point_numbers",
+        "integers"
+      ]
     }
   ]
 }

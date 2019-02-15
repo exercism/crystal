@@ -306,6 +306,17 @@
         "arrays",
         "strings"
       ]
+    },
+    {
+      "slug": "grains",
+      "uuid": "28cc9eaa-ebff-46b6-a7a9-3be60fe86ee6",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "math",
+        "integers"
+      ]
     }
   ]
 }

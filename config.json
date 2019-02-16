@@ -330,6 +330,18 @@
         "integers",
         "math"
       ]
+    },
+    {
+      "slug": "nth-prime",
+      "uuid": "083ec53d-b4b9-4960-a75b-25ef1b2aa7f3",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "algorithms",
+        "integers",
+        "math"
+      ]
     }
   ]
 }

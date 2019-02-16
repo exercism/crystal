@@ -306,6 +306,19 @@
         "arrays",
         "strings"
       ]
+    },
+    {
+      "slug": "perfect-numbers",
+      "uuid": "1b656b12-9046-4b47-ac51-6ffdb0afc0d0",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "algorithms",
+        "filtering",
+        "integers",
+        "math"
+      ]
     }
   ]
 }

@@ -295,6 +295,18 @@
         "floating_point_numbers",
         "integers"
       ]
+    },
+    {
+      "slug": "strain",
+      "uuid": "d69c25db-7058-45ab-ac80-83478e51c174",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "filtering",
+        "loops"
+      ]
     }
   ]
 }

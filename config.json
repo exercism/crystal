@@ -306,6 +306,17 @@
         "arrays",
         "strings"
       ]
+    },
+    {
+      "slug": "resistor-color",
+      "uuid": "e43450c4-6feb-401d-8fdb-137bb87756d7",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays",
+        "strings"
+      ]
     }
   ]
 }

@@ -365,6 +365,18 @@
         "filtering",
         "loops"
       ]
+    },
+    {
+      "slug": "all-your-base",
+      "uuid": "c8dd3c53-e4fc-434e-9e4e-3def1361cf58",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "integers",
+        "math",
+        "transforming"
+      ]
     }
   ]
 }

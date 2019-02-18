@@ -377,6 +377,18 @@
         "math",
         "transforming"
       ]
+    },
+    {
+      "slug": "luhn",
+      "uuid": "57594931-5c91-4c1b-b5c5-04ea354c581e",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "algorithms",
+        "integers",
+        "strings"
+      ]
     }
   ]
 }

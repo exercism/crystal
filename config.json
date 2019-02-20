@@ -389,6 +389,18 @@
         "integers",
         "strings"
       ]
+    },
+    {
+      "slug": "secret-handshake",
+      "uuid": "e8aef4e8-fe80-44da-a1fe-d9a29f0f1683",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "arrays",
+        "bitwise_operations",
+        "integers"
+      ]
     }
   ]
 }

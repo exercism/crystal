@@ -472,6 +472,17 @@
         "transforming",
         "type_conversion"
       ]
+    },
+    {
+      "slug": "allergies",
+      "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "bitwise_operations",
+        "enumeration"
+      ]
     }
   ]
 }

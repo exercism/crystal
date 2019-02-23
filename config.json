@@ -435,6 +435,18 @@
         "arrays",
         "strings"
       ]
+    },
+    {
+      "slug": "proverb",
+      "uuid": "3cef1164-8eab-4e2d-a455-2e0630919bd1",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "arrays",
+        "loops",
+        "strings"
+      ]
     }
   ]
 }

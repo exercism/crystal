@@ -1,5 +1,5 @@
 class Raindrops
-  def self.drops(num : Int32)
+  def self.convert(num : Int32)
     drops = String.build do |str|
       str << "Pling" if num % 3 == 0
       str << "Plang" if num % 5 == 0

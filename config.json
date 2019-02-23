@@ -401,6 +401,18 @@
         "bitwise_operations",
         "integers"
       ]
+    },
+    {
+      "slug": "sum-of-multiples",
+      "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "integers",
+        "loops",
+        "math"
+      ]
     }
   ]
 }

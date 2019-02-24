@@ -447,6 +447,18 @@
         "loops",
         "strings"
       ]
+    },
+    {
+      "slug": "series",
+      "uuid": "c725506e-2949-466d-9da9-cf0db74fb978",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "arrays",
+        "loops",
+        "enumerable"
+      ]
     }
   ]
 }

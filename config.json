@@ -413,6 +413,17 @@
         "loops",
         "math"
       ]
+    },
+    {
+      "slug": "darts",
+      "uuid": "7f0175f4-d72d-4e59-be1e-e430279c6b79",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+          "conditionals",
+          "math"
+      ]
     }
   ]
 }

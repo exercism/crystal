@@ -23,7 +23,7 @@ end
 class GrainsTestCase < ExerciseTestCase
   class Input
     JSON.mapping(
-        square: Int32 | Nil
+      square: Int32 | Nil
     )
   end
 
@@ -42,15 +42,15 @@ class GrainsTestCase < ExerciseTestCase
 
   def workload
     if expected.is_a?(Error)
-        <<-WL
-        expect_raises(ArgumentError) do
-              Grains.#{property}(#{input.square})
-            end
-        WL
+      <<-WL
+      expect_raises(ArgumentError) do
+            Grains.#{property}(#{input.square})
+          end
+      WL
     elsif input.square
-        "Grains.#{property}(#{input.square}).should eq(#{expected})"
+      "Grains.#{property}(#{input.square}).should eq(#{expected})"
     else
-        "Grains.#{property}.should eq(#{expected})"
+      "Grains.#{property}.should eq(#{expected})"
     end
   end
 

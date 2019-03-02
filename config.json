@@ -459,6 +459,19 @@
         "loops",
         "enumerable"
       ]
+    },
+    {
+      "slug": "meetup",
+      "uuid": "46ae63dc-7d6f-4eb3-9d6e-c6e83b28fcfa",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "dates",
+        "time",
+        "transforming",
+        "type_conversion"
+      ]
     }
   ]
 }

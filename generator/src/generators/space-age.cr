@@ -16,8 +16,8 @@ end
 class SpaceAgeTestCase < ExerciseTestCase
   class Input
     JSON.mapping(
-        planet: String,
-        seconds: Int32
+      planet: String,
+      seconds: Int32
     )
   end
 

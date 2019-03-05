@@ -308,6 +308,42 @@
       ]
     },
     {
+      "slug": "grains",
+      "uuid": "28cc9eaa-ebff-46b6-a7a9-3be60fe86ee6",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "math",
+        "integers"
+      ]
+    },
+    {
+      "slug": "perfect-numbers",
+      "uuid": "1b656b12-9046-4b47-ac51-6ffdb0afc0d0",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "algorithms",
+        "filtering",
+        "integers",
+        "math"
+      ]
+    },
+    {
+      "slug": "nth-prime",
+      "uuid": "083ec53d-b4b9-4960-a75b-25ef1b2aa7f3",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "algorithms",
+        "integers",
+        "math"
+      ]
+    },
+    {
       "slug": "resistor-color",
       "uuid": "e43450c4-6feb-401d-8fdb-137bb87756d7",
       "core": false,

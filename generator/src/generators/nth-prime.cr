@@ -1,19 +1,19 @@
 require "../exercise_generator"
 require "../exercise_test_case"
 
-class CollatzConjectureGenerator < ExerciseGenerator
+class NthPrimeGenerator < ExerciseGenerator
   def exercise_name
-    "collatz-conjecture"
+    "nth-prime"
   end
 
   def test_cases
     JSON.parse(data)["cases"].as_a.map do |test_case|
-      CollatzConjectureTestCase.from_json(test_case.to_json)
+      NthPrimeTestCase.from_json(test_case.to_json)
     end
   end
 end
 
-class CollatzConjectureTestCase < ExerciseTestCase
+class NthPrimeTestCase < ExerciseTestCase
   class Input
     JSON.mapping(
       number: Int32
@@ -37,11 +37,11 @@ class CollatzConjectureTestCase < ExerciseTestCase
     if expected.is_a?(Error)
       <<-WL
       expect_raises(ArgumentError) do
-            CollatzConjecture.#{property}(#{input.number})
+            NthPrime.#{property}(#{input.number})
           end
       WL
     else
-      "CollatzConjecture.#{property}(#{input.number}).should eq(#{expected})"
+      "NthPrime.#{property}(#{input.number}).should eq(#{expected})"
     end
   end
 

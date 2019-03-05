@@ -1,19 +1,21 @@
 require "../exercise_generator"
 require "../exercise_test_case"
 
-class CollatzConjectureGenerator < ExerciseGenerator
+class PerfectNumbersGenerator < ExerciseGenerator
   def exercise_name
-    "collatz-conjecture"
+    "perfect-numbers"
   end
 
   def test_cases
-    JSON.parse(data)["cases"].as_a.map do |test_case|
-      CollatzConjectureTestCase.from_json(test_case.to_json)
+    JSON.parse(data)["cases"].as_a.flat_map do |case_group|
+      case_group["cases"].as_a.map do |test_case|
+        PerfectNumbersTestCase.from_json(test_case.to_json)
+      end
     end
   end
 end
 
-class CollatzConjectureTestCase < ExerciseTestCase
+class PerfectNumbersTestCase < ExerciseTestCase
   class Input
     JSON.mapping(
       number: Int32
@@ -30,18 +32,18 @@ class CollatzConjectureTestCase < ExerciseTestCase
     description: String,
     property: String,
     input: Input,
-    expected: Int32 | Error
+    expected: String | Error
   )
 
   def workload
     if expected.is_a?(Error)
       <<-WL
       expect_raises(ArgumentError) do
-            CollatzConjecture.#{property}(#{input.number})
+            PerfectNumbers.#{property}(#{input.number})
           end
       WL
     else
-      "CollatzConjecture.#{property}(#{input.number}).should eq(#{expected})"
+      "PerfectNumbers.#{property}(#{input.number}).should eq(\"#{expected}\")"
     end
   end
 

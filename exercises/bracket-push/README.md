@@ -14,7 +14,7 @@ More help installing can be found here:
 
 http://crystal-lang.org/docs/installation/index.html
 
-## Making the Test Suit Pass
+## Making the Test Suite Pass
 
 Execute the tests with:
 

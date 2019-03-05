@@ -35,13 +35,13 @@ class CollatzConjectureTestCase < ExerciseTestCase
 
   def workload
     if expected.is_a?(Error)
-        <<-WL
-        expect_raises(ArgumentError) do
-              CollatzConjecture.#{property}(#{input.number})
-            end
-        WL
+      <<-WL
+      expect_raises(ArgumentError) do
+            CollatzConjecture.#{property}(#{input.number})
+          end
+      WL
     else
-        "CollatzConjecture.#{property}(#{input.number}).should eq(#{expected})"
+      "CollatzConjecture.#{property}(#{input.number}).should eq(#{expected})"
     end
   end
 

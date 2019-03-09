@@ -424,6 +424,17 @@
           "conditionals",
           "math"
       ]
+    },
+    {
+      "slug": "resistor-color-duo",
+      "uuid": "4bff3abc-c385-4549-84ef-c138720c444d",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays",
+        "strings"
+      ]
     }
   ]
 }

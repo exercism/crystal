@@ -483,6 +483,18 @@
         "bitwise_operations",
         "enumeration"
       ]
+    },
+    {
+      "slug": "prime-factors",
+      "uuid": "db7b806a-a595-4739-abda-8bf7bf43c3e4",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "algorithms",
+        "integers",
+        "math"
+      ]
     }
   ]
 }

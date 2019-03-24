@@ -495,6 +495,18 @@
         "integers",
         "math"
       ]
+    },
+    {
+      "slug": "protein-translation",
+      "uuid": "00c6f623-2e54-4f90-ae3f-07e493f93c7c",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "filtering",
+        "maps",
+        "sequences"
+      ]
     }
   ]
 }

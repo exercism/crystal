@@ -314,8 +314,8 @@
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
-        "math",
-        "integers"
+        "integers",
+        "math"
       ]
     },
     {
@@ -421,8 +421,8 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-          "conditionals",
-          "math"
+        "conditionals",
+        "math"
       ]
     },
     {
@@ -456,8 +456,8 @@
       "difficulty": 3,
       "topics": [
         "arrays",
-        "loops",
-        "enumerable"
+        "enumerable",
+        "loops"
       ]
     },
     {
@@ -506,6 +506,18 @@
         "filtering",
         "maps",
         "sequences"
+      ]
+    },
+    {
+      "slug": "etl",
+      "uuid": "47465da6-5fa7-4d4c-a0cc-9a1cd74f6610",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "loops",
+        "maps",
+        "transforming"
       ]
     }
   ]

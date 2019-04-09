@@ -2,7 +2,11 @@ require "spec"
 require "../src/*"
 
 describe "ArmstrongNumbers" do
-  it "Single digit numbers are Armstrong numbers" do
+  it "Zero is an Armstrong number" do
+    ArmstrongNumbers.armstrong_number?(0).should eq(true)
+  end
+
+  pending "Single digit numbers are Armstrong numbers" do
     ArmstrongNumbers.armstrong_number?(5).should eq(true)
   end
 

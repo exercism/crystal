@@ -7,7 +7,7 @@ class DartsGenerator < ExerciseGenerator
   end
 
   def test_cases
-    JSON.parse(data)["cases"][0]["cases"].as_a.map do |test_case|
+    JSON.parse(data)["cases"].as_a.map do |test_case|
       DartsCase.from_json(test_case.to_json)
     end
   end

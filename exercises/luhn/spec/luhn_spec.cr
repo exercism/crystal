@@ -34,6 +34,10 @@ describe "Luhn" do
     Luhn.valid?("095 245 88").should eq(true)
   end
 
+  pending "valid number with an odd number of spaces" do
+    Luhn.valid?("234 567 891 234").should eq(true)
+  end
+
   pending "valid strings with a non-digit added at the end become invalid" do
     Luhn.valid?("059a").should eq(false)
   end
@@ -43,7 +47,7 @@ describe "Luhn" do
   end
 
   pending "valid strings with symbols included become invalid" do
-    Luhn.valid?("055£ 444$ 285").should eq(false)
+    Luhn.valid?("055# 444$ 285").should eq(false)
   end
 
   pending "single zero with space is invalid" do

@@ -2,47 +2,56 @@ require "spec"
 require "../src/*"
 
 describe "SecretHandshake" do
+  {% begin %}
+  {% pending = if flag? :RUN_ALL_TESTS
+                 :it
+               else
+                 :pending
+               end
+  %}
+
   it "wink for 1" do
     SecretHandshake.commands(1).should eq(["wink"])
   end
 
-  pending "double blink for 10" do
+  {{pending.id}} "double blink for 10" do
     SecretHandshake.commands(2).should eq(["double blink"])
   end
 
-  pending "close your eyes for 100" do
+  {{pending.id}} "close your eyes for 100" do
     SecretHandshake.commands(4).should eq(["close your eyes"])
   end
 
-  pending "jump for 1000" do
+  {{pending.id}} "jump for 1000" do
     SecretHandshake.commands(8).should eq(["jump"])
   end
 
-  pending "combine two actions" do
+  {{pending.id}} "combine two actions" do
     SecretHandshake.commands(3).should eq(["wink", "double blink"])
   end
 
-  pending "reverse two actions" do
+  {{pending.id}} "reverse two actions" do
     SecretHandshake.commands(19).should eq(["double blink", "wink"])
   end
 
-  pending "reversing one action gives the same action" do
+  {{pending.id}} "reversing one action gives the same action" do
     SecretHandshake.commands(24).should eq(["jump"])
   end
 
-  pending "reversing no actions still gives no actions" do
+  {{pending.id}} "reversing no actions still gives no actions" do
     SecretHandshake.commands(16).should eq([] of String)
   end
 
-  pending "all possible actions" do
+  {{pending.id}} "all possible actions" do
     SecretHandshake.commands(15).should eq(["wink", "double blink", "close your eyes", "jump"])
   end
 
-  pending "reverse all possible actions" do
+  {{pending.id}} "reverse all possible actions" do
     SecretHandshake.commands(31).should eq(["jump", "close your eyes", "double blink", "wink"])
   end
 
-  pending "do nothing for zero" do
+  {{pending.id}} "do nothing for zero" do
     SecretHandshake.commands(0).should eq([] of String)
   end
+  {% end %}
 end

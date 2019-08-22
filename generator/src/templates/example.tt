@@ -1,10 +1,18 @@
 require "spec"
 require "../src/*"
 
-describe <%= "#{describe_name.inspect} do" -%>
-<% test_cases.each_with_index do |test_case, index| %>
+describe <%= "#{describe_name.inspect} do" %>
+  {% begin %}
+  {% pending = if flag? :RUN_ALL_TESTS
+                 :it
+               else
+                 :pending
+               end
+  %}
+<%- test_cases.each_with_index do |test_case, index| %>
   <%= test_case.pending?(index) %> "<%= test_case.test_name %>" do
     <%= test_case.workload %>
   end
 <% end -%>
+  {% end %}
 end

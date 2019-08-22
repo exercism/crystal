@@ -24,7 +24,13 @@ $ crystal spec
 
 In each test suite all but the first test have been skipped.
 
-Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
+Once you get a test passing, you can unskip the next one by changing
+`{{pending.id}}` to `it` or by defining the RUN_ALL_TESTS compiler flag with:
+
+```bash
+$ crystal spec -D RUN_ALL_TESTS
+```
+
 {{ with .Spec.Credits }}
 ## Source
 

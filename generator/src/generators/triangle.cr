@@ -14,11 +14,11 @@ end
 class TriangleTestCase < ExerciseTestCase
   class Input
     JSON.mapping(
-      sides: Tuple(Int32, Int32, Int32) | Tuple(Float64, Float64, Float64)
+      sides: Tuple(JSON::Any, JSON::Any, JSON::Any)
     )
 
     def to_s(io)
-      io << "{#{sides.map { |s| s.to_i == s.to_f ? s.to_i : s.to_s }.join(", ")}}"
+      io << "{#{sides.map { |s| s.as_i? || s.as_f }.join(", ")}}"
     end
   end
 

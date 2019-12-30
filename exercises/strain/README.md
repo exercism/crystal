@@ -23,8 +23,8 @@ While your discard operation should produce:
 
 Note that the union of keep and discard is all the elements.
 
-The functions may be called `keep` and `discard`, or they may need different
-names in order to not clash with existing functions or concepts in your
+The methods may be called `keep` and `discard`, or they may need different
+names in order to not clash with existing methods or concepts in your
 language.
 
 ## Restrictions

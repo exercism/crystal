@@ -1,0 +1,23 @@
+name: Tests
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+  schedule:
+    # Weekly.
+    - cron: "0 0 * * 0"
+
+jobs:
+  exercises:
+    name: Check exercises
+    runs-on: ubuntu-latest
+    # idea from https://github.com/actions/starter-workflows/blob/master/ci/crystal.yml
+    container:
+      image: crystallang/crystal
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: make test-exercises
+        # TODO: fix generators
+        #run: make test-generator

@@ -26,7 +26,8 @@ class MatchingBracketsTestCase < ExerciseTestCase
   )
 
   def workload
-    "MatchingBrackets.valid?(\"#{input.value}\").should eq(#{expected})"
+    # Must inspect - some inputs have backslashes that need to be escaped
+    "MatchingBrackets.valid?(#{input.value.inspect}).should eq(#{expected})"
   end
 
   def test_name

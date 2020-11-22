@@ -13,7 +13,7 @@ module Meetup
   DAYS_IN_WEEK = 7
 
   def meetup(year : Number, month : Number, week : String, day_of_week : String) : String
-    time = Time.new(year, month, START_DAYS[week])
+    time = Time.utc(year, month, START_DAYS[week])
     day = Time::DayOfWeek.parse(day_of_week).to_i
 
     if (week == "last")

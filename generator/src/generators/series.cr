@@ -36,7 +36,7 @@ class SeriesTestCase < ExerciseTestCase
     if expected.is_a?(Error)
       <<-WL
       expect_raises(ArgumentError) do
-            Series.#{property}(\"#{input.series}\", #{input.sliceLength})
+            Series.#{property}("#{input.series}", #{input.sliceLength})
           end
       WL
     else

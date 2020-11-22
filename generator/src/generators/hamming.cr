@@ -36,7 +36,7 @@ class HammingTestCase < ExerciseTestCase
     if expected.is_a?(Error)
       <<-WL
       expect_raises(ArgumentError) do
-            Hamming.#{property}(\"#{input.strand1}\", \"#{input.strand2}\")
+            Hamming.#{property}("#{input.strand1}", "#{input.strand2}")
           end
       WL
     else

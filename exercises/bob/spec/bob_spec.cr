@@ -16,11 +16,11 @@ describe "Bob" do
     end
 
     pending "responds to talking forcefully" do
-      Bob.hey("Let\'s go make out behind the gym!").should eq "Whatever."
+      Bob.hey("Let's go make out behind the gym!").should eq "Whatever."
     end
 
     pending "responds to using acronyms in regular speech" do
-      Bob.hey("It\'s OK if you don\'t want to go to the DMV.").should eq "Whatever."
+      Bob.hey("It's OK if you don't want to go to the DMV.").should eq "Whatever."
     end
 
     pending "responds to forceful questions" do

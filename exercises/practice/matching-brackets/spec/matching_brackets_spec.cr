@@ -67,6 +67,6 @@ describe "MatchingBrackets" do
   end
 
   pending "complex latex expression" do
-    MatchingBrackets.valid?("\left(\begin{array}{cc} \frac{1}{3} & x\\ \mathrm{e}^{x} &... x^2 \end{array}\right)").should eq(true)
+    MatchingBrackets.valid?("\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)").should eq(true)
   end
 end

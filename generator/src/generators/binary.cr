@@ -31,7 +31,7 @@ class BinaryTestCase < ExerciseTestCase
     else
       <<-WL
       expect_raises(ArgumentError) do
-            Binary.to_decimal(\"#{input.binary}\")
+            Binary.to_decimal("#{input.binary}")
           end
       WL
     end

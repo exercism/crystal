@@ -1,5 +1,6 @@
 {
   "language": "Crystal",
+  "slug": "crystal",
   "active": true,
   "status": {
     "concept_exercises": false,

@@ -16,6 +16,7 @@
   },
   "test_pattern": "_spec.cr",
   "exercises": {
+    "concept": [],
     "practice": [
       {
         "slug": "acronym",

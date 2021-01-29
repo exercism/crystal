@@ -1,6 +1,12 @@
 {
   "language": "Crystal",
   "active": true,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "",
   "version": 3,
   "test_pattern": "_spec.cr",

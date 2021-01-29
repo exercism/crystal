@@ -19,24 +19,18 @@
     {
       "slug": "acronym",
       "uuid": "5373e713-f2ab-4b1e-b934-92969174bc48",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "anagram",
       "uuid": "2df0796e-951d-4f10-8a2e-5c54f2443f10",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "armstrong-numbers",
       "uuid": "f2fb1233-33bf-44fd-977a-f56731f6509c",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -47,16 +41,12 @@
     {
       "slug": "atbash-cipher",
       "uuid": "7dc99d5e-95af-4f91-85d4-ddb4c9dbb758",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "binary",
       "uuid": "d0c862a3-7d1f-4081-b378-f631ccf54fac",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "math"
@@ -65,8 +55,6 @@
     {
       "slug": "binary-search-tree",
       "uuid": "415605d8-cc98-4eb1-9467-5c970e69f137",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -78,16 +66,12 @@
     {
       "slug": "bob",
       "uuid": "7ad02ecf-036c-4510-b6ad-93bf1d5f0d28",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "collatz-conjecture",
       "uuid": "b52b0ee3-2dc3-4ab7-9fb1-22731d4b2fcd",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "loops",
@@ -97,8 +81,6 @@
     {
       "slug": "difference-of-squares",
       "uuid": "19298c02-b34f-4f11-aad6-5da4838967a0",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "math"
@@ -107,8 +89,6 @@
     {
       "slug": "etl",
       "uuid": "47465da6-5fa7-4d4c-a0cc-9a1cd74f6610",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "loops",
@@ -119,41 +99,30 @@
     {
       "slug": "flatten-array",
       "uuid": "85b2450c-727d-4b84-9904-02c37f385610",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "gigasecond",
       "uuid": "16228cbe-49ff-4d15-b121-d84b40a56a66",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "hamming",
       "uuid": "080b6ab1-576f-4566-a065-5aae761f51af",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "hello-world",
       "uuid": "4078cf4d-4361-4c55-aa18-63a3fe269be1",
-      "core": false,
-      "auto_approve": true,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "isogram",
       "uuid": "bba4f22b-1afc-46a5-bb99-046f7f4bee8c",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "algorithms",
@@ -166,8 +135,6 @@
     {
       "slug": "largest-series-product",
       "uuid": "ec55356b-61ab-4164-94d0-791133718fa8",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "math"
@@ -176,32 +143,24 @@
     {
       "slug": "leap",
       "uuid": "607eb4f7-2650-47e1-81b9-a6fc2f0367cd",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "matching-brackets",
       "uuid": "b8a4ccaa-4676-4921-baad-ec194a429b75",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "pangram",
       "uuid": "1546e974-866e-4d4d-bec5-d08f91c47fa3",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "pascals-triangle",
       "uuid": "1f04c451-a96a-4299-9386-6774b08f55ed",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "math"
@@ -210,24 +169,18 @@
     {
       "slug": "raindrops",
       "uuid": "a1a95816-b9e8-480e-beca-477531cdaa4c",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "react",
       "uuid": "2da645e4-7e72-4377-a7ac-184b67ff8a63",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "resistor-color",
       "uuid": "e43450c4-6feb-401d-8fdb-137bb87756d7",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "arrays",
@@ -237,8 +190,6 @@
     {
       "slug": "resistor-color-duo",
       "uuid": "4bff3abc-c385-4549-84ef-c138720c444d",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "arrays",
@@ -248,8 +199,6 @@
     {
       "slug": "reverse-string",
       "uuid": "f25d51c6-4830-461c-abd1-b9b03f620eac",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "strings"
@@ -258,32 +207,24 @@
     {
       "slug": "rna-transcription",
       "uuid": "99e661d7-7094-400f-a31d-48cf96d2cbc6",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "roman-numerals",
       "uuid": "45a2591a-493d-4bab-be64-847243b4554b",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "run-length-encoding",
       "uuid": "bed338cd-2308-4a15-9225-699d1d09ed49",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "scrabble-score",
       "uuid": "0768322b-89aa-4aa1-9dac-d694c4417f52",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "games",
@@ -295,8 +236,6 @@
     {
       "slug": "sieve",
       "uuid": "a2e06a49-1311-47eb-8d57-6fbc5abbe7e2",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "math"
@@ -305,8 +244,6 @@
     {
       "slug": "space-age",
       "uuid": "0077bdf1-a1be-4a42-992e-8cdde99837eb",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -317,16 +254,12 @@
     {
       "slug": "triangle",
       "uuid": "64f8e403-9a3d-4094-9114-f1bee88c072b",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": []
     },
     {
       "slug": "two-fer",
       "uuid": "17e14d66-6896-42f2-8237-250166f0d774",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -337,8 +270,6 @@
     {
       "slug": "darts",
       "uuid": "7f0175f4-d72d-4e59-be1e-e430279c6b79",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "conditionals",
@@ -348,8 +279,6 @@
     {
       "slug": "isbn-verifier",
       "uuid": "0b6c8c53-04ae-4969-8bc0-1f1205df3420",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "arrays",
@@ -359,8 +288,6 @@
     {
       "slug": "luhn",
       "uuid": "57594931-5c91-4c1b-b5c5-04ea354c581e",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "algorithms",
@@ -371,8 +298,6 @@
     {
       "slug": "strain",
       "uuid": "d69c25db-7058-45ab-ac80-83478e51c174",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "arrays",
@@ -383,8 +308,6 @@
     {
       "slug": "all-your-base",
       "uuid": "c8dd3c53-e4fc-434e-9e4e-3def1361cf58",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "integers",
@@ -395,16 +318,12 @@
     {
       "slug": "forth",
       "uuid": "c85a6334-2f76-44ce-8ca5-0e997cc65d03",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": []
     },
     {
       "slug": "meetup",
       "uuid": "46ae63dc-7d6f-4eb3-9d6e-c6e83b28fcfa",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "dates",
@@ -416,8 +335,6 @@
     {
       "slug": "nth-prime",
       "uuid": "083ec53d-b4b9-4960-a75b-25ef1b2aa7f3",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -428,8 +345,6 @@
     {
       "slug": "prime-factors",
       "uuid": "db7b806a-a595-4739-abda-8bf7bf43c3e4",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -440,8 +355,6 @@
     {
       "slug": "protein-translation",
       "uuid": "00c6f623-2e54-4f90-ae3f-07e493f93c7c",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "filtering",
@@ -452,8 +365,6 @@
     {
       "slug": "series",
       "uuid": "c725506e-2949-466d-9da9-cf0db74fb978",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "arrays",
@@ -464,8 +375,6 @@
     {
       "slug": "allergies",
       "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "bitwise_operations",
@@ -475,8 +384,6 @@
     {
       "slug": "grains",
       "uuid": "28cc9eaa-ebff-46b6-a7a9-3be60fe86ee6",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "integers",
@@ -486,8 +393,6 @@
     {
       "slug": "perfect-numbers",
       "uuid": "1b656b12-9046-4b47-ac51-6ffdb0afc0d0",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -499,8 +404,6 @@
     {
       "slug": "proverb",
       "uuid": "3cef1164-8eab-4e2d-a455-2e0630919bd1",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "arrays",
@@ -511,8 +414,6 @@
     {
       "slug": "secret-handshake",
       "uuid": "e8aef4e8-fe80-44da-a1fe-d9a29f0f1683",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "arrays",
@@ -523,8 +424,6 @@
     {
       "slug": "sum-of-multiples",
       "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",
-      "core": false,
-      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "integers",

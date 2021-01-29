@@ -10,6 +10,10 @@
   },
   "blurb": "",
   "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4
+  },
   "test_pattern": "_spec.cr",
   "exercises": [
     {

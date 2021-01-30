@@ -79,6 +79,7 @@ describe "BinarySearchTree" do
       tree.insert(2)
       tree.delete(5)
       tree.value.should eq(2)
+      tree.left.should be_nil
     end
 
     pending "removes a node with no children" do

@@ -1,4 +1,4 @@
-## Installation
+# Installation
 
 *Note: Currently, Crystal only supports Linux and OSX.*
 

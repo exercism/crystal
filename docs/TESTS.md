@@ -1,3 +1,5 @@
+# Tests
+
 ## Running Tests
 
 When you are in the directory for an exercise, you should see two subdirectories:

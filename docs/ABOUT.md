@@ -1,3 +1,5 @@
+# About
+
 Crystal is a compiled language that is currently in the alpha stages of development. 
 These are some of the language's goals:
 

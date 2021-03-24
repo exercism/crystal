@@ -1,6 +1,8 @@
 {
   "blurb": "Translate RNA sequences into proteins.",
-  "authors": [],
+  "authors": [
+    "amscotti"
+  ],
   "files": {
     "solution": [],
     "test": [],

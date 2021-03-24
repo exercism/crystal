@@ -1,6 +1,12 @@
 {
   "blurb": "Insert and search for numbers in a binary tree.",
-  "authors": [],
+  "authors": [
+    "bmulvihill"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0"
+  ],
   "files": {
     "solution": [],
     "test": [],

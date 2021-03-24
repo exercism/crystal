@@ -1,6 +1,12 @@
 {
   "blurb": "Reverse a string",
-  "authors": [],
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "issyl0",
+    "mhelmetag"
+  ],
   "files": {
     "solution": [],
     "test": [],

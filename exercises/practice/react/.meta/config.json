@@ -1,6 +1,13 @@
 {
   "blurb": "Implement a basic reactive system.",
-  "authors": [],
+  "authors": [
+    "petertseng"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0",
+    "mhelmetag"
+  ],
   "files": {
     "solution": [],
     "test": [],

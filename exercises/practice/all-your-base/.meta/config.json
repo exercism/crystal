@@ -1,6 +1,11 @@
 {
   "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
-  "authors": [],
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "mhelmetag"
+  ],
   "files": {
     "solution": [],
     "test": [],

@@ -497,7 +497,7 @@
       {
         "slug": "protein-translation",
         "name": "Protein Translation",
-        "uuid": "00c6f623-2e54-4f90-ae3f-07e493f93c7c",
+        "uuid": "718711b2-16d5-4d50-9fe1-a62135ced606",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -523,7 +523,7 @@
       {
         "slug": "allergies",
         "name": "Allergies",
-        "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
+        "uuid": "6c07e00f-78f0-4878-9222-d9e3ed86fd0b",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,

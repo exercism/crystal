@@ -14,6 +14,9 @@
     "indent_style": "space",
     "indent_size": 4
   },
+  "test_runner": {
+    "average_run_time": 6.0
+  },
   "test_pattern": "_spec.cr",
   "files": {
     "solution": [

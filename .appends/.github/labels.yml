@@ -1,0 +1,48 @@
+- name: "bug"
+  description: ""
+  color: "fc2929"
+
+- name: "duplicate"
+  description: ""
+  color: "cccccc"
+
+- name: "enhancement"
+  description: ""
+  color: "84b6eb"
+
+- name: "first-timers only"
+  description: ""
+  color: "159818"
+
+- name: "good first patch"
+  description: ""
+  color: "159818"
+
+- name: "help wanted"
+  description: ""
+  color: "159818"
+
+- name: "invalid"
+  description: ""
+  color: "e6e6e6"
+
+- name: "pinned"
+  description: ""
+  color: "f4dc9a"
+
+- name: "question"
+  description: ""
+  color: "cc317c"
+
+- name: "stale"
+  description: ""
+  color: "ffffff"
+
+- name: "v3-migration 🤖"
+  description: "Preparing for Exercism v3"
+  color: "E99695"
+
+- name: "wontfix"
+  description: ""
+  color: "ffffff"
+

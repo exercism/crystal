@@ -636,5 +636,18 @@
       "icon": "TODO"
     }
   ],
-  "tags": []
+  "tags": [
+    "paradigm/functional",
+    "paradigm/imperative",
+    "paradigm/object_oriented",
+    "paradigm/procedural",
+    "typing/static",
+    "execution_mode/compiled",
+    "platform/mac",
+    "platform/linux",
+    "runtime/standalone_executable",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/scripts"
+  ]
 }

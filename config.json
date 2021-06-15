@@ -612,7 +612,7 @@
     },
     {
       "title": "Static Type Checking",
-      "content": "Crystal is statically type checked with built-in type inference, so type errors are caught early by the compiler.",
+      "content": "Crystal is statically type checked with built-in type inference, so type errors are caught early.",
       "icon": "TODO"
     },
     {
@@ -622,17 +622,17 @@
     },
     {
       "title": "Concurrency Model",
-      "content": "Crystal has built in concurrency primitives, called fibers, to achieve concurrency. Fibers communicate via channels.",
+      "content": "Crystal has built in concurrency primitives, called fibers, to achieve concurrency.",
       "icon": "TODO"
     },
     {
       "title": "C-Interopability",
-      "content": "Crystal has dedicated syntax to easily call native libraries, eliminating the need to reimplement low-level tasks.",
+      "content": "Crystal has dedicated syntax to easily call native libraries, increasing code re-use.",
       "icon": "TODO"
     },
     {
       "title": "Macros",
-      "content": "Crystal's answer to metaprogramming is a powerful macro system, which ranges from basic templating to type inspection.",
+      "content": "Crystal's answer to metaprogramming is a powerful macro system.",
       "icon": "TODO"
     }
   ],

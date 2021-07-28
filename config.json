@@ -607,32 +607,32 @@
     {
       "title": "Simple Syntax",
       "content": "Crystal's syntax is heavily inspired by Ruby, so it is natural to read and easy to write.",
-      "icon": "TODO"
+      "icon": "fun"
     },
     {
       "title": "Static Type Checking",
       "content": "Crystal is statically type checked with built-in type inference, so type errors are caught early.",
-      "icon": "TODO"
+      "icon": "immutable"
     },
     {
       "title": "Null Reference Checks",
       "content": "All types are non-nilable in Crystal, so the compiler checks for null references at compile time.",
-      "icon": "TODO"
+      "icon": "safe"
     },
     {
       "title": "Concurrency Model",
       "content": "Crystal has built in concurrency primitives, called fibers, to achieve concurrency.",
-      "icon": "TODO"
+      "icon": "concurrency"
     },
     {
       "title": "C-Interopability",
       "content": "Crystal has dedicated syntax to easily call native libraries, increasing code re-use.",
-      "icon": "TODO"
+      "icon": "interop"
     },
     {
       "title": "Macros",
       "content": "Crystal's answer to metaprogramming is a powerful macro system.",
-      "icon": "TODO"
+      "icon": "powerful"
     }
   ],
   "tags": [

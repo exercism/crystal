@@ -16,7 +16,7 @@
       "spec/space_age_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Partially inspired by Chapter 1 in Chris Pine's online Learn to Program tutorial.",

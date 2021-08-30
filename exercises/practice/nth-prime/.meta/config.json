@@ -11,7 +11,7 @@
       "spec/nth_prime_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "A variation on Problem 7 at Project Euler",

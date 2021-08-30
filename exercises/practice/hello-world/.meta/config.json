@@ -18,7 +18,7 @@
       "spec/hello_world_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "This is an exercise to introduce users to using Exercism",

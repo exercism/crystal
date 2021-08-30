@@ -11,7 +11,7 @@
       "spec/secret_handshake_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Bert, in Mary Poppins",

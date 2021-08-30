@@ -11,7 +11,7 @@
       "spec/allergies_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Jumpstart Lab Warm-up",

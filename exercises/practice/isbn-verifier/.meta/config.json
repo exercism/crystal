@@ -14,7 +14,7 @@
       "spec/isbn_verifier_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Converting a string into a number and some basic processing utilizing a relatable real world example.",

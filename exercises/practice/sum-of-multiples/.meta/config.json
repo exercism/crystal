@@ -11,7 +11,7 @@
       "spec/sum_of_multiples_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "A variation on Problem 1 at Project Euler",

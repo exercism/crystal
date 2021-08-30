@@ -16,7 +16,7 @@
       "spec/roman_numerals_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "The Roman Numeral Kata",

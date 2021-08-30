@@ -15,7 +15,7 @@
       "spec/flatten_array_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Interview Question",

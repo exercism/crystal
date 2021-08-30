@@ -18,7 +18,7 @@
       "spec/gigasecond_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Chapter 9 in Chris Pine's online Learn to Program tutorial.",

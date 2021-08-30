@@ -11,7 +11,7 @@
       "spec/series_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "A subset of the Problem 8 at Project Euler",

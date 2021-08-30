@@ -15,7 +15,7 @@
       "spec/binary_search_tree_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Josh Cheek",

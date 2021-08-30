@@ -14,7 +14,7 @@
       "spec/two_fer_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source_url": "https://github.com/exercism/problem-specifications/issues/757"

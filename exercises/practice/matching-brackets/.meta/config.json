@@ -17,7 +17,7 @@
       "spec/matching_brackets_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Ginna Baker"

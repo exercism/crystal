@@ -19,7 +19,7 @@
       "spec/triangle_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "The Ruby Koans triangle project, parts 1 & 2",

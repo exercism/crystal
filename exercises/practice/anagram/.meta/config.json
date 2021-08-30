@@ -15,7 +15,7 @@
       "spec/anagram_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Inspired by the Extreme Startup game",

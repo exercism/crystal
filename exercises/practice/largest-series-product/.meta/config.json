@@ -18,7 +18,7 @@
       "spec/largest_series_product_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "A variation on Problem 8 at Project Euler",

@@ -18,7 +18,7 @@
       "spec/difference_of_squares_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Problem 6 at Project Euler",

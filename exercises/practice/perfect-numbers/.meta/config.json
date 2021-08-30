@@ -11,7 +11,7 @@
       "spec/perfect_numbers_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "Taken from Chapter 2 of Functional Thinking by Neal Ford.",

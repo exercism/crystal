@@ -16,7 +16,7 @@
       "spec/hamming_spec.cr"
     ],
     "example": [
-      "src/example.cr"
+      ".meta/src/example.cr"
     ]
   },
   "source": "The Calculating Point Mutations problem at Rosalind",

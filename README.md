@@ -1,4 +1,4 @@
-# Crystal [![Build Status](https://travis-ci.org/exercism/crystal.svg?branch=master)](https://travis-ci.org/exercism/crystal)
+# Crystal [![Build Status](https://github.com/exercism/crystal/workflows/Tests/badge.svg?branch=main)](https://github.com/exercism/crystal/actions?query=workflow%3ATests+branch%3Amain)
 
 Exercism problems in Crystal.
 

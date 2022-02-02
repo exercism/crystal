@@ -1,4 +1,4 @@
-IGNOREDIRS := "^(\.git|.crystal|docs|bin|img|script)$$"
+IGNOREDIRS := "^shared/"
 EXERCISESDIR ?= "exercises"
 EXERCISES = $(shell find exercises -maxdepth 2 -mindepth 2 -type d | cut -d'/' -f2-3 | sort | grep -Ev $(IGNOREDIRS))
 

@@ -1,11 +1,12 @@
 IGNOREDIRS := "^(\.git|.crystal|docs|bin|img|script)$$"
 EXERCISESDIR ?= "exercises"
-EXERCISES = $(shell find exercises -maxdepth 1 -mindepth 1 -type d | cut -d'/' -f2 | sort | grep -Ev $(IGNOREDIRS))
+EXERCISES = $(shell find exercises -maxdepth 2 -mindepth 2 -type d | cut -d'/' -f2-3 | sort | grep -Ev $(IGNOREDIRS))
 
 FILEEXT = "cr"
 SPECDIR = "spec"
-EXERCISENAME := "$(subst -,_,$(EXERCISE))"
+EXERCISENAME := "$(subst -,_,$(notdir $(EXERCISE))")
 EXERCISESPECDIR := $(EXERCISESDIR)/$(EXERCISE)/$(SPECDIR)
+EXERCISEDIR := $(EXERCISESDIR)/$(EXERCISE)
 SPECFILE := "$(EXERCISENAME)_spec.$(FILEEXT)"
 SUPERSPECFILE := "$(SPECFILE).super"
 TMPSPECFILE := "$(SPECFILE).tmp"
@@ -24,8 +25,12 @@ test-exercise:
 	@sed 's/pending/it/g' $(EXERCISESPECDIR)/$(SPECFILE) > $(EXERCISESPECDIR)/$(TMPSPECFILE)
 	@mv $(EXERCISESPECDIR)/$(SPECFILE) $(EXERCISESPECDIR)/$(SUPERSPECFILE)
 	@mv $(EXERCISESPECDIR)/$(TMPSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
+	@mv $(EXERCISEDIR)/src $(EXERCISEDIR)/notsrc
+	@cp -r $(EXERCISEDIR)/.meta/src $(EXERCISEDIR)
 	@echo "running tests for: $(EXERCISE)"
 	@cd $(EXERCISESDIR)/$(EXERCISE) && crystal spec
+	@rm -r $(EXERCISEDIR)/src
+	@mv $(EXERCISEDIR)/notsrc $(EXERCISEDIR)/src
 	@rm $(EXERCISESPECDIR)/$(SPECFILE)
 	@mv $(EXERCISESPECDIR)/$(SUPERSPECFILE) $(EXERCISESPECDIR)/$(SPECFILE)
 	@printf "\n"

@@ -110,6 +110,15 @@
         "topics": []
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "3ba4f982-c46e-4fc3-8ab4-9580656eb2b4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": ["equality", "text_formatting", "time"]
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "b52b0ee3-2dc3-4ab7-9fb1-22731d4b2fcd",

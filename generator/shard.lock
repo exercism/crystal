@@ -1,6 +1,10 @@
-version: 1.0
+version: 2.0
 shards:
+  json_mapping:
+    git: https://github.com/crystal-lang/json_mapping.cr.git
+    version: 0.1.1
+
   webmock:
-    github: manastech/webmock.cr
-    commit: ca7c79ab3cc8b4c56cb1d70ba7a6952dc35ef8f6
+    git: https://github.com/manastech/webmock.cr.git
+    version: 0.14.0+git.commit.42b347cdd64e13193e46167a03593944ae2b3d20
 

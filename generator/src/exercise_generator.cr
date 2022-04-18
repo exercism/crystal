@@ -2,6 +2,7 @@ require "./remote_data_file"
 
 require "ecr"
 require "json"
+require "json_mapping"
 
 abstract class ExerciseGenerator
   METADATA_REPOSITORY = "problem-specifications"
@@ -27,7 +28,7 @@ abstract class ExerciseGenerator
   end
 
   private def test_file
-    File.expand_path(File.join("exercises", exercise_name, "spec", "#{exercise_name.tr("-", "_")}_spec.cr"), root)
+    File.expand_path(File.join("exercises", "practice", exercise_name, "spec", "#{exercise_name.tr("-", "_")}_spec.cr"), root)
   end
 
   private def metadata_dir

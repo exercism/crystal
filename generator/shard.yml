@@ -1,6 +1,10 @@
 name: generator
 version: 0.0.1
 
+dependencies:
+  json_mapping:
+    github: crystal-lang/json_mapping.cr
+
 development_dependencies:
   webmock:
     github: manastech/webmock.cr

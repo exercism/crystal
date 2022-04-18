@@ -3,9 +3,13 @@ require "json"
 require "../src/exercise_test_case"
 
 class DummyTestCase < ExerciseTestCase
-  def workload; end
+  def workload
+    ""
+  end
 
-  def test_name; end
+  def test_name
+    ""
+  end
 end
 
 describe "DummyTestCase" do

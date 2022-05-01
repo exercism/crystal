@@ -19,4 +19,5 @@ jobs:
       - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
       - name: Run tests
         run: make test-exercises
+      - name: Run generator tests
         run: make test-generator

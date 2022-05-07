@@ -7,15 +7,18 @@ Exercism problems in Crystal.
 ### All Exercises
 
 Test all exercises with:
-```bash
-$ make test-exercises
+```shell
+make test-exercises
 ```
 
 ### Single Exercises
 
 Test single exercises with:
-```bash
-$ make test-exercise EXERCISE=exercise-name
+```shell
+make test-exercise EXERCISE=directory/exercise-name
+
+# Example
+make test-exercise EXERCISE=practice/acronym
 ```
 
 ## The Test Generator
@@ -39,13 +42,13 @@ If the local problem-specifications repo doesn't exist, a request is made to Git
 ### Running the Generator for a Single Exercise
 
 From within the crystal directory:
-```bash
-$ crystal generator/generator.cr hello-world
+```shell
+crystal generator/generator.cr hello-world
 ```
 
 Or build a binary and use that:
-```bash
-$ make generate-exercise GENERATOR=hello-world
+```shell
+make generate-exercise GENERATOR=hello-world
 ```
 
 NOTE: A binary version of the generator is built automatically when needed for a given make target, but you may build it manually at any time by running `make build-generator` (or rebuild it with `make clean build-generator`).
@@ -54,20 +57,20 @@ NOTE: A binary version of the generator is built automatically when needed for a
 
 This can be used for refreshing the tests when changes are made to the [problem-specifications](https://github.com/exercism/problem-specifications) repo. Or for testing the full functionality of the test generator.
 
-```bash
-$ make generate-exercises
+```shell
+make generate-exercises
 ```
 
 ### Testing the Generator
 
-```bash
-$ make test-generator
+```shell
+make test-generator
 ```
 
 ### Cleaning up
 
-```bash
-$ make clean
+```shell
+make clean
 ```
 
 Use this command to delete any transient files and build artifacts. This is potentially useful for troubleshooting purposes as it will purge any stale cached files, rebuild the generator when needed and can be combined with other make targets (e.g. `make clean test`).

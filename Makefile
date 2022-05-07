@@ -44,11 +44,15 @@ $(GENERATORBIN):
 $(GENERATORBIN)/generator: $(G_SRCS) | $(GENERATORBIN)
 	@crystal build $(GENERATORDIR)/generator.$(FILEEXT) -o generator/bin/generator
 
-build-generator: $(GENERATORBIN)/generator
+.PHONY: build-generator
+build-generator:
+	@echo "building binary for generator: $(GENERATOR)"
+	@cd $(GENERATORDIR) && (shards check || shards install) && mkdir -p bin && crystal build generator.cr -o bin/generator
 
-generate-exercise: $(GENERATORBIN)/generator
+.PHONY: generate-exercise
+generate-exercise:
 	@echo "generating spec file for generator: $(GENERATOR)"
-	@generator/bin/generator $(GENERATOR)
+	@cd $(GENERATORDIR) && (shards check || shards install) && crystal generator.cr $(GENERATOR)
 
 generate-exercises:
 	@for generator in $(GENERATORS); do GENERATOR=$$generator $(MAKE) -s generate-exercise || exit 1; done
@@ -57,7 +61,7 @@ test-generator:
 	@echo "running formatting check for generators"
 	@crystal tool format --check $(GENERATORDIR)
 	@echo "running generator tests"
-	@cd $(GENERATORDIR) && shards install && crystal spec
+	@cd $(GENERATORDIR) && (shards check || shards install) && crystal spec
 
 test:
 	@echo "running all the tests"

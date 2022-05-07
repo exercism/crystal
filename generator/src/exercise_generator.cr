@@ -45,5 +45,5 @@ abstract class ExerciseGenerator
     end
   end
 
-  ECR.def_to_s "#{__DIR__}/templates/example.tt"
+  ECR.def_to_s "#{__DIR__}/templates/example.ecr"
 end

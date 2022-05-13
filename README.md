@@ -1,4 +1,6 @@
-# Crystal [![Build Status](https://github.com/exercism/crystal/workflows/Tests/badge.svg?branch=main)](https://github.com/exercism/crystal/actions?query=workflow%3ATests+branch%3Amain)
+# Exercism Crystal Track
+
+[![Build Status](https://github.com/exercism/crystal/workflows/Tests/badge.svg?branch=main)](https://github.com/exercism/crystal/actions?query=workflow%3ATests+branch%3Amain)
 
 Exercism problems in Crystal.
 

@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [
     "amscotti"
   ],
@@ -17,6 +16,7 @@
       ".meta/src/example.cr"
     ]
   },
+  "blurb": "Given a word, compute the Scrabble score for that word.",
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a basic reactive system.",
   "authors": [
     "petertseng"
   ],
@@ -18,5 +17,6 @@
     "example": [
       ".meta/src/example.cr"
     ]
-  }
+  },
+  "blurb": "Implement a basic reactive system."
 }

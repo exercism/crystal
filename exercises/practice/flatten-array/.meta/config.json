@@ -1,5 +1,4 @@
 {
-  "blurb": "Take a nested list and return a single list with all values except nil/null.",
   "authors": [
     "mhelmetag"
   ],
@@ -18,6 +17,7 @@
       ".meta/src/example.cr"
     ]
   },
+  "blurb": "Take a nested list and return a single list with all values except nil/null.",
   "source": "Interview Question",
   "source_url": "https://reference.wolfram.com/language/ref/Flatten.html"
 }

@@ -1,0 +1,87 @@
+#!/bin/bash
+
+# Test the spec files.
+# Regenerate the spec files from the liquid template and check that the newly generated spec is the same as the old spec.
+
+# error prints an error to STDERR and exits.
+error() {
+    printf '%s\n' "$@" >&2
+    exit 1
+}
+
+# Temporary directory for holding copies of the specs.
+tmpdir="$(mktemp -d)" || error "Failed to make a temp directory."
+trap 'rm -r "${tmpdir}"' EXIT
+
+# Find the repo root.
+full_path="$(readlink -e "$0")"
+repo_root="${full_path%bin/*}"
+if [[ "${PWD}" != "${repo_root}" ]]; then
+    cd "${repo_root}" || error "Failed to chdir to ${repo_root}."
+fi
+
+# get_exercises prints the exercises passed in, if any.
+# Otherwise, prints exerises with a liquid template.
+get_exercises() {
+    local exercise
+    # Use "$@" if specified.
+    if (( $# )); then
+        printf "%s\n" "$@"
+        return
+    fi
+    # Check practice exercises for a liquid template.
+    for exercise in ./exercises/practice/*; do
+        if [[ -r "${exercise}/.meta/test_template.liquid" ]]; then
+            printf "%s\n" "${exercise#./exercises/practice/}"
+        fi
+    done
+}
+
+# test_specs generates specs using the liquid template and compares against existing specs.
+test_specs() {
+    local exercise exercises spec spec_name
+    local -a failed passed specs
+
+    mapfile -t exercises < <( get_exercises "$@" )
+    for exercise in "${exercises[@]}"; do
+        # Find the existing spec and move it to a temp location
+        # so we can generate a new spec in the old location.
+        specs=("./exercises/practice/${exercise}/spec/"*_spec.cr)
+        if (( ${#specs[@]} != 1 )); then
+            error "Expected one spec for ${exercise} but found ${#specs[@]}!"
+        fi
+        spec="${specs[0]}"
+        spec_name="${spec##*/}"
+
+        # Generate a new spec.
+        crystal ./bin/generator.cr "${exercise}" "${tmpdir}/${spec_name}" >/dev/null || error "Failed to generate spec for ${exercise}."
+        if [[ ! -r "${tmpdir}/${spec_name}" ]]; then
+            error "Failed to generate spec ${spec}!"
+        fi
+        
+        # Compare the old and new spec.
+        if cmp -s "${spec}" "${tmpdir}/${spec_name}"; then
+            passed+=( "${exercise}" )
+        else
+            failed+=( "${exercise}" )
+        fi
+    done
+
+    # Print a report.
+    if (( "${#passed[@]}" )); then
+         printf 'Passed:\n'
+         printf '* %s\n' "${passed[@]}"
+    fi
+    (( "${#passed[@]}" && "${#failed[@]}" )) && printf '\n'
+    if (( "${#failed[@]}" )); then
+        printf 'Failed:\n'
+        printf '* %s\n' "${failed[@]}"
+    fi
+
+    # Return the exit code.
+    if (( "${#failed[@]}" )); then
+        return 1
+    fi
+}
+
+test_specs "$@"

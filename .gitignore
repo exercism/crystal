@@ -4,7 +4,7 @@
 # unignore files with extensions, dirs and specific ones
 !*.*
 !*/
-!bin/fetch-configlet
+!bin/*
 !LICENSE
 !Makefile
 !generator/

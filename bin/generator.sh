@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Used to start the generator 
+# Used to start the generator
 
 # error prints an error to STDERR and exits.
 
 if [ -z "$1" ] ; then
-    echo "usage: ./bin/template.sh exercise-slug "
+    echo "usage: $0 exercise-slug "
     exit 1
 fi
 
 slug="$1"
 
 if test ! -d "./bin/templates"; then
-  mkdir "./bin/templates"
+    mkdir "./bin/templates"
 fi
 
 cat "./exercises/practice/${slug}/.meta/test_template.ecr" > "./bin/templates/template.ecr"

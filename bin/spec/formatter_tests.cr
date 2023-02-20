@@ -7,7 +7,7 @@ describe "Generator" do
       temp_file = File.tempfile("temp")
       File.write(temp_file.path, Formatter.post_proccesing("./bin/test-templates/files-to-format/example.cr"))
       system("crystal tool format #{temp_file.path}")
-      File.read(temp_file.path).should eq(File.read("./bin/test-templates/formated-files/example.cr"))
+      File.read(temp_file.path).should eq(File.read("./bin/test-templates/formatted-files/example.cr"))
       temp_file.delete
     end
   end

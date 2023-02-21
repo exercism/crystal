@@ -559,6 +559,15 @@
         "topics": ["integers", "loops", "math"]
       },
       {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
+        "uuid": "5b5bf7c3-6aad-4648-a6e1-964bbbad838c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": []
+      },
+      {
         "slug": "react",
         "name": "React",
         "uuid": "2da645e4-7e72-4377-a7ac-184b67ff8a63",

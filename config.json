@@ -91,6 +91,15 @@
         "topics": []
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "a50ad959-0a5e-4110-8e49-fa50b1242a89",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "clock",
         "name": "Clock",
         "uuid": "3ba4f982-c46e-4fc3-8ab4-9580656eb2b4",

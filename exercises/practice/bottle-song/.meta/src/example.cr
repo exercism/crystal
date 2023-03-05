@@ -1,4 +1,4 @@
-class BottleSong
+module BottleSong
   def self.recite(start_bottles : Int32, take_down : Int32)
     (start_bottles..(start_bottles - take_down + 1))
       .step(-1)

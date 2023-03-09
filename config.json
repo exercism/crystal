@@ -559,6 +559,14 @@
         "topics": ["arrays", "loops", "strings"]
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "00e8ffd8-b4f7-44e0-b007-8b265eed14fb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "e8aef4e8-fe80-44da-a1fe-d9a29f0f1683",

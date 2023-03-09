@@ -1,5 +1,5 @@
 {
-  "authors": [],
+  "authors": ["ryanplusplus"],
   "files": {
     "solution": [
       "src/pig_latin.cr"

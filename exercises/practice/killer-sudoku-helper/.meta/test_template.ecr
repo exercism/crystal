@@ -1,0 +1,20 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%- if cases["cases"]? -%>
+        <%- cases["cases"].as_a.each do |sub_case| %>
+            <%= status()%> "<%-= sub_case["description"] %>" do
+            killer_sudoku_helper = <%-= to_capitalized(sub_case["property"].to_s) %>.new(<%-= sub_case["input"]["cage"]["sum"] %>, <%-= sub_case["input"]["cage"]["size"] %>, <%-= sub_case["input"]["cage"]["exclude"] %> of Int32)
+            killer_sudoku_helper.solve.should eq <%-= sub_case["expected"] %>
+        end
+        <%- end -%>
+    <%- else -%>
+        <%= status()%> "<%-= cases["description"] %>" do
+        killer_sudoku_helper = <%-= to_capitalized(cases["property"].to_s) %>.new(<%-= cases["input"]["cage"]["sum"] %>, <%-= cases["input"]["cage"]["size"] %>, <%-= cases["input"]["cage"]["exclude"] %> of Int32)
+        killer_sudoku_helper.solve.should eq <%-= cases["expected"] %>
+    end
+    <%- end %>
+<% end %>
+end

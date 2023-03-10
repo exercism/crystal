@@ -18,11 +18,11 @@ describe "Darts" do
     Darts.score(0.0, -1.0).should eq(10)
   end
 
-  pending "Exactly on centre" do
+  pending "Exactly on center" do
     Darts.score(0.0, 0.0).should eq(10)
   end
 
-  pending "Near the centre" do
+  pending "Near the center" do
     Darts.score(-0.1, -0.1).should eq(10)
   end
 

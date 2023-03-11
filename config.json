@@ -532,6 +532,14 @@
         "topics": ["strings", "classes"]
       },
       {
+        "slug": "linked-list",
+        "name": "Linked List",
+        "uuid": "3941b2c4-19d1-478e-96d7-1cc596197ccd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "6c07e00f-78f0-4878-9222-d9e3ed86fd0b",

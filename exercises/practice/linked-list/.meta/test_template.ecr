@@ -1,0 +1,21 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        list = LinkedList.new
+        <%- cases["input"]["operations"].as_a.each do |operation| -%>
+            <%- if Set{"push", "unshift"}.includes? operation["operation"] -%>
+                list.<%= operation["operation"] %>(<%= operation["value"] %>)
+            <%- elsif Set{"pop", "shift", "count"}.includes? operation["operation"] -%>
+                <%- if operation["expected"]? -%>
+                    list.<%= operation["operation"] %>.should eq(<%= operation["expected"] %>)
+                <%- else -%>
+                    list.<%= operation["operation"] %>
+                <%- end -%>
+            <%- end -%>
+        <% end %>
+    end
+<% end %>
+end

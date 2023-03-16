@@ -101,6 +101,7 @@ describe "LinkedList" do
   pending "deletes the only element" do
     list = LinkedList.new
     list.push(61)
+    list.delete(61)
     list.count.should eq(0)
   end
 
@@ -109,6 +110,7 @@ describe "LinkedList" do
     list.push(71)
     list.push(83)
     list.push(79)
+    list.delete(83)
     list.count.should eq(2)
     list.pop.should eq(79)
     list.shift.should eq(71)
@@ -119,6 +121,7 @@ describe "LinkedList" do
     list.push(71)
     list.push(83)
     list.push(79)
+    list.delete(83)
     list.count.should eq(2)
     list.pop.should eq(79)
     list.pop.should eq(71)
@@ -129,6 +132,7 @@ describe "LinkedList" do
     list.push(71)
     list.push(83)
     list.push(79)
+    list.delete(83)
     list.count.should eq(2)
     list.shift.should eq(71)
     list.shift.should eq(79)
@@ -138,6 +142,7 @@ describe "LinkedList" do
     list = LinkedList.new
     list.push(97)
     list.push(101)
+    list.delete(97)
     list.count.should eq(1)
     list.pop.should eq(101)
   end
@@ -146,6 +151,7 @@ describe "LinkedList" do
     list = LinkedList.new
     list.push(97)
     list.push(101)
+    list.delete(101)
     list.count.should eq(1)
     list.pop.should eq(97)
   end
@@ -153,6 +159,7 @@ describe "LinkedList" do
   pending "delete does not modify the list if the element is not found" do
     list = LinkedList.new
     list.push(89)
+    list.delete(103)
     list.count.should eq(1)
   end
 
@@ -162,6 +169,7 @@ describe "LinkedList" do
     list.push(9)
     list.push(9)
     list.push(107)
+    list.delete(9)
     list.count.should eq(3)
     list.pop.should eq(107)
     list.pop.should eq(9)

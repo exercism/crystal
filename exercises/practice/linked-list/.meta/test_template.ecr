@@ -6,7 +6,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%= status()%> "<%-= cases["description"] %>" do
         list = LinkedList.new
         <%- cases["input"]["operations"].as_a.each do |operation| -%>
-            <%- if Set{"push", "unshift"}.includes? operation["operation"] -%>
+            <%- if Set{"push", "unshift", "delete"}.includes? operation["operation"] -%>
                 list.<%= operation["operation"] %>(<%= operation["value"] %>)
             <%- elsif Set{"pop", "shift", "count"}.includes? operation["operation"] -%>
                 <%- if operation["expected"]? -%>

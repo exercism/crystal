@@ -16,9 +16,6 @@ class LinkedList
 
   getter count
 
-  def initialize
-  end
-
   def push(value : Int32)
     if @tail.nil?
       @tail = Node.new(value)

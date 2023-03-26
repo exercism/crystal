@@ -23,6 +23,6 @@ module Sublist
   end
 
   private def self.as_string(list : Array(Int32)) : String
-    list.map { |x| ':' + x.to_s + ':' }.join
+    list.map { |x| ":#{x}:" }.join
   end
 end

@@ -496,6 +496,15 @@
         "topics": ["arrays", "enumerable", "loops"]
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "243d683a-a2ba-4759-8a7c-61b4173a9a7e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": ["arrays", "loops"]
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "27783181-8b3e-4a18-af09-05882941f8d7",

@@ -1,0 +1,15 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/sublist.cr"
+    ],
+    "test": [
+      "spec/sublist_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}

@@ -1,0 +1,10 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        Sublist.classify(<%= cases["input"]["listOne"].inspect %> of Int32, <%= cases["input"]["listTwo"].inspect %> of Int32).should eq(Sublist::Classification::<%= cases["expected"].to_s.capitalize %>)
+    end
+<% end %>
+end

@@ -1,0 +1,16 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        <%- if cases["expected"].as_h? && cases["expected"]["error"] -%>
+            expect_raises(ArgumentError) do
+                Say.number(<%= cases["input"]["number"].inspect %>)
+            end
+        <%- else -%>
+            Say.number(<%= cases["input"]["number"].inspect %>).should eq(<%= cases["expected"].inspect %>)
+        <% end %>
+    end
+<% end %>
+end

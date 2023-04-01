@@ -1,6 +1,6 @@
 module Say
   def self.number(n : Int64) : String
-    raise ArgumentError.new unless n >=0 && n < 1e12
+    raise ArgumentError.new unless n >= 0 && n < 1e12
 
     return zero if n.zero?
 
@@ -56,7 +56,7 @@ module Say
       6 => "six",
       7 => "seven",
       8 => "eight",
-      9 => "nine"
+      9 => "nine",
     }
   end
 
@@ -71,7 +71,7 @@ module Say
       16 => "sixteen",
       17 => "seventeen",
       18 => "eighteen",
-      19 => "nineteen"
+      19 => "nineteen",
     }
   end
 
@@ -84,7 +84,7 @@ module Say
       6 => "sixty",
       7 => "seventy",
       8 => "eighty",
-      9 => "ninety"
+      9 => "ninety",
     }
   end
 
@@ -93,7 +93,7 @@ module Say
       0 => "",
       1 => "thousand",
       2 => "million",
-      3 => "billion"
+      3 => "billion",
     }
   end
 end

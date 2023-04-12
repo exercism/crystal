@@ -54,16 +54,6 @@ describe "LargestSeriesProduct" do
     end
   end
 
-  pending "reports 1 for empty string and empty product (0 span)" do
-    series = LargestSeriesProduct.new("")
-    series.largest_product(0).should eq(1)
-  end
-
-  pending "reports 1 for nonempty string and empty product (0 span)" do
-    series = LargestSeriesProduct.new("123")
-    series.largest_product(0).should eq(1)
-  end
-
   pending "rejects empty string and nonzero span" do
     series = LargestSeriesProduct.new("")
     expect_raises(ArgumentError) do

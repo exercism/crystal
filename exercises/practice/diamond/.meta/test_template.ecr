@@ -1,0 +1,11 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        expected = <%= cases["expected"].inspect.gsub(/[,\[]/,"\\0\n") %>
+        Diamond.rows(<%= cases["input"]["letter"].inspect.gsub("\"", "'") %>).should eq(expected)
+    end
+<% end %>
+end

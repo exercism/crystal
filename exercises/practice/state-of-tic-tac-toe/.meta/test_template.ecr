@@ -1,0 +1,23 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+    <%- @json["cases"].as_a.each do |cases| %>
+        describe "<%-= cases["description"].to_s %>" do
+            <%- cases["cases"].as_a.each do |cases| %>
+                <%= status()%> "<%-= cases["description"] %>" do
+                    board = <%= cases["input"]["board"].inspect.gsub(/[,\[]/,"\\0\n") %>
+                    <%
+                        expected = cases["expected"].inspect
+                        if expected.includes? "error"
+                            expected = "TicTacToe::Error::" + expected.split(": ")[1][0...-2].gsub(" ", "_").camelcase
+                        else
+                            expected = "TicTacToe::State::" + expected.gsub("\"", "").capitalize
+                        end
+                    -%>
+                    TicTacToe.state(board).should eq(<%= expected %>)
+                end
+            <% end %>
+        end
+    <% end %>
+end

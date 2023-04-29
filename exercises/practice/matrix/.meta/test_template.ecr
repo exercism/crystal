@@ -1,0 +1,11 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        matrix = Matrix.new(<%= cases["input"]["string"].inspect %>)
+        matrix.<%= cases["property"].to_s %>(<%= cases["input"]["index"].inspect %>).should eq(<%= cases["expected"] %>)
+    end
+<% end %>
+end

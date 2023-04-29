@@ -531,6 +531,14 @@
         "topics": ["Hashmaps", "strings", "loops"]
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "8d675618-a8f3-49b5-b32e-fee46991b5a7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

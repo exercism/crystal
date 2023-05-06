@@ -1,0 +1,27 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        <%- if cases["expected"]["error"]? -%>
+            expect_raises(ArgumentError) do
+        <% end %>
+        TwoBucket.measure(
+            bucket_one: <%= cases["input"]["bucketOne"].to_s %>,
+            bucket_two: <%= cases["input"]["bucketTwo"].to_s %>,
+            goal: <%= cases["input"]["goal"].to_s %>,
+            start_bucket: TwoBucket::Bucket::<%= cases["input"]["startBucket"].to_s.capitalize %>
+        ) <%- if cases["expected"]["moves"]? -%>
+            .should eq TwoBucket::Result.new(
+                moves: <%= cases["expected"]["moves"].to_s %>,
+                other_bucket: <%= cases["expected"]["otherBucket"].to_s %>,
+                goal_bucket: TwoBucket::Bucket::<%= cases["expected"]["goalBucket"].to_s.capitalize %>
+            )
+        <% end %>
+        <%- if cases["expected"]["error"]? -%>
+            end
+        <% end %>
+    end
+<% end %>
+end

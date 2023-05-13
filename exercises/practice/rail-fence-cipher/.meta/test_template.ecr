@@ -1,0 +1,15 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+    <%- @json["cases"].as_a.each do |cases| %>
+        describe "<%-= cases["description"] %>" do
+            <%- cases["cases"].as_a.each do |cases| %>
+                <%= status()%> "<%-= cases["description"] %>" do
+                    RailFenceCipher.<%= cases["property"] %>(<%-= cases["input"]["rails"].to_s %>, <%-= cases["input"]["msg"].inspect %>)
+                        .should eq <%-= cases["expected"].inspect %>
+                end
+            <% end %>
+        end
+    <% end %>
+end

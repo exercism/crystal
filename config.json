@@ -686,6 +686,14 @@
         "difficulty": 5
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "0adf6b3f-c518-4660-ba6b-be991828a658",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "react",
         "name": "React",
         "uuid": "2da645e4-7e72-4377-a7ac-184b67ff8a63",

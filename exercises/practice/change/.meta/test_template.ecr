@@ -1,0 +1,23 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        <%- if cases["expected"].as_h? %>
+            expect_raises(ArgumentError) do
+        <% end %>
+        Change.find_fewest_coins(target: <%= cases["input"]["target"].inspect %>, coins: <%= cases["input"]["coins"].inspect %>)
+        <%- if cases["expected"].as_a? -%>
+            <%- if cases["expected"].inspect == "[]" -%>
+                .should eq [] of Int32
+            <%- else -%>
+                .should eq <%= cases["expected"].inspect %>
+            <% end %>
+        <% end %>
+        <%- if cases["expected"].as_h? %>
+            end
+        <% end %>
+    end
+<% end %>
+end

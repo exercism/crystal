@@ -694,6 +694,14 @@
         "difficulty": 5
       },
       {
+        "slug": "dominoes",
+        "name": "Dominoes",
+        "uuid": "c237b348-89e6-4ba7-8450-0cf248b9cba0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "react",
         "name": "React",
         "uuid": "2da645e4-7e72-4377-a7ac-184b67ff8a63",

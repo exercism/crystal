@@ -1,0 +1,15 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/dominoes.cr"
+    ],
+    "test": [
+      "spec/dominoes_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Make a chain of dominoes."
+}

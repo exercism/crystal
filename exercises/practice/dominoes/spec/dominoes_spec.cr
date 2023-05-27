@@ -3,7 +3,7 @@ require "../src/*"
 
 describe "Dominoes" do
   it "empty input = empty output" do
-    Dominoes.can_chain([] of UInt8).should eq(true)
+    Dominoes.can_chain([] of Array(Int32)).should eq(true)
   end
 
   pending "singleton input = singleton output" do

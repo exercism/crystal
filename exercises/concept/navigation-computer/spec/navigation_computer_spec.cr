@@ -14,6 +14,7 @@ describe "Navigation" do
       distance.should eq 227_940_000
       distance.should be_a(Int32)
     end
+
     it "ATMOSPHERE_DISTANCE should be 10_000 km and be int16" do
       distance = Navigation::ATMOSPHERE_DISTANCE
       distance.should eq 10_000

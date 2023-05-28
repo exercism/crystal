@@ -3,8 +3,8 @@ class Navigation
   MARS_DISTANCE       =   227_940_000_i32
   ATMOSPHERE_DISTANCE =        10_000_i16
 
-  def correct_area_analysis(messurment)
-    messurment.to_u
+  def correct_area_analysis(measurement)
+    measurement.to_u
   end
 
   def calculate_velocity(distance, time)

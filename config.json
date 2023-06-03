@@ -831,6 +831,14 @@
         "difficulty": 4
       },
       {
+        "slug": "rational-numbers",
+        "name": "Rational Numbers",
+        "uuid": "d8901821-bcdd-4e2c-981f-7f2445971064",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "e8aef4e8-fe80-44da-a1fe-d9a29f0f1683",
@@ -885,14 +893,6 @@
         "slug": "dominoes",
         "name": "Dominoes",
         "uuid": "c237b348-89e6-4ba7-8450-0cf248b9cba0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "rational-numbers",
-        "name": "Rational Numbers",
-        "uuid": "d8901821-bcdd-4e2c-981f-7f2445971064",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5

@@ -1,5 +1,5 @@
 class Queen
-  getter row, column
+  protected getter row, column
 
   def initialize(@row : Int8, @column : Int8)
     raise ArgumentError.new unless (0..7).includes? @row

@@ -695,6 +695,14 @@
         "difficulty": 3
       },
       {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "06741d82-0bf9-4aeb-af1f-be6e03bc7e46",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

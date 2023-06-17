@@ -1,0 +1,15 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/connect.cr"
+    ],
+    "test": [
+      "spec/connect_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Compute the result for a game of Hex / Polygon."
+}

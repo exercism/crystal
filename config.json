@@ -906,6 +906,14 @@
         "difficulty": 5
       },
       {
+        "slug": "connect",
+        "name": "Connect",
+        "uuid": "9a889142-2223-407a-af9a-df9c14eb6a9e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "react",
         "name": "React",
         "uuid": "2da645e4-7e72-4377-a7ac-184b67ff8a63",

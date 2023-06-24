@@ -60,16 +60,24 @@
         "slug": "navigation-computer",
         "name": "Navigation Computer",
         "uuid": "d980412c-1480-453a-be6c-2cd7779284bc",
-        "concepts": ["number-types"],
-        "prerequisites": ["numbers"],
+        "concepts": [
+          "number-types"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
         "status": "wip"
       },
       {
         "slug": "wellingtons-weather-station",
         "name": "Wellington's Weather Station",
         "uuid": "e6175dc0-61b5-4bf4-8df4-ad8815ccd3a9",
-        "concepts": ["numbers"],
-        "prerequisites": ["basics"],
+        "concepts": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
         "status": "wip"
       }
     ],
@@ -752,7 +760,10 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
-        "topics": ["numbers", "concurrency"]
+        "topics": [
+          "numbers",
+          "concurrency"
+        ]
       },
       {
         "slug": "palindrome-products",
@@ -945,6 +956,14 @@
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "20c471f8-e45e-4313-a23a-85d4a36c7185",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "uuid": "d8a1b1c8-41ba-43a9-a4d6-b8325e438dc6",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6

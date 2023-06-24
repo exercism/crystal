@@ -10,13 +10,13 @@ describe "Alphametics" do
 
   pending "solution must have unique value for each letter" do
     puzzle = "A == B"
-    solution = nil
+    solution = Hash(String, Int32).new
     Alphametics.solve(puzzle).should eq(solution)
   end
 
   pending "leading zero solution is invalid" do
     puzzle = "ACA + DD == BD"
-    solution = nil
+    solution = Hash(String, Int32).new
     Alphametics.solve(puzzle).should eq(solution)
   end
 

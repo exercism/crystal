@@ -5,7 +5,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- @json["cases"].as_a.each do |cases| %>
         <%= status()%> "<%-= cases["description"] %>" do
             puzzle = <%= cases["input"]["puzzle"].inspect %>
-            solution = <%= cases["expected"].inspect %>
+            solution = <%= cases["expected"].inspect.gsub("nil", "Hash(String, Int32).new") %>
             <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(puzzle).should eq(solution)
         end
     <% end %>

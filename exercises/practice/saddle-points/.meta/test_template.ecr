@@ -5,10 +5,9 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
         input = <%= cases["input"]["matrix"][0].as_a.empty? ? "Array(Array(Int32)).new" : cases["input"]["matrix"].as_a %>
-        expected = [<%- cases["expected"].as_a.each do |expected| -%>{row: <%= expected["row"] %>, column: <%= expected["column"] %>}, <%- end %>]<%= cases["expected"].as_a.empty? ? " of NamedTuple(row: Int32, column: Int32)" : ""%>
+        expected = Set.new [<%- cases["expected"].as_a.each do |expected| -%>{row: <%= expected["row"] %>, column: <%= expected["column"] %>}, <%- end %>]<%= cases["expected"].as_a.empty? ? " of NamedTuple(row: Int32, column: Int32)" : ""%>
         actual = <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s) %>(input)
-        actual.size.should eq(expected.size)
-	    actual.to_set.should eq(expected.to_set)
+        actual.should eq(expected.to_set)
     end
 <% end %>
 end

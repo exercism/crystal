@@ -6,7 +6,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <%- unless cases["description"].as_s.includes?("199") -%>
             <%= status()%> "<%-= cases["description"] %>" do
                 puzzle = <%= cases["input"]["puzzle"].inspect %>
-                solution = <%= cases["expected"].inspect.gsub("nil", "Hash(String, Int32).new") %>
+                solution = <%= cases["expected"].inspect.gsub("nil", "Hash(Char, Int32).new").gsub("\"", "'") %>
                 <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(puzzle).should eq(solution)
             end
         <% end %>

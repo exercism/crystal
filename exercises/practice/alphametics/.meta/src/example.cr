@@ -1,9 +1,9 @@
 module Alphametics
-  def self.solve(puzzle : String) : Hash(String, Int32)
-    recur(equations(puzzle), leading_chars(puzzle), Hash(String, Int32).new, (0..9).to_a, 0) || Hash(String, Int32).new
+  def self.solve(puzzle : String) : Hash(Char, Int32)
+    recur(equations(puzzle), leading_chars(puzzle), Hash(Char, Int32).new, (0..9).to_a, 0) || Hash(Char, Int32).new
   end
 
-  record Equation, letters : Array(String), addends : Hash(String, Int32), result : String
+  record Equation, letters : Array(Char), addends : Hash(Char, Int32), result : Char
 
   def self.recur(eqs, leading_chars, current_map, available, carry)
     return current_map if eqs.empty? && carry.zero?
@@ -29,13 +29,13 @@ module Alphametics
   end
 
   def self.leading_chars(puzzle)
-    (" " + puzzle).scan(/ ([A-Z])/).map { |s| s[1] }.uniq
+    (" " + puzzle).scan(/ ([A-Z])/).map { |s| s[1][0] }.uniq
   end
 
   def self.equations(puzzle)
     addends, result = puzzle.split("==")
-    addends = addends.split("+").map { |a| a.strip.chars.map(&.to_s).reverse }
-    result = result.strip.chars.map(&.to_s).reverse
+    addends = addends.split("+").map { |a| a.strip.chars.reverse }
+    result = result.strip.chars.reverse
 
     (0...result.size).map do |i|
       column_addends = addends.compact_map(&.[i]?).tally

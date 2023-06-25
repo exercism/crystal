@@ -38,3 +38,4 @@ description = "puzzle with ten letters"
 
 [9a101e81-9216-472b-b458-b513a7adacf7]
 description = "puzzle with ten letters and 199 addends"
+include = false

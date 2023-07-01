@@ -928,6 +928,14 @@
         "difficulty": 5
       },
       {
+        "slug": "ocr-numbers",
+        "name": "OCR Numbers",
+        "uuid": "26bebd08-8867-4a90-94ba-5b620ab3af84",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "connect",
         "name": "Connect",
         "uuid": "9a889142-2223-407a-af9a-df9c14eb6a9e",

@@ -9,7 +9,7 @@ describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
                     <% if cases["expected"].as_h? %>
                         expect_raises(ArgumentError) do
                     <% end %>
-                    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(<%= cases["input"]["key"]["a"].inspect %>, <%= cases["input"]["key"]["a"].inspect %>, <%= cases["input"]["phrase"].inspect %>)
+                    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(<%= cases["input"]["key"]["a"].inspect %>, <%= cases["input"]["key"]["b"].inspect %>, <%= cases["input"]["phrase"].inspect %>)
                     <% if cases["expected"].as_h? %>
                         end
                     <% else -%>

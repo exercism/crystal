@@ -1,0 +1,22 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <%- @json["cases"].as_a.each do |cases| %>
+        describe <%= cases["description"].inspect %> do
+            <%- cases["cases"].as_a.each do |cases| %>
+                <%= status()%> "<%-= cases["description"] %>" do
+                    <% if cases["expected"].as_h? %>
+                        expect_raises(ArgumentError) do
+                    <% end %>
+                    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(<%= cases["input"]["key"]["a"].inspect %>, <%= cases["input"]["key"]["a"].inspect %>, <%= cases["input"]["phrase"].inspect %>)
+                    <% if cases["expected"].as_h? %>
+                        end
+                    <% else -%>
+                        .should eq(<%= cases["expected"].inspect %>)
+                    <% end %>
+                end
+            <% end %>
+        end
+    <% end %>
+end

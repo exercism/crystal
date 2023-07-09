@@ -1,0 +1,17 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/affine_cipher.cr"
+    ],
+    "test": [
+      "spec/affine_cipher_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Create an implementation of the Affine cipher, an ancient encryption algorithm from the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Affine_cipher"
+}

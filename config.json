@@ -16,7 +16,7 @@
     "highlightjs_language": "crystal"
   },
   "test_runner": {
-    "average_run_time": 6.0
+    "average_run_time": 6
   },
   "files": {
     "solution": [

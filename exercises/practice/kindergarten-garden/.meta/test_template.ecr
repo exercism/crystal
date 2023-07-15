@@ -1,0 +1,22 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        describe <%= cases["description"].inspect %> do
+            <% cases["cases"].as_a.each do |cases| %>
+                <%= status()%> "<%-= cases["description"] %>" do
+                    <% if cases["property"]? %>
+                        garden = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["input"]["diagram"].inspect %>)
+                        garden.<%= cases["property"] %>(<%= cases["input"]["student"].inspect %>).should eq(<%= cases["expected"] %>)
+                    <% else %>
+                        garden = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["cases"][0]["input"]["diagram"].inspect %>)
+                        <% cases["cases"].as_a.each do |cases| -%>
+                            garden.<%= cases["property"] %>(<%= cases["input"]["student"].inspect %>).should eq(<%= cases["expected"] %>)
+                        <% end %>
+                    <% end %>
+                end
+            <% end %>
+        end
+    <% end %>
+end

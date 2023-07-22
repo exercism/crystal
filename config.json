@@ -1034,6 +1034,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
+      },
+      {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "9881c617-2388-4c30-884b-f79cbebcdb55",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
       }
     ]
   },

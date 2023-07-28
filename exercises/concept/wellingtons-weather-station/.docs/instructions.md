@@ -83,7 +83,7 @@ Temperature.new.to_fahrenheit(10)
 ## 4. Get the number of missing sensors
 
 During the installation of the temperature sensors, the maintenance workers realized some sensors were missing.
-To build a complete temperature measurement unit so are 4 temperature sensors required.
+Each temperature measurement unit requires 4 temperature sensors.
 The maintenance team counted how many sensors they had, but they do not know how many sensors are missing.
 They would like to get some help counting how many sensors they need to buy to build another complete temperature measurement unit.
 

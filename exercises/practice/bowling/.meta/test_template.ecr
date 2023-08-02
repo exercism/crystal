@@ -1,0 +1,28 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            game = <%= to_capitalized(@json["exercise"].to_s) %>.new
+            <% if cases["input"]["previousRolls"].as_a.size > 0 -%>
+                <%= cases["input"]["previousRolls"].inspect %>.each do |roll|
+                    game.roll(roll)
+                end
+            <% end -%>
+            <% if cases["input"]["roll"]? -%>
+                expect_raises(ArgumentError) do
+                    game.<%= cases["property"] %>(<%= cases["input"]["roll"].inspect %>)
+                end
+            <% else -%>
+                <% if cases["expected"].as_h? -%>
+                    expect_raises(ArgumentError) do
+                        game.<%= cases["property"] %>
+                    end
+                <% else -%>
+                    game.<%= cases["property"] %>.should eq(<%= cases["expected"].inspect %>)
+                <% end %>
+            <% end %>
+        end
+    <% end %>
+end

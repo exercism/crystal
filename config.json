@@ -925,6 +925,14 @@
         "difficulty": 4
       },
       {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "18510219-c432-4280-bd22-de0ed6cb40c1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",

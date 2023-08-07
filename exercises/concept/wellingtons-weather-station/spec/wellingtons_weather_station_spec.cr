@@ -58,7 +58,7 @@ describe "Temprature" do
 
   describe "number_missing_sensors" do
     it "should return 0 if there are no missing sensors" do
-      Temperature.new.number_missing_sensors(4).should eq 4
+      Temperature.new.number_missing_sensors(4).should eq 0
     end
 
     it "should return 1 if there is one missing sensor" do

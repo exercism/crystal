@@ -20,9 +20,9 @@ class SavingsAccount
     balance + interest(balance)
   end
 
-  def self.years_before_desired_balance(current_balance, targetBalance)
+  def self.years_before_desired_balance(current_balance, target_balance)
     years = 0
-    while current_balance < targetBalance
+    while current_balance < target_balance
       current_balance = annual_balance_update(current_balance)
       years += 1
     end

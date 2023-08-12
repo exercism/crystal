@@ -933,6 +933,14 @@
         "difficulty": 4
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "679d0ac6-f14a-475d-836a-08ce39750216",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",

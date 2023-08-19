@@ -781,6 +781,15 @@
         ]
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "2b18edd0-c07e-4125-b21d-20bf07828cac",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

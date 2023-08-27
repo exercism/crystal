@@ -790,6 +790,15 @@
         "topics": []
       },
       {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "c7482e09-16f3-4d52-a410-e00d820c2d8e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

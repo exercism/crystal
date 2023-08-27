@@ -1,0 +1,25 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            buffer = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["input"]["capacity"].inspect %>)
+            <% cases["input"]["operations"].as_a.each do |operation| -%>
+                <% if operation["should_succeed"]? && operation["should_succeed"].to_s == "false" -%>
+                    expect_raises(RuntimeError) do
+                <% end -%>
+                <% if operation["item"]? -%>
+                    buffer.<%= operation["operation"].to_s %>(<%= operation["item"].inspect %>)
+                <% elsif operation["expected"]? -%>
+                    buffer.<%= operation["operation"].to_s %>().should eq(<%= operation["expected"].inspect %>)
+                <% else -%>
+                    buffer.<%= operation["operation"].to_s %>()
+                <% end -%>
+                <% if operation["should_succeed"]? && operation["should_succeed"].to_s == "false" -%>
+                    end
+                <% end -%>
+            <% end -%>
+        end
+    <% end %>
+end

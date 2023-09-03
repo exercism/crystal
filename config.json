@@ -815,6 +815,15 @@
         "topics": []
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "70be18b6-b153-466f-b270-c94d5406b1ab",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

@@ -1,0 +1,12 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            plaintext = <%= cases["input"]["plaintext"].inspect %>
+            ciphertext = <%= cases["expected"].inspect %>
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s %>(plaintext).should eq(ciphertext)
+        end
+    <% end %>
+end

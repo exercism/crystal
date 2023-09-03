@@ -1,12 +1,12 @@
 module TicketingReservation
-  MINIUM_TICKETS = 100
+  MINIMUM_TICKETS = 100
 
   def tickets_available : UInt32
     @tickets_available
   end
 
   def order_ticket? : Bool
-    if tickets_available() >= MINIUM_TICKETS
+    if tickets_available() >= MINIMUM_TICKETS
       @tickets_available -= 1
       return true
     end

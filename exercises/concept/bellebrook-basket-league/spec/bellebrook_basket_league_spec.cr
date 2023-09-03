@@ -16,7 +16,7 @@ describe TicketSystem do
     end
   end
 
-  describe "tickets_avaiable" do
+  describe "tickets_available" do
     it "Can return the number of tickets available" do
       {% if @top_level.has_constant? "TicketingReservation" %}
         {% if TicketingReservation.has_method? "tickets_available" %}

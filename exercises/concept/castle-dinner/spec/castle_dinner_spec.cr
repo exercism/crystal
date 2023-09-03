@@ -47,7 +47,7 @@ describe CastleDinner do
       CastleDinner.replace_drink("Water").should eq "Apple juice"
     end
 
-    it "should replace Ale with Iced tea" do
+    it "should replace Ale with Apple Juice" do
       CastleDinner.replace_drink("Ale").should eq "Apple juice"
     end
   end

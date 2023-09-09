@@ -824,6 +824,15 @@
         "topics": []
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "0c4fd479-201f-4586-b1c9-3a05af73eda9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

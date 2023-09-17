@@ -1,0 +1,12 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            dice = <%= cases["input"]["dice"].as_a.inspect %>
+            category = <%= to_capitalized(@json["exercise"].to_s) %>::Category::<%= to_capitalized(cases["input"]["category"].to_s.gsub(" ", "-")) %>
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s %>(dice, category).should eq(<%= cases["expected"] %>)
+        end
+    <% end %>
+end

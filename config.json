@@ -841,6 +841,15 @@
         "topics": []
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "ca3477f3-8bf0-46b6-9495-77ea6eded945",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

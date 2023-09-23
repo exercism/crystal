@@ -1027,6 +1027,14 @@
         "difficulty": 4
       },
       {
+        "slug": "rectangles",
+        "name": "Rectangles",
+        "uuid": "15257768-af28-4066-bc5c-effc189c4b8e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",

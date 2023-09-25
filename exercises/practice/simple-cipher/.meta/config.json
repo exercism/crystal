@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "kahgoh"
+  ],
+  "files": {
+    "solution": [
+      "src/simple_cipher.cr"
+    ],
+    "test": [
+      "spec/simple_cipher_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher.",
+  "source": "Substitution Cipher at Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Substitution_cipher"
+}

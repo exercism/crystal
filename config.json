@@ -1170,6 +1170,17 @@
           "math"
         ],
         "status": "deprecated"
+      },
+      {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "d01026c6-3829-449c-852c-e0a13fc1db40",
+        "practices": [
+          "strings",
+          "string-methods"
+        ],
+        "prerequisites": [],
+        "difficulty": 6
       }
     ]
   },

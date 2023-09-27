@@ -1,0 +1,23 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+  <%- @json["cases"].as_a.each do |cases| -%>
+    describe <%-= to_capitalized(cases["description"].to_s).inspect %> do
+      <% cases["cases"].as_a.each do |subcase| -%>
+
+        <%= status() %> <%= subcase["description"].inspect %> do
+          cipher = SimpleCipher.new<% if subcase["input"]["key"]? %>("<%= subcase["input"]["key"] %>")<% end %>
+          <%- if subcase["expected"].as_h? && subcase["expected"]["match"]? -%>
+          /<%= subcase["expected"]["match"] %>/.matches?(cipher.<%= subcase["property"] %>).should be_true
+          <%- elsif subcase["property"] == "decode" -%>
+          cipher.decode(<% if subcase["input"]["ciphertext"] == "cipher.encode" %>cipher.encode("<%= subcase["input"]["plaintext"] %>")<% elsif subcase["input"]["ciphertext"] == "cipher.key.substring(0, expected.length)" %>cipher.key[0, "<%= subcase["expected"] %>".size]<% else %>"<%= subcase["input"]["ciphertext"] %>"<% end %>).should eq("<%= subcase["expected"] %>")
+          <%- elsif subcase["property"] == "encode" -%>
+          cipher.encode("<%= subcase["input"]["plaintext"] %>").should eq(<% if subcase["expected"] == "cipher.key.substring(0, plaintext.length)" %>cipher.key[0, "<%= subcase["input"]["plaintext"] %>".size]<% else %>"<%= subcase["expected"] %>"<% end %>)
+          <%- end -%>
+        end
+      <% end -%>
+    end
+
+  <% end %>
+end

@@ -22,6 +22,6 @@ p speed_limit(2) # => 80
 p speed_limit(3) # => 100
 ```
 
-```exercism/note
+~~~~exercism/note
 The `return` keyword should be omitted when the last expression in a method is the value that should be returned.
-```
+~~~~

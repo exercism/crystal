@@ -18,7 +18,7 @@ Ranges can also be created using the `Range` initializer.
 Range.new(1, 5) # A range containing 1, 2, 3, 4, 5
 ```
 
-````exercism/note
+~~~~exercism/note
 When creating a range in Crystal using the range operators `..` or `...`, and wanting to call a method on the range, you need to wrap the range in parentheses.
 This is because the otherwise will the method be called on the 2nd argument of the range operator.
 
@@ -26,7 +26,7 @@ This is because the otherwise will the method be called on the 2nd argument of t
 (1..5).size # => 5
 1..5.size # => Error: undefined method 'size' for Int32
 ```
-````
+~~~~
 
 ## Getting substrings
 
@@ -69,9 +69,9 @@ Using beginless and endless ranges is useful when you want to, for example, slic
 "Hello World"[..5] # => "Hello"
 ```
 
-```exercism/caution
+~~~~exercism/caution
 If not used on a collection, the endless range can cause an endless sequence, if not used with caution.
-```
+~~~~
 
 ## Char ranges
 
@@ -94,7 +94,7 @@ Its behavior can become confusing when doing more complex string ranges, so use 
 
 ## Custom objects in ranges
 
-````exercism/advanced
+~~~~exercism/advanced
 Crystal allows you to use custom objects in ranges.
 The requirement for this is that the object implements the following:
 
@@ -125,7 +125,7 @@ end
 p (Foo.new(1)..Foo.new(5))
 # => #<Foo:0x7f3552bebe70 @value=1>, #<Foo:0x7f3552bebe50 @value=2>, #<Foo:0x7f3552bebe40 @value=3>, #<Foo:0x7f3552bebe30 @value=4>, #<Foo:0x7f3552bebe20 @value=5>
 ```
-````
+~~~~
 
 [range]: https://crystal-lang.org/api/latest/Range.html
 [sum]: https://crystal-lang.org/api/latest/Range.html#sum%28initial%29-instance-method

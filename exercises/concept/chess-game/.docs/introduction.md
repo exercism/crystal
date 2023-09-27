@@ -18,7 +18,7 @@ Ranges can also be created using the `Range` initializer.
 Range.new(1, 5) # A range containing 1, 2, 3, 4, 5
 ```
 
-````exercism/note
+~~~~exercism/note
 When creating a range in Crystal using the range operators `..` or `...`, and wanting to call a method on the range, you need to wrap the range in parentheses.
 This is because the otherwise will the method be called on the 2nd argument of the range operator.
 
@@ -26,7 +26,7 @@ This is because the otherwise will the method be called on the 2nd argument of t
 (1..5).size # => 5
 1..5.size # => Error: undefined method 'size' for Int32
 ```
-````
+~~~~
 
 ## Getting substrings
 
@@ -69,9 +69,9 @@ Using beginless and endless ranges is useful when you want to, for example, slic
 "Hello World"[..5] # => "Hello"
 ```
 
-```exercism/caution
+~~~~exercism/caution
 If not used on a collection, the endless range can cause an endless sequence, if not used with caution.
-```
+~~~~
 
 ## Char ranges
 

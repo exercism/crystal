@@ -42,7 +42,7 @@ end
 Account.new(4)
 ```
 
-````exercism/note
+~~~~exercism/note
 The `initialize` method cannot manually return a value, instead, `new` returns the newly created instance.
 
 ```crystal
@@ -55,7 +55,7 @@ end
 Account.new(4)
 # => #<Account:0x7f5dc33dcea0>
 ```
-````
+~~~~
 
 ## Instance methods
 

@@ -53,9 +53,9 @@ SavingsAccount.years_before_desired_balance(balance, target_balance)
 # => 14
 ```
 
-```exercism/note
+~~~~exercism/note
 When applying simple interest to a principal balance, the balance is multiplied by the interest rate and the product of the two is the interest amount.
 
 Compound interest on the other hand is done by applying interest on a recurring basis.
 On each application the interest amount is computed and added to the principal balance so that subsequent interest calculations are subject to a greater principal balance.
-```
+~~~~

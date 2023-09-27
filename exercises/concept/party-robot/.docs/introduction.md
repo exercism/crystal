@@ -82,9 +82,9 @@ The size of a string is a stored property of the string, so it doesn't have to c
 Indexing is when you want to get a specific character from a string.
 To get a character from a string you can use familiar bracket notation.
 
-```exercism/note
+~~~~exercism/note
 `[]` is actually implemented as a String instance method, where the index is the method argument.
-```
+~~~~
 
 In Crystal is the first character in a string at index 0.
 

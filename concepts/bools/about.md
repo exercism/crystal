@@ -72,9 +72,9 @@ Since what is in parentheses is evaluated first, in the following example, the _
 # => true
 ```
 
-```exercism/note
+~~~~exercism/note
 You should only use parentheses when they affect the result, otherwise, should they be omitted.
-```
+~~~~
 
 ## Truthy and falsey
 

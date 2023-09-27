@@ -4,11 +4,11 @@ Crystal allows for a variable to consist of multiple types.
 This is called a [union type][union-type].
 In Crystal it is quite common for a union type to be inferred by the compiler.
 
-```exercism/note
+~~~~exercism/note
 A union type, even if it consists of multiple types, is still a single type at runtime.
 Meaning a union type is built of String and Int32 so it will not be both at the same time.
 Instead, it will be either a String or an Int32.
-```
+~~~~
 
 A union type is declared by separating the types with a pipe (`|`).
 They are often placed in parenthesis, but it is not required.
@@ -72,10 +72,10 @@ end
 This `is_a?` is not limited to having just a single type as an argument, but can have a union type as an argument.
 And can also be combined with `&&` to allow for multiple types.
 
-```exercism/note
+~~~~exercism/note
 The `is_a?` method when using it in conjunction with a control expression can't be an instance variable or class variable.
 Instead these have to be assigned to a local variable first.
-```
+~~~~
 
 ## as
 
@@ -91,11 +91,11 @@ a.as(String).downcase # => "hello"
 a.as(Int32) # Error: can't cast String to Int32
 ```
 
-```exercism/caution
+~~~~exercism/caution
 This approach is only meant for when you are sure that the type is the expected type or if you want to raise an exception when it is not.
 
 Using this approach with an improper setup can lead to unexpected behavior.
-```
+~~~~
 
 ## as?
 

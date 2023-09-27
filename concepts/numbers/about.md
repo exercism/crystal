@@ -68,7 +68,7 @@ The result will always be a Float.
 # => 2.0
 ```
 
-````exercism/caution
+~~~~exercism/caution
 In some programming languages when dividing by zero the result will be an error.
 
 In Crystal when dividing by zero the result will be `Infinity` or `-Infinity`.
@@ -85,7 +85,7 @@ Infinity and NaN are special values in the Float type.
 0 / 0
 # => NaN
 ```
-````
+~~~~
 
 ## Integer division
 
@@ -100,10 +100,10 @@ The result will always be rounded down to an Int.
 # => 2
 ```
 
-```exercism/caution
+~~~~exercism/caution
 When dividing by zero when using integer division results in a `DivisionByZeroError`.
 This is different from normal division.
-```
+~~~~
 
 ### Modulus
 
@@ -121,7 +121,7 @@ The `%` operator is used for modulus.
 # => 2
 ```
 
-````exercism/caution
+~~~~exercism/caution
 Dividing by zero when using modulo results in a DivisionByZeroError.
 This is different from normal division.
 
@@ -129,7 +129,7 @@ This is different from normal division.
 1 % 0
 # Error: Unhandled exception: Division by 0 (DivisionByZeroError)
 ```
-````
+~~~~
 
 ## Exponentiation
 

@@ -5,10 +5,10 @@ The company you work for is just about to launch their brand new smartphone, cal
 The new processor has the power to be able to do more secure password handling than ever before, and the company has decided to use this to its advantage.
 They have asked you to implement a password lock system for the phone that will allow the user to set a password and then check if a given password is correct.
 
-```exercism/caution
+~~~~exercism/caution
 The password system practiced in this exercise is not secure and is only used for educational purposes.
 It should **NOT** be used in any real-world applications.
-```
+~~~~
 
 ## 1. Set a password
 

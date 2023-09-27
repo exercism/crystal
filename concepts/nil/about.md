@@ -68,10 +68,10 @@ This can be used to make if the value is `nil` it will be falsey and thereby the
 
 ## not_nil!
 
-```exercism/caution 
+~~~~exercism/caution 
 This approach should be seen as a last resort, and should only be used if you are **sure** that the value is not nil.
 If possible use the other approaches instead.
-```
+~~~~
 
 [`not_nil!`][not_nil] is a method that allows you to tell the compiler that a value is not nil and will thereby make so the type it holds can't be nil.
 It does that by raising an exception if the value is nil.

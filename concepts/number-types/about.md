@@ -94,7 +94,7 @@ Then `Float64` is more precise than Float32 and so on.
 
 ## Dig Deeper: unsigned integers vs signed integers
 
-```exercism/advanced
+~~~~exercism/advanced
 Under the hood, what differentiates unsigned and signed integers is that signed integers use the first bit to store the sign.
 The sign is either positive or negative.
 For unsigned integers, the first bit is used to store the value.
@@ -102,7 +102,7 @@ So for a signed 32-bit integer is the max value 2^31 - 1.
 For an unsigned 32-bit integer is the max value 2^32 - 1.
 
 If you are interested in learning more about signedness you can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Signedness).
-```
+~~~~
 
 [float]: https://crystal-lang.org/api/latest/Float.html
 [int]: https://crystal-lang.org/api/latest/Int.html

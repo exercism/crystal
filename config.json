@@ -6,7 +6,7 @@
     "concept_exercises": true,
     "test_runner": true,
     "representer": true,
-    "analyzer": false
+    "analyzer": true
   },
   "blurb": "Crystal combines the elegant and expressive syntax of Ruby with the speed and type safety of a compiled language. Crystal supports advanced type inference, macros and makes writing concurrent code easy and safe.",
   "version": 3,

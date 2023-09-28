@@ -15,7 +15,7 @@ The method should return the first letter of the title.
 
 ```Crystal
 Library.first_letter("Mystery of the Crystal Skull")
-# => "M"
+# => 'M'
 ```
 
 ## 2. Get authors initials
@@ -46,8 +46,8 @@ Implement the `Library.decrypt_character` method that takes an argument `charact
 The method should return the decrypted letter.
 
 ```Crystal
-Library.decrypt_character("a")
-# => "z"
+Library.decrypt_character('a')
+# => 'z'
 ```
 
 ## 4. Decrypt text

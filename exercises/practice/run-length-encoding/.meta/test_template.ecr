@@ -8,7 +8,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <% if sub_case["property"].to_s == "consistency" %>
         <%= to_capitalized(@json["exercise"].to_s) %>.decode(<%= to_capitalized(@json["exercise"].to_s) %>.encode("<%= sub_case["input"]["string"] %>")).should eq("<%= sub_case["expected"] %>")
         <% else %>
-<%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(sub_case["property"].to_s)%>("<%= sub_case["input"]["string"] %>").should eq("<%= sub_case["expected"] %>")
+<%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["string"] %>").should eq("<%= sub_case["expected"] %>")
         <% end %>
         end
     <% end %>

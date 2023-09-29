@@ -6,9 +6,9 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- cases["cases"].as_a.each do |sub_case| %>
     <%= status()%> "<%-= sub_case["description"] %>" do
         <%- if sub_case["input"]["item"]? -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(sub_case["property"].to_s)%>("<%= sub_case["input"]["item"] %>", <%= sub_case["input"]["score"] %>).should eq(<%= sub_case["expected"] %>)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["item"] %>", <%= sub_case["input"]["score"] %>).should eq(<%= sub_case["expected"] %>)
         <%- else -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(sub_case["property"].to_s)%>(<%= sub_case["input"]["score"] %>).should eq(<%= sub_case["expected"]? %> of String)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["score"] %>).should eq(<%= sub_case["expected"]? %> of String)
         <% end %>
     end
     <% end %>

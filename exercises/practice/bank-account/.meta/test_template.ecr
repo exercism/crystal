@@ -39,7 +39,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <%- elsif operations["operation"].to_s == "open" || operations["operation"].to_s == "close" -%>
             bank_account.<%= to_snake(operations["operation"].to_s) %>
         <%- elsif operations["operation"].to_s == "deposit" || operations["operation"].to_s == "withdraw" -%>
-            bank_account.<%= to_snake(operations["operation"].to_s)%>(<%= operations["amount"] %>)
+            bank_account.<%= operations["operation"].to_s.underscore %>(<%= operations["amount"] %>)
         <%- elsif operations["operation"].to_s == "balance" -%>
             <% if cases["expected"].as_h? %>
                 expect_raises(ArgumentError) do

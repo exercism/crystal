@@ -6,12 +6,12 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%= status()%> "<%-= cases["description"] %>" do
     <%- if cases["expected"]["error"]? %>
     expect_raises(ArgumentError) do
-        <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s)%>("<%= cases["input"]["strand"] %>")
+        <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>("<%= cases["input"]["strand"] %>")
     end
     <%- else %>
     input = "<%= cases["input"]["strand"] %>"
     expected = {'A' => <%= cases["expected"]["A"] %>, 'C' => <%= cases["expected"]["C"] %>, 'G' => <%= cases["expected"]["G"] %>, 'T' => <%= cases["expected"]["T"] %>}
-    <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s)%>(input).should eq(expected)
+    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input).should eq(expected)
     <%- end %>
     end
 <% end %>

@@ -9,10 +9,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         output_base = <%= cases["input"]["outputBase"] %>
         <%- if cases["expected"].as_h? -%>
         expect_raises(ArgumentError) do
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s)%>(input_base, digits, output_base)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input_base, digits, output_base)
         end
         <%- else -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s)%>(input_base, digits, output_base).should eq(<%= cases["expected"] %> of Int32)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input_base, digits, output_base).should eq(<%= cases["expected"] %> of Int32)
         <% end %>
     end
 <% end %>

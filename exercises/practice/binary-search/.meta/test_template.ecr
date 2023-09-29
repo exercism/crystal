@@ -8,10 +8,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     value = <%= cases["input"]["value"] %> 
     <%- if cases["expected"].as_h? %>
     expect_raises(ArgumentError) do
-        binary.<%= to_snake(cases["property"].to_s)%>(value)
+        binary.<%= cases["property"].to_s.underscore %>(value)
     end
     <%- else %>
-    binary.<%= to_snake(cases["property"].to_s)%>(value).should eq(<%= cases["expected"]%>)
+    binary.<%= cases["property"].to_s.underscore %>(value).should eq(<%= cases["expected"]%>)
     <%- end %>
     end
 <% end %>

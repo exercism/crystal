@@ -4,7 +4,7 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
-        <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s)%>(<%= cases["input"]["name"].as_s? ? cases["input"]["name"].inspect : "" %>).should eq("<%= cases["expected"] %>")
+        <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(<%= cases["input"]["name"].as_s? ? cases["input"]["name"].inspect : "" %>).should eq("<%= cases["expected"] %>")
     end
 <% end %>
 end

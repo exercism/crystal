@@ -6,12 +6,12 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- if cases["cases"]? -%>
         <%- cases["cases"].as_a.each do |subcases| %>
     <%= status()%> "<%-= subcases["description"] %>" do
-        <%= to_capitalized(@json["exercise"].to_s)%>.<%= to_snake(subcases["property"].to_s)%>("<%= subcases["input"]["color"]%>").should eq(<%= subcases["expected"].to_s%>)
+        <%= to_capitalized(@json["exercise"].to_s)%>.<%= subcases["property"].to_s.underscore %>("<%= subcases["input"]["color"]%>").should eq(<%= subcases["expected"].to_s%>)
     end
         <% end %>
     <%- else -%>    
     <%= status()%> "<%-= cases["description"] %>" do
-        <%= to_capitalized(@json["exercise"].to_s)%>.<%= to_snake(cases["property"].to_s)%>().should eq(<%= cases["expected"]%>)
+        <%= to_capitalized(@json["exercise"].to_s)%>.<%= cases["property"].to_s.underscore %>().should eq(<%= cases["expected"]%>)
     end
     <% end %>
 <% end %>

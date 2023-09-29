@@ -5,7 +5,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%- cases["cases"].as_a.each do |sub_case| %>
     <%= status()%> "<%-= sub_case["description"] %>" do
-    Squares.<%= to_snake(sub_case["property"].to_s)%>(<%= sub_case["input"]["number"] %>).should eq(<%= sub_case["expected"]%>)
+    Squares.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["number"] %>).should eq(<%= sub_case["expected"]%>)
     end
     <% end %>
 <% end %>

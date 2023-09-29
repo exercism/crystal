@@ -11,12 +11,12 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
             <%- else -%>
                 series = <%= to_capitalized(@json["exercise"].to_s) %>.new("<%= cases["input"]["digits"] %>")
                 expect_raises(ArgumentError) do
-                    series.<%= to_snake(cases["property"].to_s)%>(<%= cases["input"]["span"] %>)
+                    series.<%= cases["property"].to_s.underscore %>(<%= cases["input"]["span"] %>)
             <% end %>
             end
         <%- else -%>
             series = <%= to_capitalized(@json["exercise"].to_s) %>.new("<%= cases["input"]["digits"] %>")
-            series.<%= to_snake(cases["property"].to_s)%>(<%= cases["input"]["span"] %>).should eq(<%= cases["expected"] %>)
+            series.<%= cases["property"].to_s.underscore %>(<%= cases["input"]["span"] %>).should eq(<%= cases["expected"] %>)
         <% end %>
     end
 <% end %>

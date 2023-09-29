@@ -6,7 +6,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%= status()%> "<%-= cases["description"] %>" do
         input = <%= cases["input"]["legacy"].as_h%>
         expected = <%= cases["expected"].as_h%>
-        <%= @json["exercise"].to_s.upcase %>.<%= to_snake(cases["property"].to_s)%>(input).should eq(expected)
+        <%= @json["exercise"].to_s.upcase %>.<%= cases["property"].to_s.underscore %>(input).should eq(expected)
     end
 <% end %>
 end

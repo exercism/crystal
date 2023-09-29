@@ -7,7 +7,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <%= status()%> "<%-= subcases["description"] %>" do
         robot = <%= to_capitalized(@json["exercise"].to_s)%>.new({<%= subcases["input"]["position"]["x"]%>, <%= subcases["input"]["position"]["y"]%>}, :<%= subcases["input"]["direction"]%>)
         <%- if subcases["input"]["instructions"]? -%>
-            robot.<%= to_snake(subcases["property"].to_s)%>("<%= subcases["input"]["instructions"] %>")
+            robot.<%= subcases["property"].to_s.underscore %>("<%= subcases["input"]["instructions"] %>")
         <% end %>
         robot.x.should eq <%= subcases["expected"]["position"]["x"]%>
         robot.y.should eq <%= subcases["expected"]["position"]["y"]%>

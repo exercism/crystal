@@ -7,15 +7,15 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     palindrome = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["input"]["min"] %>, <%= cases["input"]["max"] %>)
     <%- if cases["expected"]["error"]? -%>
     expect_raises(ArgumentError) do
-        palindrome.<%= to_snake(cases["property"].to_s)%>()
+        palindrome.<%= cases["property"].to_s.underscore %>()
     end
     <%- else -%>
     <%- if cases["expected"]["factors"].as_a.size == 2 -%>
-    result = palindrome.<%= to_snake(cases["property"].to_s)%>
+    result = palindrome.<%= cases["property"].to_s.underscore %>
     result[0].should eq <%= cases["expected"]["value"] %>
     <%= "[#{cases["expected"]["factors"].as_a}, #{cases["expected"]["factors"].as_a.reverse}]"%>.should contain result[1]
     <%- else -%>
-    palindrome.<%= to_snake(cases["property"].to_s)%>.should eq({<%= cases["expected"]["value"].as_i? ? cases["expected"]["value"] :  "nil" %> , <%= cases["expected"]["factors"].as_a.empty? ? "#{ cases["expected"]["factors"]} of Int32": cases["expected"]["factors"]%>})
+    palindrome.<%= cases["property"].to_s.underscore %>.should eq({<%= cases["expected"]["value"].as_i? ? cases["expected"]["value"] :  "nil" %> , <%= cases["expected"]["factors"].as_a.empty? ? "#{ cases["expected"]["factors"]} of Int32": cases["expected"]["factors"]%>})
     <%- end -%>
     <%- end %>
     end

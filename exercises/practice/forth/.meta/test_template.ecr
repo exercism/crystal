@@ -12,10 +12,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
             result.should eq(<%= sub_case["expected"]? %>)
         <%- elsif sub_case["expected"].as_h? -%>
             expect_raises(ArgumentError) do
-                <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(sub_case["property"].to_s)%>("<%= sub_case["input"]["instructions"].as_a.join("") %>")
+                <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["instructions"].as_a.join("") %>")
             end
         <%- else -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(sub_case["property"].to_s)%>("<%= sub_case["input"]["instructions"].as_a.join("") %>").should eq(<%= sub_case["expected"]? %> of Int32)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["instructions"].as_a.join("") %>").should eq(<%= sub_case["expected"]? %> of Int32)
         <% end %>
     end
     <% end %>

@@ -10,7 +10,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
                 <%= to_capitalized(@json["exercise"].to_s) %>.new({<%= sub_case["input"]["sides"].to_s[1...-1] %>})
             end
         <%- else %>
-            <%= to_capitalized(@json["exercise"].to_s) %>.new({<%= sub_case["input"]["sides"].to_s[1...-1] %>}).<%= to_snake(sub_case["property"].to_s)%>?.should <%-= sub_case["expected"].as_bool ? "be_true" : "be_false" %>
+            <%= to_capitalized(@json["exercise"].to_s) %>.new({<%= sub_case["input"]["sides"].to_s[1...-1] %>}).<%= sub_case["property"].to_s.underscore %>?.should <%-= sub_case["expected"].as_bool ? "be_true" : "be_false" %>
         <% end %>
     end
     <% end %>

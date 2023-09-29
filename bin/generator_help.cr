@@ -110,18 +110,7 @@ class GeneratorHelp
   end
 
   def to_capitalized(input)
-    result = ""
-    input = input.capitalize
-    capitalized = false
-    input.each_char do |x|
-      if x == '-'
-        capitalized = true
-      else
-        result += capitalized ? x.upcase : x
-        capitalized = false
-      end
-    end
-    result
+    input.tr("-","_").camelcase
   end
 
   def status

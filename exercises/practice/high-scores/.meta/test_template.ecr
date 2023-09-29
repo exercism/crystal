@@ -9,7 +9,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <% if subcases["property"].to_s.includes?("After") %>
         high_scores = <%= to_capitalized(@json["exercise"].to_s)%>.new(<%= subcases["input"]["scores"]%>)
         expected = <%= subcases["expected"]%>
-        high_scores.<%= subcases["property"].to_s.split("After")[1] == "Best" || subcases["property"].to_s.split("After")[1] == "TopThree" ? to_snake("personal" + subcases["property"].to_s.split("After")[1]) : subcases["property"].to_s.split("After")[1]%>()
+        high_scores.<%= subcases["property"].to_s.split("After")[1] == "Best" || subcases["property"].to_s.split("After")[1] == "TopThree" ? ("personal" + subcases["property"].to_s.split("After")[1]).underscore : subcases["property"].to_s.split("After")[1]%>()
         high_scores.<%= subcases["property"].to_s.split("After")[0].underscore %>.should eq expected
         <% else %>
         high_scores = <%= to_capitalized(@json["exercise"].to_s)%>.new(<%= subcases["input"]["scores"]%>)

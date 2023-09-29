@@ -4,8 +4,8 @@ require "../src/*"
 describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
     <% @json["cases"].as_a.each do |cases| %>
         <%= status()%> "<%-= cases["description"] %>" do
-            <%= to_snake(cases["property"].to_s) %> = <%= to_capitalized(@json["exercise"].to_s) %>.<%= to_snake(cases["property"].to_s) %>(<%= cases["input"]["maximumWeight"].inspect %>, <%= cases["input"]["items"].inspect.gsub("\"", "").gsub(" =>", ":").gsub("{", "\n{").gsub("\n{}", "[] of NamedTuple(weight: Int32, value: Int32)") %>)
-            <%= to_snake(cases["property"].to_s) %>.should eq(<%= cases["expected"].inspect %>)
+            <%= cases["property"].to_s.underscore %> = <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(<%= cases["input"]["maximumWeight"].inspect %>, <%= cases["input"]["items"].inspect.gsub("\"", "").gsub(" =>", ":").gsub("{", "\n{").gsub("\n{}", "[] of NamedTuple(weight: Int32, value: Int32)") %>)
+            <%= cases["property"].to_s.underscore %>.should eq(<%= cases["expected"].inspect %>)
         end
     <% end %>
 end

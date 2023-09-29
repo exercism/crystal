@@ -37,7 +37,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 
             1000.times { Fiber.yield }
         <%- elsif operations["operation"].to_s == "open" || operations["operation"].to_s == "close" -%>
-            bank_account.<%= to_snake(operations["operation"].to_s) %>
+            bank_account.<%= operations["operation"].to_s.underscore %>
         <%- elsif operations["operation"].to_s == "deposit" || operations["operation"].to_s == "withdraw" -%>
             bank_account.<%= operations["operation"].to_s.underscore %>(<%= operations["amount"] %>)
         <%- elsif operations["operation"].to_s == "balance" -%>

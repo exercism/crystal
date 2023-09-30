@@ -866,6 +866,15 @@
         "topics": []
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "117cb845-d668-4919-be21-283cb60ff576",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": []
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",
@@ -1255,7 +1264,7 @@
       "slug": "nil",
       "name": "Nil"
     },
-    {      
+    {
       "uuid": "1c734ab0-2bec-4521-ae8b-dcb07f7e7357",
       "slug": "union-type",
       "name": "Union Type"

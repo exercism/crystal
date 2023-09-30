@@ -1,0 +1,17 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(<%= cases["input"]["size"] %>).should eq(<%=
+                cases["expected"]
+                    .inspect
+                    .gsub("[[", "[\n[")
+                    .gsub("],", "],\n")
+                    .gsub("]]", "]\n]")
+                    .gsub("[]", "[] of Int32")
+            %>)
+        end
+    <% end %>
+end

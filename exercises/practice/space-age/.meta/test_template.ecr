@@ -6,10 +6,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%= status()%> "<%-= cases["description"] %>" do
     <%- if cases["expected"].as_h? %>
     expect_raises(ArgumentError) do
-        Space::Age.from_seconds(<%= cases["input"]["seconds"] %>).age_on<%-= to_snake(cases["input"]["planet"].to_s) %>
+        Space::Age.from_seconds(<%= cases["input"]["seconds"] %>).age_on_<%-= cases["input"]["planet"].to_s.underscore %>
     end
     <% else %>
-        Space::Age.from_seconds(<%= cases["input"]["seconds"] %>).age_on<%-= to_snake(cases["input"]["planet"].to_s) %>.should be_close(<%= cases["expected"]%>, 0.01)
+        Space::Age.from_seconds(<%= cases["input"]["seconds"] %>).age_on_<%-= cases["input"]["planet"].to_s.underscore %>.should be_close(<%= cases["expected"]%>, 0.01)
     <% end %>
     end
 <% end %>

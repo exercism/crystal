@@ -101,16 +101,8 @@ class GeneratorHelp
     end
   end
 
-  def to_snake(input)
-    result = ""
-    input.each_char do |x|
-      result += x.upcase == x ? "_#{x.downcase}" : x
-    end
-    result
-  end
-
   def to_capitalized(input)
-    input.tr("-","_").camelcase
+    input.tr("-", "_").camelcase
   end
 
   def status

@@ -34,17 +34,17 @@ describe Chess do
     end
   end
 
-  describe "nick_name" do
-    it "Should return correct player nick name" do
-      Chess.nick_name("John", "Doe").should eq "JOOE"
+  describe "nickname" do
+    it "Should return correct player nickname" do
+      Chess.nickname("John", "Doe").should eq "JOOE"
     end
 
     it "Should give correct nickname for 2 letter last name" do
-      Chess.nick_name("Lisa", "Li").should eq "LILI"
+      Chess.nickname("Lisa", "Li").should eq "LILI"
     end
 
     it "Should give correct nickname for 2 letter first name" do
-      Chess.nick_name("Dj", "Walker").should eq "DJER"
+      Chess.nickname("Dj", "Walker").should eq "DJER"
     end
   end
 

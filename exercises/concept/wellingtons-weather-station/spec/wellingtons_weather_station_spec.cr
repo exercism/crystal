@@ -1,7 +1,7 @@
 require "spec"
 require "../src/*"
 
-describe "Temprature" do
+describe "Temperature" do
   describe "to_kelvin" do
     it "should convert 0 celsius to 273.15 Kelvin" do
       Temperature.new.to_kelvin(0).should eq 273.15
@@ -29,7 +29,7 @@ describe "Temprature" do
       Temperature.new.round(1).should eq 1
     end
 
-    it "should convert -273.15 to -273" do
+    it "should convert -273.15 to -273.2" do
       Temperature.new.round(-273.15).should eq -273.2
     end
 
@@ -43,7 +43,7 @@ describe "Temprature" do
       Temperature.new.to_fahrenheit(0).should eq 32
     end
 
-    it "should convert -273.15 to -456 fahrenheit" do
+    it "should convert -273.15 to -459 fahrenheit" do
       Temperature.new.to_fahrenheit(-273.15).should eq -459
     end
 
@@ -73,7 +73,7 @@ describe "Temprature" do
       Temperature.new.number_missing_sensors(1).should eq 3
     end
 
-    it "should return 1 if there are 1 missing sensors when having a big number of sensors" do
+    it "should return 1 if there is 1 missing sensor when having a big number of sensors" do
       Temperature.new.number_missing_sensors(15).should eq 1
     end
   end

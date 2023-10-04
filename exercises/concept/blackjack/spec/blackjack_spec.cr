@@ -97,7 +97,7 @@ describe Blackjack do
       Blackjack.card_range("ten", "king").should eq("high")
     end
 
-    it "blacjack" do
+    it "blackjack" do
       Blackjack.card_range("ace", "ten").should eq("blackjack")
     end
   end

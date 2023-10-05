@@ -18,11 +18,11 @@ You will receive two cards and will be able to see the face up card of the deale
 
 **Note**: Commonly, aces can take the value of 1 or 11 but for simplicity we will assume that they can only take the value of 11.
 
-Implement the method `Blackjack.card_value` which takes a card as a string as an argument.
+Implement the method `Blackjack.parse_value` which takes a card as a string as an argument.
 The method should return the value of the card as an integer.
 
 ```Crystal
-Blackjack.card_value("ace")
+Blackjack.parse_value("ace")
 # => 11
 ```
 

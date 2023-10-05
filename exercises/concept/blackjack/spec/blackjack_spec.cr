@@ -7,7 +7,7 @@ describe Blackjack do
       Blackjack.parse_card("ace").should eq(11)
     end
 
-    it "pase two" do
+    it "parse two" do
       Blackjack.parse_card("two").should eq(2)
     end
 

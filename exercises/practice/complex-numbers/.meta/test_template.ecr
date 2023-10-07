@@ -13,7 +13,6 @@ require "../src/*"
   ".div" => "/"
 } %>
 
-
 <%
 complex_args = ->(j : JSON::Any) {
   j.as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",")
@@ -21,113 +20,53 @@ complex_args = ->(j : JSON::Any) {
 %>
 
 describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% flattened_cases = [] of JSON::Any %>
+
     <% @json["cases"].as_a.each do |cases| %>
         <% if cases["cases"]? %>
-            describe "<%-= cases["description"] %>" do
-                <% cases["cases"].as_a.each do |cases| %>
-                    <% if cases["cases"]? %>
-                        describe "<%-= cases["description"] %>" do
-                            <% cases["cases"].as_a.each do |cases| %>
-                                <%= status()%> "<%-= cases["description"] %>" do
-                                    <% if cases["input"]["z"]? %>
-                                        Complex.new(<%= complex_args.call(cases["input"]["z"]) %>)<%= property_map["." + cases["property"].to_s] -%>
-                                        .should eq <% -%>
-                                        <% if cases["expected"].as_a? -%>
-                                            Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
-                                        <% else -%>
-                                            <%= cases["expected"] -%>
-                                        <% end -%>
-                                    <% else %>
-                                        (<% -%>
-                                        <% if cases["input"]["z1"].as_a? -%>
-                                            Complex.new(<%= complex_args.call(cases["input"]["z1"]) %>)<% -%>
-                                        <% else -%>
-                                            <%= cases["input"]["z1"] -%><% -%>
-                                        <% end -%>
-                                        <%= property_map["." + cases["property"].to_s] -%>(<% -%>
-                                            <% if cases["input"]["z2"].as_a? -%>
-                                                Complex.new(<%= complex_args.call(cases["input"]["z2"]) %>)<% -%>
-                                            <% else -%>
-                                                <%= cases["input"]["z2"] -%><% -%>
-                                            <% end -%>
-                                        )<% -%>
-                                        ).should eq<% -%>
-                                        <% if cases["expected"].as_a? -%>
-                                            Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
-                                        <% else -%>
-                                            <%= cases["expected"] -%>
-                                        <% end -%>
-                                    <% end %>
-                                end
-                            <% end %>
-                        end
-                    <% else -%>
-                        <%= status()%> "<%-= cases["description"] %>" do
-                            <% if cases["input"]["z"]? %>
-                                Complex.new(<%= complex_args.call(cases["input"]["z"]) %>)<%= property_map["." + cases["property"].to_s] -%>
-                                .should eq <% -%>
-                                <% if cases["expected"].as_a? -%>
-                                    Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
-                                <% else -%>
-                                    <%= cases["expected"] -%>
-                                <% end -%>
-                            <% else %>
-                                (<% -%>
-                                <% if cases["input"]["z1"].as_a? -%>
-                                    Complex.new(<%= complex_args.call(cases["input"]["z1"]) %>)<% -%>
-                                <% else -%>
-                                    <%= cases["input"]["z1"] -%><% -%>
-                                <% end -%>
-                                <%= property_map["." + cases["property"].to_s] -%>(<% -%>
-                                    <% if cases["input"]["z2"].as_a? -%>
-                                        Complex.new(<%= complex_args.call(cases["input"]["z2"]) %>)<% -%>
-                                    <% else -%>
-                                        <%= cases["input"]["z2"] -%><% -%>
-                                    <% end -%>
-                                )<% -%>
-                                ).should eq<% -%>
-                                <% if cases["expected"].as_a? -%>
-                                    Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
-                                <% else -%>
-                                    <%= cases["expected"] -%>
-                                <% end -%>
-                            <% end %>
-                        end
-                    <% end %>
+            <% cases["cases"].as_a.each do |cases| %>
+                <% if cases["cases"]? %>
+                        <% flattened_cases.concat(cases["cases"].as_a) %>
+                <% else -%>
+                        <% flattened_cases.concat([cases]) %>
                 <% end %>
-            end
+            <% end %>
         <% else -%>
-            <%= status()%> "<%-= cases["description"] %>" do
-                <% if cases["input"]["z"]? %>
-                    Complex.new(<%= complex_args.call(cases["input"]["z"]) %>)<%= property_map["." + cases["property"].to_s] -%>
-                    .should eq <% -%>
-                    <% if cases["expected"].as_a? -%>
-                        Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
-                    <% else -%>
-                        <%= cases["expected"] -%>
-                    <% end -%>
-                <% else %>
-                    (<% -%>
-                    <% if cases["input"]["z1"].as_a? -%>
-                        Complex.new(<%= complex_args.call(cases["input"]["z1"]) %>)<% -%>
-                    <% else -%>
-                        <%= cases["input"]["z1"] -%><% -%>
-                    <% end -%>
-                    <%= property_map["." + cases["property"].to_s] -%>(<% -%>
-                        <% if cases["input"]["z2"].as_a? -%>
-                            Complex.new(<%= complex_args.call(cases["input"]["z2"]) %>)<% -%>
-                        <% else -%>
-                            <%= cases["input"]["z2"] -%><% -%>
-                        <% end -%>
-                    )<% -%>
-                    ).should eq<% -%>
-                    <% if cases["expected"].as_a? -%>
-                        Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
-                    <% else -%>
-                        <%= cases["expected"] -%>
-                    <% end -%>
-                <% end %>
-            end
+            <% flattened_cases.concat([cases]) %>
         <% end %>
+    <% end %>
+
+    <% flattened_cases.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            <% if cases["input"]["z"]? %>
+                Complex.new(<%= complex_args.call(cases["input"]["z"]) %>)<%= property_map["." + cases["property"].to_s] -%>
+                .should eq <% -%>
+                <% if cases["expected"].as_a? -%>
+                    Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
+                <% else -%>
+                    <%= cases["expected"] -%>
+                <% end -%>
+            <% else %>
+                (<% -%>
+                <% if cases["input"]["z1"].as_a? -%>
+                    Complex.new(<%= complex_args.call(cases["input"]["z1"]) %>)<% -%>
+                <% else -%>
+                    <%= cases["input"]["z1"] -%><% -%>
+                <% end -%>
+                <%= property_map["." + cases["property"].to_s] -%>(<% -%>
+                    <% if cases["input"]["z2"].as_a? -%>
+                        Complex.new(<%= complex_args.call(cases["input"]["z2"]) %>)<% -%>
+                    <% else -%>
+                        <%= cases["input"]["z2"] -%><% -%>
+                    <% end -%>
+                )<% -%>
+                ).should eq<% -%>
+                <% if cases["expected"].as_a? -%>
+                    Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
+                <% else -%>
+                    <%= cases["expected"] -%>
+                <% end -%>
+            <% end %>
+        end
     <% end %>
 end

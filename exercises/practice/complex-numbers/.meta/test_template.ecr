@@ -14,8 +14,14 @@ require "../src/*"
 } %>
 
 <%
-complex_args = ->(j : JSON::Any) {
-  j.as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",")
+complex_args = ->(json : JSON::Any) {
+  json
+    .as_a
+    .map(&.to_s)
+    .map(&.gsub("e", "Math::E"))
+    .map(&.gsub("pi", "Math::PI"))
+    .map(&.gsub("ln", "Math.log"))
+    .join(",")
 }
 %>
 
@@ -53,13 +59,12 @@ describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
                 <% else -%>
                     <%= cases["input"]["z1"] -%><% -%>
                 <% end -%>
-                <%= property_map["." + cases["property"].to_s] -%>(<% -%>
+                <%= property_map["." + cases["property"].to_s] -%><% -%>
                     <% if cases["input"]["z2"].as_a? -%>
                         Complex.new(<%= complex_args.call(cases["input"]["z2"]) %>)<% -%>
                     <% else -%>
                         <%= cases["input"]["z2"] -%><% -%>
                     <% end -%>
-                )<% -%>
                 ).should eq<% -%>
                 <% if cases["expected"].as_a? -%>
                     Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>

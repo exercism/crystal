@@ -883,15 +883,6 @@
         "topics": []
       },
       {
-        "slug": "complex-numbers",
-        "name": "Complex Numbers",
-        "uuid": "bc681ef9-c0ef-46bc-ac67-8720131161c0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": []
-      },
-      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",
@@ -1121,6 +1112,15 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "bc681ef9-c0ef-46bc-ac67-8720131161c0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": []
       },
       {
         "slug": "connect",

@@ -1,0 +1,17 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/complex_numbers.cr"
+    ],
+    "test": [
+      "spec/complex_numbers_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Implement complex numbers.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Complex_number"
+}

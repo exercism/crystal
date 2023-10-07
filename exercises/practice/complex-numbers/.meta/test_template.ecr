@@ -1,0 +1,126 @@
+require "spec"
+require "../src/*"
+
+<% property_map = {
+  ".real" => ".real",
+  ".imaginary" => ".imaginary",
+  ".abs" => ".abs",
+  ".conjugate" => ".conjugate",
+  ".exp" => ".exp",
+  ".add" => "+",
+  ".sub" => "-",
+  ".mul" => "*",
+  ".div" => "/"
+} %>
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <% if cases["cases"]? %>
+            describe "<%-= cases["description"] %>" do
+                <% cases["cases"].as_a.each do |cases| %>
+                    <% if cases["cases"]? %>
+                        describe "<%-= cases["description"] %>" do
+                            <% cases["cases"].as_a.each do |cases| %>
+                                <%= status()%> "<%-= cases["description"] %>" do
+                                    <% if cases["input"]["z"]? %>
+                                        Complex.new(<%= cases["input"]["z"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<%= property_map["." + cases["property"].to_s] -%>
+                                        .should eq <% -%>
+                                        <% if cases["expected"].as_a? -%>
+                                            Complex.new(<%= cases["expected"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                        <% else -%>
+                                            <%= cases["expected"] -%>
+                                        <% end -%>
+                                    <% else %>
+                                        (<% -%>
+                                        <% if cases["input"]["z1"].as_a? -%>
+                                            Complex.new(<%= cases["input"]["z1"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                        <% else -%>
+                                            <%= cases["input"]["z1"] -%><% -%>
+                                        <% end -%>
+                                        <%= property_map["." + cases["property"].to_s] -%>(<% -%>
+                                            <% if cases["input"]["z2"].as_a? -%>
+                                                Complex.new(<%= cases["input"]["z2"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                            <% else -%>
+                                                <%= cases["input"]["z2"] -%><% -%>
+                                            <% end -%>
+                                        )<% -%>
+                                        ).should eq<% -%>
+                                        <% if cases["expected"].as_a? -%>
+                                            Complex.new(<%= cases["expected"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                        <% else -%>
+                                            <%= cases["expected"] -%>
+                                        <% end -%>
+                                    <% end %>
+                                end
+                            <% end %>
+                        end
+                    <% else -%>
+                        <%= status()%> "<%-= cases["description"] %>" do
+                            <% if cases["input"]["z"]? %>
+                                Complex.new(<%= cases["input"]["z"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<%= property_map["." + cases["property"].to_s] -%>
+                                .should eq <% -%>
+                                <% if cases["expected"].as_a? -%>
+                                    Complex.new(<%= cases["expected"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                <% else -%>
+                                    <%= cases["expected"] -%>
+                                <% end -%>
+                            <% else %>
+                                (<% -%>
+                                <% if cases["input"]["z1"].as_a? -%>
+                                    Complex.new(<%= cases["input"]["z1"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                <% else -%>
+                                    <%= cases["input"]["z1"] -%><% -%>
+                                <% end -%>
+                                <%= property_map["." + cases["property"].to_s] -%>(<% -%>
+                                    <% if cases["input"]["z2"].as_a? -%>
+                                        Complex.new(<%= cases["input"]["z2"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                    <% else -%>
+                                        <%= cases["input"]["z2"] -%><% -%>
+                                    <% end -%>
+                                )<% -%>
+                                ).should eq<% -%>
+                                <% if cases["expected"].as_a? -%>
+                                    Complex.new(<%= cases["expected"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                                <% else -%>
+                                    <%= cases["expected"] -%>
+                                <% end -%>
+                            <% end %>
+                        end
+                    <% end %>
+                <% end %>
+            end
+        <% else -%>
+            <%= status()%> "<%-= cases["description"] %>" do
+                <% if cases["input"]["z"]? %>
+                    Complex.new(<%= cases["input"]["z"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<%= property_map["." + cases["property"].to_s] -%>
+                    .should eq <% -%>
+                    <% if cases["expected"].as_a? -%>
+                        Complex.new(<%= cases["expected"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                    <% else -%>
+                        <%= cases["expected"] -%>
+                    <% end -%>
+                <% else %>
+                    (<% -%>
+                    <% if cases["input"]["z1"].as_a? -%>
+                        Complex.new(<%= cases["input"]["z1"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                    <% else -%>
+                        <%= cases["input"]["z1"] -%><% -%>
+                    <% end -%>
+                    <%= property_map["." + cases["property"].to_s] -%>(<% -%>
+                        <% if cases["input"]["z2"].as_a? -%>
+                            Complex.new(<%= cases["input"]["z2"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                        <% else -%>
+                            <%= cases["input"]["z2"] -%><% -%>
+                        <% end -%>
+                    )<% -%>
+                    ).should eq<% -%>
+                    <% if cases["expected"].as_a? -%>
+                        Complex.new(<%= cases["expected"].as_a.map(&.to_s).map(&.gsub("pi", "Math::PI")).map(&.gsub("ln", "Math.log")).join(",") %>)<% -%>
+                    <% else -%>
+                        <%= cases["expected"] -%>
+                    <% end -%>
+                <% end %>
+            end
+        <% end %>
+    <% end %>
+end

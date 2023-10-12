@@ -7,7 +7,7 @@ module TwoBucket
   struct Result
     property moves, other_bucket, goal_bucket
 
-    def initialize(moves : UInt32, @other_bucket : UInt32, @goal_bucket : Bucket)
+    def initialize(@moves : UInt32, @other_bucket : UInt32, @goal_bucket : Bucket)
     end
   end
 

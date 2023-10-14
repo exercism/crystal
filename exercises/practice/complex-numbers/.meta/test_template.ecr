@@ -26,23 +26,7 @@ complex_args = ->(json : JSON::Any) {
 %>
 
 describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
-    <% flattened_cases = [] of JSON::Any %>
-
-    <% @json["cases"].as_a.each do |cases| %>
-        <% if cases["cases"]? %>
-            <% cases["cases"].as_a.each do |cases| %>
-                <% if cases["cases"]? %>
-                        <% flattened_cases.concat(cases["cases"].as_a) %>
-                <% else -%>
-                        <% flattened_cases.concat([cases]) %>
-                <% end %>
-            <% end %>
-        <% else -%>
-            <% flattened_cases.concat([cases]) %>
-        <% end %>
-    <% end %>
-
-    <% flattened_cases.each do |cases| %>
+    <% flattened_cases(@json["cases"]).each do |cases| %>
         <%= status()%> "<%-= cases["description"] %>" do
             <% if cases["input"]["z"]? %>
                 Complex.new(<%= complex_args.call(cases["input"]["z"]) %>)<%= property_map["." + cases["property"].to_s] -%>

@@ -113,5 +113,25 @@ class GeneratorHelp
     "pending"
   end
 
+  def flattened_cases(cases : JSON::Any)
+    flattened_cases = [] of JSON::Any
+
+    cases.as_a.each do |cases|
+      if cases["cases"]?
+        cases["cases"].as_a.each do |cases|
+          if cases["cases"]?
+            flattened_cases.concat(cases["cases"].as_a)
+          else
+            flattened_cases << cases
+          end
+        end
+      else
+        flattened_cases << cases
+      end
+    end
+
+    flattened_cases
+  end
+
   ECR.def_to_s "./bin/templates/template.ecr"
 end

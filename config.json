@@ -1060,6 +1060,14 @@
         "difficulty": 4
       },
       {
+        "slug": "variable-length-quantity",
+        "name": "Variable Length Quantity",
+        "uuid": "d0ef5012-0034-4a71-a8a8-e2ed99f93d70",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "15257768-af28-4066-bc5c-effc189c4b8e",

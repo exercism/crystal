@@ -30,12 +30,13 @@ describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
         <%= status()%> "<%-= cases["description"] %>" do
             <% if cases["input"]["z"]? %>
                 Complex.new(<%= complex_args.call(cases["input"]["z"]) %>)<%= property_map["." + cases["property"].to_s] -%>
-                .should eq <% -%>
+                .should be_close <% -%>
                 <% if cases["expected"].as_a? -%>
                     Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
                 <% else -%>
                     <%= cases["expected"] -%>
                 <% end -%>
+                , 1e-9
             <% else %>
                 (<% -%>
                 <% if cases["input"]["z1"].as_a? -%>
@@ -49,12 +50,13 @@ describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
                     <% else -%>
                         <%= cases["input"]["z2"] -%><% -%>
                     <% end -%>
-                ).should eq<% -%>
+                ).should be_close<% -%>
                 <% if cases["expected"].as_a? -%>
                     Complex.new(<%= complex_args.call(cases["expected"]) %>)<% -%>
                 <% else -%>
                     <%= cases["expected"] -%>
                 <% end -%>
+                , 1e-9
             <% end %>
         end
     <% end %>

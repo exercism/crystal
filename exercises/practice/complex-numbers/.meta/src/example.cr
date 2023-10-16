@@ -59,10 +59,6 @@ class Complex
   def exp
     self.class.new(Math.exp(real), 0) * self.class.new(Math.cos(imaginary), Math.sin(imaginary))
   end
-
-  def ==(other : Complex)
-    (real - other.real).abs < 1e-9 && (imaginary - other.imaginary).abs < 1e-9
-  end
 end
 
 struct Number

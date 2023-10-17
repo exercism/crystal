@@ -15,7 +15,7 @@ jobs:
     container:
       image: crystallang/crystal
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Run generator tests
         run: ./bin/test_specs
   template:
@@ -24,7 +24,7 @@ jobs:
     container:
       image: crystallang/crystal
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Run file formatting
         run: crystal ./bin/check-format.cr
   exercises:
@@ -37,7 +37,7 @@ jobs:
     container:
       image: crystallang/crystal:${{ matrix.crystal }}
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Install jq
         run: apt-get update && apt-get install -y jq
       - name: Run tests

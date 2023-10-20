@@ -7,7 +7,7 @@ module ColossalCoaster
     raise "Please implement the ColossalCoaster.find_my_friend method"
   end
 
-  def self.add_with_friends(queue, person_name, friend_name)
+  def self.add_with_friends(queue, friend_name, person_name)
     raise "Please implement the ColossalCoaster.add_with_friends method"
   end
 

@@ -44,15 +44,16 @@ ColossalCoaster.find_my_friend(["Natasha", "Steve", "T'challa", "Wanda", "Rocket
 ## 3. Can I please join them?
 
 Now that their friends have been found (in task #2 above), the late arriver would like to join them at their place in the queue.
-Define the `ColossalCoaster.add_with_friends` method that takes 2 arguments `queue`, and `person_name`.
+Define the `ColossalCoaster.add_with_friends` method that takes 3 arguments `queue`, `friend_name` and `person_name`.
 
 1. `<queue>` is an `array` of people standing in the queue.
+2. `<friend_name>` is the name of the friend at whose position the person should be added.
 2. `<person_name>` is the name of the person to add at the index position.
 
 Return the queue updated with the late arrival's name.
 
 ```crystal
-ColossalCoaster.add_with_friends(["Natasha", "Steve", "T'challa", "Wanda", "Rocket"], "Bucky")
+ColossalCoaster.add_with_friends(["Natasha", "Steve", "T'challa", "Wanda", "Rocket"], "Steve", "Bucky")
 # => ["Natasha", "Bucky", "Steve", "T'challa", "Wanda", "Rocket"]
 ```
 

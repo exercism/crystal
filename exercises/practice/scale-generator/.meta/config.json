@@ -1,0 +1,15 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/scale_generator.cr"
+    ],
+    "test": [
+      "spec/scale_generator_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Generate musical scales, given a starting note and a set of intervals."
+}

@@ -1,0 +1,16 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        describe <%= cases["description"].inspect %> do
+            <%- cases["cases"].as_a.each do |cases| %>
+                <%= status()%> "<%-= cases["description"] %>" do
+                    expected = <%= cases["expected"].inspect %>
+                    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>( \
+                        <%-= cases["input"]["tonic"].inspect %><% if cases["input"]["intervals"]? %>, <%= cases["input"]["intervals"].inspect %><% end %>).should eq(expected)
+                end
+            <% end %>
+        end
+    <% end %>
+end

@@ -2,21 +2,21 @@ require "spec"
 require "../src/*"
 
 describe Reactor do
-  describe "is_criticality_balanced?" do
+  describe "criticality_balanced?" do
     it "Should return false if the temperature is too low" do
-      Reactor.is_criticality_balanced?(799, 499).should be_false
+      Reactor.criticality_balanced?(799, 499).should be_false
     end
 
     it "Should return false if too many neutrons are emitted" do
-      Reactor.is_criticality_balanced?(200, 501).should be_true
+      Reactor.criticality_balanced?(200, 501).should be_true
     end
 
     it "Should return false if the product of temperature and neutrons emitted is too low" do
-      Reactor.is_criticality_balanced?(800, 500).should be_false
+      Reactor.criticality_balanced?(800, 500).should be_false
     end
 
     it "Should return true if the temperature is high enough, the number of neutrons emitted is low enough, and the product of temperature and neutrons emitted is high enough" do
-      Reactor.is_criticality_balanced?(2000, 400).should be_false
+      Reactor.criticality_balanced?(2000, 400).should be_false
     end
   end
 

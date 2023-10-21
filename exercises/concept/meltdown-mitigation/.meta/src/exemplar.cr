@@ -1,5 +1,5 @@
 class Reactor
-  def self.is_criticality_balanced?(temperature, neutrons_emitted)
+  def self.criticality_balanced?(temperature, neutrons_emitted)
     output = temperature * neutrons_emitted
     return temperature < 800 && neutrons_emitted > 500 && output < 500000
   end

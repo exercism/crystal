@@ -1,6 +1,6 @@
 class Reactor
-  def self.is_criticality_balanced?(temperature, neutrons_emitted)
-    raise "Please implement the Reactor.is_criticality_balanced? method"
+  def self.criticality_balanced?(temperature, neutrons_emitted)
+    raise "Please implement the Reactor.criticality_balanced? method"
   end
 
   def self.reactor_efficiency(voltage, current, theoretical_max_power)

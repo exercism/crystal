@@ -14,6 +14,10 @@ describe "ResistorColor" do
     ResistorColor.color_code("orange").should eq(3)
   end
 
+  pending "handles input that is not a recognised color" do
+    ResistorColor.color_code("Puce").should be_nil
+  end
+
   pending "Colors" do
     ResistorColor.colors.should eq(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"])
   end

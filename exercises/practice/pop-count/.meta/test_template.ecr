@@ -1,0 +1,10 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        <%-= to_capitalized(@json["exercise"].to_s) %>.egg_count(<%= cases["input"]["number"] %>).should  eq(<%-= cases["expected"] %>)
+    end
+<% end %>
+end

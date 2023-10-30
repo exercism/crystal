@@ -42,7 +42,7 @@ module Blackjack
         "S"
       end
     when hand_score >= 17 || hand_score >= 12 && dealer_score < 7
-      return "S"
+      "S"
     else
       "H"
     end

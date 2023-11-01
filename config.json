@@ -655,7 +655,7 @@
       },
       {
         "slug": "pop-count",
-        "name": "Pop Count",
+        "name": "Eliud's Eggs",
         "uuid": "bdf29951-ece0-4212-ae1f-c4a09359aa45",
         "practices": ["bit-manipulation"],
         "prerequisites": [],

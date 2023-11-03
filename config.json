@@ -1036,6 +1036,11 @@
       "name": "Basics"
     },
     {
+      "uuid": "aaaf2d2f-fc39-4713-9e1d-df2a3f403dce",
+      "slug": "bit-manipulation",
+      "name": "Bit Manipulation"
+    },
+    {
       "uuid": "403dd39d-22ba-45b9-a80a-be0b94291ea1",
       "slug": "bools",
       "name": "Bools"

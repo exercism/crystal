@@ -1,0 +1,15 @@
+{
+  "authors": ["ryanplusplus"],
+  "files": {
+    "solution": [
+      "src/word_search.cr"
+    ],
+    "test": [
+      "spec/word_search_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Create a program to solve a word search puzzle."
+}

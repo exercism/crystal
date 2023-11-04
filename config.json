@@ -886,6 +886,14 @@
         "difficulty": 4
       },
       {
+        "slug": "word-search",
+        "name": "Word Search",
+        "uuid": "c8a6759f-acd9-4f55-9624-5401e8473113",
+        "practices": ["array-methods"],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",

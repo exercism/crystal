@@ -1,0 +1,21 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s) %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            grid = <%= cases["input"]["grid"].inspect.gsub("[", "[\n").gsub("\", \"", "\",\n\"") %>
+            words = <%= cases["input"]["wordsToSearchFor"].inspect.gsub("[", "[\n").gsub("\", \"", "\",\n\"") %>
+            expected = {
+                <% cases["expected"].as_h.each do |word, location| -%>
+                    <% if location.as_h? -%>
+                        <%= word.inspect %> => { {<%= location.as_h["start"]["column"].inspect %>, <%= location.as_h["start"]["row"].inspect %>}, {<%= location.as_h["end"]["column"].inspect %>, <%= location.as_h["end"]["row"].inspect %>} },
+                    <% else -%>
+                        <%= word.inspect %> => nil,
+                    <% end -%>
+                <% end -%>
+            }
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(grid, words).should eq(expected)
+        end
+    <% end %>
+end

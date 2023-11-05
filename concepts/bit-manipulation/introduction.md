@@ -96,6 +96,6 @@ Unlike the other binary operators, this is a unary operator, operating on only o
 # => 0b0001_1101
 ```
 
-[integers]: https://crystal-lang.org/api/1.10.1/Int.html
-[shift]: https://crystal-lang.org/reference/1.10/syntax_and_semantics/operators.html#shifts
-[binary]: https://crystal-lang.org/reference/1.10/syntax_and_semantics/operators.html#binary
+[integers]: https://crystal-lang.org/api/Int.html
+[shift]: https://crystal-lang.org/reference/syntax_and_semantics/operators.html#shifts
+[binary]: https://crystal-lang.org/reference/syntax_and_semantics/operators.html#binary

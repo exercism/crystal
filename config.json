@@ -194,6 +194,14 @@
         "concepts": ["binary-octal-hexadecimal"],
         "prerequisites": ["string"],
         "status": "wip"
+      },
+      {
+        "slug": "secrets",
+        "name": "Secrets",
+        "uuid": "b8b96139-53b9-4f3d-b528-7d82fc76c4c6",
+        "concepts": ["bit-manipulation"],
+        "prerequisites": ["binary-octal-hexadecimal"],
+        "status": "wip"
       }
     ],
     "practice": [

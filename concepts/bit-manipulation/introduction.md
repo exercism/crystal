@@ -88,7 +88,7 @@ Otherwise, it is 0.
 
 ### Bitwise NOT(`~`)
 
-Lastly, the bitwise NOT operator (`~`) flips each bit in the value. 
+Lastly, the bitwise NOT operator (`~`) flips each of the value's bits. 
 Unlike the other binary operators, this is a unary operator, operating on only on the value to the right.
 
 ```crystal

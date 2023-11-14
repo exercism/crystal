@@ -1,6 +1,6 @@
 # Bit Manipulation
 
-Crystal has bitwise operators for manipulating [`Integers`][integers] at the binary level.
+Crystal has bitwise operators for manipulating [`Int`][ints] at the binary level.
 
 ## Shift operators 
 
@@ -96,6 +96,6 @@ Unlike the other binary operators, this is a unary operator, operating on only o
 # => 0b0001_1101
 ```
 
-[integers]: https://crystal-lang.org/api/Int.html
+[ints]: https://crystal-lang.org/api/Int.html
 [shift]: https://crystal-lang.org/reference/syntax_and_semantics/operators.html#shifts
 [binary]: https://crystal-lang.org/reference/syntax_and_semantics/operators.html#binary

@@ -1,17 +1,17 @@
 module Secrets
-  def shift_back(value : UInt8, numberOfPlaces : UInt8) : UInt8
+  def self.shift_back(value : UInt8, numberOfPlaces : UInt8) : UInt8
     raise "Please implement the Secrets::shift_back method"
   end
 
-  def apply_mask(value : UInt8, mask : UInt8) : UInt8
+  def self.apply_mask(value : UInt8, mask : UInt8) : UInt8
     raise "Please implement the Secrets::apply_mask method"
   end
 
-  def set_bits(value1 : UInt8, value2 : UInt8) : UInt8
+  def self.set_bits(value1 : UInt8, value2 : UInt8) : UInt8
     raise "Please implement the Secrets::set_bits method"
   end
 
-  def reverse_xor(value : UInt8, agreedValue : UInt8) : UInt8
+  def self.reverse_xor(value : UInt8, agreedValue : UInt8) : UInt8
     raise "Please implement the Secrets::reverse_xor method"
   end
 end

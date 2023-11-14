@@ -1,14 +1,14 @@
 [
   {
-    "url": "https://crystal-lang.org/reference/1.10/syntax_and_semantics/operators.html#binary",
+    "url": "https://crystal-lang.org/reference/syntax_and_semantics/operators.html#binary",
     "description": "Crystal docs: List of operators - Binary"
   },
   {
-    "url": "https://crystal-lang.org/reference/1.10/syntax_and_semantics/operators.html#shifts",
+    "url": "https://crystal-lang.org/reference/syntax_and_semantics/operators.html#shifts",
     "description": "Crystal docs: List of operators - Shifts"
   },
   {
-    "url": "https://crystal-lang.org/reference/1.10/syntax_and_semantics/operators.html#other-unary-operators",
+    "url": "https://crystal-lang.org/reference/syntax_and_semantics/operators.html#other-unary-operators",
     "description": "Crystal docs: List of operators - Unary"
   }
 ]

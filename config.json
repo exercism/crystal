@@ -726,14 +726,6 @@
         "difficulty": 3
       },
       {
-        "slug": "scale-generator",
-        "name": "Scale Generator",
-        "uuid": "a5626618-3a52-43d3-b6a6-657755db9384",
-        "practices": ["enumeration"],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",
@@ -1025,6 +1017,15 @@
         "topics": [
           "math"
         ],
+        "status": "deprecated"
+      },
+      {
+        "slug": "scale-generator",
+        "name": "Scale Generator",
+        "uuid": "a5626618-3a52-43d3-b6a6-657755db9384",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
         "status": "deprecated"
       }
     ]

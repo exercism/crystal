@@ -950,6 +950,14 @@
         "difficulty": 5
       },
       {
+        "slug": "poker",
+        "name": "Poker",
+        "uuid": "5eee3bb6-bcb8-4056-a854-805ecc4dd903",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "connect",
         "name": "Connect",
         "uuid": "9a889142-2223-407a-af9a-df9c14eb6a9e",

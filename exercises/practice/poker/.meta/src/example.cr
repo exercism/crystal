@@ -1,7 +1,7 @@
 module Poker
   def self.best_hands(hands)
     hands = hands.map { |hand| Hand.new(hand) }
-    max_score = hands.map(&.score).max
+    max_score = hands.max_of(&.score)
     hands.select { |hand| hand.score == max_score }.map(&.to_s)
   end
 end
@@ -33,19 +33,19 @@ class Poker::Hand
   end
 
   private def partitioned_by_rank
-    @cards.group_by { |card| card.rank }.values
+    @cards.group_by(&.rank).values
   end
 
   private def partitioned_by_suit
-    @cards.group_by { |card| card.suit }.values
+    @cards.group_by(&.suit).values
   end
 
   private def sorted_by_rank(cards = @cards)
-    cards.sort_by { |card| card.rank }.reverse
+    cards.sort_by(&.rank).reverse!
   end
 
   private def sorted_by_rank_ace_low
-    @cards.sort_by { |card| card.rank_ace_low }.reverse
+    @cards.sort_by(&.rank_ace_low).reverse!
   end
 
   private def base_score(type)
@@ -92,10 +92,9 @@ class Poker::Hand
 
     if pairs.size == 2
       everything_else = partitioned_by_rank.select { |p| p.size == 1 }.flatten
-      pair_ranks = pairs.flatten.map(&.rank)
       base_score(:two_pair) + fractional_score([
-        pairs.flatten.max_by { |c| c.rank },
-        pairs.flatten.min_by { |c| c.rank },
+        pairs.flatten.max_by(&.rank),
+        pairs.flatten.min_by(&.rank),
         *sorted_by_rank(everything_else),
       ])
     end

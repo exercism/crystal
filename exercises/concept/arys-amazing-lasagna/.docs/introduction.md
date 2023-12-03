@@ -98,7 +98,7 @@ end
 
 When calling a method that belongs to a class, module or struct, you must use the dot operator(`.`).
 Like following: `<ClassName>.<method_name>`.
-When the method doesn't belong to a class, module or struct, then you can simple call it by writing its name.
+When the method doesn't belong to a class, module or struct, then you can simply call it by writing its name.
 Methods always implicitly return the value of the last expression in the method.
 
 When a method has arguments, you may use parentheses when specifying the arguments in the method call and definition, like following: `<method_name>(<argument_1>, <argument_2>)`.

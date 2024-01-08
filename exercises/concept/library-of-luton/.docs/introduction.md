@@ -65,7 +65,7 @@ Here is a list of some of the methods, for a full list see the [Char API][char-a
 
 ### Converting between code points and Chars
 
-Since Chars is a 32-bit Unicode point, you can convert between Chars and code points (Int).
+Since a Char is a 32-bit Unicode point, you can convert between Chars and code points (Int).
 This can be done using the [`Char#ord`][ord] method which will return the code point of the Char, or the [`Int#chr`][chr] method which will return the Char of the code point.
 
 ```crystal

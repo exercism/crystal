@@ -64,7 +64,7 @@ The ticketing system has to have easy to understand messages for the users.
 And the messages should feel personal, so they should include the user's name.
 
 If the ticket purchase was successful, the user should get a message telling them that the purchase was successful, their ticket number, and which stadium the game is played at.
-The ticket number should be the how many tickets there were available before the order.
+The ticket number should be the number of tickets available before the order.
 
 If the purchase was successful, the message should look like this: `{name}, your purchase was successful, your ticket number is #{ticket_number}, and the game is played at the {stadium_number} stadium.`.
 If the purchase was unsuccessful, the message should look like this: `{name}, your purchase was unsuccessful, there are not enough tickets available.`.

@@ -124,7 +124,7 @@ while i < 3
 end
 ```
 
-## Return
+# Return
 
 In Crystal, the last expression in a method returns its value.
 Although sometimes you need to return a value before the last expression.

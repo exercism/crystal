@@ -153,3 +153,4 @@ World"
 ```
 
 [strings]: https://crystal-lang.org/reference/latest/syntax_and_semantics/literals/string.html
+[unicode]: https://en.wikipedia.org/wiki/Unicode

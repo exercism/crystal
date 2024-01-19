@@ -67,7 +67,6 @@ This can be used to make if the value is `nil` it will be falsey and thereby the
 ```
 
 [nil]: https://crystal-lang.org/reference/syntax_and_semantics/literals/nil.html
-[null-pointer]: https://en.wikipedia.org/wiki/Null_pointer
 [truthy-falsey]: https://crystal-lang.org/reference/latest/syntax_and_semantics/truthy_and_falsey_values.html
 [nil?]: https://crystal-lang.org/api/latest/Object.html#nil?:Bool-instance-method
 [string-index]: https://crystal-lang.org/api/latest/String.html#%5B%5D%3F%28index%3AInt%29%3AChar%7CNil-instance-method

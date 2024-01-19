@@ -1,0 +1,10 @@
+comment:
+  on-update: edit
+  header: |
+    Hello!. Thanks for opening this pr.🙂
+  snippets:
+  - id: any-file-changed
+    files:
+      - any: ["**", "**/**"]
+    body: |
+      On the Crystal-lang repo we use a doc generator to generate all introduction.md files. The tool is located in the document-generator folder. Our tooling has noticed that they are out of sync of the about.md file, this can be caused of 2 reasons:\n\n 1. You have updated an introduction.md file instead of updating the concepts about.md file\n2. You have updated the about.md file but haven't synced.

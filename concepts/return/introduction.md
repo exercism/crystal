@@ -10,7 +10,6 @@ def speed_limit(road_number)
     if road_number == 1
         return 50
         puts "This will not be executed"
-    end
     elsif road_number == 2
         return 80
         puts "This will not be executed"
@@ -26,3 +25,4 @@ p speed_limit(3) # => 100
 ~~~~exercism/note
 The `return` keyword should be omitted when the last expression in a method is the value that should be returned.
 ~~~~
+

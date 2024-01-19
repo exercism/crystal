@@ -167,10 +167,8 @@ Comments are not executed by the compiler.
 ```
 
 [arguments]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#arguments
-[assignement]: https://crystal-lang.org/reference/latest/syntax_and_semantics/assignment.html#assignment
 [comments]: https://crystal-lang.org/reference/latest/syntax_and_semantics/comments.html
 [constants]: https://crystal-lang.org/reference/latest/syntax_and_semantics/constants.html
-[default_arguments]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#default-arguments
 [methods]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#methods
 [return]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#returning-a-value
 [snake-case]: https://en.wikipedia.org/wiki/Snake_case

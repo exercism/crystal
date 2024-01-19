@@ -98,7 +98,7 @@ end
 
 When calling a method that belongs to a class, module or struct, you must use the dot operator(`.`).
 Like following: `<ClassName>.<method_name>`.
-When the method doesn't belong to a class, module or struct, then you can simply call it by writing its name.
+When the method doesn't belong to a class, module or struct, then you can simple call it by writing its name.
 Methods always implicitly return the value of the last expression in the method.
 
 When a method has arguments, you may use parentheses when specifying the arguments in the method call and definition, like following: `<method_name>(<argument_1>, <argument_2>)`.
@@ -167,10 +167,8 @@ Comments are not executed by the compiler.
 ```
 
 [arguments]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#arguments
-[assignement]: https://crystal-lang.org/reference/latest/syntax_and_semantics/assignment.html#assignment
 [comments]: https://crystal-lang.org/reference/latest/syntax_and_semantics/comments.html
 [constants]: https://crystal-lang.org/reference/latest/syntax_and_semantics/constants.html
-[default_arguments]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#default-arguments
 [methods]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#methods
 [return]: https://crystal-lang.org/reference/latest/tutorials/basics/60_methods.html#returning-a-value
 [snake-case]: https://en.wikipedia.org/wiki/Snake_case

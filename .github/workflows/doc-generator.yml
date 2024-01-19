@@ -1,0 +1,26 @@
+name: Comment on Failed Test
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  comment_on_failed_test:
+    permissions: write-all
+    name: Check Generator Templates
+    runs-on: ubuntu-22.04
+    container:
+      image: crystallang/crystal
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Run generator tests
+        run: crystal document-generator/scripts/check_docs.cr
+      - name: Comment on PR if test failed
+        if: failure()
+        uses: exercism/pr-commenter-action@v1.5.1
+        with:
+          github-token: ${{github.token}}
+          config-file: ".github/pr-commenter.yml"
+          

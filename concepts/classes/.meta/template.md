@@ -1,0 +1,1 @@
+{% $classes \ $classes."Shorthand to initialize instance variables" %}

@@ -27,7 +27,7 @@ class DocumentGenerator
     result
   end
 
-  private def read_markdown(content : String)
+  def read_markdown(content : String)
     data = Hash(String, Hash(String, String)).new
     data["chapter"] = {} of String => String
     name = ""
@@ -46,8 +46,10 @@ class DocumentGenerator
         else
           data["chapter"]["links"] = line + "\n"
         end
-      else
+      elsif data["chapter"][name]?
         data["chapter"][name] += line + "\n"
+      else 
+        raise "An Error occured while parsing, this is likely due to a missing header"
       end
     end
     return data
@@ -125,8 +127,3 @@ class DocumentGenerator
     @links = [*@links, *new_links]
   end
 end
-
-#generator = DocumentGenerator.new
-#generator.read_documents("./././concepts")
-
-#generator.load_template(File.read("./././template.md"))

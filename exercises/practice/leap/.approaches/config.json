@@ -5,7 +5,7 @@
   },
   "approaches": [
     {
-      "uuid": "5d42dc83-2473-425a-90bd-bf03f92b8c8b",
+      "uuid": "71375115-d712-4b3c-8485-bad7a6dfcf9f",
       "slug": "boolean-chain",
       "title": "Use boolean chain",
       "blurb": "Use a chain of boolean expressions.",

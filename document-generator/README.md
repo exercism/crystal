@@ -22,8 +22,7 @@ Then you can run the following command:
 
 ```bash
 cd document-generator
-crystal build ./src/cli.cr -o ./bin/document-generator
-mv ./bin/document-generator ../bin/document-generator
+crystal build ./src/cli.cr -o ../bin/document-generator
 ```
 
 ## Usage

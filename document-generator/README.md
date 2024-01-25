@@ -34,7 +34,7 @@ crystal build ./src/cli.cr -o ../bin/document-generator
 ./bin/document-generator --help
 
 # To generate all docs
-./bin/document-generator -all
+./bin/document-generator --all
 
 # To generate docs for a specific concept
 ./bin/document-generator -d <concept_name>
@@ -76,6 +76,7 @@ To exclude a specific header from a concept, use the `{% $concept exclude $conce
 - [x] Create a CLI to work with the DSL
 - [x] Automatic link handling system
 - [x] Add a CI script to run tests on the generated docs
+- [x] Add github output when fail
 - [ ] Fully extensive test suite
 - [ ] Fully documented code & Usage
 - [ ] Add support to exclude multiple heading easier from the docs

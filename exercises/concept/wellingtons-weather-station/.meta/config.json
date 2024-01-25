@@ -6,6 +6,6 @@
     "test": ["spec/wellingtons_weather_station_spec.cr"],
     "exemplar": [".meta/src/exemplar.cr"]
   },
-  "icon": "the-weather-in-deather",
+  "icon": "weather-forecast",
   "blurb": "Learn about numbers by update Wellington's weather station temperature system"
 }

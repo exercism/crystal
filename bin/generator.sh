@@ -18,7 +18,7 @@ fi
 cat "./exercises/practice/${slug}/.meta/test_template.ecr" > "./bin/templates/template.ecr"
 
 if [ $# -eq 2 ] ; then
-    crystal ./bin/generator.cr "${slug}" "${2%/}" || exit 1
+    crystal ./test-generator/src/generator.cr "${slug}" "${2%/}" || exit 1
 else
-    crystal ./bin/generator.cr "${slug}" || exit 1
+    crystal ./test-generator/src/generator.cr "${slug}" || exit 1
 fi

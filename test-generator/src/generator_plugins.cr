@@ -2,9 +2,23 @@
 #
 
 module GeneratorPlugins
+  def to_cammel(input : String)
+    result = ""
+    input = input.capitalize
+    capitalized = false
+    input.each_char do |character|
+      if character == '-'
+        capitalized = true
+      else
+        result += capitalized ? character.upcase : character
+        capitalized = false
+      end
+    end
+    result
+  end
+
   def binary_search_tree(tree, last = [] of String) : String
-    case tree
-    when tree.as_h?
+    if tree.as_h?
       result = ""
       return "" if tree == nil
       if tree["data"]?

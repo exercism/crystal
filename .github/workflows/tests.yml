@@ -9,14 +9,23 @@ on:
     - cron: '0 0 * * 0'
 
 jobs:
-  generator:
-    name: Check Generator Templates
+  test-generator:
+    name: Test Generator
     runs-on: ubuntu-22.04
     container:
       image: crystallang/crystal
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Run generator tests
+        run: crystal spec test-generator/spec/*
+  test-generator-templates:
+    name: Check Generator Templates
+    runs-on: ubuntu-22.04
+    container:
+      image: crystallang/crystal
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Check generator templates tests
         run: ./bin/test_specs
   template:
     name: Check file formatting
@@ -28,7 +37,7 @@ jobs:
       - name: Run file formatting
         run: crystal ./bin/check-format.cr
   exercises:
-    name: Check exercises crystal ${{ matrix.crystal }}
+    name: Check exercises Crystal ${{ matrix.crystal }}
     runs-on: ubuntu-22.04
     strategy:
       # Allows running the job multiple times with different configurations
@@ -42,3 +51,16 @@ jobs:
         run: apt-get update && apt-get install -y jq
       - name: Run tests
         run: ./bin/test-exercises.sh
+  exercises-windows:
+    name: Check exercises Crystal on Windows
+    runs-on: windows-2022
+    steps:
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: "1.11.1"
+      - name: 'Setup jq'
+        run: choco install jq
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: Run tests
+        run: ./bin/test-exercises.ps1

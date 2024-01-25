@@ -5,20 +5,21 @@ require "./generator_plugins.cr"
 
 class GeneratorHelp
   include GeneratorPlugins
-  @tpl : String | Nil
   @json : JSON::Any
 
   def initialize(@exercise : String)
     @first = true
-    check_config()
     @json = get_remote_files()
+  end
+
+  def exectute
+    check_config()
     additional_json()
     remove_tests(toml())
   end
 
-  def toml
+  def toml(path : String = "./exercises/practice/#{@exercise}/.meta/tests.toml")
     uuid = [] of String
-    path = "./exercises/practice/#{@exercise}/.meta/tests.toml"
     raise "Toml not found: #{path}" unless File.exists?(path)
     File.read(path).split("\n").each do |line|
       line = line.strip
@@ -66,21 +67,6 @@ class GeneratorHelp
       return true if @exercise == x["slug"]
     end
     raise "Couldn't find the exercise in the config.json.\nMake sure you use the same slug name as in the config file."
-  end
-
-  def to_cammel(input : String)
-    result = ""
-    input = input.capitalize
-    capitalized = false
-    input.each_char do |character|
-      if character == '-'
-        capitalized = true
-      else
-        result += capitalized ? character.upcase : character
-        capitalized = false
-      end
-    end
-    result
   end
 
   def additional_json

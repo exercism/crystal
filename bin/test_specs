@@ -46,6 +46,7 @@ test_specs() {
     for exercise in "${exercises[@]}"; do
         # Find the existing spec and move it to a temp location
         # so we can generate a new spec in the old location.
+        echo "Testing ${exercise}..."
         specs=("./exercises/practice/${exercise}/spec/"*_spec.cr)
         if (( ${#specs[@]} != 1 )); then
             error "Expected one spec for ${exercise} but found ${#specs[@]}!"

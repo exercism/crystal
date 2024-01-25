@@ -1,0 +1,7 @@
+def self.p_divisible_by?(num : Int32) : Proc(Int32, Bool)
+  ->(year : Int32) { year.divisible_by?(num) }
+end
+
+def self.p_negate(test : Proc(A, Bool)) : Proc(A, Bool) forall A
+  ->(input : A) { !test.call(input) }
+end

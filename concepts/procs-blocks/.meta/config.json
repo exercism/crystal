@@ -1,0 +1,5 @@
+{
+  "blurb": "Blocks and Procs, are two core concepts of Crystal. They are used to pass around code as if it were data. They are used for callbacks, iterators and to build DSLs.", 
+  "contributors": [],
+  "authors": ["meatball133"]
+}

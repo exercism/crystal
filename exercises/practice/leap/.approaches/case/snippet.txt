@@ -1,0 +1,8 @@
+case year
+when .divisible_by? 400
+  true
+when .divisible_by? 100
+  false
+when .divisible_by? 4
+  true
+end

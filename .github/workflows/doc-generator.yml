@@ -11,7 +11,7 @@ jobs:
     name: Check Generator Templates
     runs-on: ubuntu-22.04
     container:
-      image: crystallang/crystal
+      image: crystallang/crystal:1.11
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Run generator tests

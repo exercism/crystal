@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "kahgoh"
+  ],
+  "files": {
+    "solution": [
+      "src/list_ops.cr"
+    ],
+    "test": [
+      "spec/list_ops_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Implement basic list operations."
+}

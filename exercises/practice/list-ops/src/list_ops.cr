@@ -1,5 +1,5 @@
 module ListOps(T)
-  # Write your code for the 'Simple Cipher' exercise in this file.
+  # Write your code for the 'List Ops' exercise in this file.
 
   def self.append(list1 : Array(T), list2 : Array(T)) : Array(T)
   end

@@ -91,22 +91,6 @@ class GeneratorHelp
     input.tr("-", "_").camelcase
   end
 
-  def function(input : JSON::Any, arg_types : Array(String))
-    func_string = input.to_s
-
-    # Add types to function
-    args_match = func_string.match(/^\((.*)\)\s*->/)
-    if args_match && !args_match.captures.empty?
-      if args_match.captures[0]
-        typed_args = args_match.captures[0].as(String).split(",").map_with_index{ | elem, i | "#{elem.strip} : #{arg_types[i]}" }.join(",")
-      else
-        typed_args = ""
-      end
-      func_string = func_string.gsub(args_match[0], "->(#{typed_args}) {") + " }"
-    end
-    func_string.gsub("modulo", "%")
-  end
-
   def status
     if @first
       @first = false

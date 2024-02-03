@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "src/pop_count.cr"
+      "src/eliuds_eggs.cr"
     ],
     "test": [
-      "spec/pop_count_spec.cr"
+      "spec/eliuds_eggs_spec.cr"
     ],
     "example": [
       ".meta/src/example.cr"

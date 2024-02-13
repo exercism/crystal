@@ -1,0 +1,5 @@
+module ReverseString
+  def self.reverse(input : String) : String
+    input.reverse
+  end
+end

@@ -1,0 +1,58 @@
+require "spec"
+require "../src/*"
+
+<%- 
+    # These are uuids of the test cases that use nested arrays.
+    tests_with_nested = ["d6ecd72c-197f-40c3-89a4-aa1f45827e09", "40872990-b5b8-4cb8-9085-d91fc0d05d26"]
+-%>
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+    <%- @json["cases"].as_a.each do |describe| -%>
+        describe "<%= describe["description"].to_s %>" do
+            <%- describe["cases"].as_a.each do |cases| -%>
+                <%= status() %> "<%= cases["description"] %>" do
+                    <%- if cases["property"].to_s == "append" -%>
+                        ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list1"]) %>, <%= list_ops_array(cases["input"]["list2"]) %>).should eq(<%= list_ops_array(cases["expected"]) %>)
+                    <%- end -%>
+                    <%- if cases["property"].to_s == "concat" -%>
+                        ListOps.<%= cases["property"] %>(<%= list_ops_nestable(cases["input"]["lists"]) %>).should eq(<%= 
+                            if tests_with_nested.any?(cases["uuid"]) 
+                                list_ops_nestable(cases["expected"])
+                            else
+                                list_ops_array(cases["expected"]) 
+                            end%>)
+                    <%- end -%>
+                    <%- if cases["property"].to_s == "filter" -%>
+                        filter = <%= list_ops_function(cases["input"]["function"], ["Int32"]) %>
+                        ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list"]) %>, filter).should eq(<%= list_ops_array(cases["expected"]) %>)
+                    <%- end -%>
+                    <%- if cases["property"].to_s == "length" -%>
+                        ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list"]) %>).should eq(<%= cases["expected"] %>)
+                    <%- end -%>
+                    <%- if cases["property"].to_s == "map" -%>
+                        mapper = <%= list_ops_function(cases["input"]["function"], ["Int32"]) %>
+                        ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list"]) %>, mapper).should eq(<%= list_ops_array(cases["expected"]) %>)
+                    <%- end -%>
+                    <%- if ["foldl", "foldr"].any?(cases["property"]) -%>
+                        <%- # If the function performs a division, use Float64 -%>
+                        <%- if cases["input"]["function"].to_s.matches?(/.*->.*\/.*/) -%>
+                            folder = <%= list_ops_function(cases["input"]["function"], ["Float64", "Int32"]) %>
+                            ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list"]) %>, <%= cases["input"]["initial"] %>.to_f64, folder).should eq(<%= cases["expected"] %>.to_f64)                    
+                        <%- else -%>
+                            folder = <%= list_ops_function(cases["input"]["function"], ["Int32", "Int32"]) %>
+                            ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list"]) %>, <%= cases["input"]["initial"] %>, folder).should eq(<%= cases["expected"] %>)
+                        <%- end -%>
+                    <%- end -%>
+                    <%- if cases["property"].to_s == "reverse" -%>
+                        <%- if tests_with_nested.any?(cases["uuid"]) -%>
+                            ListOps.<%= cases["property"] %>(<%= list_ops_nestable(cases["input"]["list"]) %>).should eq(<%= list_ops_nestable(cases["expected"]) %>)
+                        <%- else -%>
+                            ListOps.<%= cases["property"] %>(<%= list_ops_array(cases["input"]["list"]) %>).should eq(<%= list_ops_array(cases["expected"]) %>)
+                        <%- end -%>
+                    <%- end -%>
+                end
+
+            <%- end -%>
+        end
+
+    <%- end -%>
+end

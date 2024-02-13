@@ -1,0 +1,34 @@
+{
+  "introduction": {
+    "authors": [
+      "meatball133"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "f7b0f17c-4e8e-43a7-92e2-56580aea818c",
+      "slug": "array",
+      "title": "Use an array",
+      "blurb": "Use an array to store the values.",
+      "authors": [
+        "meatball133"
+      ]
+    },
+    {
+      "uuid": "c298d774-b9b8-48e6-98c3-256dffcf8c73",
+      "slug": "string-builder",
+      "title": "Uses String::Builder",
+      "blurb": "Uses String::Builder to build the string.",
+      "authors": [
+        "meatball133"
+      ]
+    },
+    {
+      "uuid": "f6cf9f18-47a6-408a-933c-40dd0536eef2",
+      "slug": "reverse",
+      "title": "Uses Reverse",
+      "blurb": "Uses the built-in reverse method.",
+      "authors": ["meatball133"]
+    }
+  ]
+}

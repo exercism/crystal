@@ -1,0 +1,16 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "src/task_handler.cr"
+    ],
+    "test": [
+      "spec/task_handler_spec.cr"
+    ],
+    "exemplar": [
+      ".meta/src/exemplar.cr"
+    ]
+  },
+  "blurb": "Learn about Procs & blocks by implementing a simple task handler.",
+  "icon": "coordinate-transformation"
+}

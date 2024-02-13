@@ -55,6 +55,8 @@ jobs:
     name: Check exercises Crystal on Windows
     runs-on: windows-2022
     steps:
+      - name: Cache shards
+        uses: actions/cache@v4
       - name: Install Crystal
         uses: crystal-lang/install-crystal@1249f8d618d02f88c2862d498d8fce8192cf26ad
         with:

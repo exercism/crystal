@@ -2,9 +2,9 @@ name: Comment on Failed Test
 
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
+  push:
+    branches:
+      - main
 
 jobs:
   spec_doc_generator:

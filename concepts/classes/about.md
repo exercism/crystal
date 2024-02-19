@@ -96,7 +96,7 @@ account.balance
 # => 100
 ```
 
-Instance methods are defined using the `def` keyword, followed by the name of the method. They are defined inside the class definition.
+Instance variables may also be defined inside the class definition.
 
 ```crystal
 class Account

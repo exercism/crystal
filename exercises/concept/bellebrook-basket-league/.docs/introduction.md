@@ -18,6 +18,8 @@ end
 
 new change
 
+
+
 ## Namespace
 
 A namespace is a way to group code together, this is to avoid name clashes, but also to make it easier to understand what the code is for.

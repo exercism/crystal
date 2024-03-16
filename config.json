@@ -18,9 +18,6 @@
   "test_runner": {
     "average_run_time": 6
   },
-  "approaches": {
-    "snippet_extension": "cr"
-  },
   "files": {
     "solution": [
       "src/%{snake_slug}.cr"
@@ -273,8 +270,12 @@
         "slug": "task-handler",
         "name": "Task Handler",
         "uuid": "2acbe0f3-bb3b-4eb7-bd6f-fd760e3816b0",
-        "concepts": ["procs-blocks"],
-        "prerequisites": ["array-methods"],
+        "concepts": [
+          "procs-blocks"
+        ],
+        "prerequisites": [
+          "array-methods"
+        ],
         "status": "beta"
       }
     ],
@@ -987,6 +988,17 @@
         "difficulty": 3
       },
       {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "4a459cd8-a52f-48d3-9287-9245956f0ada",
+        "practices": [
+          "array",
+          "strings"
+        ],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",
@@ -1518,7 +1530,7 @@
       "uuid": "22b6c054-9705-46c9-a14e-cf051c1d653a",
       "slug": "procs-blocks",
       "name": "Procs & Blocks"
-    }   
+    }
   ],
   "key_features": [
     {

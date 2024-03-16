@@ -34,8 +34,7 @@ describe "FoodChain" do
   pending "cat" do
     expected = [
       "I know an old lady who swallowed a cat.",
-      "Imagine that,
- to swallow a cat!",
+      "Imagine that, to swallow a cat!",
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
@@ -47,8 +46,7 @@ describe "FoodChain" do
   pending "dog" do
     expected = [
       "I know an old lady who swallowed a dog.",
-      "What a hog,
- to swallow a dog!",
+      "What a hog, to swallow a dog!",
       "She swallowed the dog to catch the cat.",
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
@@ -90,8 +88,7 @@ describe "FoodChain" do
   pending "horse" do
     expected = [
       "I know an old lady who swallowed a horse.",
-      "She's dead,
- of course!",
+      "She's dead, of course!",
     ]
     FoodChain.recite(8, 8).should eq(expected)
   end
@@ -132,16 +129,14 @@ describe "FoodChain" do
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       "",
       "I know an old lady who swallowed a cat.",
-      "Imagine that,
- to swallow a cat!",
+      "Imagine that, to swallow a cat!",
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       "",
       "I know an old lady who swallowed a dog.",
-      "What a hog,
- to swallow a dog!",
+      "What a hog, to swallow a dog!",
       "She swallowed the dog to catch the cat.",
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
@@ -168,8 +163,7 @@ describe "FoodChain" do
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       "",
       "I know an old lady who swallowed a horse.",
-      "She's dead,
- of course!",
+      "She's dead, of course!",
     ]
     FoodChain.recite(1, 8).should eq(expected)
   end

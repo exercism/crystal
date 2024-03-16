@@ -2,10 +2,10 @@ require "spec"
 require "../src/*"
 
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
-<%- @json["cases"].as_a.each do |cases| %>
-    <%= status()%> "<%-= cases["description"] %>" do
-        expected = <%= cases["expected"].inspect.gsub(/[,\[]/,"\\0\n") %>
-        <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s %>(<%= cases["input"]["startVerse"].inspect %>, <%= cases["input"]["endVerse"].inspect %>).should eq(expected)
-    end
-<% end %>
+    <%- @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            expected = <%= cases["expected"].inspect.gsub(/(",)|\[/,"\\0\n") %>
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s %>(<%= cases["input"]["startVerse"].inspect %>, <%= cases["input"]["endVerse"].inspect %>).should eq(expected)
+        end
+    <% end %>
 end

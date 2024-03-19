@@ -1,0 +1,39 @@
+require "spec"
+require "../src/*"
+
+<% dndCharacterTraits = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]  %>
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+  <% @json["cases"].as_a.each do |top_level_case| %>
+    <% if top_level_case["cases"]? %>
+      describe "<%= top_level_case["description"] %>" do
+        <% top_level_case["cases"].as_a.each do |sub_case| %>
+          <%= status()%> "<%-= sub_case["description"] %>" do
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["score"].to_s %>).should eq(<%= sub_case["expected"].to_s %>)
+          end
+        <% end %>
+      end
+    <% end %>
+  <% end %>
+
+  <%= status() %> "random ability is within range" do
+    <%-= to_capitalized(@json["exercise"].to_s) %>.ability().should be >= 3
+    <%-= to_capitalized(@json["exercise"].to_s) %>.ability().should be <= 18
+  end
+
+  <%= status() %> "random character is valid" do
+    character = <%= to_capitalized(@json["exercise"].to_s) %>.new
+    <% dndCharacterTraits.each do |ability| -%>
+      character.<%= ability %>.should be >= 3
+      character.<%= ability %>.should be <= 18
+    <% end %>
+    character.hitpoints.should eq(10 + DndCharacter.modifier(character.constitution))
+  end
+
+  <%= status() %> "each ability is only calculated once" do
+    character = <%= to_capitalized(@json["exercise"].to_s) %>.new
+    <% dndCharacterTraits.each do |ability| -%>
+        character.<%= ability %>.should eq character.<%= ability %>
+    <% end %>
+  end
+end

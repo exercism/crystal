@@ -15,7 +15,7 @@ jobs:
     container:
       image: crystallang/crystal
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Run generator tests
         run: crystal spec test-generator/spec/*
   test-generator-templates:
@@ -24,7 +24,7 @@ jobs:
     container:
       image: crystallang/crystal
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Check generator templates tests
         run: ./bin/test_specs
   template:
@@ -33,7 +33,7 @@ jobs:
     container:
       image: crystallang/crystal
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Run file formatting
         run: crystal ./bin/check-format.cr
   exercises:
@@ -46,7 +46,7 @@ jobs:
     container:
       image: crystallang/crystal:${{ matrix.crystal }}
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Install jq
         run: apt-get update && apt-get install -y jq
       - name: Run tests
@@ -61,6 +61,6 @@ jobs:
           crystal: "1.11.2"
       - name: 'Setup jq'
         run: choco install jq
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
       - name: Run tests
         run: ./bin/test-exercises.ps1

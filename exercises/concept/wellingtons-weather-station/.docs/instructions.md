@@ -67,7 +67,7 @@ Here is a table showing the conversion between Celsius and Fahrenheit:
 | Celsius(°C) | Fahrenheit(°F) |
 | ----------- | -------------- |
 | -273.15     | -459.8         |
-| -100        | 148            |
+| -100        | -148            |
 | 0           | 32             |
 | 100         | 212            |
 

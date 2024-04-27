@@ -1433,6 +1433,17 @@
         ],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "7f99f0a1-c7ae-4b11-b45b-75e86b67aa09",
+        "practices": [
+          "conditionals",
+          "while-loops"
+        ],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },

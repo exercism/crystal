@@ -1,0 +1,11 @@
+require "spec"
+require "../src/*"
+
+describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
+    <% @json["cases"].as_a.each do |cases| %>
+        <%= status()%> "<%-= cases["description"] %>" do
+            puzzle = ZebraPuzzle.new
+            puzzle.<%= cases["property"].to_s.gsub(/([A-Z])/, "_\\1").downcase %>.should eq("<%= cases["expected"]%>")
+        end
+    <% end %>
+end

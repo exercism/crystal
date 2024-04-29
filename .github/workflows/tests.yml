@@ -56,7 +56,7 @@ jobs:
     runs-on: windows-2022
     steps:
       - name: Install Crystal
-        uses: crystal-lang/install-crystal@e4c9d197a5d1fa8329b55dadf309d06050ef5d07
+        uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d
         with:
           crystal: "1.11.2"
       - name: 'Setup jq'

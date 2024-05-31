@@ -25,4 +25,16 @@ describe "ReverseString" do
   pending "an even-sized word" do
     ReverseString.reverse("drawer").should eq("reward")
   end
+
+  pending "wide characters", tags: "optional" do
+    ReverseString.reverse("子猫").should eq("猫子")
+  end
+
+  pending "grapheme cluster with pre-combined form", tags: "optional" do
+    ReverseString.reverse("Würstchenstand").should eq("dnatsnehctsrüW")
+  end
+
+  pending "grapheme clusters", tags: "optional" do
+    ReverseString.reverse("ผู้เขียนโปรแกรม").should eq("มรกแรปโนยขีเผู้")
+  end
 end

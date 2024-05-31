@@ -3,8 +3,14 @@ require "../src/*"
 
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
+    <%- if cases["scenarios"]? %>
+        <%= status()%> "<%-= cases["description"] %>", tags: "optional" do
+        <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>("<%= cases["input"]["value"] %>").should eq("<%= cases["expected"] %>")
+    end
+    <%- else %>
     <%= status()%> "<%-= cases["description"] %>" do
         <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>("<%= cases["input"]["value"] %>").should eq("<%= cases["expected"] %>")
     end
+    <%- end %>
 <% end %>
 end

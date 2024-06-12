@@ -1,0 +1,15 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "src/spellbound_steel.cr"
+    ],
+    "test": [
+      "spec/spellbound_steel_spec.cr"
+    ],
+    "exemplar": [
+      ".meta/src/exemplar.cr"
+    ]
+  },
+  "blurb": "Learn about Iteration by implementing methods to aid in the game of Spellbound Steel."
+}

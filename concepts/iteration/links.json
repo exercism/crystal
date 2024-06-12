@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://crystal-lang.org/reference/latest/syntax_and_semantics/if.html",
+    "description": "Crystal docs: if"
+  },
+  {
+    "url": "https://crystal-lang.org/reference/latest/syntax_and_semantics/unless.html",
+    "description": "Crystal docs: Unless"
+  },
+  {
+    "url": "https://crystal-lang.org/reference/1.8/syntax_and_semantics/as_a_suffix.html",
+    "description": "Crystal docs: If as suffix"
+  },
+  {
+    "url": "https://crystal-lang.org/reference/latest/syntax_and_semantics/operators.html#equality-and-comparison",
+    "description": "Crystal docs: Numbers and Equality and Comparison operators"
+  },
+  {
+    "url": "https://crystal-lang.org/reference/latest/tutorials/basics/30_math.html#equality-and-comparison",
+    "description": "Crystal introduction: Numbers and Equality and Comparison"
+  },
+  {
+    "url": "https://crystal-lang.org/reference/latest/tutorials/basics/50_control_flow.html",
+    "description": "Crystal introduction: Control flow"
+  }
+]

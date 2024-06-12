@@ -277,6 +277,17 @@
           "array-methods"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "spellbound-steel",
+        "name": "spellbound-steel",
+        "uuid": "8fed320d-59b8-4683-83fb-a87b6c1a6911",
+        "concepts": [
+          "iteration"
+        ],
+        "prerequisites": [
+          "procs-blocks"
+        ]
       }
     ],
     "practice": [
@@ -1552,6 +1563,11 @@
       "uuid": "22b6c054-9705-46c9-a14e-cf051c1d653a",
       "slug": "procs-blocks",
       "name": "Procs & Blocks"
+    },
+    {
+      "uuid": "0455ecbd-dc84-4799-b49e-bc9bf0a9fc71",
+      "slug": "iteration",
+      "name": "Iteration"
     }
   ],
   "key_features": [

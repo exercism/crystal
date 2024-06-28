@@ -1227,6 +1227,14 @@
         "difficulty": 4
       },
       {
+        "slug": "markdown",
+        "name": "Markdown",
+        "uuid": "93ae2c8c-b54d-460a-accf-e6719538a2d6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",

@@ -1,0 +1,15 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "src/markdown.cr"
+    ],
+    "test": [
+      "spec/markdown_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Refactor a Markdown parser."
+}

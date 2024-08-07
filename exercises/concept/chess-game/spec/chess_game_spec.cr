@@ -2,7 +2,7 @@ require "spec"
 require "../src/*"
 
 describe Chess do
-  describe "Files & Ranks" do
+  describe "Files & Ranks", tags: "task_id=1" do
     it "should have 8 files" do
       Chess::FILES.should eq 'A'..'H'
     end
@@ -12,7 +12,7 @@ describe Chess do
     end
   end
 
-  describe "valid_square?" do
+  describe "valid_square?", tags: "task_id=2" do
     it "should return true when given a valid square" do
       Chess.valid_square?(1, 'A').should be_true
     end
@@ -34,7 +34,7 @@ describe Chess do
     end
   end
 
-  describe "nickname" do
+  describe "nickname", tags: "task_id=3" do
     it "Should return correct player nickname" do
       Chess.nickname("John", "Doe").should eq "JOOE"
     end
@@ -48,7 +48,7 @@ describe Chess do
     end
   end
 
-  describe "move_message" do
+  describe "move_message", tags: "task_id=4" do
     it "should return correct message for a move" do
       Chess.move_message("John", "Doe", "A2").should eq "JOOE moved to A2"
     end

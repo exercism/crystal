@@ -1,10 +1,10 @@
 # Case
 
 [`case`][case] (often referred to as switch in other languages) is a form of control expression like if-else.
-`case` allows for chaining of multiple if-else-if statements and can be more readable and also allows for powerful constructs.
+`case` allows for chaining multiple if-else-if statements, can be more readable, and allows for powerful constructs.
 
 A `case` is defined by the keyword `case` followed by an optional expression.
-Then for each case, the keyword `when` is used followed by an expression which is compared to the case expression.
+Then for each case, the keyword `when` is used followed by an expression that is compared to the case expression.
 The `when` keyword should not be indented from the `case` keyword.
 After the `when` keyword is the code that should be executed if the case expression matches the when expression.
 Case allows for an optional `else` statement which is executed if no other case matches.
@@ -15,22 +15,22 @@ The expression is compared using the [case subsumption operator (`===`)][case-su
 ```Crystal
 case 1
 when 1
-  puts "One"
+  puts "One"
 when 2
-  puts "Two"
+  puts "Two"
 else
-  puts "Other"
+  puts "Other"
 end
 # => One
 
 # This is the same as:
 tmp = 1
 if 1 === tmp
-  puts "One"
+  puts "One"
 elsif 2 === tmp
-  puts "Two"
+  puts "Two"
 else
-  puts "Other"
+  puts "Other"
 end
 ```
 
@@ -42,25 +42,25 @@ This means that it does matter where each operand is placed.
 How this works depends on the type of the left side, for example a `Range` would check if the right side is in the range or a `Object` would check if the right side is an instance of the `Object`.
 
 ```Crystal
-(1..3) == 1  # => false
+(1..3) == 1  # => false
 (1..3) === 1 # => true
 
-String == "foo"  # => false
+String == "foo"  # => false
 String === "foo" # => true
 ```
 
 ## Case with multiple expressions
 
-Cases allow for matching multiple expressions in a single case with each possible value separated by a comma.
+Cases allow matching multiple expressions in a single case with each possible value separated by a comma.
 It will execute the code if any of the expressions match.
-This can be useful when you want a single case to have multiple possible values.
+This can be useful for a single case with multiple possible values.
 
 ```Crystal
 case 1
 when 1, 2
-  puts "One or two"
+  puts "One or two"
 else
-  puts "Other"
+  puts "Other"
 end
 ```
 
@@ -72,9 +72,9 @@ This is done by having a range as the when expression.
 ```Crystal
 case var
 when 1..3
-  puts "One to three"
+  puts "One to three"
 else
-  puts "Other"
+  puts "Other"
 end
 ```
 
@@ -87,20 +87,20 @@ And makes them behave like if-else-if statements.
 ```Crystal
 case
 when 1 == 1
-  puts "One is equal to one"
+  puts "One is equal to one"
 when 1 > 2
-  puts "One is greater than two"
+  puts "One is greater than two"
 else
-  puts "Other"
+  puts "Other"
 end
 ```
 
 ## Single line when
 
-Crystal allows for single line case statements.
-This can be used when you have a simple single line statement.
-The single line when statement is written as `when <expression> then <statement>`.
-And when used in the else statement it is written as `else <statement>`.
+Crystal allows for single-line case statements.
+This can be used when you have a simple single-line statement.
+The single line when the statement is written as `when <expression> then <statement>.`
+And when used in the else statement, it is written as `else <statement>`.
 
 ```Crystal
 case var
@@ -113,17 +113,17 @@ end
 ## Case with types
 
 Case allows for the matching with types.
-The comparison will use the `is_a?` operator to check the type of the variable.
-This allows for example to have one branch for each type in a union type.
+The comparison will use the `is_a?` operator to check the variable type.
+For example, this allows one branch for each type in a union type.
 
 ```Crystal
 case var
 when Int32
-  puts "Int32"
+  puts "Int32"
 when String
-  puts "String"
+  puts "String"
 else
-  puts "Other"
+  puts "Other"
 end
 ```
 
@@ -131,14 +131,14 @@ end
 
 Case allows for the use of an implicit object.
 This allows for example a when expression to be a method call on the case expression.
-Based on if the method returns a truthy or falsey value will the case be matched or not.
+Based on whether the method returns a truthy or falsey value, will the case be matched or not.
 
 ```Crystal
 case 1
 when .odd?
-  puts "Odd"
+  puts "Odd"
 when .even?
-  puts "Even"
+  puts "Even"
 end
 ```
 

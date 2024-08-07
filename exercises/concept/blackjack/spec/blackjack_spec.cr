@@ -2,7 +2,7 @@ require "spec"
 require "../src/*"
 
 describe Blackjack do
-  describe "parse_card" do
+  describe "parse_card", tags: "task_id=1" do
     it "parse ace" do
       Blackjack.parse_card("ace").should eq(11)
     end
@@ -60,7 +60,7 @@ describe Blackjack do
     end
   end
 
-  describe "card_range" do
+  describe "card_range", tags: "task_id=2" do
     it "lower low range" do
       Blackjack.card_range("two", "two").should eq("low")
     end
@@ -102,7 +102,7 @@ describe Blackjack do
     end
   end
 
-  describe "first_turn" do
+  describe "first_turn", tags: "task_id=3" do
     it "pair of aces" do
       Blackjack.first_turn("ace", "ace", "ace").should eq "P"
     end

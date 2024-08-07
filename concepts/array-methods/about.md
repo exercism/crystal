@@ -1,18 +1,18 @@
 # Array Methods
 
-Arrays are a common data structure to deal with.
-Thereby are there a collection of methods that can be used to deal with arrays.
+Arrays are a common data structure to work with.
+Thereby, there is a collection of methods that can be used to deal with arrays.
 Which includes sorting, reversing, inserting, and many more.
 
 Some of these methods are destructive, which means that they modify the original array.
-Others are non-destructive, which means that they return a new array and do not modify the original array.
+Others are non-destructive, meaning they return a new array and do not modify the original one.
 
 Here are a few of the most common methods that can be used when dealing with arrays:
 
 ## insert
 
-When wanting to insert an element in an array, you can use the [`insert`][insert] method which takes an index and an element as arguments.
-The element will be inserted at the specified index and the rest of the array will be shifted to the right.
+When inserting an element in an array, you can use the [`insert`][insert] method, which takes an index and an element as arguments.
+The element will be inserted at the specified index, and the rest of the array will be shifted to the right.
 If the index is out of bounds, then an `IndexError` will be raised.
 
 ```crystal
@@ -25,14 +25,14 @@ numbers.insert(5, 5) # => Error: Index out of bounds (IndexError)
 
 ## delete
 
-When wanting to delete a specific element from an array, you can use the [`delete`][delete] method which takes an element as an argument.
+When you want to delete a specific element from an array, you can use the [`delete`][delete] method, which takes an element as an argument.
 The method returns the element that was removed.
 If the element does not exist in the array, then `nil` will be returned.
 
 ```crystal
 numbers = [1, 2, 3]
 numbers.delete(2) # => 2
-numbers           # => [1, 3]
+numbers           # => [1, 3]
 ```
 
 ## first & last
@@ -40,15 +40,15 @@ numbers           # => [1, 3]
 When wanting to get the first or last element of an array, you can use the [`first`][first] and [`last`][last] methods.
 These methods take an optional argument specifying how many elements to return.
 These can improve readability compared to using the index `0` or `-1`, or using a range.
-If the array is empty, then an `Enumerable::EmptyError` will be raised.
+If the array is empty, an `Enumerable::EmptyError` will be raised.
 
 ```crystal
 numbers = [1, 2, 3]
 numbers.first # => 1
-numbers.last  # => 3
+numbers.last  # => 3
 
 numbers.first(2) # => [1, 2]
-numbers.last(2)  # => [2, 3]
+numbers.last(2)  # => [2, 3]
 
 empty_array = [] of Int32
 empty_array.last # => Error: Empty enumerable (Enumerable::EmptyError)
@@ -58,25 +58,25 @@ empty_array.last # => Error: Empty enumerable (Enumerable::EmptyError)
 
 When wanting to reverse an array, you can use the [`reverse`][reverse] method which returns a new array with the elements in reverse order.
 It is important to note that `reverse` returns a new array and does not modify the original array.
-If you want to modify the original array, you can add a `!` to the end of the method name.
+If you want to modify the original array, add a `!` to the end of the method name.
 
 ```crystal
 numbers = [1, 2, 3]
 numbers.reverse # => [3, 2, 1]
-numbers         # => [1, 2, 3]
+numbers         # => [1, 2, 3]
 
 numbers.reverse! # => [3, 2, 1]
-numbers          # => [3, 2, 1]
+numbers          # => [3, 2, 1]
 ```
 
 ## flatten & compact & transpose & uniq
 
-The following methods are useful when wanting to do operations like making an array one-dimensional, removing `nil` elements, removing duplicates, or transposing an array of arrays.
+The following methods are useful when performing operations like making an array one-dimensional, removing `nil` elements, removing duplicates, or transposing an array of arrays.
 As with `reverse`, these methods return a new array and do not modify the original array.
 
 | Method | Description | example |
 | ------ | ----------- | ------- |
-| [`flatten`][flatten] | Returns a new array that is a one-dimensional flattening of this array (recursively). That is, for every element that is an array, extract its elements into the new array. | `[[1, 2], [3, 4]].flatten # => [1, 2, 3, 4]` |
+| [`flatten`][flatten] | Returns a new array that is a one-dimensional flattening of this array (recursively). That is, for every array element, extract its elements into the new array. | `[[1, 2], [3, 4]].flatten # => [1, 2, 3, 4]` |
 | [`compact`][compact] | Returns a copy of self with all nil elements removed. | `[1, nil, 2, nil, 3].compact # => [1, 2, 3]` |
 | [`transpose`][transpose] | Assumes that self is an array of arrays and [transposes][transpose] the rows and columns. | `[[1, 2], [3, 4]].transpose # => [[1, 3], [2, 4]]` |
 | [`uniq`][uniq] | Returns a new array by removing duplicate values in self. | `[1, 2, 1, 3, 1].uniq # => [1, 2, 3]` |
@@ -84,7 +84,7 @@ As with `reverse`, these methods return a new array and do not modify the origin
 ## Concat(`+`)
 
 The append method(`<<`) is useful when wanting to add objects to an array.
-However when wanting to combine two arrays, you can use the [`+`][concat] operator which returns a new array with the elements of both arrays.
+However, when combining two arrays, you can use the [`+`][concat] operator, which returns a new array with the elements of both arrays.
 
 ```crystal
 [1, 2] + [3, 4] # => [1, 2, 3, 4]
@@ -98,8 +98,8 @@ If you append an array to another array, the array will be added as a single ele
 
 ## empty?
 
-When wanting to check if an array is empty, you can use the [`empty?`][empty?] method which returns `true` if the array is empty, and `false` otherwise.
-This improves readability compared to checking the length of the array against `0`.
+When checking if an array is empty, you can use the [`empty?`][empty?] method, which returns `true` if the array is empty and `false` otherwise.
+This improves readability compared to checking the array's length against `0`.
 
 ```crystal
 [].empty? # => true
@@ -108,7 +108,7 @@ This improves readability compared to checking the length of the array against `
 
 ## index
 
-When wanting to get the index of an element in an array, you can use the [`index`][index] method which takes an element as an argument.
+When you want to get the index of an element in an array, you can use the [`index`][index] method, which takes an element as an argument.
 If the element does not exist in the array, then `nil` will be returned.
 
 ```crystal
@@ -118,7 +118,7 @@ numbers.index(2) # => 1
 
 ## count
 
-When wanting to count the number of elements in an array, you can use the [`count`][count] method which takes an optional argument specifying the element to count.
+When you want to count the number of elements in an array, you can use the [`count`][count] method, which takes an optional argument specifying the element to count.
 
 ```crystal
 numbers = [1, 2, 3]
@@ -128,16 +128,16 @@ numbers.count(2) # => 1
 
 ## sort
 
-When wanting to sort an array, you can use the [`sort`][sort] method which returns a new array with the elements sorted.
+When you want to sort an array, you can use the [`sort`][sort] method, which returns a new array with the elements sorted.
 As with `reverse`, this method returns a new array and does not modify the original array.
 
 ```crystal
 numbers = [3, 2, 1]
 numbers.sort # => [1, 2, 3]
-numbers      # => [3, 2, 1]
+numbers      # => [3, 2, 1]
 
 numbers.sort! # => [1, 2, 3]
-numbers       # => [1, 2, 3]
+numbers       # => [1, 2, 3]
 ```
 
 [insert]: https://crystal-lang.org/api/latest/Array.html#insert%28index%3AInt%2Cobject%3AT%29%3Aself-instance-method

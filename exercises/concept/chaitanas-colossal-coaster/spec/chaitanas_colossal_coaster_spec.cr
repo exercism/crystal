@@ -2,7 +2,7 @@ require "spec"
 require "../src/*"
 
 describe ColossalCoaster do
-  describe "add_to_queue" do
+  describe "add_to_queue", tags: "task_id=1" do
     it "should add person correctly to normal queue" do
       expected = ["RobotGuy", "WW", "HawkEye"]
       ColossalCoaster.add_to_queue(["Tony", "Bruce"], ["RobotGuy", "WW"], 0, "HawkEye").should eq expected
@@ -14,7 +14,7 @@ describe ColossalCoaster do
     end
   end
 
-  describe "find_my_friend" do
+  describe "find_my_friend", tags: "task_id=1" do
     it "should find person in the start of the queue" do
       queue = ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"]
       ColossalCoaster.find_my_friend(queue, "Natasha").should eq 0
@@ -31,7 +31,7 @@ describe ColossalCoaster do
     end
   end
 
-  describe "add_with_friends" do
+  describe "add_with_friends", tags: "task_id=1" do
     it "should add person to the start of the queue" do
       queue = ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"]
       expected = ["Bucky", "Natasha", "Steve", "Tchalla", "Wanda", "Rocket"]
@@ -51,7 +51,7 @@ describe ColossalCoaster do
     end
   end
 
-  describe "remove_from_queue" do
+  describe "remove_from_queue", tags: "task_id=1" do
     it "remove Steve in the queue" do
       queue = ["Natasha", "Steve", "Tchalla", "Wanda", "Rocket"]
       expected = ["Natasha", "Tchalla", "Wanda", "Rocket"]
@@ -71,7 +71,7 @@ describe ColossalCoaster do
     end
   end
 
-  describe "sorted_queue" do
+  describe "sorted_queue", tags: "task_id=1" do
     it "should sort the queue correctly" do
       queue = ["Steve", "Ultron", "Natasha", "Rocket"]
       expected = ["Natasha", "Rocket", "Steve", "Ultron"]

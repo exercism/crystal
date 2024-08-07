@@ -3,7 +3,7 @@
 [Array][array] is a mutable data structure that stores a collection of elements of a specific type.
 An array is an [indexable][indexable] data structure.
 Arrays being mutable means that if a method is called on an array that modifies the array, the array will be modified.
-Meaning it doesn't have to be reassigned to the variable.
+Meaning it doesn't create a new array but modifies the existing one.
 
 To create an array, use the array literal denotation syntax (`[]`) and within it, specify the elements of the array separated by a comma.
 
@@ -17,10 +17,10 @@ Crystal will infer the type of the array from the elements.
 [1, 2, 3].class # => Array(Int32)
 ```
 
-## Multi type Arrays
+## Multi-type Arrays
 
-Even if mentioned earlier about arrays being a collection of elements of a specific type, you can create an array with multiple types through the use of [union types][union-types].
-This makes so that the array can contain elements of any of the types specified in the union type.
+Even if mentioned earlier about arrays being a collection of elements of a specific type, you can create an array with multiple types using [union types][union-types].
+This allows the array to contain elements of any of the types specified in the union type.
 Crystal will infer the type of the array from the elements.
 
 ```crystal
@@ -37,9 +37,9 @@ This can be useful when wanting to store data in a table format.
 To define a multi-dimensional array, you can either write an array of arrays literal or use the `Array.new` constructor.
 
 ```crystal
-[[1, 2], [3, 4]]                    # => [[1, 2], [3, 4]]
+[[1, 2], [3, 4]]                    # => [[1, 2], [3, 4]]
 numbers = Array(Array(Int32)).new() # => []
-numbers << [1, 2]                   # => [[1, 2]]
+numbers << [1, 2]                   # => [[1, 2]]
 ```
 
 ## Add an element to an array
@@ -50,7 +50,7 @@ To add an element to an array, use the [`<<` (append) operator][append].
 [1, 2, 3] << 4 # => [1, 2, 3, 4]
 ```
 
-It is important that the type of the element you want to add is the same as the type of the array, if it is not an error will be raised.
+The type of the element you want to add must be the same as the type of the array, if it is not an error will be raised.
 
 ```crystal
 numbers : Array(Int32 | Float64) = [1, 2, 3]
@@ -70,12 +70,12 @@ As with `String`, can you get the size of an array by using the [`size`][size] m
 
 ## Empty Arrays
 
-When creating an empty array, the compiler cannot infer the type of the array.
+The compiler cannot infer the array type when creating an empty array.
 Therefore, you need to specify the type of the array.
-This can be done by specifying the type of the array, by using the `of` keyword, or by using the array initializer syntax, which is: `Array(T).new`.
+This can be done by specifying the array's type, using the `of` keyword, or using the array initializer syntax, which is `Array(T).new`.
 
 ```crystal
-[] of (Int32 | Float64 | String)    # => []
+[] of (Int32 | Float64 | String)    # => []
 Array(Int32 | Float64 | String).new # => []
 ```
 
@@ -108,13 +108,13 @@ This can be useful when you want to create an array of numbers.
 ## Create an array from a string
 
 To create an array from a string, use the [`split`][split] method.
-This lets you split a string into an array of strings by using a delimiter.
+This lets you split a string into an array of strings using a delimiter.
 
 ```crystal
 "1,2,3".split(",") # => ["1", "2", "3"]
 ```
 
-It is also possible to get an array of characters from a string by using the [`chars`][chars] method.
+It is also possible to get an array of characters from a string using the [`chars`][chars] method.
 
 ```crystal
 "123".chars # => ['1', '2', '3']
@@ -128,26 +128,26 @@ To convert an array of `Char` or `String` to a `String` you can use the [`join`]
 
 ## Deleting element from an array
 
-When you want to delete an element from the end of an array, you can use [`pop`][pop] method which takes an optional argument specifying how many elements to remove from the end of the array.
+When you want to delete an element from the end of an array, you can use the [`pop`][pop] method, which takes an optional argument specifying how many elements to remove from the end of the array.
 The method returns the element that was removed.
 If the array is empty an `IndexError` will be raised.
 
 ```crystal
 numbers = [1, 2, 3]
 [1, 2, 3].pop # => 3
-numbers       # => [1, 2]
+numbers       # => [1, 2]
 
 empty_numbers = [] of Int32
 empty_numbers.pop # => Index out of bounds (IndexError)
 ```
 
-When you want to delete an element of a specific index from an array, you can use the [`delete_at`][delete_at] method which takes the index of the element to remove as an argument.
+When you want to delete an element of a specific index from an array, you can use the [`delete_at`][delete_at] method which takes the element's index to remove as an argument.
 If the array is empty an `IndexError` will be raised.
 
 ```crystal
 numbers = [1, 2, 3]
 [1, 2, 3].delete_at(1) # => 2
-numbers                # => [1, 3]
+numbers                # => [1, 3]
 
 empty_numbers = [] of Int32
 empty_numbers.delete_at(0) # => Index out of bounds (IndexError)
@@ -169,9 +169,9 @@ numbers[3] = 5 # => Index out of bounds (IndexError)
 ## Array pointer
 
 ~~~~exercism/advanced
-Arrays being mutable gives some properties that are not available for immutable data types/structures.
+Arrays being mutable gives some properties unavailable for immutable data types/structures.
 One of these properties is that arrays are passed by reference.
-This means that when passing an array to a method, the method will be able to modify the array.
+This means that when passing an array to a method, the method can modify it.
 This has the benefit of not having to create a new array which gives better performance.
 For example when working with `String` every time you modify a string a new string is created which can be expensive.
 
@@ -182,19 +182,19 @@ numbers = [1, 2, 3]
 other_numbers = numbers
 other_numbers << 4
 other_numbers # => [1, 2, 3, 4]
-numbers       # => [1, 2, 3, 4]
+numbers       # => [1, 2, 3, 4]
 ```
 
 As you can see even though we only modified `other_numbers`, `numbers` was also modified.
-This is because `other_numbers` and `numbers` are pointing to the same array.
-To avoid this behavior you can use the `dup` method which creates a copy of the array.
+This is because `other_numbers` and `numbers` point to the same array.
+To avoid this behavior you can use the `dup` method which creates a duplication of the array.
 
 ```crystal
 numbers = [1, 2, 3]
 other_numbers = numbers.dup
 other_numbers << 4
 other_numbers # => [1, 2, 3, 4]
-numbers       # => [1, 2, 3]
+numbers       # => [1, 2, 3]
 ```
 ~~~~
 

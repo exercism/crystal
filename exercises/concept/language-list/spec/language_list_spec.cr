@@ -2,14 +2,14 @@ require "spec"
 require "../src/*"
 
 describe "LanguageList" do
-  describe "list" do
+  describe "list", tags: "task_id=1" do
     it "new array" do
       language_list = LanguageList.list
       language_list.should eq [] of String
     end
   end
 
-  describe "add" do
+  describe "add", tags: "task_id=2" do
     it "add a language to an array" do
       language_list = LanguageList.list
       language_list = LanguageList.add(language_list, "Crystal")
@@ -26,7 +26,7 @@ describe "LanguageList" do
     end
   end
 
-  describe "remove" do
+  describe "remove", tags: "task_id=3" do
     it "add then remove results in empty list" do
       language_list = LanguageList.list
       language_list = LanguageList.add(language_list, "Crystal")
@@ -43,7 +43,7 @@ describe "LanguageList" do
     end
   end
 
-  describe "at" do
+  describe "at", tags: "task_id=4" do
     it "add one language, then get the first language" do
       language_list = LanguageList.list
       language_list = LanguageList.add(language_list, "Crystal")
@@ -69,7 +69,7 @@ describe "LanguageList" do
     end
   end
 
-  describe "parse" do
+  describe "parse", tags: "task_id=5" do
     it "can parse a string with only one language" do
       language_list = LanguageList.parse("Crystal")
       language_list.should eq ["Crystal"]

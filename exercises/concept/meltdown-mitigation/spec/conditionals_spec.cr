@@ -2,7 +2,7 @@ require "spec"
 require "../src/*"
 
 describe Reactor do
-  describe "criticality_balanced?" do
+  describe "criticality_balanced?", tags: "task_id=1" do
     it "Should return false if the temperature is too low" do
       Reactor.criticality_balanced?(799, 499).should be_false
     end
@@ -20,7 +20,7 @@ describe Reactor do
     end
   end
 
-  describe "reactor_efficiency" do
+  describe "reactor_efficiency", tags: "task_id=2" do
     it "Should return \"green\" if the reactor is running at 80% efficiency" do
       Reactor.reactor_efficiency(200, 60, 15000).should eq "green"
     end
@@ -38,7 +38,7 @@ describe Reactor do
     end
   end
 
-  describe "fail_safe" do
+  describe "fail_safe", tags: "task_id=3" do
     it "should return low if the the output is too low" do
       Reactor.fail_safe(10, 400, 10000).should eq "LOW"
     end

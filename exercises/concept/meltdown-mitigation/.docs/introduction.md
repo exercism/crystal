@@ -11,7 +11,7 @@ Those two are: `if` and the `unless` expression.
 ## Comparison operators
 
 Comparison operators are used to compare values and return a `true` or `false` value.
-These operators require two values to be compared of the same type.
+These operators require two values of the same type to be compared.
 If the values are not of the same type then the compiler will throw an error.
 Here is a list of the comparison operators and an example of when they give a `true` value:
 
@@ -24,16 +24,16 @@ Here is a list of the comparison operators and an example of when they give a `t
 
 ## Equality operators
 
-Equality operators are similar to comparison operators but they are used to check if two values are equal or not equal.
+Equality operators are similar to comparison operators, but they are used to check whether or not two values are equal.
 
-The `==` operator is used to check if two values are equal, and that includes checking the type of the value.
+The `==` operator checks if two values are equal, including the type of the value.
 If the values are the same then it will return `true` otherwise it will return `false`.
 The `==` operator can compare any type of value with any other type of value.
-The `!=` works the same way but it will return `true` if the values are not equal and `false` if they are equal.
+The `!=` works the same way but will return `true` if the values are not equal and `false` if they are equal.
 
 ## If statement
 
-The [`if`][if] statement is used to check if a given condition is truthy or falsey.
+The [`if`][if] statement is used to check whether a given condition is truthy or falsey.
 If the condition is truthy then the code inside the if statement will run.
 An `if` statement ends with the `end` keyword.
 
@@ -70,6 +70,11 @@ end
 The `else` statement can be used in conjunction with the `if` and `unless` statements.
 The `else` statement will be executed if the `if` branch or the `unless` branch is not executed.
 
+~~~~exercism/warrning
+Even though an `else` branch can be used in conjunction with `unless,` it is discouraged to do so because it hurts readability.
+Instead, using `if !condition` with an else branch is recommended.
+~~~~
+
 ```crystal
 if 1 == 1
   puts "1 is equal to 1"
@@ -89,9 +94,9 @@ end
 ## "Cascading-if" statements
 
 The `elsif` statement can be used in conjunction with the if statement.
-The `elsif` statement will be executed if the if branch is not executed and the condition of the elsif statement is truthy.
-Elsif statements can be chained together and the first truthy condition will be executed.
-There can also be an else statement at the end of the if statement which will run if non of the earlier statement has been true.
+The `elsif` statement will be executed if the if branch is not executed and the condition of the `elsif` statement is truthy.
+`elsif` statements can be chained together and the first truthy condition will be executed.
+There can also be an else statement at the end of the if statement which will run if none of the earlier statements has been true.
 
 ```crystal
 if 1 != 1
@@ -106,9 +111,9 @@ end
 
 ## Types with conditionals
 
-When assigning to different types then will the variable carry both of the types.
+When assigned to different types, the variable will carry both types.
 This is because the compiler doesn't know which branch will be executed.
-This multiple assignment which is also known as a union will be explained in later concepts.
+This multiple assignment, which is also known as a union, will be explained in later concepts.
 This can be seen in the following example:
 
 ```crystal
@@ -123,7 +128,7 @@ typeof(a) # => Int32 | String
 
 ## Ternary Operator
 
-Crystal has a ternary operator which is a single line if-else statement: `condition ? expression_if_truthy : expression_if_falsey`
+Crystal has a ternary operator, a single line if-else statement: `condition ? expression_if_truthy : expression_if_falsey`
 
 ```crystal
 1 == 1 ? puts("1 is equal to 1") : puts("1 is not equal to 1")

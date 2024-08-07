@@ -1,6 +1,6 @@
 ## Goal
 
-The goal of this exercise is to teach the student about conditionals in crystal.
+The goal of this exercise is to teach the student about conditionals in Crystal.
 
 ## Learning objectives
 
@@ -19,8 +19,9 @@ The goal of this exercise is to teach the student about conditionals in crystal.
 
 `Conditionals`:
 
-- if, unless, else, elsif
+- `if`, `unless`, `else`, `elsif`
 - `>=`, `<=`, `==`, `!=`, `>`, `<`
+- `condition ? expression_if_truthy : expression_if_falsey`
 
 ## Prerequisites
 

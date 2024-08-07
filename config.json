@@ -1152,6 +1152,14 @@
         "difficulty": 4
       },
       {
+        "slug": "custom-set",
+        "name": "Custom Set",
+        "uuid": "b295b187-41ff-40df-9231-f8a42eea15fc",
+        "practices": ["set"],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "rail-fence-cipher",
         "name": "Rail Fence Cipher",
         "uuid": "07e94755-9641-48cc-a6ce-2eb7d5bf039b",

@@ -1,0 +1,15 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "src/custom_set.cr"
+    ],
+    "test": [
+      "spec/custom_set_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Create a custom set type."
+}

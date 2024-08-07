@@ -1,0 +1,14 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        markdown = "<%= cases["input"]["markdown"] %>"
+        html = "<%= cases["expected"] %>"
+
+        parser = <%= to_capitalized(@json["exercise"].to_s) %>.new(markdown)
+        parser.to_html.should eq(html)
+    end
+<% end %>
+end

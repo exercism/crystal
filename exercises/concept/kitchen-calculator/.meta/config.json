@@ -1,0 +1,12 @@
+{
+  "authors": ["meatball133"],
+  "contributors": [],
+  "files": {
+    "solution": ["src/kitchen_calculator.cr"],
+    "test": ["spec/kitchen_calculator_spec.cr"],
+    "exemplar": [".meta/src/exemplar.cr"]
+  },
+  "blurb": "Learn about tuples and symbols by converting common US baking measurements to the metric system.",
+  "icon": "kitchen-calculator",
+  "forked_from": ["elixir/kitchen-calculator"]
+}

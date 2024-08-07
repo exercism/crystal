@@ -2,7 +2,7 @@ require "spec"
 require "../src/*"
 
 describe PasswordLock do
-  describe "initialize" do
+  describe "initialize", tags: "task_id=1" do
     it "can take a digit password" do
       {% if PasswordLock.has_method? "initialize" %}
         pasword_lock = PasswordLock.new(1234)
@@ -31,7 +31,7 @@ describe PasswordLock do
     end
   end
 
-  describe "encrypt" do
+  describe "encrypt", tags: "task_id=2" do
     it "can encrypt digits password" do
       {% if PasswordLock.has_method?("encrypt") && PasswordLock.has_method?("initialize") %}
         pasword_lock = PasswordLock.new(1234)
@@ -93,7 +93,7 @@ describe PasswordLock do
     end
   end
 
-  describe "unlock?" do
+  describe "unlock?", tags: "task_id=3" do
     it "can check if a digit password is correct" do
       {% if PasswordLock.has_method?("unlock?") && PasswordLock.has_method?("encrypt") && PasswordLock.has_method?("initialize") %}
         pasword_lock = PasswordLock.new(1234)

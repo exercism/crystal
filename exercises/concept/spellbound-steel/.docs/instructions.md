@@ -39,14 +39,14 @@ SpellboundSteel.capitalize_cards(cards)
 In the game is it important to calculate the power level of all cards.
 The power for all cards can been seen in the following table:
 
-| Card Type | Power Level |
-| --------- | ----------- |
-| Warrior   | 10          |
-| Mage      | 20          |
-| Rogue     | 30          |
-| Fireball  | 15          |
-| Ice Storm | 25          |
-| Lightning Bolt | 35    |
+| Card Type      | Power Level |
+|----------------|-------------|
+| Warrior        | 10          |
+| Mage           | 20          |
+| Rogue          | 30          |
+| Fireball       | 15          |
+| Ice Storm      | 25          |
+| Lightning Bolt | 35          |
 
 Implement a method `SpellboundSteel.calculate_power_level` that takes an `Array` of `String` cards and returns the total power level of all cards.
 
@@ -60,12 +60,12 @@ SpellboundSteel.calculate_power_level(cards)
 
 In the game, there are what is known as cursed cards.
 These cards is a hidden card that can only be decoded by the player who played it.
-To decode the card you need to take every second character in the card name and reverse it.
+To decode the card you need to take every second character in the card name and remove it.
 That will give the name of the card.
 
 Implement a method `SpellboundSteel.decode_card` that takes a `String` card and returns the decoded card.
 
 ```crystal
-SpellboundSteel.decode_card("Wraoir")
+SpellboundSteel.decode_card("Wbalrrrlimoqr")
 # => "Warrior"
 ```

@@ -20,14 +20,14 @@ class Markdown
       end
       i += 1
     end
-    lines.join("\n")
+    lines.join
   end
 
   private def parse_list(line : String, previous_line : Bool | String, next_line : Nil | String) : String
     result = ""
     if previous_line.is_a?(Bool)
       result += "<ul>"
-    elsif !previous_line.starts_with?('*')
+    elsif !previous_line.starts_with?(/<(ul|li)>/)
       result += "<ul>"
     end
 

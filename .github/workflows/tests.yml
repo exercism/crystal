@@ -42,7 +42,7 @@ jobs:
     strategy:
       # Allows running the job multiple times with different configurations
       matrix:
-        crystal: ["1.9", "1.10", "1.11", "1.12", "1.13.1"]
+        crystal: ["1.10", "1.11", "1.12", "1.13", "1.14.0"]
     container:
       image: crystallang/crystal:${{ matrix.crystal }}
     steps:
@@ -58,7 +58,7 @@ jobs:
       - name: Install Crystal
         uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d
         with:
-          crystal: "1.13.1"
+          crystal: "1.14.0"
       - name: 'Setup jq'
         run: choco install jq
       - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938

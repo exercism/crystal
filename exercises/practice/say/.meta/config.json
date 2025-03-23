@@ -1,5 +1,7 @@
 {
-  "authors": ["ryanplusplus"],
+  "authors": [
+    "ryanplusplus"
+  ],
   "files": {
     "solution": [
       "src/say.cr"
@@ -13,5 +15,5 @@
   },
   "blurb": "Given a number from 0 to 999,999,999,999, spell out that number in English.",
   "source": "A variation on the JavaRanch CattleDrive, Assignment 4",
-  "source_url": "https://coderanch.com/wiki/718804"
+  "source_url": "https://web.archive.org/web/20240907035912/https://coderanch.com/wiki/718804"
 }

@@ -62,14 +62,14 @@ You want to work around this limitation by adding a check for the input value in
 Write a function `TheFarm.validate_input_and_divide_food` that has the same signature as `TheFarm.divide_food` above.
 
 - If the number of cows passed in is greater than 0, the function should call `TheFarm.divide_food` and return the results of that call.
-- If the number of cows is 0 or less, the function should raise an error with message `"invalid number of cows"`.
+- If the number of cows is 0 or less, the function should raise an error with message `"Number of cows must be greater than 0"`.
 
 ```crystal
 TheFarm.validate_input_and_divide_food(fodderCalculator, 5)
 # => 15
 
 TheFarm.validate_input_and_divide_food(fodderCalculator, -2)
-# Error: invalid number of cows
+# Error: Number of cows must be greater than 0
 ```
 
 ## 3. Improve the error handling

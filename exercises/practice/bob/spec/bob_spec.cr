@@ -82,10 +82,6 @@ describe "Bob" do
     Bob.hey("\t\t\t\t\t\t\t\t\t\t").should eq("Fine. Be that way!")
   end
 
-  pending "multiple line question" do
-    Bob.hey("\nDoes this cryogenic chamber make me look fat?\nNo.").should eq("Whatever.")
-  end
-
   pending "starting with whitespace" do
     Bob.hey("         hmmmmmmm...").should eq("Whatever.")
   end
@@ -100,5 +96,9 @@ describe "Bob" do
 
   pending "non-question ending with whitespace" do
     Bob.hey("This is a statement ending with whitespace      ").should eq("Whatever.")
+  end
+
+  pending "multiple line question" do
+    Bob.hey("\nDoes this cryogenic chamber make\n me look fat?").should eq("Sure.")
   end
 end

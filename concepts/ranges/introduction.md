@@ -6,8 +6,8 @@ They can be used for many things, such as quickly creating a collection, slicing
 They are created using the range operator `..` or `...` (inclusive and exclusive, respectively).
 
 ```crystal
-1..5  # A range containing 1,2,3,4,5
-1...5 # A range containing 1,2,3,4
+1..5  # A range containing 1, 2, 3, 4 ,5
+1...5 # A range containing 1, 2, 3, 4
 ```
 
 The reason for having two range operators is to create ranges that are inclusive or exclusive of the end value, which can be useful when, for example, working with zero-based indexes.

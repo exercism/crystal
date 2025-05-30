@@ -5,7 +5,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%- cases["cases"].as_a.each do |sub_case| %>
     <%= status()%> "<%-= sub_case["description"] %>" do
-        <%- unless sub_case["input"]["sides"].to_s[1...-1].split(", ").sort.map {|x| x.to_i? ? x.to_i : x.to_f }[0..1].sum() > sub_case["input"]["sides"].to_s[1...-1].split(", ").sort.map {|x| x.to_i? ? x.to_i : x.to_f }[2]%>
+        <%- unless sub_case["input"]["sides"].to_s[1...-1].split(", ").sort.map {|x| x.to_f }[0..1].sum() > sub_case["input"]["sides"].to_s[1...-1].split(", ").sort.map {|x| x.to_i? ? x.to_i : x.to_f }[2]%>
             expect_raises(ArgumentError) do
                 <%= to_capitalized(@json["exercise"].to_s) %>.new({<%= sub_case["input"]["sides"].to_s[1...-1] %>})
             end

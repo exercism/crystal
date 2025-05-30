@@ -1,6 +1,6 @@
 # Getters and setters
 
-Getters and setters are methods that allow you to read and write the value of an object's property. 
+Getters and setters are methods that allow you to read and write the value of an object's property.
 Crystal has macros, which makes it easy to define getters and setters for a property.
 Macros are a way to generate code at compile time, which will be covered later in the macro concept.
 
@@ -17,7 +17,7 @@ The getter macro can accept multiple instance variables by separating them with 
 ```crystal
 # This:
 class Person
-  @nane : String
+  @name : String
   @age : Int32
 
   def name

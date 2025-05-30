@@ -6,8 +6,8 @@ They can be used for many things, such as quickly creating a collection, slicing
 They are created using the range operator `..` or `...` (inclusive and exclusive, respectively).
 
 ```crystal
-1..5  # A range containing 1..5
-1...5 # A range containing 1...5
+1..5  # A range containing 1, 2, 3, 4, 5
+1...5 # A range containing 1, 2, 3, 4
 ```
 
 The reason for having two range operators is to create ranges that are inclusive or exclusive of the end value, which can be useful when, for example, working with zero-based indexes.
@@ -50,10 +50,10 @@ You can also use negative indexes to get the substring from the end of the strin
 Ranges do have a set of methods that can be used to work with them.
 For example, these methods can be used to get the sum of all the values in the range or check if the range includes a value.
 
-| Method                  | Description                                                             | Example                         |
-| ----------------------- | ----------------------------------------------------------------------- | ------------------------------- |
-| [`sum`][sum]            | Returns the sum of all the values in the range                          | `(1..5).sum # => 15` |
-| [`size`][size]          | Returns the size of the range                                           | `(1..5).size # => 5` |
+| Method                  | Description                                                             | Example                         |
+|-------------------------|-------------------------------------------------------------------------|---------------------------------|
+| [`sum`][sum]            | Returns the sum of all the values in the range                          | `(1..5).sum # => 15`            |
+| [`size`][size]          | Returns the size of the range                                           | `(1..5).size # => 5`            |
 | [`includes?`][indludes] | Returns `true` if the range includes the given value, otherwise `false` | `(1..5).includes?(3) # => true` |
 
 ## Endless & Beginningless ranges

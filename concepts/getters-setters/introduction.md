@@ -17,7 +17,7 @@ The getter macro can accept multiple instance variables by separating them with 
 ```crystal
 # This:
 class Person
-  @nane : String
+  @name : String
   @age : Int32
 
   def name

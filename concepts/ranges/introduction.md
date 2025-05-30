@@ -50,10 +50,10 @@ You can also use negative indexes to get the substring from the end of the strin
 Ranges do have a set of methods that can be used to work with them.
 For example, these methods can be used to get the sum of all the values in the range or check if the range includes a value.
 
-| Method                  | Description                                                             | Example                         |
-| ----------------------- | ----------------------------------------------------------------------- | ------------------------------- |
-| [`sum`][sum]            | Returns the sum of all the values in the range                          | `(1..5).sum # => 15` |
-| [`size`][size]          | Returns the size of the range                                           | `(1..5).size # => 5` |
+| Method                  | Description                                                             | Example                         |
+|-------------------------|-------------------------------------------------------------------------|---------------------------------|
+| [`sum`][sum]            | Returns the sum of all the values in the range                          | `(1..5).sum # => 15`            |
+| [`size`][size]          | Returns the size of the range                                           | `(1..5).size # => 5`            |
 | [`includes?`][indludes] | Returns `true` if the range includes the given value, otherwise `false` | `(1..5).includes?(3) # => true` |
 
 ## Endless & Beginningless ranges

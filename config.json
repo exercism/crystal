@@ -258,8 +258,12 @@
         "slug": "the-farm",
         "name": "the-farm",
         "uuid": "600b6035-ca9b-41df-843d-2dcd86cac2d1",
-        "concepts": ["errors"],
-        "prerequisites": ["array"],
+        "concepts": [
+          "errors"
+        ],
+        "prerequisites": [
+          "array"
+        ],
         "status": "beta"
       },
       {
@@ -1057,6 +1061,16 @@
         "difficulty": 4
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "39de02f8-d946-4fae-b1a6-38629ee8cf9a",
+        "practices": [
+          "array"
+        ],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "c85a6334-2f76-44ce-8ca5-0e997cc65d03",
@@ -1102,11 +1116,10 @@
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "b6825bf9-df41-4b00-8d70-04c64fb95fa5",
-        "practices": [
-          "array"
-        ],
+        "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 4,
+        "status": "deprecated"
       },
       {
         "slug": "strain",
@@ -1189,7 +1202,9 @@
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "b295b187-41ff-40df-9231-f8a42eea15fc",
-        "practices": ["set"],
+        "practices": [
+          "set"
+        ],
         "prerequisites": [],
         "difficulty": 4
       },

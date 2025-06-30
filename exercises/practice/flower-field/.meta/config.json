@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "meatball133"
+  ],
+  "contributors": [
+    "BNAndras",
+    "ryanplusplus"
+  ],
+  "files": {
+    "solution": [
+      "src/flower_field.cr"
+    ],
+    "test": [
+      "spec/flower_field_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}

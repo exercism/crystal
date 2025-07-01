@@ -1113,15 +1113,6 @@
         "difficulty": 4
       },
       {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "b6825bf9-df41-4b00-8d70-04c64fb95fa5",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "status": "deprecated"
-      },
-      {
         "slug": "strain",
         "name": "Strain",
         "uuid": "d69c25db-7058-45ab-ac80-83478e51c174",
@@ -1528,6 +1519,15 @@
         ],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "b6825bf9-df41-4b00-8d70-04c64fb95fa5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "status": "deprecated"
       }
     ]
   },

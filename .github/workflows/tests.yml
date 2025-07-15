@@ -11,7 +11,7 @@ on:
 jobs:
   test-generator:
     name: Test Generator
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
       image: crystallang/crystal
     steps:
@@ -20,7 +20,7 @@ jobs:
         run: crystal spec test-generator
   test-generator-templates:
     name: Check Generator Templates
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
       image: crystallang/crystal
     steps:
@@ -29,7 +29,7 @@ jobs:
         run: ./bin/test_specs
   template:
     name: Check file formatting
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
       image: crystallang/crystal
     steps:
@@ -38,7 +38,7 @@ jobs:
         run: crystal ./bin/check-format.cr
   exercises:
     name: Check exercises Crystal ${{ matrix.crystal }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       # Allows running the job multiple times with different configurations
       matrix:

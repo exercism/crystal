@@ -9,7 +9,7 @@ on:
 jobs:
   spec_doc_generator:
     name: Check Generator Templates
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Install Crystal
         uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d
@@ -21,7 +21,7 @@ jobs:
   comment_on_failed_test:
     permissions: write-all
     name: Check Generator Templates
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Install Crystal
         uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d

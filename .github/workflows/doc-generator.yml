@@ -15,7 +15,7 @@ jobs:
         uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d
         with:
           crystal: "1.15.1"
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Run generator tests
         run: crystal spec ./document-generator/spec/*
   comment_on_failed_test:
@@ -27,7 +27,7 @@ jobs:
         uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d
         with:
           crystal: "1.15.1"
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Run generator tests
         run: crystal document-generator/scripts/check_docs.cr
       - name: Comment on PR if test failed

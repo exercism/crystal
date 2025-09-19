@@ -134,8 +134,8 @@ If the array is empty an `IndexError` will be raised.
 
 ```crystal
 numbers = [1, 2, 3]
-[1, 2, 3].pop # => 3
-numbers       # => [1, 2]
+numbers.pop # => 3
+numbers     # => [1, 2]
 
 empty_numbers = [] of Int32
 empty_numbers.pop # => Index out of bounds (IndexError)
@@ -146,8 +146,8 @@ If the array is empty an `IndexError` will be raised.
 
 ```crystal
 numbers = [1, 2, 3]
-[1, 2, 3].delete_at(1) # => 2
-numbers                # => [1, 3]
+numbers.delete_at(1) # => 2
+numbers              # => [1, 3]
 
 empty_numbers = [] of Int32
 empty_numbers.delete_at(0) # => Index out of bounds (IndexError)

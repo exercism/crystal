@@ -10,7 +10,7 @@ The types used in a tuple can be different at each position, but the types must 
 Depending on if the tuples values types can be interpreted under compilation, the tuple can be created in different ways.
 If the values are known at compile time, the tuple can be created using the tuple literal syntax, otherwise they need to be explicitly declared.
 It is also important that the types of the values match the types specified in the tuple and that the number of values matches the number of types specified.
-Here is an example of defning through tuple literal syntax:
+Here is an example of defining through tuple literal syntax:
 
 ```crystal
 tuple = {1, "foo", 'c'} # Tuple(Int32, String, Char)

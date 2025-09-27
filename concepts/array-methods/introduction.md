@@ -104,14 +104,24 @@ numbers = [1, 2, 3]
 numbers.index(2) # => 1
 ```
 
-## count
+## size
 
-When you want to count the number of elements in an array, you can use the [`count`][count] method, which takes an optional argument specifying the element to count.
+When you want to know the number of elements in an array, you can use the [`size`][size] method.
 
 ```crystal
 numbers = [1, 2, 3]
-numbers.count # => 3
-numbers.count(2) # => 1
+numbers.size # => 3
+```
+
+## count
+
+When you want to count the number of times an element is present in an array, you can use the [`count`][count] method.
+
+```crystal
+fruits = ["apple", "banana", "apple"]
+fruits.count("apple")      # => 2
+fruits.count("banana")     # => 1
+fruits.count("watermelon") # => 0
 ```
 
 ## sort
@@ -136,5 +146,6 @@ numbers       # => [1, 2, 3]
 [concat]: https://crystal-lang.org/api/latest/Array.html#%2B%28other%3AArray%28U%29%29%3AArray%28T%7CU%29forallU-instance-method
 [empty?]: https://crystal-lang.org/api/latest/Indexable.html#empty%3F%3ABool-instance-method
 [index]: https://crystal-lang.org/api/latest/Array.html#index%28object%2Coffset%3AInt%3D0%29-instance-method
+[size]: https://crystal-lang.org/api/1.17.1/Enumerable.html#size%3AInt32-instance-method
 [count]: https://crystal-lang.org/api/latest/Enumerable.html#count%28%26%3AT-%3E%29%3AInt32-instance-method
 [sort]: https://crystal-lang.org/api/latest/Array.html#sort%3AArray%28T%29-instance-method

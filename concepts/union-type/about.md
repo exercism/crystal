@@ -81,7 +81,7 @@ Instead these have to be assigned to a local variable first.
 
 One way of making a union type into a single type is by making it so that a branch can only be entered if the type is a specific type.
 Another approach is to use the [`as`][as] method.
-This will make an union type into a single type by doing a runtime check.
+This will make a union type into a single type by doing a runtime check.
 An exception will be raised if the type is not the expected type.
 
 ```crystal

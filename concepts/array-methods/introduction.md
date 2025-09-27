@@ -146,6 +146,6 @@ numbers       # => [1, 2, 3]
 [concat]: https://crystal-lang.org/api/latest/Array.html#%2B%28other%3AArray%28U%29%29%3AArray%28T%7CU%29forallU-instance-method
 [empty?]: https://crystal-lang.org/api/latest/Indexable.html#empty%3F%3ABool-instance-method
 [index]: https://crystal-lang.org/api/latest/Array.html#index%28object%2Coffset%3AInt%3D0%29-instance-method
-[size]: https://crystal-lang.org/api/1.17.1/Enumerable.html#size%3AInt32-instance-method
+[size]: https://crystal-lang.org/api/latest/Enumerable.html#size%3AInt32-instance-method
 [count]: https://crystal-lang.org/api/latest/Enumerable.html#count%28%26%3AT-%3E%29%3AInt32-instance-method
 [sort]: https://crystal-lang.org/api/latest/Array.html#sort%3AArray%28T%29-instance-method

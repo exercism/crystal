@@ -6,8 +6,24 @@ describe "Wordy" do
     Wordy.answer("What is 5?").should eq(5)
   end
 
+  pending "just a zero" do
+    Wordy.answer("What is 0?").should eq(0)
+  end
+
+  pending "just a negative number" do
+    Wordy.answer("What is -123?").should eq(-123)
+  end
+
   pending "addition" do
     Wordy.answer("What is 1 plus 1?").should eq(2)
+  end
+
+  pending "addition with a left hand zero" do
+    Wordy.answer("What is 0 plus 2?").should eq(2)
+  end
+
+  pending "addition with a right hand zero" do
+    Wordy.answer("What is 3 plus 0?").should eq(3)
   end
 
   pending "more addition" do

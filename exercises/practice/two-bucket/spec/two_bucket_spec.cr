@@ -80,6 +80,32 @@ describe "TwoBucket" do
     )
   end
 
+  pending "Measure using bucket one much bigger than bucket two" do
+    TwoBucket.measure(
+      bucket_one: 5,
+      bucket_two: 1,
+      goal: 2,
+      start_bucket: TwoBucket::Bucket::One
+    ).should eq TwoBucket::Result.new(
+      moves: 6,
+      other_bucket: 1,
+      goal_bucket: TwoBucket::Bucket::One
+    )
+  end
+
+  pending "Measure using bucket one much smaller than bucket two" do
+    TwoBucket.measure(
+      bucket_one: 3,
+      bucket_two: 15,
+      goal: 9,
+      start_bucket: TwoBucket::Bucket::One
+    ).should eq TwoBucket::Result.new(
+      moves: 6,
+      other_bucket: 0,
+      goal_bucket: TwoBucket::Bucket::Two
+    )
+  end
+
   pending "Not possible to reach the goal" do
     expect_raises(ArgumentError) do
       TwoBucket.measure(

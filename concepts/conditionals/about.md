@@ -83,7 +83,7 @@ end
 The `else` statement can be used in conjunction with the `if` and `unless` statements.
 The `else` statement will be executed if the `if` branch or the `unless` branch is not executed.
 
-~~~~exercism/warrning
+~~~~exercism/warning
 Even though an `else` branch can be used in conjunction with `unless,` it is discouraged to do so because it hurts readability.
 Instead, using `if !condition` with an else branch is recommended.
 ~~~~

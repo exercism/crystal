@@ -1,0 +1,12 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        start = Time.parse_utc("<%= cases["input"]["meetingStart"] %>", "%Y-%m-%dT%H:%M:%S")
+        expected = Time.parse_utc("<%-= cases["expected"] %>", "%Y-%m-%dT%H:%M:%S")
+        <%-= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(start, <%= cases["input"]["description"].to_s.inspect %>).should eq(expected)
+    end
+<% end %>
+end

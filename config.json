@@ -1266,6 +1266,14 @@
         "difficulty": 4
       },
       {
+        "slug": "grep",
+        "name": "Grep",
+        "uuid": "de1af862-3118-428e-8590-72806a700780",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "bc681ef9-c0ef-46bc-ac67-8720131161c0",

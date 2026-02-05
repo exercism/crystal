@@ -1,0 +1,31 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%- cases["cases"].as_a.each do |sub_case| %>
+    <%= status()%> "<%-= sub_case["description"] %>" do
+        <%- if sub_case["property"] == "sharedBirthday" -%>
+            birthdays = [<%= sub_case["input"]["birthdates"].as_a.map {|date| "Time.parse_utc(\"#{date}\",  \"%Y-%m-%d\")" }.join(", ") %>]
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(birthdays).should be_<%= sub_case["expected"] %>
+        <%- elsif sub_case["property"] == "estimatedProbabilityOfSharedBirthday" -%>
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["groupSize"] %>).should be_close <%= (sub_case["expected"]) %>, <%= sub_case["input"]["groupSize"].as_i == 1 ? 0.01 : 1  %>
+        <%- elsif sub_case["expected"] == "length == groupsize" -%>
+            (1..10).each do |size|
+                result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(size)
+                result.size.should eq(size)
+            end
+        <%- elsif (sub_case["expected"]["years"]? || {} of String => Bool)["leapYear"]? -%>
+            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(50)
+            result.all? { |date| Time.leap_year?(date.year) }.should be_false
+        <%- elsif (sub_case["expected"]["months"]? || {} of String => Bool)["random"]? -%>
+            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(100)
+            result.to_set { |date| date.month }.size.should eq(12)
+        <%- elsif (sub_case["expected"]["days"]? || {} of String => Bool)["random"]? -%>
+            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(300)
+            result.to_set { |date| date.day }.size.should eq(31)
+        <% end %>
+    end
+    <% end %>
+<% end %>
+end

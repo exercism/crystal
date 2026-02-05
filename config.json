@@ -1338,6 +1338,14 @@
         "difficulty": 5
       },
       {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "f893d23c-c432-48fd-ae87-0561451cb180",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "dominoes",
         "name": "Dominoes",
         "uuid": "c237b348-89e6-4ba7-8450-0cf248b9cba0",

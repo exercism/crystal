@@ -693,6 +693,14 @@
         "difficulty": 2
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "ae91da04-ba1b-4d5b-91c5-5ba035e2ae2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "45a2591a-493d-4bab-be64-847243b4554b",

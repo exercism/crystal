@@ -1083,6 +1083,14 @@
         "difficulty": 4
       },
       {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "7f8b5494-1424-488a-a650-e5ceca8ed6f2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "cf967aae-fb56-45ca-ad47-02df6b72614c",

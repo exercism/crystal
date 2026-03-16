@@ -1048,6 +1048,14 @@
         "difficulty": 3
       },
       {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "9980f921-375e-4d1b-aa34-61064f11ca16",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "1fd5c0db-dbfd-4956-bcb8-d874bff26258",

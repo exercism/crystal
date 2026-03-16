@@ -5,4 +5,4 @@ You can read more about enums and unions in the Crystal reference documentation:
 - [union][union]
 
 [enum]: https://crystal-lang.org/reference/latest/syntax_and_semantics/enum.html
-[union]: https://crystal-lang.org/reference/1.8/syntax_and_semantics/union_types.html
+[union]: https://crystal-lang.org/reference/latest/syntax_and_semantics/union_types.html

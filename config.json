@@ -1037,6 +1037,14 @@
         "difficulty": 3
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "232e58b6-06ca-4401-b4ba-2e16e59902c3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "4a459cd8-a52f-48d3-9287-9245956f0ada",

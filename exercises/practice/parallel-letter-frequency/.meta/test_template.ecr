@@ -1,0 +1,12 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        input = [<%= cases["input"]["texts"].as_a.map { |text| text.to_s.inspect }.join(", ") %>] <%= to_s_deep(cases["input"]["texts"]) == "[]" ? "of String" : ""%>
+        expected = <%= to_s_deep(cases["expected"]) == "{}" ? "{} of String => Int32" : to_s_deep(cases["expected"]) %>
+        <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input).should eq(expected)
+    end
+<% end %>
+end

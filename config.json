@@ -1061,6 +1061,14 @@
         "difficulty": 4
       },
       {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "6d5cdbb3-f592-4b18-9cd3-23a28723e9cf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "flower-field",
         "name": "Flower Field",
         "uuid": "39de02f8-d946-4fae-b1a6-38629ee8cf9a",

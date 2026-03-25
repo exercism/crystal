@@ -1,0 +1,18 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%- cases["cases"].as_a.each do |subcase| %>
+        <%= status()%> "<%-= subcase["description"] %>" do
+            <%- if subcase["expected"].as_h? %>
+                expect_raises(ArgumentError) do
+                    <%-= to_capitalized(@json["exercise"].to_s) %>.<%-= subcase["property"].to_s.underscore %>(<%-= subcase["input"]["message"].to_s == "[]" ? "[] of Int32" : "[#{subcase["input"]["message"].as_a.join(", ")}]" %>)
+                end
+            <% else %>
+                <%-= to_capitalized(@json["exercise"].to_s) %>.<%-= subcase["property"].to_s.underscore %>(<%-= subcase["input"]["message"].to_s == "[]" ? "[] of Int32" : "[#{subcase["input"]["message"].as_a.join(", ")}]" %>).should eq <%-= subcase["expected"].to_s == "[]" ? "[] of Int32" : "[#{subcase["expected"].as_a.join(", ")}]" %>
+            <% end %>
+        end
+    <% end %>
+<% end %>
+end

@@ -1071,6 +1071,14 @@
         "difficulty": 4
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "5e7320db-0ec4-4db2-806a-4845f4bf8180",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "c85a6334-2f76-44ce-8ca5-0e997cc65d03",

@@ -1037,6 +1037,16 @@
         "difficulty": 3
       },
       {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "2bf80456-020c-4adc-8e81-8dfe75da7083",
+        "practices": [
+          "classes"
+        ],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "4a459cd8-a52f-48d3-9287-9245956f0ada",

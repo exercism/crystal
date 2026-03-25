@@ -1,0 +1,28 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+    <%- cases["input"]["commands"].as_a.each do |command| %>
+        <%- if command["command"] == "new" %>
+            stopwatch = SplitSecondStopwatch.new
+        <%- elsif command["command"] == "state" || command["command"] == "currentLap" %>
+            stopwatch.<%= command["command"].to_s.underscore %>.should eq("<%= command["expected"] %>")
+        <%- elsif command["command"] == "previousLaps" %>
+            stopwatch.previous_laps.should eq(<%= command["expected"].to_s == "[]" ? "[] of String": to_s_deep(command["expected"]) %>)
+        <%- elsif command["command"] == "start" || command["command"] == "stop" || command["command"] == "lap" || command["command"] == "reset" %>
+            <%- if command["expected"]? %>
+                expect_raises(ArgumentError) do
+                    stopwatch.<%= command["command"] %>
+                end
+            <%- else -%>
+            stopwatch.<%= command["command"] %>
+            <%- end %>
+        <%- elsif command["command"] == "advanceTime" %>
+            stopwatch.advance_time("<%= command["by"] %>")
+        <%- end %>
+    <%- end %>
+    end
+<% end %>
+end

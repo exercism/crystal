@@ -8,23 +8,23 @@ describe "SplitSecondStopwatch" do
     stopwatch.state.should eq("ready")
   end
 
-  it "new stopwatch's current lap has no elapsed time" do
+  pending "new stopwatch's current lap has no elapsed time" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.current_lap.should eq("00:00:00")
   end
 
-  it "new stopwatch's total has no elapsed time" do
+  pending "new stopwatch's total has no elapsed time" do
     stopwatch = SplitSecondStopwatch.new
   end
 
-  it "new stopwatch does not have previous laps" do
+  pending "new stopwatch does not have previous laps" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.previous_laps.should eq([] of String)
   end
 
-  it "start from ready state changes state to running" do
+  pending "start from ready state changes state to running" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -32,7 +32,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.state.should eq("running")
   end
 
-  it "start does not change previous laps" do
+  pending "start does not change previous laps" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -40,7 +40,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.previous_laps.should eq([] of String)
   end
 
-  it "start initiates time tracking for current lap" do
+  pending "start initiates time tracking for current lap" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -50,7 +50,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.current_lap.should eq("00:00:05")
   end
 
-  it "start initiates time tracking for total" do
+  pending "start initiates time tracking for total" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -58,7 +58,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.advance_time("00:00:23")
   end
 
-  it "start cannot be called from running state" do
+  pending "start cannot be called from running state" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -68,7 +68,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "stop from running state changes state to stopped" do
+  pending "stop from running state changes state to stopped" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -78,7 +78,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.state.should eq("stopped")
   end
 
-  it "stop pauses time tracking for current lap" do
+  pending "stop pauses time tracking for current lap" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -92,7 +92,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.current_lap.should eq("00:00:05")
   end
 
-  it "stop pauses time tracking for total" do
+  pending "stop pauses time tracking for total" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -104,7 +104,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.advance_time("00:00:44")
   end
 
-  it "stop cannot be called from ready state" do
+  pending "stop cannot be called from ready state" do
     stopwatch = SplitSecondStopwatch.new
 
     expect_raises(ArgumentError) do
@@ -112,7 +112,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "stop cannot be called from stopped state" do
+  pending "stop cannot be called from stopped state" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -124,7 +124,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "start from stopped state changes state to running" do
+  pending "start from stopped state changes state to running" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -136,7 +136,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.state.should eq("running")
   end
 
-  it "start from stopped state resumes time tracking for current lap" do
+  pending "start from stopped state resumes time tracking for current lap" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -154,7 +154,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.current_lap.should eq("00:01:28")
   end
 
-  it "start from stopped state resumes time tracking for total" do
+  pending "start from stopped state resumes time tracking for total" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -170,7 +170,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.advance_time("00:00:09")
   end
 
-  it "lap adds current lap to previous laps" do
+  pending "lap adds current lap to previous laps" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -188,7 +188,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.previous_laps.should eq(["00:01:38", "00:00:44"])
   end
 
-  it "lap resets current lap and resumes time tracking" do
+  pending "lap resets current lap and resumes time tracking" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -204,7 +204,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.current_lap.should eq("00:00:15")
   end
 
-  it "lap continues time tracking for total" do
+  pending "lap continues time tracking for total" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -216,7 +216,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.advance_time("00:00:33")
   end
 
-  it "lap cannot be called from ready state" do
+  pending "lap cannot be called from ready state" do
     stopwatch = SplitSecondStopwatch.new
 
     expect_raises(ArgumentError) do
@@ -224,7 +224,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "lap cannot be called from stopped state" do
+  pending "lap cannot be called from stopped state" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -236,7 +236,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "stop does not change previous laps" do
+  pending "stop does not change previous laps" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -252,7 +252,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.previous_laps.should eq(["00:11:22"])
   end
 
-  it "reset from stopped state changes state to ready" do
+  pending "reset from stopped state changes state to ready" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -264,7 +264,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.state.should eq("ready")
   end
 
-  it "reset resets current lap" do
+  pending "reset resets current lap" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -278,7 +278,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.current_lap.should eq("00:00:00")
   end
 
-  it "reset clears previous laps" do
+  pending "reset clears previous laps" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -300,7 +300,7 @@ describe "SplitSecondStopwatch" do
     stopwatch.previous_laps.should eq([] of String)
   end
 
-  it "reset cannot be called from ready state" do
+  pending "reset cannot be called from ready state" do
     stopwatch = SplitSecondStopwatch.new
 
     expect_raises(ArgumentError) do
@@ -308,7 +308,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "reset cannot be called from running state" do
+  pending "reset cannot be called from running state" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start
@@ -318,7 +318,7 @@ describe "SplitSecondStopwatch" do
     end
   end
 
-  it "supports very long laps" do
+  pending "supports very long laps" do
     stopwatch = SplitSecondStopwatch.new
 
     stopwatch.start

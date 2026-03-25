@@ -2,7 +2,7 @@
 
 Crystal is available on Linux, macOS, and Windows.
 
-What to note is that Crystal's windows support is experimental.
+What to note is that Crystal's Windows support is experimental.
 Meaning there might be some edge cases which don't work and it might not be ideal for production use cases.
 However, for Exercism and basic usage, native Windows should be largely usable.
 

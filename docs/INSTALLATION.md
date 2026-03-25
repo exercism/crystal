@@ -3,7 +3,7 @@
 Crystal is available on Linux, macOS, and Windows.
 
 What to note is that Crystal's windows support is experimental.
-Meaning there might be some edge cases which doesn't work and might not be ideal for production use cases.
+Meaning there might be some edge cases which don't work and it might not be ideal for production use cases.
 However, for Exercism and basic usage should native Windows be largely usable.
 
 If you are looking for a non preview experince for windows development, it is recommended to use [WSL (Windows Subsystem for Linux)][wsl].

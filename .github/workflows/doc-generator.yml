@@ -32,7 +32,7 @@ jobs:
         run: crystal document-generator/scripts/check_docs.cr
       - name: Comment on PR if test failed
         if: failure()
-        uses: exercism/pr-commenter-action@v1.5.1
+        uses: exercism/pr-commenter-action@v1.5.2
         with:
           github-token: ${{github.token}}
           config-file: ".github/pr-commenter.yml"

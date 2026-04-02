@@ -1,0 +1,12 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+        family_tree = <%= cases["input"]["familyTree"].to_s == "{}" ? "{} of String => Array(String)" : to_s_deep(cases["input"]["familyTree"]) %>
+        relative_distance = <%= to_capitalized(@json["exercise"].to_s) %>.new(family_tree)
+        relative_distance.<%= cases["property"].to_s.underscore %>?("<%= cases["input"]["personA"] %>", "<%= cases["input"]["personB"] %>").should eq(<%= cases["expected"].as_i? ? cases["expected"] : "nil" %>)
+    end
+<% end %>
+end

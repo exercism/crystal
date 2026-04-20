@@ -26,6 +26,10 @@ describe "PerfectNumbers" do
     PerfectNumbers.classify(33550335).should eq("abundant")
   end
 
+  pending "Perfect square abundant number is classified correctly" do
+    PerfectNumbers.classify(196).should eq("abundant")
+  end
+
   pending "Smallest prime deficient number is classified correctly" do
     PerfectNumbers.classify(2).should eq("deficient")
   end

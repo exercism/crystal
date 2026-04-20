@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "src/parallel_letter_frequency.cr"
+    ],
+    "test": [
+      "spec/parallel_letter_frequency_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Count the frequency of letters in texts using parallel computation."
+}

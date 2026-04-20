@@ -69,12 +69,12 @@ describe "BafflingBirthdays" do
   end
 
   pending "months are random" do
-    result = BafflingBirthdays.random_birthdates(100)
+    result = BafflingBirthdays.random_birthdates(300)
     result.to_set { |date| date.month }.size.should eq(12)
   end
 
   pending "days are random" do
-    result = BafflingBirthdays.random_birthdates(300)
+    result = BafflingBirthdays.random_birthdates(1000)
     result.to_set { |date| date.day }.size.should eq(31)
   end
 

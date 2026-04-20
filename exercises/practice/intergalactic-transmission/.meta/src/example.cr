@@ -5,9 +5,7 @@ class IntergalacticTransmission
     i = 0
     while i < message.size || temp.size > 0
       if temp.size == 7 || i >= message.size
-        p temp
         temp = expand_number(sum(temp.reverse!)).reverse!
-        p temp
         temp.pop
         temp << (temp.sum.even? ? 0 : 1)
         result << sum(temp)

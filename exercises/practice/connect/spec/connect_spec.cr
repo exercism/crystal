@@ -70,6 +70,26 @@ describe "Connect" do
     Connect.winner(board).should eq "X"
   end
 
+  pending "X wins with left-hand dead end fork" do
+    board = [
+      ". . X .",
+      " X X . .",
+      "  . X X X",
+      "   O O O O",
+    ]
+    Connect.winner(board).should eq "X"
+  end
+
+  pending "X wins with right-hand dead end fork" do
+    board = [
+      ". . X X",
+      " X X . .",
+      "  . X X .",
+      "   O O O O",
+    ]
+    Connect.winner(board).should eq "X"
+  end
+
   pending "O wins crossing from top to bottom" do
     board = [
       ". O . .",

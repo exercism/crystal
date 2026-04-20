@@ -6,7 +6,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         describe "<%= describe["description"].to_s %>" do
             <%- describe["cases"].as_a.each do |cases| %>
                 <%= status()%> "<%-= cases["description"] %>" do
-                    <%= to_capitalized(@json["exercise"].to_s) %>.translate(<%= cases["input"]["phrase"].inspect %>).should eq(<%= cases["expected"].to_s.inspect %>)
+                    <%= to_capitalized(@json["exercise"].to_s) %>.translate(<%= cases["input"]["phrase"].to_s.inspect %>).should eq(<%= cases["expected"].to_s.inspect %>)
                 end
             <% end %>
         end

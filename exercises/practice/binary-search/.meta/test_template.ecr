@@ -4,7 +4,7 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
-    binary = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["input"]["array"].as_a %> of Int32)
+    binary = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= to_s_deep(cases["input"]["array"]) %> of Int32)
     value = <%= cases["input"]["value"] %> 
     <%- if cases["expected"].as_h? %>
     expect_raises(ArgumentError) do

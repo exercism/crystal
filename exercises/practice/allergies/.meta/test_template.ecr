@@ -8,7 +8,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <%- if sub_case["input"]["item"]? -%>
             <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["item"] %>", <%= sub_case["input"]["score"] %>).should eq(<%= sub_case["expected"] %>)
         <%- else -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["score"] %>).should eq(<%= sub_case["expected"]? %> of String)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["score"] %>).should eq(<%= to_s_deep(sub_case["expected"]) %> of String)
         <% end %>
     end
     <% end %>

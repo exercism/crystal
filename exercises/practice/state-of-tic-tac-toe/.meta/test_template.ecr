@@ -6,11 +6,11 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         describe "<%-= cases["description"].to_s %>" do
             <%- cases["cases"].as_a.each do |cases| %>
                 <%= status()%> "<%-= cases["description"] %>" do
-                    board = <%= cases["input"]["board"].inspect.gsub(/[,\[]/,"\\0\n") %>
+                    board = <%= to_s_deep(cases["input"]["board"]).gsub(/[,\[]/,"\\0\n") %>
                     <%
-                        expected = cases["expected"].inspect
+                        expected = cases["expected"].to_s
                         if expected.includes? "error"
-                            expected = "TicTacToe::Error::" + expected.split(": ")[1][0...-2].gsub(" ", "_").camelcase
+                            expected = "TicTacToe::Error::" + expected.split(": ")[1][0...-2].gsub(" ", "_").gsub("\"", "").camelcase
                         else
                             expected = "TicTacToe::State::" + expected.gsub("\"", "").capitalize
                         end

@@ -4,10 +4,10 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
-        <%- if cases["input"]["array"].to_s == "[[[]]]" %>
-<%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(Array(Array(Int32)).new).should eq(<%= cases["expected"].as_a %> of Int32)
+        <%- if to_s_deep(cases["input"]["array"]) == "[[[]]]" %>
+<%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(Array(Array(Int32)).new).should eq(<%= to_s_deep(cases["expected"]) %> of Int32)
         <%- else %>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(<%= cases["input"]["array"].to_s == "[]" ? "[] of Int32 | Nil" : cases["input"]["array"].as_a %>).should eq(<%= cases["expected"].to_s == "[]" ? "[] of Int32" : cases["expected"].as_a %>)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(<%= to_s_deep(cases["input"]["array"]) == "[]" ? "[] of Int32 | Nil" : to_s_deep(cases["input"]["array"]) %>).should eq(<%= to_s_deep(cases["expected"]) == "[]" ? "[] of Int32" : to_s_deep(cases["expected"]) %>)
         <%- end %>
     end
 <% end %>

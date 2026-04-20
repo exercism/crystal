@@ -6,19 +6,19 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- cases["cases"].as_a.each do |sub_case| %>
     <%= status()%> "<%-= sub_case["description"] %>" do
         <%- if sub_case["input"]["set1"]? -%>
-            custom_set1 = CustomSet.new(<%= sub_case["input"]["set1"].as_a %> <%= sub_case["input"]["set1"].as_a.size == 0 ? "of Int32" : nil  %>)
-            custom_set2 = CustomSet.new(<%= sub_case["input"]["set2"].as_a %> <%= sub_case["input"]["set2"].as_a.size == 0 ? "of Int32" : nil  %>)
+            custom_set1 = CustomSet.new(<%= to_s_deep(sub_case["input"]["set1"]) %> <%= sub_case["input"]["set1"].as_a.size == 0 ? "of Int32" : nil  %>)
+            custom_set2 = CustomSet.new(<%= to_s_deep(sub_case["input"]["set2"]) %> <%= sub_case["input"]["set2"].as_a.size == 0 ? "of Int32" : nil  %>)
             <%- if sub_case["expected"].as_a? -%>
-                expected = CustomSet.new(<%= sub_case["expected"].as_a %> <%= sub_case["expected"].as_a.size == 0 ? "of Int32" : nil  %>)
+                expected = CustomSet.new(<%= to_s_deep(sub_case["expected"]) %> <%= sub_case["expected"].as_a.size == 0 ? "of Int32" : nil  %>)
                 custom_set1.<%= sub_case["property"].to_s.underscore %>(custom_set2).should eq(expected)
             <%- else -%>
                 custom_set1.<%= sub_case["property"].to_s.underscore %>?(custom_set2).should be_<%= sub_case["expected"].to_s %>
             <% end %>
         <%- else -%>
 
-            custom_set = CustomSet.new(<%= sub_case["input"]["set"].as_a %> <%= sub_case["input"]["set"].as_a.size == 0 ? "of Int32" : nil  %>)
+            custom_set = CustomSet.new(<%= to_s_deep(sub_case["input"]["set"]) %> <%= sub_case["input"]["set"].as_a.size == 0 ? "of Int32" : nil  %>)
             <%- if sub_case["expected"].as_a? -%>
-                expected = CustomSet.new(<%= sub_case["expected"].as_a %> <%= sub_case["expected"].as_a.size == 0 ? "of Int32" : nil  %>)
+                expected = CustomSet.new(<%= to_s_deep(sub_case["expected"]) %> <%= sub_case["expected"].as_a.size == 0 ? "of Int32" : nil  %>)
                 custom_set.<%= sub_case["property"].to_s.underscore %>(<%= sub_case["input"]["element"]? %>).should eq(expected)
                 
             <%- else -%>

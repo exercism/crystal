@@ -4,15 +4,15 @@ require "../src/*"
 describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
     <% @json["cases"].as_a.each do |cases| %>
         <%= status()%> "<%-= cases["description"] %>" do
-            buffer = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["input"]["capacity"].inspect %>)
+            buffer = <%= to_capitalized(@json["exercise"].to_s) %>.new(<%= cases["input"]["capacity"] %>)
             <% cases["input"]["operations"].as_a.each do |operation| -%>
                 <% if operation["should_succeed"]? && operation["should_succeed"].to_s == "false" -%>
                     expect_raises(RuntimeError) do
                 <% end -%>
                 <% if operation["item"]? -%>
-                    buffer.<%= operation["operation"].to_s %>(<%= operation["item"].inspect %>)
+                    buffer.<%= operation["operation"].to_s %>(<%= operation["item"] %>)
                 <% elsif operation["expected"]? -%>
-                    buffer.<%= operation["operation"].to_s %>().should eq(<%= operation["expected"].inspect %>)
+                    buffer.<%= operation["operation"].to_s %>().should eq(<%= operation["expected"] %>)
                 <% else -%>
                     buffer.<%= operation["operation"].to_s %>()
                 <% end -%>

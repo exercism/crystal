@@ -3,7 +3,7 @@ require "../src/*"
 
 describe "<%= to_capitalized(@json["exercise"].to_s) %>" do
 <% @json["cases"].as_a.each do |describe| %>
-    describe <%= describe["description"].inspect %> do
+    describe <%= describe["description"].to_s.inspect %> do
         <% describe["cases"].as_a.each do |cases| %>
             <%= status()%> "<%= cases["description"] %>" do
                 <% if cases["property"] == "create" %>
@@ -15,7 +15,7 @@ describe "<%= to_capitalized(@json["exercise"].to_s) %>" do
                         end
                     <% end %>
                 <% else %>
-                    Queen.new(<%= cases["input"]["white_queen"]["position"]["row"].to_s %>, <%= cases["input"]["white_queen"]["position"]["column"].to_s %>).can_attack?(Queen.new(<%= cases["input"]["black_queen"]["position"]["row"].to_s %>, <%= cases["input"]["black_queen"]["position"]["column"].to_s %>)).should eq <%= cases["expected"].to_s %>
+                    Queen.new(<%= cases["input"]["white_queen"]["position"]["row"].to_s %>, <%= cases["input"]["white_queen"]["position"]["column"].to_s %>).can_attack?(Queen.new(<%= cases["input"]["black_queen"]["position"]["row"].to_s %>, <%= cases["input"]["black_queen"]["position"]["column"].to_s %>)).should be_<%= cases["expected"] %>
                 <% end %>
             end
         <% end %>

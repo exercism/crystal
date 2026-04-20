@@ -9,7 +9,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
         <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>("<%= cases["input"]["series"] %>", <%= cases["input"]["sliceLength"] %>)
     end
     <%- else %>
-    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>("<%= cases["input"]["series"] %>", <%= cases["input"]["sliceLength"] %>).should eq(<%= cases["expected"]%>)
+    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>("<%= cases["input"]["series"] %>", <%= cases["input"]["sliceLength"] %>).should eq(<%= to_s_deep(cases["expected"]) %>)
     <%- end %>
     end
 <% end %>

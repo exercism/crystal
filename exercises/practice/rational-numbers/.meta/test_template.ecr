@@ -8,23 +8,23 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
                 <% if cases["property"]? %>
                     <%= status()%> "<%= cases["description"].to_s %>" do
                         <% if cases["property"].to_s == "abs" %>
-                            RationalNumbers.abs(<%= cases["input"]["r"].to_s.gsub({'[' => '{', ']' => '}'}) %>).should eq(<%= cases["expected"].to_s.gsub({'[' => '{', ']' => '}'}) %>)
+                            RationalNumbers.abs(<%= to_s_deep(cases["input"]["r"]).gsub({'[' => '{', ']' => '}'}) %>).should eq(<%= to_s_deep(cases["expected"]).gsub({'[' => '{', ']' => '}'}) %>)
                         <% end %>
                         <% if cases["property"].to_s == "exprational" %>
-                            RationalNumbers.exp(<%= cases["input"]["r"].to_s.gsub({'[' => '{', ']' => '}'}) %>, <%= cases["input"]["n"].to_s %>).should eq(<%= cases["expected"].to_s.gsub({'[' => '{', ']' => '}'}) %>)
+                            RationalNumbers.exp(<%= to_s_deep(cases["input"]["r"]).gsub({'[' => '{', ']' => '}'}) %>, <%= cases["input"]["n"].to_s %>).should eq(<%= to_s_deep(cases["expected"]).gsub({'[' => '{', ']' => '}'}) %>)
                         <% end %>
                         <% if cases["property"].to_s == "expreal" %>
-                            RationalNumbers.exp(<%= cases["input"]["x"] %>, <%= cases["input"]["r"].to_s.gsub({'[' => '{', ']' => '}'}) %>).should be_close(<%= cases["expected"] %>, 1e-9)
+                            RationalNumbers.exp(<%= cases["input"]["x"] %>, <%= to_s_deep(cases["input"]["r"]).gsub({'[' => '{', ']' => '}'}) %>).should be_close(<%= cases["expected"] %>, 1e-9)
                         <% end %>
                         <% if cases["property"].to_s == "reduce" %>
-                            RationalNumbers.reduce(<%= cases["input"]["r"].to_s.gsub({'[' => '{', ']' => '}'}) %>).should eq(<%= cases["expected"].to_s.gsub({'[' => '{', ']' => '}'}) %>)
+                            RationalNumbers.reduce(<%= to_s_deep(cases["input"]["r"]).gsub({'[' => '{', ']' => '}'}) %>).should eq(<%= to_s_deep(cases["expected"]).gsub({'[' => '{', ']' => '}'}) %>)
                         <% end %>
                     end
                 <% else %>
                     describe "<%= cases["description"].to_s %>" do
                         <%- cases["cases"].as_a.each do |cases| %>
                             <%= status()%> "<%= cases["description"].to_s %>" do
-                                RationalNumbers.<%= cases["property"].to_s %>(<%= cases["input"]["r1"].to_s.gsub({'[' => '{', ']' => '}'}) %>, <%= cases["input"]["r2"].to_s.gsub({'[' => '{', ']' => '}'}) %>).should eq(<%= cases["expected"].to_s.gsub({'[' => '{', ']' => '}'}) %>)
+                                RationalNumbers.<%= cases["property"].to_s %>(<%= to_s_deep(cases["input"]["r1"]).gsub({'[' => '{', ']' => '}'}) %>, <%= to_s_deep(cases["input"]["r2"]).gsub({'[' => '{', ']' => '}'}) %>).should eq(<%= to_s_deep(cases["expected"]).gsub({'[' => '{', ']' => '}'}) %>)
                             end
                         <% end %>
                     end

@@ -4,13 +4,13 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- @json["cases"].as_a.each do |cases| %>
         <%= status()%> "<%-= cases["description"] %>" do
-            input = <%= cases["input"]["rows"].inspect.gsub(/[\[,]/, &.+("\n")) %>
+            input = <%= to_s_deep(cases["input"]["rows"]).gsub(/[\[,]/, &.+("\n")) %>
             <% if cases["expected"].as_h? %>
                 expect_raises(ArgumentError) do
                     <%= to_capitalized(@json["exercise"].to_s) %>.convert(input)
                 end
             <% else %>
-                <%= to_capitalized(@json["exercise"].to_s) %>.convert(input).should eq(<%= cases["expected"].inspect %>)
+                <%= to_capitalized(@json["exercise"].to_s) %>.convert(input).should eq(<%= cases["expected"].to_s.inspect %>)
             <% end %>
         end
     <% end %>

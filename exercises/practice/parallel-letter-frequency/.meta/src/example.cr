@@ -20,7 +20,7 @@ class ParallelLetterFrequency
           end
           shared_data
         end
-        channel.send(nil)  # signal completion
+        channel.send(nil) # signal completion
       end
     end
 
@@ -28,7 +28,6 @@ class ParallelLetterFrequency
       channel.receive
     end
 
-
-    data.get()
+    data.get
   end
 end

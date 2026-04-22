@@ -19,8 +19,8 @@ class Camicia
         card = @player_a.shift
         @pile << card
         penalty -= 1
-        if check_penelaty(card) != 0
-          penalty = check_penelaty(card)
+        if check_penalty(card) != 0
+          penalty = check_penalty(card)
           @current = "B"
         elsif penalty == 0
           @player_b.concat(@pile)
@@ -36,8 +36,8 @@ class Camicia
         card = @player_b.shift
         penalty -= 1
         @pile << card
-        if check_penelaty(card) != 0
-          penalty = check_penelaty(card)
+        if check_penalty(card) != 0
+          penalty = check_penalty(card)
           @current = "A"
         elsif penalty == 0
           @player_a.concat(@pile)
@@ -52,12 +52,12 @@ class Camicia
       elsif @current == "A"
         card = @player_a.shift
         @pile << card
-        penalty = check_penelaty(card)
+        penalty = check_penalty(card)
         @current = "B"
       else
         card = @player_b.shift
         @pile << card
-        penalty = check_penelaty(card)
+        penalty = check_penalty(card)
         @current = "A"
       end
 
@@ -86,7 +86,7 @@ class Camicia
     end
 
     deck_a.each_with_index do |card, idx|
-      if check_penelaty(card) != check_penelaty(deck_b[idx])
+      if check_penalty(card) != check_penalty(deck_b[idx])
         return false
       end
     end
@@ -94,7 +94,7 @@ class Camicia
     return true
   end
 
-  def check_penelaty(card : String) : Int
+  def check_penalty(card : String) : Int
     case card
     when "A" then 4
     when "K" then 3

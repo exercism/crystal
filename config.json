@@ -693,6 +693,14 @@
         "difficulty": 2
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "ae91da04-ba1b-4d5b-91c5-5ba035e2ae2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "45a2591a-493d-4bab-be64-847243b4554b",
@@ -1047,6 +1055,14 @@
         "difficulty": 3
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "232e58b6-06ca-4401-b4ba-2e16e59902c3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "4a459cd8-a52f-48d3-9287-9245956f0ada",
@@ -1081,6 +1097,14 @@
         "difficulty": 4
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "5e7320db-0ec4-4db2-806a-4845f4bf8180",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "c85a6334-2f76-44ce-8ca5-0e997cc65d03",
@@ -1089,6 +1113,14 @@
           "case",
           "conditionals"
         ],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "7f8b5494-1424-488a-a650-e5ceca8ed6f2",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 4
       },
@@ -1344,6 +1376,14 @@
           "array",
           "numbers"
         ],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "f893d23c-c432-48fd-ae87-0561451cb180",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 5
       },

@@ -8,7 +8,7 @@ test_run() {
     echo "Testing $1"
     cat "$1/.meta/src/$2.cr" > "${dic}/src/$2.cr"
     if [ -d "$1/assets/." ]; then
-    cp -a "$1/assets/." "./assets/"
+        cp -a "$1/assets/." "./assets/"
     fi
     spec_file="$1/$(jq -r '.files.test[0]' $1/.meta/config.json)"
     cat "${spec_file}" > "${dic}/spec/spec.cr"

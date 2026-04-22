@@ -1045,6 +1045,16 @@
         "difficulty": 3
       },
       {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "2bf80456-020c-4adc-8e81-8dfe75da7083",
+        "practices": [
+          "classes"
+        ],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "baffling-birthdays",
         "name": "Baffling Birthdays",
         "uuid": "232e58b6-06ca-4401-b4ba-2e16e59902c3",

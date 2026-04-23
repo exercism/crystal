@@ -5,25 +5,25 @@ describe "RelativeDistance" do
   it "Direct parent-child relation" do
     family_tree = {"Vera" => ["Tomoko"], "Tomoko" => ["Aditi"]}
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Vera", "Tomoko").should eq(1)
+    relative_distance.degree_of_separation("Vera", "Tomoko").should eq(1)
   end
 
   pending "Sibling relationship" do
     family_tree = {"Dalia" => ["Olga", "Yassin"]}
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Olga", "Yassin").should eq(1)
+    relative_distance.degree_of_separation("Olga", "Yassin").should eq(1)
   end
 
   pending "Two degrees of separation, grandchild" do
     family_tree = {"Khadija" => ["Mateo"], "Mateo" => ["Rami"]}
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Khadija", "Rami").should eq(2)
+    relative_distance.degree_of_separation("Khadija", "Rami").should eq(2)
   end
 
   pending "Unrelated individuals" do
     family_tree = {"Priya" => ["Rami"], "Kaito" => ["Elif"]}
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Priya", "Kaito").should eq(nil)
+    relative_distance.degree_of_separation("Priya", "Kaito").should eq(nil)
   end
 
   pending "Complex graph, cousins" do
@@ -42,7 +42,7 @@ describe "RelativeDistance" do
       "Wyatt" => ["Jun"], "Xia" => ["Kim"], "Yassin" => ["Lucia"], "Zara" => ["Mohammed"],
     }
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Dimitri", "Fabio").should eq(9)
+    relative_distance.degree_of_separation("Dimitri", "Fabio").should eq(9)
   end
 
   pending "Complex graph, no shortcut, far removed nephew" do
@@ -61,7 +61,7 @@ describe "RelativeDistance" do
       "Wyatt" => ["Jun"], "Xia" => ["Kim"], "Yassin" => ["Lucia"], "Zara" => ["Mohammed"],
     }
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Lucia", "Jun").should eq(14)
+    relative_distance.degree_of_separation("Lucia", "Jun").should eq(14)
   end
 
   pending "Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree" do
@@ -80,6 +80,6 @@ describe "RelativeDistance" do
       "Yassin" => ["Lucia"], "Zara" => ["Mohammed"],
     }
     relative_distance = RelativeDistance.new(family_tree)
-    relative_distance.degree_of_separation?("Wyatt", "Xia").should eq(12)
+    relative_distance.degree_of_separation("Wyatt", "Xia").should eq(12)
   end
 end

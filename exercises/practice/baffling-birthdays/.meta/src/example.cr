@@ -24,6 +24,6 @@ class BafflingBirthdays
   end
 
   def self.estimated_probability_of_shared_birthday(size : Int) : Float
-    return (1..10000).sum { |_| shared_birthday(random_birthdates(size)) ? 1 : 0 } / 100.0
+    return (1..100000).sum { |_| shared_birthday(random_birthdates(size)) ? 1 : 0 } / 1000.0
   end
 end

@@ -19,10 +19,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
             result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(50)
             result.all? { |date| Time.leap_year?(date.year) }.should be_false
         <%- elsif (sub_case["expected"]["months"]? || {} of String => Bool)["random"]? -%>
-            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(100)
+            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(300)
             result.to_set { |date| date.month }.size.should eq(12)
         <%- elsif (sub_case["expected"]["days"]? || {} of String => Bool)["random"]? -%>
-            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(300)
+            result = <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>(1000)
             result.to_set { |date| date.day }.size.should eq(31)
         <% end %>
     end

@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "src/grep.cr"
+    ],
+    "test": [
+      "spec/grep_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ],
+    "editor": [
+      "assets/iliad.txt",
+      "assets/midsummer-night.txt",
+      "assets/paradise-lost.txt"
+    ]
+  },
+  "blurb": "Search a file for lines matching a regular expression pattern. Return the line number and contents of each matching line.",
+  "source": "Conversation with Nate Foster.",
+  "source_url": "https://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf"
+}

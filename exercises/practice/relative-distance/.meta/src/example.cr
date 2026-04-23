@@ -8,7 +8,7 @@ class RelativeDistance
     @graph = build_graph(@family_tree)
   end
 
-  def degree_of_separation?(person_a : String, person_b : String) : Int32?
+  def degree_of_separation(person_a : String, person_b : String) : Int32?
     return 0 if person_a == person_b
     return nil unless @graph.has_key?(person_a) && @graph.has_key?(person_b)
 

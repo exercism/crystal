@@ -16,6 +16,8 @@ describe "SplitSecondStopwatch" do
 
   pending "new stopwatch's total has no elapsed time" do
     stopwatch = SplitSecondStopwatch.new
+
+    stopwatch.total.should eq("00:00:00")
   end
 
   pending "new stopwatch does not have previous laps" do
@@ -56,6 +58,8 @@ describe "SplitSecondStopwatch" do
     stopwatch.start
 
     stopwatch.advance_time("00:00:23")
+
+    stopwatch.total.should eq("00:00:23")
   end
 
   pending "start cannot be called from running state" do
@@ -102,6 +106,8 @@ describe "SplitSecondStopwatch" do
     stopwatch.stop
 
     stopwatch.advance_time("00:00:44")
+
+    stopwatch.total.should eq("00:00:13")
   end
 
   pending "stop cannot be called from ready state" do
@@ -168,6 +174,8 @@ describe "SplitSecondStopwatch" do
     stopwatch.start
 
     stopwatch.advance_time("00:00:09")
+
+    stopwatch.total.should eq("00:00:32")
   end
 
   pending "lap adds current lap to previous laps" do
@@ -214,6 +222,8 @@ describe "SplitSecondStopwatch" do
     stopwatch.lap
 
     stopwatch.advance_time("00:00:33")
+
+    stopwatch.total.should eq("00:00:55")
   end
 
   pending "lap cannot be called from ready state" do
@@ -335,6 +345,8 @@ describe "SplitSecondStopwatch" do
 
     stopwatch.current_lap.should eq("04:01:40")
 
+    stopwatch.total.should eq("05:25:25")
+
     stopwatch.lap
 
     stopwatch.previous_laps.should eq(["01:23:45", "04:01:40"])
@@ -342,6 +354,8 @@ describe "SplitSecondStopwatch" do
     stopwatch.advance_time("08:43:05")
 
     stopwatch.current_lap.should eq("08:43:05")
+
+    stopwatch.total.should eq("14:08:30")
 
     stopwatch.lap
 

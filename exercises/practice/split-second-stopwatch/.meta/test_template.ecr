@@ -21,6 +21,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
             <%- end %>
         <%- elsif command["command"] == "advanceTime" %>
             stopwatch.advance_time("<%= command["by"] %>")
+        <%- elsif command["command"] == "total" %>
+            stopwatch.total.should eq("<%= command["expected"] %>")
+        <%- else %>
+            raise "Unknown command: #{command["command"]}"
         <%- end %>
     <%- end %>
     end

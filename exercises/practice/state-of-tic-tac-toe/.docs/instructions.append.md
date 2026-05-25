@@ -1,3 +1,7 @@
+# Instructions append
+
+## Implementation
+
 In this exercise you are given 2 enums.
 Both enum types are to be used as return values for the `state` method via a union.
 You can read more about enums and unions in the Crystal reference documentation:

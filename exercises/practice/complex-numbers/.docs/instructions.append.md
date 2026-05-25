@@ -1,3 +1,7 @@
+# Instructions append
+
+## Implementation
+
 In this exercise you will need to add methods to an existing struct (`Number`).
 You can see an example of this in the Crystal documentation for [getters and setters][getters-and-setters]
 

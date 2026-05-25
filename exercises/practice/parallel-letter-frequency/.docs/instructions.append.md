@@ -1,5 +1,7 @@
 # Instruction Appendix
 
+## Implementation
+
 For building a concurrent/parallel program in Crystal, [might this resource prove useful][resource].
 In Crystal 1.19 a new [Sync][sync] library was added which adds several primitives to make it easier to make high performance concurrent/parallel programs.
 

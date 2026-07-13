@@ -17,7 +17,7 @@ Here is a list of the comparison operators and an example of when they give a `t
 
 | Method | Description           | Example |
 | ------ | --------------------- | ------- |
-| <      | less than             | 5 < 4   |
+| <      | less than             | 4 < 5   |
 | <=     | less than or equal    | 4 <= 4  |
 | >      | greater than          | 3 > 1   |
 | >=     | greater than or equal | 2 >= 2  |

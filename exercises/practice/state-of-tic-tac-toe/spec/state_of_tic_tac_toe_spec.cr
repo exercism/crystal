@@ -251,5 +251,23 @@ describe "StateOfTicTacToe" do
       ]
       TicTacToe.state(board).should eq(TicTacToe::Error::GameShouldHaveEndedAfterTheGameWasWon)
     end
+
+    pending "Invalid board: O kept playing after X wins" do
+      board = [
+        "OO ",
+        "XXX",
+        " O ",
+      ]
+      TicTacToe.state(board).should eq(TicTacToe::Error::GameShouldHaveEndedAfterTheGameWasWon)
+    end
+
+    pending "Invalid board: X kept playing after O wins" do
+      board = [
+        "XX ",
+        "OOO",
+        " XX",
+      ]
+      TicTacToe.state(board).should eq(TicTacToe::Error::GameShouldHaveEndedAfterTheGameWasWon)
+    end
   end
 end

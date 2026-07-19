@@ -54,6 +54,10 @@ describe "Bob" do
     Bob.hey("FCECDFCAAB").should eq("Whoa, chill out!")
   end
 
+  pending "shouting a statement containing a question mark" do
+    Bob.hey("DO LIONS EAT PEOPLE? AHHHHH.").should eq("Whoa, chill out!")
+  end
+
   pending "shouting numbers" do
     Bob.hey("1, 2, 3 GO!").should eq("Whoa, chill out!")
   end

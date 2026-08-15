@@ -58,8 +58,28 @@ describe "LineUp" do
     LineUp.format("Washi", 21).should eq("Washi, you are the 21st customer we serve today. Thank you!")
   end
 
+  pending "format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11" do
+    LineUp.format("Ingrid", 22).should eq("Ingrid, you are the 22nd customer we serve today. Thank you!")
+  end
+
+  pending "format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11" do
+    LineUp.format("Mario", 33).should eq("Mario, you are the 33rd customer we serve today. Thank you!")
+  end
+
+  pending "format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13" do
+    LineUp.format("Quentin", 52).should eq("Quentin, you are the 52nd customer we serve today. Thank you!")
+  end
+
   pending "format exceptional ordinal numeral 62" do
     LineUp.format("Nayra", 62).should eq("Nayra, you are the 62nd customer we serve today. Thank you!")
+  end
+
+  pending "format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12" do
+    LineUp.format("Ugo", 72).should eq("Ugo, you are the 72nd customer we serve today. Thank you!")
+  end
+
+  pending "format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13" do
+    LineUp.format("Boris", 91).should eq("Boris, you are the 91st customer we serve today. Thank you!")
   end
 
   pending "format exceptional ordinal numeral 100" do
@@ -76,5 +96,9 @@ describe "LineUp" do
 
   pending "format exceptional ordinal numeral 123" do
     LineUp.format("Yma", 123).should eq("Yma, you are the 123rd customer we serve today. Thank you!")
+  end
+
+  pending "format large number 972 ending in nd even though it is a multiple of 12" do
+    LineUp.format("Elias", 972).should eq("Elias, you are the 972nd customer we serve today. Thank you!")
   end
 end

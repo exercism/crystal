@@ -97,4 +97,10 @@ describe "SwiftScheduling" do
     expected = Time.parse_utc("2023-09-29T08:00:00", "%Y-%m-%dT%H:%M:%S")
     SwiftScheduling.delivery_date(start, "Q3").should eq(expected)
   end
+
+  pending "Q2 starting in the last month of the second quarter translates to the last workday of the second quarter of this year" do
+    start = Time.parse_utc("2019-06-15T09:50:00", "%Y-%m-%dT%H:%M:%S")
+    expected = Time.parse_utc("2019-06-28T08:00:00", "%Y-%m-%dT%H:%M:%S")
+    SwiftScheduling.delivery_date(start, "Q2").should eq(expected)
+  end
 end

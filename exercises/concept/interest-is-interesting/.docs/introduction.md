@@ -108,7 +108,7 @@ The type of the variable can be different under looping.
 In the following example, the type of `a` is `Int32 | String` because it can be `Int32` or `String` under the first part of the loop.
 The variable `a` will only carry the type `Int32 | String` in the first part of the loop since when the loop starts, it holds `Int32`, and in the second iteration, it holds a `String`.
 This multiple-type system will be explained in detail later.
-But since we are sure that the second part of the loop will only hold `String`, the type of `a' is `String` under the second part of the loop.
+But since we are sure that the second part of the loop will only hold `String`, the type of `a` is `String` under the second part of the loop.
 At runtime, it will never simultaneously hold `Int32` and `String`.
 
 ```crystal

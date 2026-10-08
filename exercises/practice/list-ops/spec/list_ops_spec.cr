@@ -107,7 +107,7 @@ describe "ListOps" do
       ListOps.reverse([] of Int32).should eq([] of Int32)
     end
 
-    pending "non-empty list" do
+    pending "non-empty even-length list" do
       ListOps.reverse([1, 3, 5, 7]).should eq([7, 5, 3, 1])
     end
 

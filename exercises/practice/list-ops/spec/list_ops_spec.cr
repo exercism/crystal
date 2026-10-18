@@ -111,6 +111,10 @@ describe "ListOps" do
       ListOps.reverse([1, 3, 5, 7]).should eq([7, 5, 3, 1])
     end
 
+    pending "non-empty odd-length list" do
+      ListOps.reverse([1, 3, 5, 7, 9, 11, 13]).should eq([13, 11, 9, 7, 5, 3, 1])
+    end
+
     pending "list of lists is not flattened" do
       ListOps.reverse([[1, 2], [3], [] of Int32, [4, 5, 6]]).should eq([[4, 5, 6], [] of Int32, [3], [1, 2]])
     end

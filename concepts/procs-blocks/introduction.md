@@ -119,21 +119,15 @@ If the block does not match the type given to the method an error will be raised
 
 ## Procs
 
-[`Proc`][procs] has a very strong connection to blocks.
+[`Proc`][proc] has a very strong connection to blocks.
 The key difference is that a `Proc` is a type and a block is not.
 A `Proc` represents a function pointer and can be passed around as a variable.
 
 To define a `Proc` you use the proc literal `->(args) { ... }` syntax.
 The arguments are separated by commas(`,`), and the block is separated by `{ ... }`.
 To invoke a Proc you use the `call` method and pass the arguments to it.
-
-```crystal
-my_proc = ->(x, y) { x * y }
-my_proc.call(2, 3)
-# => 6
-```
-
-They can also be explicitly typed like blocks.
+The types of the parameters are mandatory.
+The return type is inferred from the proc's body, but can also be provided explicitly.
 
 ```crystal
 my_proc = ->(x : Int32, y : Int32) : Int32 { x * y }

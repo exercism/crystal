@@ -1,0 +1,14 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+    <%= status()%> "<%-= cases["description"] %>" do
+    player_a = <%= to_s_deep(cases["input"]["playerA"]) %>
+    player_b = <%= to_s_deep(cases["input"]["playerB"]) %>
+    game = <%= to_capitalized(@json["exercise"].to_s) %>.new(player_a, player_b)
+
+    game.<%= cases["property"].to_s.underscore %>.should eq({status: "<%= cases["expected"]["status"] %>", moves: <%= cases["expected"]["cards"] %>, tricks: <%= cases["expected"]["tricks"] %>})
+    end
+<% end %>
+end

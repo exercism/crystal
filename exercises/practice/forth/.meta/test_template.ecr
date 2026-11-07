@@ -7,15 +7,15 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%= status()%> "<%-= sub_case["description"] %>" do
         <%- if sub_case["input"]["instructionsFirst"]? -%>
             result = Array(Array(Int32)).new
-            result << <%= to_capitalized(@json["exercise"].to_s) %>.evaluate("<%= sub_case["input"]["instructionsFirst"].as_a.join("") %>")
-            result << <%= to_capitalized(@json["exercise"].to_s) %>.evaluate("<%= sub_case["input"]["instructionsSecond"].as_a.join("") %>")
-            result.should eq(<%= sub_case["expected"]? %>)
+            result << <%= to_capitalized(@json["exercise"].to_s) %>.evaluate("<%= (sub_case["input"]["instructionsFirst"]).as_a.join("") %>")
+            result << <%= to_capitalized(@json["exercise"].to_s) %>.evaluate("<%= (sub_case["input"]["instructionsSecond"]).as_a.join("") %>")
+            result.should eq(<%= to_s_deep(sub_case["expected"]) %>)
         <%- elsif sub_case["expected"].as_h? -%>
             expect_raises(ArgumentError) do
                 <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["instructions"].as_a.join("") %>")
             end
         <%- else -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["instructions"].as_a.join("") %>").should eq(<%= sub_case["expected"]? %> of Int32)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= sub_case["property"].to_s.underscore %>("<%= sub_case["input"]["instructions"].as_a.join("") %>").should eq(<%= to_s_deep(sub_case["expected"]) %> of Int32)
         <% end %>
     end
     <% end %>

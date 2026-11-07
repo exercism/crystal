@@ -21,7 +21,7 @@ module CheckDocs
         generator = Generator.new()
         generator.generate_exercise_doc(exercise, tempfile)
         unless File.same_content?(tempfile, "./exercises/concept/#{exercise}/.docs/introduction.md")
-          raise "Eexericse docs for #{exercise} are not up to date"
+          raise "Exercise docs for #{exercise} are not up to date"
         end
       end
     end

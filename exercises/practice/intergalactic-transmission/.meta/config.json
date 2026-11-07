@@ -1,0 +1,17 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "src/intergalactic_transmission.cr"
+    ],
+    "test": [
+      "spec/intergalactic_transmission_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Add parity bits to a message for transmission",
+  "source": "Kah Goh",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2543"
+}

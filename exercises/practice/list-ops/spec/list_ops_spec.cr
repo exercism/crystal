@@ -107,8 +107,12 @@ describe "ListOps" do
       ListOps.reverse([] of Int32).should eq([] of Int32)
     end
 
-    pending "non-empty list" do
+    pending "non-empty even-length list" do
       ListOps.reverse([1, 3, 5, 7]).should eq([7, 5, 3, 1])
+    end
+
+    pending "non-empty odd-length list" do
+      ListOps.reverse([1, 3, 5, 7, 9, 11, 13]).should eq([13, 11, 9, 7, 5, 3, 1])
     end
 
     pending "list of lists is not flattened" do

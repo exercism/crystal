@@ -15,6 +15,12 @@ describe "VariableLengthQuantity" do
       VariableLengthQuantity.encode(input).should eq(expected)
     end
 
+    pending "asymmetric single byte" do
+      input = [83]
+      expected = [83]
+      VariableLengthQuantity.encode(input).should eq(expected)
+    end
+
     pending "largest single byte" do
       input = [127]
       expected = [127]
@@ -30,6 +36,12 @@ describe "VariableLengthQuantity" do
     pending "arbitrary double byte" do
       input = [8192]
       expected = [192, 0]
+      VariableLengthQuantity.encode(input).should eq(expected)
+    end
+
+    pending "asymmetric double byte" do
+      input = [173]
+      expected = [129, 45]
       VariableLengthQuantity.encode(input).should eq(expected)
     end
 
@@ -51,6 +63,12 @@ describe "VariableLengthQuantity" do
       VariableLengthQuantity.encode(input).should eq(expected)
     end
 
+    pending "asymmetric triple byte" do
+      input = [120220]
+      expected = [135, 171, 28]
+      VariableLengthQuantity.encode(input).should eq(expected)
+    end
+
     pending "largest triple byte" do
       input = [2097151]
       expected = [255, 255, 127]
@@ -69,6 +87,12 @@ describe "VariableLengthQuantity" do
       VariableLengthQuantity.encode(input).should eq(expected)
     end
 
+    pending "asymmetric quadruple byte" do
+      input = [3503876]
+      expected = [129, 213, 238, 4]
+      VariableLengthQuantity.encode(input).should eq(expected)
+    end
+
     pending "largest quadruple byte" do
       input = [268435455]
       expected = [255, 255, 255, 127]
@@ -84,6 +108,12 @@ describe "VariableLengthQuantity" do
     pending "arbitrary quintuple byte" do
       input = [4278190080]
       expected = [143, 248, 128, 128, 0]
+      VariableLengthQuantity.encode(input).should eq(expected)
+    end
+
+    pending "asymmetric quintuple byte" do
+      input = [2254790917]
+      expected = [136, 179, 149, 194, 5]
       VariableLengthQuantity.encode(input).should eq(expected)
     end
 

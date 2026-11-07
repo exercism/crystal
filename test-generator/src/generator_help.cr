@@ -13,7 +13,7 @@ class GeneratorHelp
     @json = get_remote_files()
   end
 
-  def exectute
+  def execute
     check_config()
     additional_json()
     remove_tests(toml())

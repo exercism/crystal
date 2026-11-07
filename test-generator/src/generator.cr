@@ -4,7 +4,7 @@ require "./formatter"
 class Generator
   def initialize(exercise, file_name = "./exercises/practice/#{exercise}/spec/#{exercise.gsub("-", "_")}_spec.cr")
     generator_help = GeneratorHelp.new(exercise)
-    generator_help.exectute
+    generator_help.execute
     content = generator_help.to_s
     raise "Spec directory not found: ./exercises/practice/#{exercise}/spec" unless Dir.exists?("./exercises/practice/#{exercise}/spec")
     file = File.new(file_name, mode = "wb")

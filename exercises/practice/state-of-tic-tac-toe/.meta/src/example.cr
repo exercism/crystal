@@ -25,6 +25,10 @@ module TicTacToe
 
     if x_won && o_won
       Error::GameShouldHaveEndedAfterTheGameWasWon
+    elsif x_won && o_count == x_count
+      Error::GameShouldHaveEndedAfterTheGameWasWon
+    elsif o_won && x_count > o_count
+      Error::GameShouldHaveEndedAfterTheGameWasWon
     elsif x_won || o_won
       State::Win
     else

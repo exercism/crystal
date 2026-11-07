@@ -1,3 +1,5 @@
+# Instructions append
+
 ## Adding method to the Int struct
 
 This exercise focuses on adding methods to the `Int` struct in Crystal.

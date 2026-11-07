@@ -44,6 +44,10 @@ describe "PigLatin" do
     pending "word beginning with q without a following u" do
       PigLatin.translate("qat").should eq("atqay")
     end
+
+    pending "word beginning with consonant and vowel containing qu" do
+      PigLatin.translate("liquid").should eq("iquidlay")
+    end
   end
 
   describe "some letter clusters are treated like a single consonant" do

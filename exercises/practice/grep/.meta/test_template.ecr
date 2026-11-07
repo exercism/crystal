@@ -1,0 +1,17 @@
+require "spec"
+require "../src/*"
+
+describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
+<%- @json["cases"].as_a.each do |cases| %>
+  <%- cases["cases"].as_a.each do |subcases| %>
+    <%= status()%> "<%-= subcases["description"] %>" do
+        expected = "<%= subcases["expected"].as_a.join("\n") %>"
+        pattern = "<%= subcases["input"]["pattern"] %>"
+        flags = <%= to_s_deep(subcases["input"]["flags"]) %> <%= to_s_deep(subcases["input"]["flags"]) == "[]" ? "of String" : "" %>
+        files = <%= to_s_deep(subcases["input"]["files"]) %>
+
+        <%= to_capitalized(@json["exercise"].to_s) %>.search(pattern, flags, files).should eq(expected)
+    end
+    <% end %>
+<% end %>
+end

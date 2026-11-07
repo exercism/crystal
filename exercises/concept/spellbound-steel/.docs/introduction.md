@@ -9,7 +9,7 @@ Both the `Array` and `Range` classes in Crystal include the [`Enumerable`][enume
 Meanwhile, the `String` class has its own set of methods for iterating over the characters.
 
 Crystal also doesn't have any for statement like other languages.
-Instead it has several methods that can be used to iterate.
+Instead, it has several methods that can be used to iterate.
 
 ## Iterating
 

@@ -44,7 +44,7 @@ describe "CryptoSquare" do
     CryptoSquare.ciphertext(plaintext).should eq(ciphertext)
   end
 
-  pending "54 character plaintext results in 7 chunks, the last two with trailing spaces" do
+  pending "54 character plaintext results in 8 chunks, the last two with trailing spaces" do
     plaintext = "If man was meant to stay on the ground, god would have given us roots."
     ciphertext = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
     CryptoSquare.ciphertext(plaintext).should eq(ciphertext)

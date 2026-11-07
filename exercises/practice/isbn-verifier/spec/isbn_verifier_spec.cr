@@ -30,6 +30,14 @@ describe "IsbnVerifier" do
     IsbnVerifier.valid?("3-598-2X507-9").should eq(false)
   end
 
+  pending "only one check digit is allowed" do
+    IsbnVerifier.valid?("3-598-21508-96").should eq(false)
+  end
+
+  pending "X is not substituted by the value 10" do
+    IsbnVerifier.valid?("3-598-2X507-5").should eq(false)
+  end
+
   pending "valid isbn without separating dashes" do
     IsbnVerifier.valid?("3598215088").should eq(true)
   end

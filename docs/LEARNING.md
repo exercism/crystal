@@ -10,6 +10,6 @@
   Without having to install anything.
 
 [rubyists guide]: http://www.crystalforrubyists.com/
-[offical-doc]: https://crystal-lang.org/docs/
+[offical-doc]: https://crystal-lang.org/reference/
 [coding conventions]: https://crystal-lang.org/reference/conventions/coding_style.html
 [online editor]: https://replit.com/languages/crystal

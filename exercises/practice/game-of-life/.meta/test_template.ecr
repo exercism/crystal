@@ -4,8 +4,8 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
-        matrix = <%= cases["input"]["matrix"].size == 0 ? "Array(Array(Int32)).new" : cases["input"]["matrix"] %>
-        expected = <%= cases["expected"].size == 0 ? "Array(Array(Int32)).new" : cases["expected"] %>
+        matrix = <%= cases["input"]["matrix"].size == 0 ? "Array(Array(Int32)).new" : to_s_deep(cases["input"]["matrix"]) %>
+        expected = <%= cases["expected"].size == 0 ? "Array(Array(Int32)).new" : to_s_deep(cases["expected"]) %>
         <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(matrix).should eq(expected)
     end
 <% end %>

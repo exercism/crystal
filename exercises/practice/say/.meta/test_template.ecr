@@ -6,10 +6,10 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%= status()%> "<%-= cases["description"] %>" do
         <%- if cases["expected"].as_h? && cases["expected"]["error"] -%>
             expect_raises(ArgumentError) do
-                Say.number(<%= cases["input"]["number"].inspect %>)
+                Say.number(<%= cases["input"]["number"] %>)
             end
         <%- else -%>
-            Say.number(<%= cases["input"]["number"].inspect %>).should eq(<%= cases["expected"].inspect %>)
+            Say.number(<%= cases["input"]["number"] %>).should eq(<%= cases["expected"].to_s.inspect %>)
         <% end %>
     end
 <% end %>

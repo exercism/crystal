@@ -11,56 +11,56 @@ on:
 jobs:
   test-generator:
     name: Test Generator
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     container:
-      image: crystallang/crystal
+      image: crystallang/crystal:1.20.3
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Run generator tests
         run: crystal spec test-generator
   test-generator-templates:
     name: Check Generator Templates
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     container:
-      image: crystallang/crystal
+      image: crystallang/crystal:1.20.3
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Check generator templates tests
         run: ./bin/test_specs
   template:
     name: Check file formatting
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     container:
-      image: crystallang/crystal
+      image: crystallang/crystal:1.20.3
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Run file formatting
         run: crystal ./bin/check-format.cr
   exercises:
     name: Check exercises Crystal ${{ matrix.crystal }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     strategy:
       # Allows running the job multiple times with different configurations
       matrix:
-        crystal: ["1.11", "1.12", "1.13", "1.14", "1.15.1"]
+        crystal: ["1.17", "1.18", "1.19.1", "1.20.3"]
     container:
       image: crystallang/crystal:${{ matrix.crystal }}
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Install jq
         run: apt-get update && apt-get install -y jq
       - name: Run tests
         run: ./bin/test-exercises.sh
   exercises-windows:
     name: Check exercises Crystal on Windows
-    runs-on: windows-2022
+    runs-on: windows-2025
     steps:
       - name: Install Crystal
-        uses: crystal-lang/install-crystal@cdf26dcd488490c9939e9d4d62cab169c9e4f20d
+        uses: crystal-lang/install-crystal@36a22e9145188eec527c96e5a789ce4b832af587
         with:
-          crystal: "1.15.1"
+          crystal: "1.20.3"
       - name: 'Setup jq'
         run: choco install jq
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Run tests
         run: ./bin/test-exercises.ps1

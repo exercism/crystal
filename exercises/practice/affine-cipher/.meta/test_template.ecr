@@ -3,17 +3,17 @@ require "../src/*"
 
 describe <%= to_capitalized(@json["exercise"].to_s).inspect %> do
     <%- @json["cases"].as_a.each do |cases| %>
-        describe <%= cases["description"].inspect %> do
+        describe <%= cases["description"].to_s.inspect %> do
             <%- cases["cases"].as_a.each do |cases| %>
                 <%= status()%> "<%-= cases["description"] %>" do
                     <% if cases["expected"].as_h? %>
                         expect_raises(ArgumentError) do
                     <% end %>
-                    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(<%= cases["input"]["key"]["a"].inspect %>, <%= cases["input"]["key"]["b"].inspect %>, <%= cases["input"]["phrase"].inspect %>)
+                    <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"] %>(<%= cases["input"]["key"]["a"].as_i %>, <%= cases["input"]["key"]["b"].as_i %>, <%= cases["input"]["phrase"].to_s.inspect %>)
                     <% if cases["expected"].as_h? %>
                         end
                     <% else -%>
-                        .should eq(<%= cases["expected"].inspect %>)
+                        .should eq(<%= cases["expected"].to_s.inspect %>)
                     <% end %>
                 end
             <% end %>

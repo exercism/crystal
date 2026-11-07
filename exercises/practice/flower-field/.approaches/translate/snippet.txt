@@ -1,0 +1,7 @@
+def annotate
+  @board.map_with_index do |row, y|
+    row.chars.map_with_index do |cell, x|
+      cell.to_s.tr(" ", annotated_space(x, y))
+    end.join
+  end
+end

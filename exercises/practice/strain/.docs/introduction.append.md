@@ -1,3 +1,5 @@
+# Instructions append
+
 ## Adding methods to the Array class
 
 This exercise focuses on adding methods to the `Array` class in Crystal.

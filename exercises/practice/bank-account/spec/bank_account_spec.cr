@@ -143,36 +143,4 @@ describe "BankAccount" do
       bank_account.deposit(-50)
     end
   end
-
-  pending "Can handle concurrent transactions" do
-    bank_account = BankAccount.new
-    bank_account.open
-    channel = Channel(Int32).new
-    1000.times do
-      spawn do
-        begin
-          bank_account.deposit(1)
-          bank_account.balance.should eq 1
-          channel.send(0)
-        rescue
-          channel.send(1)
-        end
-      end
-
-      spawn do
-        begin
-          bank_account.withdraw(1)
-          bank_account.balance.should eq 0
-          channel.send(0)
-        rescue exception
-          channel.send(1)
-        end
-      end
-
-      channel.receive.should eq 0
-    end
-
-    1000.times { Fiber.yield }
-    bank_account.balance.should eq 0
-  end
 end

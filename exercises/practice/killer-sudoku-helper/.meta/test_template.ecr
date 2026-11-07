@@ -6,14 +6,14 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- if cases["cases"]? -%>
         <%- cases["cases"].as_a.each do |sub_case| %>
             <%= status()%> "<%-= sub_case["description"] %>" do
-            killer_sudoku_helper = <%-= to_capitalized(sub_case["property"].to_s) %>.new(<%-= sub_case["input"]["cage"]["sum"] %>, <%-= sub_case["input"]["cage"]["size"] %>, <%-= sub_case["input"]["cage"]["exclude"] %> of Int32)
-            killer_sudoku_helper.solve.should eq <%-= sub_case["expected"] %>
+            killer_sudoku_helper = <%-= to_capitalized(sub_case["property"].to_s) %>.new(<%-= sub_case["input"]["cage"]["sum"] %>, <%-= sub_case["input"]["cage"]["size"] %>, <%-= to_s_deep(sub_case["input"]["cage"]["exclude"]) %> of Int32)
+            killer_sudoku_helper.solve.should eq <%-= to_s_deep(sub_case["expected"]) %>
         end
         <%- end -%>
     <%- else -%>
         <%= status()%> "<%-= cases["description"] %>" do
-        killer_sudoku_helper = <%-= to_capitalized(cases["property"].to_s) %>.new(<%-= cases["input"]["cage"]["sum"] %>, <%-= cases["input"]["cage"]["size"] %>, <%-= cases["input"]["cage"]["exclude"] %> of Int32)
-        killer_sudoku_helper.solve.should eq <%-= cases["expected"] %>
+        killer_sudoku_helper = <%-= to_capitalized(cases["property"].to_s) %>.new(<%-= cases["input"]["cage"]["sum"] %>, <%-= cases["input"]["cage"]["size"] %>, <%-= to_s_deep(cases["input"]["cage"]["exclude"]) %> of Int32)
+        killer_sudoku_helper.solve.should eq <%-= to_s_deep(cases["expected"]) %>
     end
     <%- end %>
 <% end %>

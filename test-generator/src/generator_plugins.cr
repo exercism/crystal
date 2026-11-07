@@ -2,6 +2,29 @@
 #
 
 module GeneratorPlugins
+  def to_s_deep(input : JSON::Any) : String
+    case input
+    when .as_i64?
+      input.as_i64.to_s
+    when .as_f?
+      input.as_f.to_s
+    when .as_bool?
+      input.as_bool.to_s
+    when .as_a?
+      elements = input.as_a.map { |element| to_s_deep(element) }.join(", ")
+      "[#{elements}]"
+    when .as_h?
+      pairs = input.as_h.map do |key, value|
+        "\"#{key}\"=> #{to_s_deep(value)}"
+      end.join(", ")
+      "{#{pairs}}"
+    when .as_s?
+      "\"#{input}\""
+    else
+      "nil"
+    end
+  end
+
   def to_cammel(input : String)
     result = ""
     input = input.capitalize
@@ -57,7 +80,7 @@ module GeneratorPlugins
     if input.as_a.empty?
       "[] of Int32"
     else
-      input.to_s
+      to_s_deep(input)
     end
   end
 
@@ -65,7 +88,7 @@ module GeneratorPlugins
     if input.as_a.empty?
       "[] of Array(Int32)"
     else
-      input.to_s.gsub("[]", "[] of Int32")
+      to_s_deep(input).gsub("[]", "[] of Int32")
     end
   end
 

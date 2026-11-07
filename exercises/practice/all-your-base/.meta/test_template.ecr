@@ -5,14 +5,14 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
         input_base = <%= cases["input"]["inputBase"] %>
-        digits = <%= cases["input"]["digits"].as_a? %> of Int32
+        digits = <%= to_s_deep(cases["input"]["digits"]) %> of Int32
         output_base = <%= cases["input"]["outputBase"] %>
         <%- if cases["expected"].as_h? -%>
         expect_raises(ArgumentError) do
             <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input_base, digits, output_base)
         end
         <%- else -%>
-            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input_base, digits, output_base).should eq(<%= cases["expected"] %> of Int32)
+            <%= to_capitalized(@json["exercise"].to_s) %>.<%= cases["property"].to_s.underscore %>(input_base, digits, output_base).should eq(<%= to_s_deep(cases["expected"]) %> of Int32)
         <% end %>
     end
 <% end %>

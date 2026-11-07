@@ -23,7 +23,7 @@ These require you to pass a message to the exception.
 raise ArgumentError.new("This is an argument error")
 ```
 
-## [Handling exceptions][[exception-handling]]
+## [Handling exceptions][exception-handling]
 
 We wouldn't want our program to crash when an exception is raised.
 Therefore, when we know a piece of code is error prone, we can wrap it in a `begin` block and rescue the exception with a `rescue` block.
@@ -112,7 +112,7 @@ But there is also another convention around ending a method with `?` mentioned i
 Some methods raise an exception by default but also have a version ending with `?` which returns `nil` instead of raising an exception.
 
 This is ideal when you want to avoid an error being raised. 
-This can benefit performance since it doesn't have to create a stack trace and, if set up correctly, could make the code safer.
+This can benefit performance since it doesn't have to create a stacktrace and, if set up correctly, could make the code safer.
 
 ## Custom exceptions
 

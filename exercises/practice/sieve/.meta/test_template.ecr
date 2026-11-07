@@ -4,7 +4,7 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
-    output = <%= cases["expected"].to_s == "[]" ? "[] of Int32" : cases["expected"].as_a %>
+    output = <%= cases["expected"].to_s == "[]" ? "[] of Int32" : to_s_deep(cases["expected"]) %>
         Primes.sieve(<%= cases["input"]["limit"]%>).should eq(output)
     end
 <% end %>

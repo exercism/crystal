@@ -4,7 +4,7 @@ require "../src/*"
 describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
 <%- @json["cases"].as_a.each do |cases| %>
     <%= status()%> "<%-= cases["description"] %>" do
-        <%-= to_capitalized(@json["exercise"].to_s) %>.pangram?(<%= cases["input"]["sentence"].inspect %>).should <%-= cases["expected"].as_bool ? "be_true" : "be_false" %>
+        <%-= to_capitalized(@json["exercise"].to_s) %>.pangram?(<%= cases["input"]["sentence"].to_s.inspect %>).should <%-= cases["expected"].as_bool ? "be_true" : "be_false" %>
     end
 <% end %>
 end

@@ -8,7 +8,7 @@ describe "<%-= to_capitalized(@json["exercise"].to_s) %>" do
     <%- else %>
         <%= status()%> "<%-= cases["description"] %>" do
     <%- end %>
-        <%= to_capitalized(@json["exercise"].to_s) %>.find("<%= cases["input"]["subject"].to_s %>", <%= cases["input"]["candidates"].as_a? %>).should eq(<%= cases["expected"].as_a? %> of String)
+        <%= to_capitalized(@json["exercise"].to_s) %>.find("<%= cases["input"]["subject"].to_s %>", <%= to_s_deep(cases["input"]["candidates"]) %>).should eq(<%= to_s_deep( cases["expected"]) %> of String)
     end
 <% end %>
 end

@@ -30,19 +30,19 @@ describe "FlattenArray" do
     FlattenArray.flatten([1, 2, nil]).should eq([1, 2])
   end
 
-  pending "consecutive null values at the front of the list are omitted from the final result" do
+  pending "consecutive null values at the front of the array are omitted from the final result" do
     FlattenArray.flatten([nil, nil, 3]).should eq([3])
   end
 
-  pending "consecutive null values in the middle of the list are omitted from the final result" do
+  pending "consecutive null values in the middle of the array are omitted from the final result" do
     FlattenArray.flatten([1, nil, nil, 4]).should eq([1, 4])
   end
 
-  pending "6 level nest list with null values" do
+  pending "6 level nested array with null values" do
     FlattenArray.flatten([0, 2, [[2, 3], 8, [[100]], nil, [[nil]]], -2]).should eq([0, 2, 2, 3, 8, 100, -2])
   end
 
-  pending "all values in nested list are null" do
+  pending "all values in nested array are null" do
     FlattenArray.flatten([nil, [[[nil]]], nil, nil, [[nil, nil], nil], nil]).should eq([] of Int32)
   end
 end

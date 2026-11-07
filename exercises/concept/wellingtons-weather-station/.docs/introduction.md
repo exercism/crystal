@@ -115,7 +115,7 @@ This is different from normal division.
 # Error: Unhandled exception: Division by 0 (DivisionByZeroError)
 ```
 
-Note that unlike some other programming languages crystal is using floored division to calculate modulus (in JavaScript this would yield -1)
+Note that unlike some other programming languages, `%` in Crystal calculates the modulus instead of the remainder (for example, in JavaScript this would yield -1):
 
 ```crystal
 -6 % 5 

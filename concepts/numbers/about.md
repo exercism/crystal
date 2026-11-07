@@ -119,6 +119,9 @@ The `%` operator is used for modulus.
 
 5 % 3
 # => 2
+
+-7 % 5
+# => 3
 ```
 
 ~~~~exercism/caution
@@ -128,6 +131,13 @@ This is different from normal division.
 ```crystal
 1 % 0
 # Error: Unhandled exception: Division by 0 (DivisionByZeroError)
+```
+
+Note that unlike some other programming languages, `%` in Crystal calculates the modulus with floored division (for example, in JavaScript this would yield -1):
+
+```crystal
+-6 % 5
+# => 4
 ```
 ~~~~
 

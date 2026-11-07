@@ -118,7 +118,7 @@ This is different from normal division.
 Note that unlike some other programming languages, `%` in Crystal calculates the modulus with floored division (for example, in JavaScript this would yield -1):
 
 ```crystal
--6 % 5 
+-6 % 5
 # => 4
 ```
 ~~~~

@@ -10,4 +10,5 @@ checks:
   - Test Generator
   - Check file formatting
   - Check exercises Crystal on Windows
+  - Tests
   - Validate required checks

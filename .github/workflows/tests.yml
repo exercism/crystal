@@ -64,3 +64,17 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Run tests
         run: ./bin/test-exercises.ps1
+  tests:
+    name: Tests
+    needs: exercises
+    if: always()
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Check that every Crystal version passed
+        env:
+          RESULT: ${{ needs.exercises.result }}
+        run: |
+          if [[ "$RESULT" != "success" ]]; then
+            echo "The exercise tests failed on at least one Crystal version."
+            exit 1
+          fi

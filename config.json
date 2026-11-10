@@ -619,7 +619,6 @@
         "uuid": "0077bdf1-a1be-4a42-992e-8cdde99837eb",
         "practices": [
           "hash",
-          "classes",
           "macro"
         ],
         "prerequisites": [],
@@ -631,7 +630,6 @@
         "uuid": "64646ca3-ca2e-4ae2-84ad-8c3425a524b0",
         "practices": [
           "array-methods",
-          "conditionals",
           "ranges",
           "hash"
         ],
@@ -643,8 +641,7 @@
         "name": "ISBN Verifier",
         "uuid": "0b6c8c53-04ae-4969-8bc0-1f1205df3420",
         "practices": [
-          "bools",
-          "strings"
+          "bools"
         ],
         "prerequisites": [],
         "difficulty": 2
@@ -706,7 +703,6 @@
         "uuid": "45a2591a-493d-4bab-be64-847243b4554b",
         "practices": [
           "struct",
-          "hash",
           "numbers"
         ],
         "prerequisites": [],
@@ -760,7 +756,6 @@
         "name": "Bottle Song",
         "uuid": "a50ad959-0a5e-4110-8e49-fa50b1242a89",
         "practices": [
-          "numbers",
           "strings"
         ],
         "prerequisites": [],
@@ -771,8 +766,7 @@
         "name": "Clock",
         "uuid": "3ba4f982-c46e-4fc3-8ab4-9580656eb2b4",
         "practices": [
-          "classes",
-          "numbers"
+          "classes"
         ],
         "prerequisites": [],
         "difficulty": 3
@@ -835,8 +829,7 @@
         "uuid": "45708d37-36f7-4368-a2ef-0ab3e66df0c9",
         "practices": [
           "set",
-          "named-tuples",
-          "array"
+          "named-tuples"
         ],
         "prerequisites": [],
         "difficulty": 3
@@ -857,9 +850,7 @@
         "name": "Prime Factors",
         "uuid": "db7b806a-a595-4739-abda-8bf7bf43c3e4",
         "practices": [
-          "while-loops",
-          "numbers",
-          "array"
+          "while-loops"
         ],
         "prerequisites": [],
         "difficulty": 3
@@ -869,7 +860,6 @@
         "name": "Protein Translation",
         "uuid": "718711b2-16d5-4d50-9fe1-a62135ced606",
         "practices": [
-          "array",
           "hash"
         ],
         "prerequisites": [],
@@ -902,8 +892,6 @@
         "name": "Word Count",
         "uuid": "27783181-8b3e-4a18-af09-05882941f8d7",
         "practices": [
-          "strings",
-          "hash",
           "conditionals"
         ],
         "prerequisites": [],
@@ -914,7 +902,6 @@
         "name": "Matrix",
         "uuid": "8d675618-a8f3-49b5-b32e-fee46991b5a7",
         "practices": [
-          "classes",
           "array"
         ],
         "prerequisites": [],
@@ -948,7 +935,6 @@
         "name": "Kindergarten Garden",
         "uuid": "d1d73f91-51e0-45a2-95a1-d37b493512ae",
         "practices": [
-          "classes",
           "char",
           "hash"
         ],
@@ -970,7 +956,6 @@
         "name": "Proverb",
         "uuid": "3cef1164-8eab-4e2d-a455-2e0630919bd1",
         "practices": [
-          "strings",
           "enumeration"
         ],
         "prerequisites": [],
@@ -981,9 +966,7 @@
         "name": "Tournament",
         "uuid": "2b18edd0-c07e-4125-b21d-20bf07828cac",
         "practices": [
-          "strings",
-          "case",
-          "hash"
+          "case"
         ],
         "prerequisites": [],
         "difficulty": 3
@@ -1004,8 +987,7 @@
         "name": "Crypto Square",
         "uuid": "70be18b6-b153-466f-b270-c94d5406b1ab",
         "practices": [
-          "strings",
-          "numbers"
+          "strings"
         ],
         "prerequisites": [],
         "difficulty": 3
@@ -1027,7 +1009,6 @@
         "practices": [
           "enum",
           "array-methods",
-          "conditionals",
           "case"
         ],
         "prerequisites": [],
@@ -1067,7 +1048,6 @@
         "name": "Food Chain",
         "uuid": "4a459cd8-a52f-48d3-9287-9245956f0ada",
         "practices": [
-          "array",
           "strings"
         ],
         "prerequisites": [],
@@ -1088,8 +1068,7 @@
         "practices": [
           "case",
           "symbol",
-          "classes",
-          "char"
+          "classes"
         ],
         "prerequisites": [],
         "difficulty": 4
@@ -1126,8 +1105,7 @@
         "uuid": "c85a6334-2f76-44ce-8ca5-0e997cc65d03",
         "practices": [
           "hash",
-          "case",
-          "conditionals"
+          "case"
         ],
         "prerequisites": [],
         "difficulty": 4
@@ -1209,7 +1187,6 @@
         "practices": [
           "number-types",
           "classes",
-          "array",
           "nil"
         ],
         "prerequisites": [],
@@ -1230,7 +1207,6 @@
         "name": "Pig Latin",
         "uuid": "00e8ffd8-b4f7-44e0-b007-8b265eed14fb",
         "practices": [
-          "strings",
           "conditionals"
         ],
         "prerequisites": [],
@@ -1262,8 +1238,7 @@
         "name": "Rail Fence Cipher",
         "uuid": "07e94755-9641-48cc-a6ce-2eb7d5bf039b",
         "practices": [
-          "ranges",
-          "strings"
+          "ranges"
         ],
         "prerequisites": [],
         "difficulty": 4
@@ -1284,7 +1259,6 @@
         "name": "Bowling",
         "uuid": "18510219-c432-4280-bd22-de0ed6cb40c1",
         "practices": [
-          "array",
           "conditionals",
           "classes"
         ],
@@ -1297,7 +1271,6 @@
         "uuid": "679d0ac6-f14a-475d-836a-08ce39750216",
         "practices": [
           "named-tuples",
-          "array",
           "conditionals"
         ],
         "prerequisites": [],
@@ -1364,7 +1337,6 @@
         "name": "Sum of Multiples",
         "uuid": "5241b5ce-7360-40f2-8266-6a8934dc1d30",
         "practices": [
-          "array",
           "numbers"
         ],
         "prerequisites": [],
@@ -1397,7 +1369,6 @@
         "name": "Change",
         "uuid": "0adf6b3f-c518-4660-ba6b-be991828a658",
         "practices": [
-          "array",
           "numbers"
         ],
         "prerequisites": [],
@@ -1416,7 +1387,6 @@
         "name": "Dominoes",
         "uuid": "c237b348-89e6-4ba7-8450-0cf248b9cba0",
         "practices": [
-          "array",
           "bools"
         ],
         "prerequisites": [],
@@ -1427,8 +1397,7 @@
         "name": "OCR Numbers",
         "uuid": "26bebd08-8867-4a90-94ba-5b620ab3af84",
         "practices": [
-          "enumeration",
-          "strings"
+          "enumeration"
         ],
         "prerequisites": [],
         "difficulty": 5
@@ -1466,7 +1435,6 @@
         "uuid": "2da645e4-7e72-4377-a7ac-184b67ff8a63",
         "practices": [
           "modules",
-          "classes",
           "union-type"
         ],
         "prerequisites": [],
@@ -1477,8 +1445,6 @@
         "name": "Say",
         "uuid": "cef9b59f-d44e-4477-8dd2-8ab88953caea",
         "practices": [
-          "hash",
-          "numbers",
           "while-loops"
         ],
         "prerequisites": [],
@@ -1490,8 +1456,7 @@
         "uuid": "20c471f8-e45e-4313-a23a-85d4a36c7185",
         "practices": [
           "enum",
-          "while-loops",
-          "conditionals"
+          "while-loops"
         ],
         "prerequisites": [],
         "difficulty": 6
@@ -1512,7 +1477,6 @@
         "name": "Alphametics",
         "uuid": "d8a1b1c8-41ba-43a9-a4d6-b8325e438dc6",
         "practices": [
-          "conditionals",
           "hash",
           "char"
         ],
@@ -1534,7 +1498,6 @@
         "name": "Book Store",
         "uuid": "9881c617-2388-4c30-884b-f79cbebcdb55",
         "practices": [
-          "hash",
           "while-loops",
           "array-methods"
         ],
@@ -1577,7 +1540,6 @@
         "name": "D&D Character",
         "uuid": "3ad6da95-f3ff-401b-83e7-6b8b7b29e133",
         "practices": [
-          "classes",
           "numbers"
         ],
         "prerequisites": [],
@@ -1588,7 +1550,6 @@
         "name": "Zebra Puzzle",
         "uuid": "7f99f0a1-c7ae-4b11-b45b-75e86b67aa09",
         "practices": [
-          "conditionals",
           "while-loops"
         ],
         "prerequisites": [],

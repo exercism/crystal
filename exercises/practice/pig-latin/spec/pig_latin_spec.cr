@@ -102,7 +102,7 @@ describe "PigLatin" do
 
   describe "phrases are translated" do
     pending "a whole phrase" do
-      PigLatin.translate("quick fast run").should eq("ickquay astfay unray")
+      PigLatin.translate("why do squids enjoy xrays").should eq("ywhay oday idssquay enjoyay xraysay")
     end
   end
 end

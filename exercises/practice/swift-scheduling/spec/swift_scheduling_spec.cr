@@ -74,7 +74,7 @@ describe "SwiftScheduling" do
     SwiftScheduling.delivery_date(start, "11M").should eq(expected)
   end
 
-  pending "4M in the ninth month translates to the first workday of the fourth month of next year" do
+  pending "4M in the eleventh month translates to the first workday of the fourth month of next year" do
     start = Time.parse_utc("2019-11-18T15:15:00", "%Y-%m-%dT%H:%M:%S")
     expected = Time.parse_utc("2020-04-01T08:00:00", "%Y-%m-%dT%H:%M:%S")
     SwiftScheduling.delivery_date(start, "4M").should eq(expected)

@@ -74,7 +74,7 @@ describe "LineUp" do
     LineUp.format("Nayra", 62).should eq("Nayra, you are the 62nd customer we serve today. Thank you!")
   end
 
-  pending "format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12" do
+  pending "format exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12" do
     LineUp.format("Ugo", 72).should eq("Ugo, you are the 72nd customer we serve today. Thank you!")
   end
 
@@ -82,7 +82,7 @@ describe "LineUp" do
     LineUp.format("Boris", 91).should eq("Boris, you are the 91st customer we serve today. Thank you!")
   end
 
-  pending "format exceptional ordinal numeral 100" do
+  pending "format non-exceptional ordinal numeral 100" do
     LineUp.format("John", 100).should eq("John, you are the 100th customer we serve today. Thank you!")
   end
 

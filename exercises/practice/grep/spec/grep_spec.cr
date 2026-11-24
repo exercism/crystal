@@ -176,7 +176,7 @@ paradise-lost.txt:6:Sing Heav'nly Muse, that on the secret top"
     Grep.search(pattern, flags, files).should eq(expected)
   end
 
-  pending "Multiple files, one match, print file names flag" do
+  pending "Multiple files, several matches, print file names flag" do
     expected = "iliad.txt
 paradise-lost.txt"
     pattern = "who"

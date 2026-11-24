@@ -13,7 +13,7 @@ describe "SimpleCipher" do
       cipher.decode(cipher.key[0, "aaaaaaaaaa".size]).should eq("aaaaaaaaaa")
     end
 
-    pending "Is reversible. I.e., if you apply decode in a encoded result, you must see the same plaintext encode parameter as a result of the decode method" do
+    pending "Is reversible. I.e., if you apply decode to an encoded result, you must see the same plaintext encode parameter as a result of the decode method" do
       cipher = SimpleCipher.new
       cipher.decode(cipher.encode("abcdefghij")).should eq("abcdefghij")
     end
@@ -35,7 +35,7 @@ describe "SimpleCipher" do
       cipher.decode("abcdefghij").should eq("aaaaaaaaaa")
     end
 
-    pending "Is reversible. I.e., if you apply decode in a encoded result, you must see the same plaintext encode parameter as a result of the decode method" do
+    pending "Is reversible. I.e., if you apply decode to an encoded result, you must see the same plaintext encode parameter as a result of the decode method" do
       cipher = SimpleCipher.new("abcdefghij")
       cipher.decode(cipher.encode("abcdefghij")).should eq("abcdefghij")
     end

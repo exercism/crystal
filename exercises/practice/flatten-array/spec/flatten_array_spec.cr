@@ -22,7 +22,7 @@ describe "FlattenArray" do
     FlattenArray.flatten([0, 2, [[2, 3], 8, 100, 4, [[[50]]]], -2]).should eq([0, 2, 2, 3, 8, 100, 4, 50, -2])
   end
 
-  pending "6 level nesting" do
+  pending "5 level nesting with multiple nested arrays" do
     FlattenArray.flatten([1, [2, [[3]], [4, [[5]]], 6, 7], 8]).should eq([1, 2, 3, 4, 5, 6, 7, 8])
   end
 
@@ -38,7 +38,7 @@ describe "FlattenArray" do
     FlattenArray.flatten([1, nil, nil, 4]).should eq([1, 4])
   end
 
-  pending "6 level nested array with null values" do
+  pending "4 level nested array with null values" do
     FlattenArray.flatten([0, 2, [[2, 3], 8, [[100]], nil, [[nil]]], -2]).should eq([0, 2, 2, 3, 8, 100, -2])
   end
 

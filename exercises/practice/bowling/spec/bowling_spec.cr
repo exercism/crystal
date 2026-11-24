@@ -174,7 +174,7 @@ describe "Bowling" do
     game.score.should eq(26)
   end
 
-  pending "the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike" do
+  pending "the second bonus roll after a strike in the last frame cannot be a strike if the first one is not a strike" do
     game = Bowling.new
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6].each do |roll|
       game.roll(roll)
